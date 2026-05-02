@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Về tôi",
+    "section": "",
+    "text": "Tôi làm việc trong lĩnh vực Data Analytics và Python. Trang này là nơi tôi ghi lại những gì tôi học được, những vấn đề tôi đã giải quyết, và những tool tôi thực sự dùng hàng ngày.\nNội dung ở đây không phải từ sách giáo khoa — mà từ công việc thực tế."
+  },
+  {
+    "objectID": "about.html#dz-data-practitioner",
+    "href": "about.html#dz-data-practitioner",
+    "title": "Về tôi",
+    "section": "",
+    "text": "Tôi làm việc trong lĩnh vực Data Analytics và Python. Trang này là nơi tôi ghi lại những gì tôi học được, những vấn đề tôi đã giải quyết, và những tool tôi thực sự dùng hàng ngày.\nNội dung ở đây không phải từ sách giáo khoa — mà từ công việc thực tế."
+  },
+  {
+    "objectID": "about.html#tại-sao-tôi-tạo-trang-này",
+    "href": "about.html#tại-sao-tôi-tạo-trang-này",
+    "title": "Về tôi",
+    "section": "Tại sao tôi tạo trang này",
+    "text": "Tại sao tôi tạo trang này\nKhi học data analytics, tôi phải tự lắp ghép từ quá nhiều nguồn rời rạc. Không có roadmap rõ ràng, không có nội dung tiếng Việt đủ sâu, và không có môi trường thực hành dễ bắt đầu.\nDZ AI Academy là thứ tôi ước mình có khi bắt đầu."
+  },
+  {
+    "objectID": "about.html#nội-dung-tôi-chia-sẻ",
+    "href": "about.html#nội-dung-tôi-chia-sẻ",
+    "title": "Về tôi",
+    "section": "Nội dung tôi chia sẻ",
+    "text": "Nội dung tôi chia sẻ\n\nData Analytics: Pandas, SQL, visualization, EDA\nDeveloping: Python thực tế, automation, APIs\nAI/LLM: Concepts, RAG, AI agents"
+  },
+  {
+    "objectID": "about.html#liên-hệ",
+    "href": "about.html#liên-hệ",
+    "title": "Về tôi",
+    "section": "Liên hệ",
+    "text": "Liên hệ\n\nGitHub: github.com/dzai-vn"
+  },
+  {
+    "objectID": "posts/data-analytics/pandas-groupby-co-ban.html",
+    "href": "posts/data-analytics/pandas-groupby-co-ban.html",
+    "title": "Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế",
+    "section": "",
+    "text": "groupby() trong Pandas cho phép bạn chia dữ liệu thành các nhóm, áp dụng một hàm, rồi kết hợp kết quả lại.\nPattern cơ bản: Split → Apply → Combine\nimport pandas as pd\n\ndf = pd.DataFrame({\n    'region': ['North', 'South', 'North', 'South', 'North'],\n    'sales': [100, 200, 150, 120, 180],\n    'month': ['Jan', 'Jan', 'Feb', 'Feb', 'Mar']\n})\n\n# Tổng sales theo region\ndf.groupby('region')['sales'].sum()"
+  },
+  {
+    "objectID": "posts/data-analytics/pandas-groupby-co-ban.html#groupby-là-gì",
+    "href": "posts/data-analytics/pandas-groupby-co-ban.html#groupby-là-gì",
+    "title": "Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế",
+    "section": "",
+    "text": "groupby() trong Pandas cho phép bạn chia dữ liệu thành các nhóm, áp dụng một hàm, rồi kết hợp kết quả lại.\nPattern cơ bản: Split → Apply → Combine\nimport pandas as pd\n\ndf = pd.DataFrame({\n    'region': ['North', 'South', 'North', 'South', 'North'],\n    'sales': [100, 200, 150, 120, 180],\n    'month': ['Jan', 'Jan', 'Feb', 'Feb', 'Mar']\n})\n\n# Tổng sales theo region\ndf.groupby('region')['sales'].sum()"
+  },
+  {
+    "objectID": "posts/data-analytics/pandas-groupby-co-ban.html#các-aggregation-phổ-biến",
+    "href": "posts/data-analytics/pandas-groupby-co-ban.html#các-aggregation-phổ-biến",
+    "title": "Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế",
+    "section": "Các aggregation phổ biến",
+    "text": "Các aggregation phổ biến\n# Nhiều aggregation cùng lúc\ndf.groupby('region')['sales'].agg(['sum', 'mean', 'count'])\n\n# Đặt tên cho output columns\ndf.groupby('region').agg(\n    total_sales=('sales', 'sum'),\n    avg_sales=('sales', 'mean'),\n    num_transactions=('sales', 'count')\n)"
+  },
+  {
+    "objectID": "posts/data-analytics/pandas-groupby-co-ban.html#groupby-với-nhiều-columns",
+    "href": "posts/data-analytics/pandas-groupby-co-ban.html#groupby-với-nhiều-columns",
+    "title": "Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế",
+    "section": "GroupBy với nhiều columns",
+    "text": "GroupBy với nhiều columns\n# Group theo nhiều điều kiện\ndf.groupby(['region', 'month'])['sales'].sum().reset_index()"
+  },
+  {
+    "objectID": "posts/data-analytics/pandas-groupby-co-ban.html#transform-vs-aggregate",
+    "href": "posts/data-analytics/pandas-groupby-co-ban.html#transform-vs-aggregate",
+    "title": "Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế",
+    "section": "Transform vs Aggregate",
+    "text": "Transform vs Aggregate\n\nagg() → thu nhỏ DataFrame (mỗi group → 1 row)\ntransform() → giữ nguyên shape, broadcast kết quả về từng row\n\n# Thêm cột \"% so với tổng của region\"\ndf['region_total'] = df.groupby('region')['sales'].transform('sum')\ndf['pct_of_region'] = df['sales'] / df['region_total'] * 100\n\nBài tiếp theo: Merge & Join trong Pandas"
+  },
+  {
+    "objectID": "roadmap/data-analytics.html",
+    "href": "roadmap/data-analytics.html",
+    "title": "Data Analytics Roadmap",
+    "section": "",
+    "text": "Click vào node để xem nội dung liên quan. Zoom bằng scroll, kéo để di chuyển."
+  },
+  {
+    "objectID": "roadmap/data-analytics.html#foundation",
+    "href": "roadmap/data-analytics.html#foundation",
+    "title": "Data Analytics Roadmap",
+    "section": "1. Foundation",
+    "text": "1. Foundation\n\nPython Basics\n\nVariables & Data Types\nControl Flow (if/for/while)\nFunctions & Modules\nList Comprehension\n\n\n\nStatistics Cơ bản\n\nDescriptive Statistics\nDistributions\nProbability Basics"
+  },
+  {
+    "objectID": "roadmap/data-analytics.html#data-wrangling",
+    "href": "roadmap/data-analytics.html#data-wrangling",
+    "title": "Data Analytics Roadmap",
+    "section": "2. Data Wrangling",
+    "text": "2. Data Wrangling\n\nPandas\n\nSeries & DataFrame\nFiltering & Selection\nGroupBy & Aggregation\nMerge, Join & Concat\nDateTime handling\n\n\n\nSQL\n\nSELECT & WHERE\nGROUP BY & HAVING\nJOINs (INNER, LEFT, RIGHT)\nWindow Functions\nCTEs\n\n\n\nData Cleaning\n\nMissing Values\nOutliers\nData Types & Casting\nString Cleaning"
+  },
+  {
+    "objectID": "roadmap/data-analytics.html#visualization",
+    "href": "roadmap/data-analytics.html#visualization",
+    "title": "Data Analytics Roadmap",
+    "section": "3. Visualization",
+    "text": "3. Visualization\n\nChart Selection Guide\n\nKhi nào dùng biểu đồ gì\nSo sánh chart types\n\n\n\nMatplotlib\n\nBasic Charts\nSubplots\nStyling & Themes\n\n\n\nPlotly\n\nInteractive Charts\nHover & Click Events\nAnimated Charts"
+  },
+  {
+    "objectID": "roadmap/data-analytics.html#exploratory-data-analysis",
+    "href": "roadmap/data-analytics.html#exploratory-data-analysis",
+    "title": "Data Analytics Roadmap",
+    "section": "4. Exploratory Data Analysis",
+    "text": "4. Exploratory Data Analysis\n\nEDA Workflow\n\nData Overview\nUnivariate Analysis\nBivariate Analysis\nCorrelation Analysis\n\n\n\nBusiness Analytics\n\nCohort Analysis\nFunnel Analysis\nA/B Testing Basics"
+  },
+  {
+    "objectID": "roadmap/data-analytics.html#dashboard-reporting",
+    "href": "roadmap/data-analytics.html#dashboard-reporting",
+    "title": "Data Analytics Roadmap",
+    "section": "5. Dashboard & Reporting",
+    "text": "5. Dashboard & Reporting\n\nPlotly Dash\n\nLayout & Components\nCallbacks\nDeploy\n\n\n\nQuarto Reports\n\nParameterized Reports\nAutomated Reporting"
+  },
+  {
+    "objectID": "demos/index.html",
+    "href": "demos/index.html",
+    "title": "Interactive Demos",
+    "section": "",
+    "text": "Các ứng dụng tương tác — khám phá bằng tay, không cần cài đặt gì."
+  },
+  {
+    "objectID": "demos/index.html#chart-selection-guide",
+    "href": "demos/index.html#chart-selection-guide",
+    "title": "Interactive Demos",
+    "section": "Chart Selection Guide",
+    "text": "Chart Selection Guide\nKhông biết dùng biểu đồ gì cho dữ liệu của bạn? Tool này giúp bạn chọn đúng.\n\n13 loại biểu đồ phổ biến\nLive preview với Chart.js\nSo sánh ưu/nhược điểm\n\nMở Chart Selection Guide →\n\nThêm demos sẽ được thêm vào đây theo thời gian."
+  },
+  {
+    "objectID": "roadmap/index.html",
+    "href": "roadmap/index.html",
+    "title": "Roadmap học tập",
+    "section": "",
+    "text": "Chọn lộ trình học tập theo mục tiêu của bạn.\n\n\n📊 Data Analytics\nPython → Pandas → SQL → Visualization → Dashboard\nXem roadmap →\n\n\n💻 Developing\nPython Basics → OOP → APIs → Automation → Tools\nComing soon\n\n\n🤖 AI / LLM\nML Basics → LLM Concepts → RAG → AI Agents\nComing soon"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Bài viết",
+    "section": "",
+    "text": "Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế\n\n\n\ndata-analytics\n\npandas\n\n\n\nGroupBy là một trong những thao tác quan trọng nhất trong Pandas. Bài này giải thích cách hoạt động và các use cases thực tế.\n\n\n\nMay 2, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DZ AI Academy",
+    "section": "",
+    "text": "Nội dung thực tế từ một data practitioner — bài viết, tutorials có code, và demos tương tác. Tất cả miễn phí, bằng tiếng Việt.\nKhám phá Roadmap → Xem bài viết"
+  },
+  {
+    "objectID": "index.html#bắt-đầu-từ-đây",
+    "href": "index.html#bắt-đầu-từ-đây",
+    "title": "DZ AI Academy",
+    "section": "Bắt đầu từ đây",
+    "text": "Bắt đầu từ đây\n\n\n🗺️ Roadmap học tập\nBức tranh tổng thể trước khi bắt đầu. Click vào node → bài học liên quan.\nXem Roadmap\n\n\n📝 Bài viết\nConcept rõ ràng, code thực tế, giải thích bằng tiếng Việt.\nXem bài viết\n\n\n📓 Tutorials\nJupyter notebooks — code có thể chạy được, từng bước một.\nXem tutorials\n\n\n⚡ Interactive Demos\nKhám phá bằng tay, không cần cài đặt gì.\nXem demos"
+  },
+  {
+    "objectID": "index.html#roadmap-data-analytics",
+    "href": "index.html#roadmap-data-analytics",
+    "title": "DZ AI Academy",
+    "section": "Roadmap Data Analytics",
+    "text": "Roadmap Data Analytics\nHọc đúng thứ tự, không mò mẫm. Xem full roadmap →"
+  },
+  {
+    "objectID": "index.html#nhận-nội-dung-mới-qua-email",
+    "href": "index.html#nhận-nội-dung-mới-qua-email",
+    "title": "DZ AI Academy",
+    "section": "Nhận nội dung mới qua email",
+    "text": "Nhận nội dung mới qua email\nMỗi tuần một bài — bài viết, tip thực tế, hoặc tutorial mới. Không spam. Unsubscribe bất kỳ lúc nào.\n\nNewsletter coming soon — Liên hệ tôi để được thông báo khi ra mắt."
+  }
+]

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách Tra cứu Biểu đồ - Standalone Sync</title>
+    <!-- CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .modal-enter { animation: fadeIn 0.2s ease-out forwards; }
+        .modal-content-enter { animation: slideUp 0.3s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 px-6 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 bg-indigo-600 rounded-xl text-white shadow-lg shadow-indigo-200">
+                    <i data-lucide="library" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-slate-800 tracking-tight">Chart Selection Guide</h1>
+                    <p class="text-slate-500 text-[10px] font-medium uppercase tracking-[0.1em]">Standalone Mode Active</p>
+                </div>
+            </div>
+            <div class="relative w-full md:w-96 group">
+                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 group-focus-within:text-indigo-500 transition-colors"></i>
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Tìm tên biểu đồ, mục đích hoặc từ khóa..."
+                    class="w-full pl-11 pr-4 py-3 bg-slate-100 border border-transparent rounded-2xl focus:bg-white focus:ring-4 focus:ring-indigo-100 focus:border-indigo-300 outline-none transition-all text-sm shadow-inner"
+                >
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 flex flex-col md:flex-row gap-10">
+        <!-- Sidebar Navigation -->
+        <aside class="md:w-72 shrink-0">
+            <div class="bg-white rounded-3xl border border-slate-200 p-3 shadow-sm sticky top-28 overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-indigo-500"></div>
+                <h3 class="px-4 pt-4 pb-3 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                    <i data-lucide="filter" class="w-3.5 h-3.5"></i> Mục đích dữ liệu
+                </h3>
+                <nav id="categoryNav" class="space-y-1">
+                    <!-- Categories will be injected here -->
+                </nav>
+            </div>
+
+            <!-- Sync Tip -->
+            <div class="mt-6 p-5 bg-indigo-50/50 rounded-3xl border border-indigo-100/50 relative overflow-hidden group">
+                <i data-lucide="refresh-cw" class="absolute -right-2 -bottom-2 w-16 h-16 text-indigo-200 opacity-30 group-hover:rotate-180 transition-transform duration-700"></i>
+                <h4 class="text-xs font-bold text-indigo-600 mb-1 flex items-center gap-2">
+                    <i data-lucide="sync" class="w-3.5 h-3.5"></i> Tool Đồng bộ
+                </h4>
+                <p class="text-[11px] text-indigo-700 leading-relaxed">Để cập nhật dữ liệu từ <strong>data.json</strong> vào file này, vui lòng chạy lệnh:</p>
+                <code class="block text-[10px] font-mono bg-indigo-100 p-2 rounded mt-2 select-all break-all">python3 sync_data.py</code>
+            </div>
+        </aside>
+
+        <!-- Gallery Section -->
+        <section class="flex-1">
+            <div id="chartGallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Charts will be injected here -->
+            </div>
+
+            <div id="noResults" class="hidden text-center py-32 bg-white rounded-[40px] border border-dashed border-slate-300">
+                <div class="bg-slate-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                    <i data-lucide="search-x" class="text-slate-300 w-12 h-12"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Không tìm thấy biểu đồ</h3>
+                <p class="text-slate-500 max-w-xs mx-auto text-sm">Hãy thử từ khóa khác hoặc xóa bộ lọc để tìm kiếm rộng hơn.</p>
+                <button onclick="clearAllFilters()" class="mt-6 px-6 py-2.5 bg-indigo-600 text-white rounded-xl font-bold text-sm shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all">Xóa bộ lọc</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Detail -->
+    <div id="modalOverlay" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md modal-enter">
+        <div class="bg-white w-full max-w-5xl rounded-[40px] shadow-2xl overflow-hidden relative modal-content-enter flex flex-col max-h-[95vh] border border-white/20">
+            <button id="closeModal" class="absolute top-6 right-6 p-2 bg-slate-100/50 hover:bg-slate-200/80 rounded-full transition-all z-20 hover:rotate-90">
+                <i data-lucide="x" class="w-6 h-6 text-slate-600"></i>
+            </button>
+            
+            <div class="flex-1 overflow-y-auto no-scrollbar scroll-smooth" id="modalBody">
+                <!-- Data will be injected -->
+            </div>
+
+            <div class="bg-slate-50/80 backdrop-blur-sm px-10 py-6 flex justify-end gap-4 border-t border-slate-100">
+                <button id="closeModalBtn" class="px-10 py-4 bg-white border border-slate-200 text-slate-700 font-black rounded-2xl hover:bg-slate-100 transition-all shadow-sm active:scale-95">Đóng cửa sổ</button>
+                <button id="nextChartBtn" class="px-10 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 active:scale-95 flex items-center gap-2 text-sm">Tiếp theo <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA INJECTION PLACEHOLDER ---
+        // Do not edit this manually, use sync_data.py
+        const CHART_DATA = /* DATA_START */{
+    "categories": [
+        {
+            "id": "All",
+            "label": "Tất cả",
+            "icon": "LayoutGrid"
+        },
+        {
+            "id": "Comparison",
+            "label": "So sánh",
+            "icon": "ArrowRightLeft"
+        },
+        {
+            "id": "Composition",
+            "label": "Thành phần",
+            "icon": "Layers"
+        },
+        {
+            "id": "Distribution",
+            "label": "Phân bổ",
+            "icon": "Activity"
+        },
+        {
+            "id": "Relationship",
+            "label": "Mối quan hệ",
+            "icon": "Share2"
+        },
+        {
+            "id": "Stage",
+            "label": "Giai đoạn",
+            "icon": "Filter"
+        },
+        {
+            "id": "Single",
+            "label": "Giá trị đơn",
+            "icon": "Hash"
+        }
+    ],
+    "charts": [
+        {
+            "id": "bar",
+            "title": "Biểu đồ Cột (Bar Chart)",
+            "category": "Comparison",
+            "description": "So sánh các giá trị giữa một vài danh mục.",
+            "question": "Có bao nhiêu đơn hàng đã được bán trong mỗi danh mục?",
+            "icon": "bar",
+            "tags": [
+                "Dưới 10 danh mục",
+                "Định tính"
+            ],
+            "advantages": "• Dễ đọc và hiểu<br>• So sánh chính xác<br>• Phù hợp với các phép đo tĩnh, không thay đổi",
+            "limitations": "• Không hiển thị xu hướng thời gian<br>• Hạn chế và khó đọc với quá nhiều danh mục<br>• Đơn giản, ít thông tin",
+            "demoType": "bar"
+        },
+        {
+            "id": "line",
+            "title": "Biểu đồ Đường (Line Chart)",
+            "category": "Comparison",
+            "description": "Hiển thị sự thay đổi của các giá trị qua nhiều thời điểm.",
+            "question": "Doanh thu hàng tháng có xu hướng như thế nào trong năm qua?",
+            "icon": "line",
+            "tags": [
+                "Thời gian",
+                "Xu hướng"
+            ],
+            "advantages": "• Cung cấp hình dạng đơn giản, dễ nhận thấy xu hướng<br>• Tốt để hiển thị lịch sử của dữ liệu chuỗi thời gian dài",
+            "limitations": "• Không phù hợp để hiển thị số tĩnh đơn lẻ<br>• Có thể trở nên rối mắt khi hiển thị quá nhiều đường cùng lúc",
+            "demoType": "line"
+        },
+        {
+            "id": "pie",
+            "title": "Biểu đồ Tròn (Pie/Donut Chart)",
+            "category": "Composition",
+            "description": "Thể hiện tỷ lệ phần trăm của từng phần so với tổng thể cho một vài danh mục.",
+            "question": "Tỷ lệ đóng góp của mỗi khu vực vào tổng doanh thu là bao nhiêu?",
+            "icon": "pie",
+            "tags": [
+                "Tỷ lệ",
+                "Tổng thể"
+            ],
+            "advantages": "• Trực quan hóa tốt để xem các phần cấu tạo nên tổng thể<br>• Hiệu quả cao nhất khi chỉ có 2 đến 3 hạng mục",
+            "limitations": "• Rất khó so sánh tỷ lệ chính xác khi có nhiều hơn 3 hạng mục<br>• Không thể hiện được biến động theo thời gian",
+            "demoType": "pie"
+        },
+        {
+            "id": "row",
+            "title": "Biểu đồ Thanh ngang (Row Chart)",
+            "category": "Comparison",
+            "description": "So sánh các giá trị trên nhiều hạng mục khác nhau.",
+            "question": "Phòng ban nào có mức chi tiêu cao nhất?",
+            "icon": "row",
+            "tags": [
+                "Nhiều danh mục",
+                "Tên nhãn dài"
+            ],
+            "advantages": "• Dễ đọc hơn biểu đồ cột dọc khi so sánh số lượng lớn danh mục<br>• Dễ dàng hiển thị và đọc các nhãn có tên quá dài",
+            "limitations": "• Không thể hiện được xu hướng thời gian<br>• Có thể chiếm rất nhiều không gian theo chiều dọc",
+            "demoType": "row"
+        },
+        {
+            "id": "scatter",
+            "title": "Biểu đồ Phân tán (Scatter Plot)",
+            "category": "Relationship",
+            "description": "Hiển thị sự liên quan và mức độ tương quan giữa hai biến số.",
+            "question": "Ngân sách quảng cáo cao hơn có dẫn đến nhiều lượt chuyển đổi hơn không?",
+            "icon": "scatter",
+            "tags": [
+                "Tương quan",
+                "Phân bố"
+            ],
+            "advantages": "• Lý tưởng để tìm mối liên hệ giữa hai biến<br>• Hoạt động tốt nhất với các điểm dữ liệu thô, chưa được tổng hợp (unaggregated data)",
+            "limitations": "• Khó diễn giải nếu người dùng không quen thuộc<br>• Có thể rất rối và khó đọc nếu có quá nhiều điểm dữ liệu chồng chéo",
+            "demoType": "scatter"
+        },
+        {
+            "id": "histogram",
+            "title": "Biểu đồ Tần suất (Histogram)",
+            "category": "Distribution",
+            "description": "Cho thấy cách các giá trị được phân nhóm thành các khoảng (ranges) liên tục.",
+            "question": "Tổng giá trị đơn hàng phổ biến nhất là bao nhiêu?",
+            "icon": "histogram",
+            "tags": [
+                "Phân phối",
+                "Dải giá trị"
+            ],
+            "advantages": "• Rất tốt để hiểu sự phân bố của một dải dữ liệu số<br>• Giúp nhanh chóng nhận ra các khoảng giá trị có sự tập trung phổ biến nhất",
+            "limitations": "• Chỉ hoạt động với dữ liệu số được chia thành các dải (bin)<br>• Không thể dùng cho việc so sánh giữa các danh mục định tính độc lập",
+            "demoType": "histogram"
+        },
+        {
+            "id": "combo",
+            "title": "Biểu đồ Kết hợp (Combo Chart)",
+            "category": "Comparison",
+            "description": "Kết hợp hiển thị xu hướng của hai số liệu khác nhau theo thời gian trên cùng biểu đồ.",
+            "question": "Doanh số và số lượng bán ra có xu hướng cùng nhau như thế nào?",
+            "icon": "combo",
+            "tags": [
+                "Kết hợp",
+                "Hai trục Y"
+            ],
+            "advantages": "• Tuyệt vời khi các số liệu có thang đo hoặc đơn vị tính hoàn toàn khác nhau<br>• Cho phép sử dụng hai trục Y độc lập giúp tiết kiệm không gian trực quan",
+            "limitations": "• Dễ gây nhầm lẫn cho người xem nếu không chú ý kỹ thang đo của các trục",
+            "demoType": "combo"
+        },
+        {
+            "id": "funnel",
+            "title": "Biểu đồ Phễu (Funnel Chart)",
+            "category": "Stage analysis",
+            "description": "Thể hiện sự sụt giảm của dữ liệu qua từng giai đoạn nối tiếp nhau.",
+            "question": "Chúng ta mất bao nhiêu lượng đối tượng ở mỗi giai đoạn của quy trình?",
+            "icon": "funnel",
+            "tags": [
+                "Quy trình",
+                "Tỷ lệ chuyển đổi"
+            ],
+            "advantages": "• Hình dung rõ ràng quy trình tuần tự (ví dụ: các bước trong chu kỳ bán hàng)<br>• Dễ dàng phát hiện ngay vị trí sụt giảm (drop-off) nhiều nhất",
+            "limitations": "• Các bước bắt buộc phải theo trình tự tuyến tính<br>• Số liệu luôn phải giảm dần từ bước trước sang bước sau",
+            "demoType": "funnel"
+        },
+        {
+            "id": "waterfall",
+            "title": "Biểu đồ Thác nước (Waterfall Chart)",
+            "category": "Composition",
+            "description": "Phân tách cách từng phần cộng vào hoặc trừ đi để tạo thành một tổng thể cuối cùng.",
+            "question": "Yếu tố nào đang làm thâm hụt doanh thu của chúng ta?",
+            "icon": "waterfall",
+            "tags": [
+                "Tích lũy",
+                "Giá trị Âm/Dương"
+            ],
+            "advantages": "• Cực kỳ hiệu quả để hình dung các giá trị tích lũy<br>• Hiển thị trực quan cả các yếu tố đóng góp dương (tăng) và âm (giảm)",
+            "limitations": "• Khá phức tạp để đọc hiểu với người chưa quen<br>• Chỉ phù hợp khi phân tích dữ liệu tổng cấu thành từ các phép cộng/trừ",
+            "demoType": "waterfall"
+        },
+        {
+            "id": "progress",
+            "title": "Thanh Tiến trình (Progress Bar)",
+            "category": "Single value",
+            "description": "Theo dõi và so sánh một số liệu trực tiếp với một mục tiêu đã đặt ra.",
+            "question": "Chúng ta đã tiến gần đến mức nào so với mục tiêu doanh thu?",
+            "icon": "progress",
+            "tags": [
+                "Mục tiêu",
+                "KPI"
+            ],
+            "advantages": "• Truyền đạt tiến độ hướng tới mục tiêu một cách trực quan, rõ ràng<br>• Hỗ trợ tính năng thiết lập cảnh báo khi đạt ngưỡng mục tiêu",
+            "limitations": "• Chỉ có thể hiện tiến độ cho 1 giá trị duy nhất<br>• Yêu cầu bắt buộc phải xác định rõ ràng con số mục tiêu hoặc giới hạn từ trước",
+            "demoType": "progress"
+        },
+        {
+            "id": "gauge",
+            "title": "Biểu đồ Đo lường (Gauge Chart)",
+            "category": "Composition",
+            "description": "So sánh một giá trị trong bối cảnh của một thang đo hoặc các phạm vi hiệu suất.",
+            "question": "Đánh giá trung bình của sản phẩm chúng ta tốt đến mức nào?",
+            "icon": "gauge",
+            "tags": [
+                "Thang đo",
+                "Trạng thái"
+            ],
+            "advantages": "• Cung cấp ngay ngữ cảnh cho con số tĩnh dựa trên dải đo tổng thể<br>• Cho phép tùy chỉnh các dải màu hiển thị trạng thái (VD: Thấp, Trung bình, Cao)",
+            "limitations": "• Không hỗ trợ thiết lập tính năng cảnh báo khi chuyển dải<br>• Tốn diện tích cho một chỉ số và không hỗ trợ chia nhóm (breakouts)",
+            "demoType": "gauge"
+        },
+        {
+            "id": "number",
+            "title": "Số liệu và Xu hướng (Number & Trend)",
+            "category": "Single value",
+            "description": "Làm nổi bật một con số duy nhất hoặc hiển thị sự thay đổi so với giá trị kỳ trước.",
+            "question": "Doanh thu hiện tại có cao hơn tháng trước không? Có bao nhiêu người dùng?",
+            "icon": "number",
+            "tags": [
+                "Tổng quan",
+                "Nổi bật"
+            ],
+            "advantages": "• Truyền tải thông tin số đo tĩnh (KPI) cực kỳ nhanh chóng trong nháy mắt<br>• Biểu đồ Trend giúp dễ dàng nhấn mạnh sự thay đổi (delta) kỳ này so với kỳ trước",
+            "limitations": "• Số liệu Number đơn lẻ bị thiếu ngữ cảnh nếu không đi kèm với mục tiêu hay mốc thời gian<br>• Biểu đồ Trend không hiển thị toàn bộ lịch sử hay hình dạng dữ liệu theo thời gian dài",
+            "demoType": "number"
+        },
+        {
+            "id": "sankey",
+            "title": "Biểu đồ Sankey (Sankey Chart)",
+            "category": "Stage analysis",
+            "description": "Lập bản đồ đường đi của dòng dữ liệu đa chiều từ bước này sang bước tiếp theo.",
+            "question": "Lưu lượng truy cập đi đâu sau khi hạ cánh trên trang chủ?",
+            "icon": "sankey",
+            "tags": [
+                "Luồng dữ liệu",
+                "Đa chiều"
+            ],
+            "advantages": "• Hiển thị rõ cách các phần tử đóng góp vào luồng phân nhánh tổng thể<br>• Độ lớn (volume) của dòng chảy được thể hiện tinh tế bằng độ dày của liên kết",
+            "limitations": "• Yêu cầu cấu trúc dữ liệu trả về rất khắt khe (Nguồn, Đích, Giá trị đếm)<br>• Sẽ phát sinh lỗi, không thể vẽ nếu dữ liệu chứa các phụ thuộc vòng tròn (circular dependencies) lặp lại",
+            "demoType": "sankey"
+        }
+    ]
+}/* DATA_END */;
+        // ----------------------------------
+
+        let currentFilter = 'All';
+        let currentSearch = '';
+        let myChartInstance = null;
+
+        function init() {
+            // Normalizing category names (handle 'Stage analysis' vs 'Stage')
+            if (CHART_DATA.charts) {
+                CHART_DATA.charts.forEach(c => {
+                    if(c.category === 'Stage analysis') c.category = 'Stage';
+                });
+            }
+
+            renderCategories();
+            renderCharts();
+            lucide.createIcons();
+
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                currentSearch = e.target.value.toLowerCase();
+                renderCharts();
+            });
+
+            document.getElementById('closeModal').onclick = closeModal;
+            document.getElementById('closeModalBtn').onclick = closeModal;
+            document.getElementById('modalOverlay').onclick = (e) => {
+                if(e.target === document.getElementById('modalOverlay')) closeModal();
+            };
+        }
+
+        function renderCategories() {
+            const nav = document.getElementById('categoryNav');
+            const iconMap = {
+                "LayoutGrid": "layout-grid", "ArrowRightLeft": "arrow-right-left",
+                "Layers": "layers", "Activity": "activity", "Share2": "share-2",
+                "Filter": "filter", "Hash": "hash"
+            };
+
+            if (!CHART_DATA.categories) return;
+
+            nav.innerHTML = CHART_DATA.categories.map(cat => `
+                <button 
+                    onclick="filterByCategory('${cat.id}')"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${currentFilter === cat.id ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-100' : 'text-slate-600 hover:bg-slate-100'}"
+                >
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="${iconMap[cat.icon] || 'layout-grid'}" class="w-4 h-4"></i>
+                        ${cat.label}
+                    </div>
+                </button>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function filterByCategory(id) {
+            currentFilter = id;
+            renderCategories();
+            renderCharts();
+        }
+
+        function clearAllFilters() {
+            currentFilter = 'All';
+            currentSearch = '';
+            document.getElementById('searchInput').value = '';
+            renderCategories();
+            renderCharts();
+        }
+
+        function renderCharts() {
+            const gallery = document.getElementById('chartGallery');
+            if (!CHART_DATA.charts) return;
+
+            const filtered = CHART_DATA.charts.filter(c => {
+                const matchesCat = currentFilter === 'All' || c.category === currentFilter;
+                const matchesSearch = c.title.toLowerCase().includes(currentSearch) || c.description.toLowerCase().includes(currentSearch);
+                return matchesCat && matchesSearch;
+            });
+
+            if(filtered.length === 0) {
+                gallery.classList.add('hidden');
+                document.getElementById('noResults').classList.remove('hidden');
+            } else {
+                gallery.classList.remove('hidden');
+                document.getElementById('noResults').classList.add('hidden');
+                
+                gallery.innerHTML = filtered.map(c => {
+                    const iconName = getIconForChartType(c.id);
+                    return `
+                    <div onclick="openModal('${c.id}')" class="group bg-white rounded-[32px] border border-slate-200 overflow-hidden shadow-sm hover:border-indigo-300 transition-all duration-500 cursor-pointer card-hover flex flex-col h-full">
+                        <div class="p-8 bg-slate-50 flex items-center justify-center min-h-[180px] group-hover:bg-white transition-colors duration-500">
+                             <div class="p-6 bg-white rounded-[24px] shadow-sm group-hover:shadow-indigo-100 transition-all duration-500 border border-slate-100">
+                                <i data-lucide="${iconName}" class="w-14 h-14 ${getColorForCategory(c.category)} opacity-90 group-hover:scale-110 transition-transform duration-500"></i>
+                             </div>
+                        </div>
+                        <div class="p-7 flex-1 flex flex-col">
+                            <h3 class="font-black text-slate-800 text-lg mb-3 group-hover:text-indigo-600 transition-colors">${c.title}</h3>
+                            <p class="text-slate-500 text-xs line-clamp-2 leading-relaxed mb-6 font-medium">${c.description}</p>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                ${c.tags.map(t => `<span class="text-[9px] font-black text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg uppercase tracking-wider">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                }).join('');
+                lucide.createIcons();
+            }
+        }
+
+        function getIconForChartType(id) {
+            const map = {
+                bar: 'bar-chart-3', line: 'line-chart', pie: 'pie-chart', scatter: 'dot-chart',
+                histogram: 'bar-chart', combo: 'layers', funnel: 'filter', waterfall: 'bar-chart-2',
+                progress: 'check-circle-2', gauge: 'gauge', number: 'hash', sankey: 'git-branch', row: 'align-left'
+            };
+            return map[id] || 'bar-chart-3';
+        }
+
+        function getColorForCategory(cat) {
+            const map = { Comparison: 'text-blue-500', Composition: 'text-orange-500', Distribution: 'text-emerald-500', Relationship: 'text-indigo-500', Stage: 'text-purple-500', Single: 'text-rose-500' };
+            return map[cat] || 'text-slate-500';
+        }
+
+        function openModal(chartId) {
+            const chart = CHART_DATA.charts.find(c => c.id === chartId);
+            const overlay = document.getElementById('modalOverlay');
+            const body = document.getElementById('modalBody');
+            
+            const nextIndex = (CHART_DATA.charts.indexOf(chart) + 1) % CHART_DATA.charts.length;
+            const nextChart = CHART_DATA.charts[nextIndex];
+            
+            document.getElementById('nextChartBtn').onclick = () => openModal(nextChart.id);
+
+            body.innerHTML = `
+                <div class="p-10 lg:p-14">
+                    <div class="flex items-start justify-between gap-6 mb-12">
+                        <div class="flex items-center gap-6">
+                            <div class="p-6 bg-indigo-50 rounded-[28px] text-indigo-600 shadow-inner">
+                                <i data-lucide="${getIconForChartType(chart.id)}" class="w-10 h-10"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-4xl font-black text-slate-900 tracking-tight leading-tight mb-2">${chart.title}</h2>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xs font-black text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-xl uppercase tracking-widest">${chart.category}</span>
+                                    <div class="flex gap-1.5">
+                                        ${chart.tags.map(t => `<span class="text-[10px] font-bold text-slate-400">#${t}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                        <div class="space-y-10">
+                            <section>
+                                <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4 flex items-center gap-2">Giới thiệu & Mục đích</h4>
+                                <p class="text-slate-600 text-xl leading-relaxed font-medium">${chart.description}</p>
+                            </section>
+
+                            <div class="p-8 bg-slate-900 rounded-[32px] text-white relative overflow-hidden group shadow-2xl">
+                                <h4 class="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">Trả lời câu hỏi quan trọng</h4>
+                                <p class="text-2xl font-black leading-tight italic">"${chart.question}"</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-emerald-50/50 rounded-3xl p-6 border border-emerald-100/50">
+                                    <h4 class="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-4 flex items-center gap-2">Điểm mạnh</h4>
+                                    <div class="text-[13px] text-slate-700 space-y-3 leading-relaxed font-medium">${chart.advantages}</div>
+                                </div>
+                                <div class="bg-rose-50/50 rounded-3xl p-6 border border-rose-100/50">
+                                    <h4 class="text-[10px] font-black text-rose-500 uppercase tracking-widest mb-4 flex items-center gap-2">Điểm yếu</h4>
+                                    <div class="text-[13px] text-slate-700 space-y-3 leading-relaxed font-medium">${chart.limitations}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col h-full">
+                            <div class="bg-slate-100/50 rounded-[40px] p-10 border border-slate-200 min-h-[450px] flex flex-col shadow-inner">
+                                <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-8 text-center italic">Minh họa tương tác (Mock Data)</h4>
+                                <div class="flex-1 relative flex items-center justify-center">
+                                    <canvas id="chartCanvas"></canvas>
+                                    <div id="chartValueOverlay" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                                         <p class="text-5xl font-black text-slate-900" id="overlayValue"></p>
+                                         <p class="text-xs font-bold text-slate-400 uppercase mt-2">Đã đạt</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            lucide.createIcons();
+            renderLiveChart(chart);
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+            if(myChartInstance) myChartInstance.destroy();
+        }
+
+        function renderLiveChart(chart) {
+            const ctx = document.getElementById('chartCanvas').getContext('2d');
+            let config = {};
+            const overlay = document.getElementById('chartValueOverlay');
+            overlay.classList.add('hidden');
+
+            switch(chart.demoType) {
+                case 'scatter':
+                    config = {
+                        type: 'scatter',
+                        data: {
+                            datasets: [{ label: 'Tương quan', data: Array.from({length: 20}, () => ({ x: Math.random()*100, y: Math.random()*100 })), backgroundColor: 'rgba(99, 102, 241, 0.6)', pointRadius: 6 }]
+                        }
+                    };
+                    break;
+                case 'histogram':
+                    config = {
+                        type: 'bar',
+                        data: {
+                            labels: ['0-10', '10-20', '20-30', '30-40', '40-50'],
+                            datasets: [{ data: [5, 12, 25, 18, 10], backgroundColor: 'rgba(16, 185, 129, 0.6)' }]
+                        }
+                    };
+                    break;
+                case 'progress':
+                case 'gauge':
+                    overlay.classList.remove('hidden');
+                    document.getElementById('overlayValue').innerText = chart.id === 'progress' ? '82%' : 'Tốt';
+                    config = {
+                        type: 'doughnut',
+                        data: {
+                            datasets: [{ data: [82, 18], backgroundColor: ['#6366f1', '#f1f5f9'], circumference: 270, rotation: 225, cutout: '85%' }]
+                        }
+                    };
+                    break;
+                case 'number':
+                    overlay.classList.remove('hidden');
+                    overlay.innerHTML = `<p class="text-7xl font-black text-slate-900 tracking-tighter">$1.2M</p><p class="text-emerald-500 font-bold mt-4 text-xl">+12.5% ↑</p>`;
+                    return;
+                default:
+                    config = {
+                        type: chart.demoType === 'horizontalBar' ? 'bar' : (chart.demoType || 'bar'),
+                        data: {
+                            labels: ['A', 'B', 'C', 'D'],
+                            datasets: [{ data: [45, 60, 25, 80], backgroundColor: chart.demoType === 'pie' ? ['#6366f1', '#f43f5e', '#10b981', '#f59e0b'] : 'rgba(99, 102, 241, 0.6)' }]
+                        },
+                        options: { indexAxis: chart.demoType === 'horizontalBar' ? 'y' : 'x' }
+                    };
+            }
+
+            config.options = config.options || {};
+            config.options.responsive = true;
+            config.options.maintainAspectRatio = false;
+            if(!config.options.plugins) config.options.plugins = {};
+            config.options.plugins.legend = { display: chart.demoType === 'pie' };
+
+            myChartInstance = new Chart(ctx, config);
+        }
+
+        init();
+    </script>
+</body>
+</html>
