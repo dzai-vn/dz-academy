@@ -10,7 +10,7 @@
 <atom:link href="https://dz-academy.pages.dev/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Chia sẻ tri thức Data Analytics, Python và AI cho cộng đồng Việt Nam</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Fri, 01 May 2026 17:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 02 May 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế</title>
   <link>https://dz-academy.pages.dev/posts/data-analytics/pandas-groupby-co-ban.html</link>
@@ -190,7 +190,7 @@ font-style: inherit;">100</span></span></code></pre></div></div>
   <category>data-analytics</category>
   <category>pandas</category>
   <guid>https://dz-academy.pages.dev/posts/data-analytics/pandas-groupby-co-ban.html</guid>
-  <pubDate>Fri, 01 May 2026 17:00:00 GMT</pubDate>
+  <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
