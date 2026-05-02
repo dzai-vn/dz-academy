@@ -1,0 +1,26 @@
+---
+title: "Về tôi"
+toc: false
+---
+
+## dz — Data Practitioner
+
+Tôi làm việc trong lĩnh vực Data Analytics và Python. Trang này là nơi tôi ghi lại những gì tôi học được, những vấn đề tôi đã giải quyết, và những tool tôi thực sự dùng hàng ngày.
+
+Nội dung ở đây không phải từ sách giáo khoa — mà từ công việc thực tế.
+
+## Tại sao tôi tạo trang này
+
+Khi học data analytics, tôi phải tự lắp ghép từ quá nhiều nguồn rời rạc. Không có roadmap rõ ràng, không có nội dung tiếng Việt đủ sâu, và không có môi trường thực hành dễ bắt đầu.
+
+DZ AI Academy là thứ tôi ước mình có khi bắt đầu.
+
+## Nội dung tôi chia sẻ
+
+- **Data Analytics**: Pandas, SQL, visualization, EDA
+- **Developing**: Python thực tế, automation, APIs
+- **AI/LLM**: Concepts, RAG, AI agents
+
+## Liên hệ
+
+- GitHub: [github.com/dzai-vn](https://github.com/dzai-vn)

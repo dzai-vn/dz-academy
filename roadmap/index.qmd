@@ -1,0 +1,29 @@
+---
+title: "Roadmap học tập"
+toc: false
+---
+
+Chọn lộ trình học tập theo mục tiêu của bạn.
+
+::: {.feature-grid}
+::: {.feature-card}
+### 📊 Data Analytics
+Python → Pandas → SQL → Visualization → Dashboard
+
+[Xem roadmap →](data-analytics.qmd){.btn .btn-primary}
+:::
+
+::: {.feature-card}
+### 💻 Developing
+Python Basics → OOP → APIs → Automation → Tools
+
+*Coming soon*
+:::
+
+::: {.feature-card}
+### 🤖 AI / LLM
+ML Basics → LLM Concepts → RAG → AI Agents
+
+*Coming soon*
+:::
+:::

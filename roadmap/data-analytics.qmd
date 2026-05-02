@@ -1,0 +1,90 @@
+---
+title: "Data Analytics Roadmap"
+toc: false
+include-in-header:
+  - text: |
+      <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+---
+
+Click vào node để xem nội dung liên quan. Zoom bằng scroll, kéo để di chuyển.
+
+<div class="markmap">
+
+# Data Analytics
+
+## 1. Foundation
+
+### Python Basics
+- Variables & Data Types
+- Control Flow (if/for/while)
+- Functions & Modules
+- List Comprehension
+
+### Statistics Cơ bản
+- Descriptive Statistics
+- Distributions
+- Probability Basics
+
+## 2. Data Wrangling
+
+### [Pandas](/posts/data-analytics/)
+- Series & DataFrame
+- Filtering & Selection
+- [GroupBy & Aggregation](/posts/data-analytics/)
+- Merge, Join & Concat
+- DateTime handling
+
+### SQL
+- SELECT & WHERE
+- GROUP BY & HAVING
+- JOINs (INNER, LEFT, RIGHT)
+- Window Functions
+- CTEs
+
+### Data Cleaning
+- Missing Values
+- Outliers
+- Data Types & Casting
+- String Cleaning
+
+## 3. Visualization
+
+### [Chart Selection Guide](/demos/chart-guide/)
+- Khi nào dùng biểu đồ gì
+- So sánh chart types
+
+### Matplotlib
+- Basic Charts
+- Subplots
+- Styling & Themes
+
+### Plotly
+- Interactive Charts
+- Hover & Click Events
+- Animated Charts
+
+## 4. Exploratory Data Analysis
+
+### EDA Workflow
+- Data Overview
+- Univariate Analysis
+- Bivariate Analysis
+- Correlation Analysis
+
+### Business Analytics
+- Cohort Analysis
+- Funnel Analysis
+- A/B Testing Basics
+
+## 5. Dashboard & Reporting
+
+### Plotly Dash
+- Layout & Components
+- Callbacks
+- Deploy
+
+### Quarto Reports
+- Parameterized Reports
+- Automated Reporting
+
+</div>

@@ -1,0 +1,16 @@
+.quarto/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.ipynb_checkpoints
+.env
+*.egg-info/
+dist/
+.venv/
+venv/
+_bmad
+_bmad-output
+.agent
+.agents
+.claude
+_internal/

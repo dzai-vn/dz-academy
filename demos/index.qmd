@@ -1,0 +1,20 @@
+---
+title: "Interactive Demos"
+toc: false
+---
+
+Các ứng dụng tương tác — khám phá bằng tay, không cần cài đặt gì.
+
+## Chart Selection Guide
+
+Không biết dùng biểu đồ gì cho dữ liệu của bạn? Tool này giúp bạn chọn đúng.
+
+- 13 loại biểu đồ phổ biến
+- Live preview với Chart.js
+- So sánh ưu/nhược điểm
+
+[Mở Chart Selection Guide →](chart-guide/){.btn .btn-primary}
+
+---
+
+*Thêm demos sẽ được thêm vào đây theo thời gian.*

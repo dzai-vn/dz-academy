@@ -1,0 +1,14 @@
+---
+title: "Bài viết"
+listing:
+  contents:
+    - "data-analytics/*.qmd"
+    - "developing/*.qmd"
+    - "ai/*.qmd"
+  type: grid
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, categories, description]
+  feed: true
+page-layout: full
+---

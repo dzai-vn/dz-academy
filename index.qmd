@@ -1,0 +1,64 @@
+---
+title: "DZ AI Academy"
+page-layout: full
+toc: false
+---
+
+::: {.hero-banner}
+# Học Data Analytics, Python & AI
+
+Nội dung thực tế từ một data practitioner — bài viết, tutorials có code, và demos tương tác.
+Tất cả miễn phí, bằng tiếng Việt.
+
+[Khám phá Roadmap →](roadmap/index.qmd){.btn .btn-primary .btn-lg}  [Xem bài viết](posts/index.qmd){.btn .btn-outline-secondary .btn-lg}
+:::
+
+## Bắt đầu từ đây
+
+::: {.feature-grid}
+::: {.feature-card}
+### 🗺️ Roadmap học tập
+Bức tranh tổng thể trước khi bắt đầu. Click vào node → bài học liên quan.
+
+[Xem Roadmap](roadmap/index.qmd)
+:::
+
+::: {.feature-card}
+### 📝 Bài viết
+Concept rõ ràng, code thực tế, giải thích bằng tiếng Việt.
+
+[Xem bài viết](posts/index.qmd)
+:::
+
+::: {.feature-card}
+### 📓 Tutorials
+Jupyter notebooks — code có thể chạy được, từng bước một.
+
+[Xem tutorials](tutorials/index.qmd)
+:::
+
+::: {.feature-card}
+### ⚡ Interactive Demos
+Khám phá bằng tay, không cần cài đặt gì.
+
+[Xem demos](demos/index.qmd)
+:::
+:::
+
+---
+
+## Roadmap Data Analytics
+
+Học đúng thứ tự, không mò mẫm. [Xem full roadmap →](roadmap/data-analytics.qmd)
+
+---
+
+::: {.newsletter-cta}
+## Nhận nội dung mới qua email
+
+Mỗi tuần một bài — bài viết, tip thực tế, hoặc tutorial mới.
+Không spam. Unsubscribe bất kỳ lúc nào.
+
+<!-- Replace with your newsletter embed (Substack, ConvertKit, etc.) -->
+**Newsletter coming soon** — [Liên hệ tôi](about.qmd) để được thông báo khi ra mắt.
+:::

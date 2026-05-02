@@ -1,0 +1,10 @@
+---
+title: "Tutorials"
+listing:
+  contents: "*.qmd"
+  type: grid
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, categories, description]
+page-layout: full
+---
