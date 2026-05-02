@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>DZ AI Academy</title>
+<link>https://dz-academy.pages.dev/posts/</link>
+<atom:link href="https://dz-academy.pages.dev/posts/index.xml" rel="self" type="application/rss+xml"/>
+<description>Chia sẻ tri thức Data Analytics, Python và AI cho cộng đồng Việt Nam</description>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Fri, 01 May 2026 17:00:00 GMT</lastBuildDate>
+<item>
+  <title>Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế</title>
+  <link>https://dz-academy.pages.dev/posts/data-analytics/pandas-groupby-co-ban.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="groupby-là-gì" class="level2">
+<h2 class="anchored" data-anchor-id="groupby-là-gì">GroupBy là gì?</h2>
+<p><code>groupby()</code> trong Pandas cho phép bạn chia dữ liệu thành các nhóm, áp dụng một hàm, rồi kết hợp kết quả lại.</p>
+<p>Pattern cơ bản: <strong>Split → Apply → Combine</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({</span>
+<span id="cb1-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>: [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'North'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'South'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'North'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'South'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'North'</span>],</span>
+<span id="cb1-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>: [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">200</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">150</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">120</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">180</span>],</span>
+<span id="cb1-6">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'month'</span>: [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Jan'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Jan'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Feb'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Feb'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Mar'</span>]</span>
+<span id="cb1-7">})</span>
+<span id="cb1-8"></span>
+<span id="cb1-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Tổng sales theo region</span></span>
+<span id="cb1-10">df.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
+</section>
+<section id="các-aggregation-phổ-biến" class="level2">
+<h2 class="anchored" data-anchor-id="các-aggregation-phổ-biến">Các aggregation phổ biến</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Nhiều aggregation cùng lúc</span></span>
+<span id="cb2-2">df.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>].agg([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sum'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'mean'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'count'</span>])</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Đặt tên cho output columns</span></span>
+<span id="cb2-5">df.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>).agg(</span>
+<span id="cb2-6">    total_sales<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sum'</span>),</span>
+<span id="cb2-7">    avg_sales<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'mean'</span>),</span>
+<span id="cb2-8">    num_transactions<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'count'</span>)</span>
+<span id="cb2-9">)</span></code></pre></div></div>
+</section>
+<section id="groupby-với-nhiều-columns" class="level2">
+<h2 class="anchored" data-anchor-id="groupby-với-nhiều-columns">GroupBy với nhiều columns</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Group theo nhiều điều kiện</span></span>
+<span id="cb3-2">df.groupby([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'month'</span>])[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>().reset_index()</span></code></pre></div></div>
+</section>
+<section id="transform-vs-aggregate" class="level2">
+<h2 class="anchored" data-anchor-id="transform-vs-aggregate">Transform vs Aggregate</h2>
+<ul>
+<li><code>agg()</code> → thu nhỏ DataFrame (mỗi group → 1 row)</li>
+<li><code>transform()</code> → giữ nguyên shape, broadcast kết quả về từng row</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Thêm cột "% so với tổng của region"</span></span>
+<span id="cb4-2">df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region_total'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>].transform(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sum'</span>)</span>
+<span id="cb4-3">df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pct_of_region'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sales'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region_total'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span></code></pre></div></div>
+<hr>
+<p><em>Bài tiếp theo: Merge &amp; Join trong Pandas</em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>data-analytics</category>
+  <category>pandas</category>
+  <guid>https://dz-academy.pages.dev/posts/data-analytics/pandas-groupby-co-ban.html</guid>
+  <pubDate>Fri, 01 May 2026 17:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

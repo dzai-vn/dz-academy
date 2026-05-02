@@ -27,13 +27,15 @@ website:
   page-footer:
     center: "© 2026 DZ AI Academy · [GitHub](https://github.com/dzai-vn)"
 
+  site-url: "https://dz-academy.pages.dev"
   open-graph: true
   twitter-card: true
 
 format:
   html:
-    theme: cosmo
-    css: assets/styles.css
+    theme:
+      - cosmo
+      - assets/styles.scss
     toc: true
     toc-depth: 3
     link-external-newwindow: true
