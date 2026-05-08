@@ -1,68 +1,5 @@
 [
   {
-    "objectID": "demos/index.html",
-    "href": "demos/index.html",
-    "title": "Demos",
-    "section": "",
-    "text": "Các ứng dụng tương tác — khám phá bằng tay, không cần cài đặt gì."
-  },
-  {
-    "objectID": "demos/index.html#chart-selection-guide",
-    "href": "demos/index.html#chart-selection-guide",
-    "title": "Demos",
-    "section": "Chart Selection Guide",
-    "text": "Chart Selection Guide\nKhông biết dùng biểu đồ gì cho dữ liệu của bạn? Tool này giúp bạn chọn đúng.\n\n13 loại biểu đồ phổ biến\nLive preview với Chart.js\nSo sánh ưu/nhược điểm\n\nMở Chart Selection Guide →\n\nThêm demos sẽ được thêm vào đây theo thời gian."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Về tôi",
-    "section": "",
-    "text": "dz-academy là nơi tôi chia sẻ kiến thức nền tảng về Data Analytics, Python và AI bằng tiếng Việt. Mục tiêu không phải là chạy theo mọi công cụ mới, mà là giúp người học xây nền tảng đủ vững để hiểu đúng, làm được, và tiếp tục tự học lâu dài.\nTôi xây nội dung này từ trải nghiệm làm việc thực tế, nhưng trình bày theo cách có cấu trúc, dễ bắt đầu và có thể áp dụng ngay."
-  },
-  {
-    "objectID": "about.html#đèn-nhỏ-tỏ-muôn-hướng",
-    "href": "about.html#đèn-nhỏ-tỏ-muôn-hướng",
-    "title": "Về tôi",
-    "section": "",
-    "text": "dz-academy là nơi tôi chia sẻ kiến thức nền tảng về Data Analytics, Python và AI bằng tiếng Việt. Mục tiêu không phải là chạy theo mọi công cụ mới, mà là giúp người học xây nền tảng đủ vững để hiểu đúng, làm được, và tiếp tục tự học lâu dài.\nTôi xây nội dung này từ trải nghiệm làm việc thực tế, nhưng trình bày theo cách có cấu trúc, dễ bắt đầu và có thể áp dụng ngay."
-  },
-  {
-    "objectID": "about.html#vì-sao-có-dz-academy",
-    "href": "about.html#vì-sao-có-dz-academy",
-    "title": "Về tôi",
-    "section": "Vì sao có dz-academy",
-    "text": "Vì sao có dz-academy\nTrong thời đại AI, thông tin có rất nhiều nhưng nền tảng lại thường bị bỏ qua. Nhiều người học phải tự ghép kiến thức từ các nguồn rời rạc, thiếu lộ trình rõ ràng, thiếu ví dụ sát công việc, và thiếu một nơi có thể bắt đầu mà không bị ngợp.\ndz-academy được tạo ra để giải quyết đúng khoảng trống đó: học từ căn bản, đi từng bước, dùng ví dụ thực tế, và ưu tiên những gì thật sự giúp bạn làm việc tốt hơn."
-  },
-  {
-    "objectID": "about.html#bạn-sẽ-tìm-thấy-gì-ở-đây",
-    "href": "about.html#bạn-sẽ-tìm-thấy-gì-ở-đây",
-    "title": "Về tôi",
-    "section": "Bạn sẽ tìm thấy gì ở đây",
-    "text": "Bạn sẽ tìm thấy gì ở đây\n\nBài viết nền tảng: giải thích concept rõ ràng, bớt jargon, bám vào vấn đề thực tế\nTutorials có code: notebook và hướng dẫn từng bước để bạn chạy thử ngay\nRoadmap học tập: giúp biết nên học gì trước, gì sau, và vì sao\nDemos và công cụ: học bằng tương tác, không chỉ đọc lý thuyết"
-  },
-  {
-    "objectID": "about.html#phù-hợp-với-ai",
-    "href": "about.html#phù-hợp-với-ai",
-    "title": "Về tôi",
-    "section": "Phù hợp với ai",
-    "text": "Phù hợp với ai\ndz-academy dành cho người muốn xây nền tảng kỹ thuật vững hơn trong công việc:\n\nsinh viên đang tìm điểm bắt đầu rõ ràng\nngười đi làm muốn học Data Analytics, Python hoặc AI theo hướng thực dụng\nngười chưa có nền tảng kỹ thuật nhưng muốn tăng giá trị bản thân trong thời đại AI\nteam hoặc doanh nghiệp cần nội dung đào tạo có cấu trúc và dùng được thật"
-  },
-  {
-    "objectID": "about.html#cách-tôi-xây-nội-dung",
-    "href": "about.html#cách-tôi-xây-nội-dung",
-    "title": "Về tôi",
-    "section": "Cách tôi xây nội dung",
-    "text": "Cách tôi xây nội dung\nTôi ưu tiên một phương pháp đơn giản: học điều cốt lõi trước, hiểu bản chất, rồi mới mở rộng sang công cụ và ứng dụng. Mỗi bài nên trả lời được ít nhất một câu hỏi quan trọng:\n\nđiều này là gì\ndùng khi nào\nlàm sao để áp dụng vào công việc\n\nNếu một nội dung không giúp người học tiến thêm một bước rõ ràng, nó không thuộc về dz-academy."
-  },
-  {
-    "objectID": "about.html#liên-hệ",
-    "href": "about.html#liên-hệ",
-    "title": "Về tôi",
-    "section": "Liên hệ",
-    "text": "Liên hệ\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
-  },
-  {
     "objectID": "training/index.html",
     "href": "training/index.html",
     "title": "Training",
@@ -75,6 +12,62 @@
     "title": "Training",
     "section": "",
     "text": "Các khoá học được tổ chức theo từng thư mục độc lập để dễ mở rộng, bảo trì, và publish lên GitHub Pages sau này."
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DZ AI Academy",
+    "section": "",
+    "text": "dz academy mark\n\n\nDZ AI Academy\n\n\nNội dung thực tế từ một data practitioner — bài viết, tutorials có code, và demos tương tác. Tất cả miễn phí, bằng tiếng Việt.\nMở tutorials Khám phá roadmap"
+  },
+  {
+    "objectID": "index.html#bắt-đầu-từ-đây",
+    "href": "index.html#bắt-đầu-từ-đây",
+    "title": "DZ AI Academy",
+    "section": "Bắt đầu từ đây",
+    "text": "Bắt đầu từ đây\nChọn điểm bắt đầu phù hợp với mục tiêu học tập của bạn."
+  },
+  {
+    "objectID": "index.html#nhận-nội-dung-mới-qua-email",
+    "href": "index.html#nhận-nội-dung-mới-qua-email",
+    "title": "DZ AI Academy",
+    "section": "Nhận nội dung mới qua email",
+    "text": "Nhận nội dung mới qua email\nMỗi tuần một bài — bài viết, tip thực tế, hoặc tutorial mới. Không spam. Unsubscribe bất kỳ lúc nào.\nNewsletter coming soon — Liên hệ tôi để được thông báo khi ra mắt."
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Bài viết",
+    "section": "",
+    "text": "Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng\n\n\n\nAI\n\nHR\n\nTuyển dụng\n\n\n\nVì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.\n\n\n\n6 thg 5, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "roadmap/index.html",
+    "href": "roadmap/index.html",
+    "title": "Roadmap học tập",
+    "section": "",
+    "text": "Chọn lộ trình học tập theo mục tiêu của bạn.\n\n\n📊 Data Analytics\nPython → Pandas → SQL → Visualization → Dashboard\nXem roadmap →\n\n\n💻 Developing\nPython Basics → OOP → APIs → Automation → Tools\nComing soon\n\n\n🤖 AI / LLM\nML Basics → LLM Concepts → RAG → AI Agents\nComing soon"
+  },
+  {
+    "objectID": "demos/index.html",
+    "href": "demos/index.html",
+    "title": "Demos",
+    "section": "",
+    "text": "Các ứng dụng tương tác — khám phá bằng tay, không cần cài đặt gì."
+  },
+  {
+    "objectID": "demos/index.html#chart-selection-guide",
+    "href": "demos/index.html#chart-selection-guide",
+    "title": "Demos",
+    "section": "Chart Selection Guide",
+    "text": "Chart Selection Guide\nKhông biết dùng biểu đồ gì cho dữ liệu của bạn? Tool này giúp bạn chọn đúng.\n\n13 loại biểu đồ phổ biến\nLive preview với Chart.js\nSo sánh ưu/nhược điểm\n\nMở Chart Selection Guide →\n\nThêm demos sẽ được thêm vào đây theo thời gian."
   },
   {
     "objectID": "roadmap/data-analytics.html",
@@ -189,6 +182,55 @@
     "text": "Tài liệu tham khảo chính\n\nGaussAlgo — A Brief History of AI and the Rise of ChatGPT\nHistory.com — ChatGPT is released to the public\nIBM — What is a context window?\nagentskills.io — Agent Skills Overview\nmodelcontextprotocol.io — MCP Introduction\nOpenAI — Memory FAQ\nAakash Gupta — Prompt Engineering in 2025\nAnthropic — Introducing MCP"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Về tôi",
+    "section": "",
+    "text": "dz-academy là nơi tôi chia sẻ kiến thức nền tảng về Data Analytics, Python và AI bằng tiếng Việt. Mục tiêu không phải là chạy theo mọi công cụ mới, mà là giúp người học xây nền tảng đủ vững để hiểu đúng, làm được, và tiếp tục tự học lâu dài.\nTôi xây nội dung này từ trải nghiệm làm việc thực tế, nhưng trình bày theo cách có cấu trúc, dễ bắt đầu và có thể áp dụng ngay."
+  },
+  {
+    "objectID": "about.html#đèn-nhỏ-tỏ-muôn-hướng",
+    "href": "about.html#đèn-nhỏ-tỏ-muôn-hướng",
+    "title": "Về tôi",
+    "section": "",
+    "text": "dz-academy là nơi tôi chia sẻ kiến thức nền tảng về Data Analytics, Python và AI bằng tiếng Việt. Mục tiêu không phải là chạy theo mọi công cụ mới, mà là giúp người học xây nền tảng đủ vững để hiểu đúng, làm được, và tiếp tục tự học lâu dài.\nTôi xây nội dung này từ trải nghiệm làm việc thực tế, nhưng trình bày theo cách có cấu trúc, dễ bắt đầu và có thể áp dụng ngay."
+  },
+  {
+    "objectID": "about.html#vì-sao-có-dz-academy",
+    "href": "about.html#vì-sao-có-dz-academy",
+    "title": "Về tôi",
+    "section": "Vì sao có dz-academy",
+    "text": "Vì sao có dz-academy\nTrong thời đại AI, thông tin có rất nhiều nhưng nền tảng lại thường bị bỏ qua. Nhiều người học phải tự ghép kiến thức từ các nguồn rời rạc, thiếu lộ trình rõ ràng, thiếu ví dụ sát công việc, và thiếu một nơi có thể bắt đầu mà không bị ngợp.\ndz-academy được tạo ra để giải quyết đúng khoảng trống đó: học từ căn bản, đi từng bước, dùng ví dụ thực tế, và ưu tiên những gì thật sự giúp bạn làm việc tốt hơn."
+  },
+  {
+    "objectID": "about.html#bạn-sẽ-tìm-thấy-gì-ở-đây",
+    "href": "about.html#bạn-sẽ-tìm-thấy-gì-ở-đây",
+    "title": "Về tôi",
+    "section": "Bạn sẽ tìm thấy gì ở đây",
+    "text": "Bạn sẽ tìm thấy gì ở đây\n\nBài viết nền tảng: giải thích concept rõ ràng, bớt jargon, bám vào vấn đề thực tế\nTutorials có code: notebook và hướng dẫn từng bước để bạn chạy thử ngay\nRoadmap học tập: giúp biết nên học gì trước, gì sau, và vì sao\nDemos và công cụ: học bằng tương tác, không chỉ đọc lý thuyết"
+  },
+  {
+    "objectID": "about.html#phù-hợp-với-ai",
+    "href": "about.html#phù-hợp-với-ai",
+    "title": "Về tôi",
+    "section": "Phù hợp với ai",
+    "text": "Phù hợp với ai\ndz-academy dành cho người muốn xây nền tảng kỹ thuật vững hơn trong công việc:\n\nsinh viên đang tìm điểm bắt đầu rõ ràng\nngười đi làm muốn học Data Analytics, Python hoặc AI theo hướng thực dụng\nngười chưa có nền tảng kỹ thuật nhưng muốn tăng giá trị bản thân trong thời đại AI\nteam hoặc doanh nghiệp cần nội dung đào tạo có cấu trúc và dùng được thật"
+  },
+  {
+    "objectID": "about.html#cách-tôi-xây-nội-dung",
+    "href": "about.html#cách-tôi-xây-nội-dung",
+    "title": "Về tôi",
+    "section": "Cách tôi xây nội dung",
+    "text": "Cách tôi xây nội dung\nTôi ưu tiên một phương pháp đơn giản: học điều cốt lõi trước, hiểu bản chất, rồi mới mở rộng sang công cụ và ứng dụng. Mỗi bài nên trả lời được ít nhất một câu hỏi quan trọng:\n\nđiều này là gì\ndùng khi nào\nlàm sao để áp dụng vào công việc\n\nNếu một nội dung không giúp người học tiến thêm một bước rõ ràng, nó không thuộc về dz-academy."
+  },
+  {
+    "objectID": "about.html#liên-hệ",
+    "href": "about.html#liên-hệ",
+    "title": "Về tôi",
+    "section": "Liên hệ",
+    "text": "Liên hệ\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
+  },
+  {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact",
@@ -210,20 +252,6 @@
     "text": "Định hướng hợp tác\ndz ưu tiên các hợp tác tập trung vào:\n\nnền tảng kỹ thuật rõ ràng\nnội dung có tính ứng dụng thật\ncông cụ hoặc workflow giúp người Việt học và làm tốt hơn trong thời đại AI"
   },
   {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Bài viết",
-    "section": "",
-    "text": "Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng\n\n\n\nAI\n\nHR\n\nTuyển dụng\n\n\n\nVì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.\n\n\n\n6 thg 5, 2026\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "roadmap/index.html",
-    "href": "roadmap/index.html",
-    "title": "Roadmap học tập",
-    "section": "",
-    "text": "Chọn lộ trình học tập theo mục tiêu của bạn.\n\n\n📊 Data Analytics\nPython → Pandas → SQL → Visualization → Dashboard\nXem roadmap →\n\n\n💻 Developing\nPython Basics → OOP → APIs → Automation → Tools\nComing soon\n\n\n🤖 AI / LLM\nML Basics → LLM Concepts → RAG → AI Agents\nComing soon"
-  },
-  {
     "objectID": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html",
     "href": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html",
     "title": "AI Thực Chiến Cho Đội Tuyển Dụng",
@@ -236,33 +264,5 @@
     "title": "AI Thực Chiến Cho Đội Tuyển Dụng",
     "section": "",
     "text": "Khoá học thực chiến dành cho đội HR/Tuyển dụng, tập trung vào cách biến AI từ chatbot trả lời chung chung thành trợ lý làm việc theo quy trình và theo nghề."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DZ AI Academy",
-    "section": "",
-    "text": "dz academy mark\n\n\nDZ AI Academy\n\n\nNội dung thực tế từ một data practitioner — bài viết, tutorials có code, và demos tương tác. Tất cả miễn phí, bằng tiếng Việt.\nMở tutorials Khám phá roadmap"
-  },
-  {
-    "objectID": "index.html#bắt-đầu-từ-đây",
-    "href": "index.html#bắt-đầu-từ-đây",
-    "title": "DZ AI Academy",
-    "section": "Bắt đầu từ đây",
-    "text": "Bắt đầu từ đây\nChọn điểm bắt đầu phù hợp với mục tiêu học tập của bạn."
-  },
-  {
-    "objectID": "index.html#nhận-nội-dung-mới-qua-email",
-    "href": "index.html#nhận-nội-dung-mới-qua-email",
-    "title": "DZ AI Academy",
-    "section": "Nhận nội dung mới qua email",
-    "text": "Nhận nội dung mới qua email\nMỗi tuần một bài — bài viết, tip thực tế, hoặc tutorial mới. Không spam. Unsubscribe bất kỳ lúc nào.\nNewsletter coming soon — Liên hệ tôi để được thông báo khi ra mắt."
-  },
-  {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "No matching items"
   }
 ]
