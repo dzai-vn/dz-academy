@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="auto" data-brand-context="academy" data-brand-assets-path="../../../assets/01-logos/master">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Thực Chiến Cho Đội Tuyển Dụng · Slides Paged</title>
+  <link rel="stylesheet" href="./assets/core.css">
+  <link rel="stylesheet" href="./assets/hr-training-custom.css">
+  <link rel="stylesheet" href="./assets/flashcard.css">
+  <style>
+    html[data-brand-context="academy"][data-theme="light"] {
+      --dz-bg: var(--dz-candle);
+      --dz-bg-elevated: rgba(255, 255, 255, 0.76);
+      --dz-bg-hero: linear-gradient(180deg, rgba(255, 253, 245, 0.96), rgba(248, 245, 236, 0.96));
+      --dz-text: var(--dz-ocean);
+      --dz-heading: var(--dz-ocean);
+      --dz-text-muted: var(--dz-mist);
+      --dz-accent: var(--dz-lamp);
+      --dz-accent-alt: var(--dz-flow);
+      --dz-line: rgba(0, 18, 51, 0.12);
+      --dz-panel: rgba(255, 255, 255, 0.72);
+      --dz-panel-border: rgba(0, 18, 51, 0.12);
+      --dz-card: rgba(255, 255, 255, 0.84);
+      --dz-card-border: rgba(0, 18, 51, 0.1);
+      --dz-link: var(--dz-flow);
+    }
+
+    html[data-brand-context="academy"][data-theme="dark"] {
+      --dz-bg: var(--dz-ocean);
+      --dz-bg-elevated: rgba(8, 25, 58, 0.9);
+      --dz-bg-hero: radial-gradient(circle at top right, rgba(232, 162, 26, 0.14) 0%, rgba(0, 18, 51, 0) 58%), var(--dz-ocean);
+      --dz-text: var(--dz-white);
+      --dz-heading: var(--dz-white);
+      --dz-text-muted: var(--dz-mist);
+      --dz-accent: var(--dz-lamp);
+      --dz-accent-alt: var(--dz-spark);
+      --dz-line: rgba(255, 255, 255, 0.1);
+      --dz-panel-border: rgba(255, 255, 255, 0.12);
+      --dz-panel: rgba(8, 25, 58, 0.84);
+      --dz-card: rgba(14, 36, 79, 0.88);
+      --dz-card-border: rgba(255, 255, 255, 0.1);
+      --dz-link: var(--dz-spark);
+    }
+
+    html[data-brand-context="academy"][data-theme="auto"] {
+      --dz-bg: var(--dz-candle);
+      --dz-bg-elevated: rgba(255, 255, 255, 0.76);
+      --dz-bg-hero: linear-gradient(180deg, rgba(255, 253, 245, 0.96), rgba(248, 245, 236, 0.96));
+      --dz-text: var(--dz-ocean);
+      --dz-heading: var(--dz-ocean);
+      --dz-text-muted: var(--dz-mist);
+      --dz-accent: var(--dz-lamp);
+      --dz-accent-alt: var(--dz-flow);
+      --dz-line: rgba(0, 18, 51, 0.12);
+      --dz-panel: rgba(255, 255, 255, 0.72);
+      --dz-panel-border: rgba(0, 18, 51, 0.12);
+      --dz-card: rgba(255, 255, 255, 0.84);
+      --dz-card-border: rgba(0, 18, 51, 0.1);
+      --dz-link: var(--dz-flow);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-brand-context="academy"][data-theme="auto"] {
+        --dz-bg: var(--dz-ocean);
+        --dz-bg-elevated: rgba(8, 25, 58, 0.9);
+        --dz-bg-hero: radial-gradient(circle at top right, rgba(232, 162, 26, 0.14) 0%, rgba(0, 18, 51, 0) 58%), var(--dz-ocean);
+        --dz-text: var(--dz-white);
+        --dz-heading: var(--dz-white);
+        --dz-text-muted: var(--dz-mist);
+        --dz-accent: var(--dz-lamp);
+        --dz-accent-alt: var(--dz-spark);
+        --dz-line: rgba(255, 255, 255, 0.1);
+        --dz-panel-border: rgba(255, 255, 255, 0.12);
+        --dz-panel: rgba(8, 25, 58, 0.84);
+        --dz-card: rgba(14, 36, 79, 0.88);
+        --dz-card-border: rgba(255, 255, 255, 0.1);
+        --dz-link: var(--dz-spark);
+      }
+    }
+
+    .dz-pre-wrap {
+      position: relative;
+    }
+
+    .dz-pre-wrap .dz-pre {
+      margin-top: 0;
+    }
+
+    .dz-copy-button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      padding: 7px 12px;
+      border: 1px solid var(--dz-panel-border);
+      border-radius: 999px;
+      background: rgba(0, 18, 51, 0.92);
+      color: #fffdf5;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+    }
+
+    .dz-copy-button:hover,
+    .dz-copy-button:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(0, 111, 160, 0.96);
+    }
+
+    .dz-copy-button.is-copied {
+      background: rgba(200, 90, 0, 0.96);
+    }
+  </style>
+</head>
+<body>
+  <div class="dz-shell">
+    <header class="dz-topbar">
+      <div class="dz-container dz-topbar__inner">
+        <div class="dz-brand">
+          <div class="dz-brand__logo-wrap">
+            <img class="dz-brand__logo" data-dz-brand-logo src="" alt="">
+          </div>
+          <div class="dz-brand__meta">
+            <div class="dz-brand__title">AI Thực Chiến Cho Đội Tuyển Dụng</div>
+            <div class="dz-brand__subtitle">Nguyễn Huỳnh Minh Duy · duy@dz-ai.vn · 090 678 8671</div>
+          </div>
+        </div>
+        <div class="dz-actions dz-topbar__actions">
+          <button class="dz-button dz-button--ghost dz-theme-button dz-theme-button--icon" type="button" data-theme-toggle aria-label="Switch theme">
+            <span data-theme-icon aria-hidden="true">☾</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="dz-container dz-paged" data-dz-shell="paged">
+      <div class="dz-paged__progress" aria-hidden="true">
+        <div class="dz-paged__progress-bar" data-dz-progress></div>
+      </div>
+
+      <div class="dz-paged__viewport">
+        <article class="dz-page is-active" id="cover">
+          <div class="dz-card__meta">Cover</div>
+          <p class="dz-kicker">DZ Academy · Training Slides</p>
+          <h1 class="dz-title">AI Thực Chiến Cho Đội Tuyển Dụng</h1>
+          <p class="dz-subtitle">Từ Prompt Chung Chung → Bộ Nghề AI Chuyên Biệt</p>
+          <div class="dz-divider"></div>
+          <div class="dz-pill-grid">
+            <span class="dz-pill">Thời lượng: 2 giờ</span>
+            <span class="dz-pill">Đối tượng: HR &amp; Tuyển dụng</span>
+            <span class="dz-pill">Cập nhật: 05/2026</span>
+          </div>
+        </article>
+
+        <article class="dz-page" id="agenda" aria-hidden="true">
+          <div class="dz-card__meta">Agenda</div>
+          <h2 class="dz-section__title">6 phần của buổi học</h2>
+          <div class="dz-artifact-list">
+            <div class="dz-artifact"><div class="dz-artifact__icon">1</div><div><h3 class="dz-artifact__title">Đặt vấn đề</h3><p class="dz-artifact__body">Câu chuyện của Linh và 4 cú vấp phổ biến khi dùng AI.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">2</div><div><h3 class="dz-artifact__title">Khái niệm chính</h3><p class="dz-artifact__body">Model, LLM, interface, context, system prompt, memory, skills.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">3</div><div><h3 class="dz-artifact__title">Demo</h3><p class="dz-artifact__body">Vì sao Skills giải quyết được output generic và re-prompting.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">4</div><div><h3 class="dz-artifact__title">Skills</h3><p class="dz-artifact__body">Demo → Markdown → cấu trúc → tạo → lưu ý.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">5</div><div><h3 class="dz-artifact__title">Q&amp;A</h3><p class="dz-artifact__body">Những câu hỏi thường gặp khi đưa AI vào team HR.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">6</div><div><h3 class="dz-artifact__title">Bài tập về nhà</h3><p class="dz-artifact__body">Roadmap 30 ngày để chuyển từ nghe hiểu sang làm thật.</p></div></div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="part-1">
+          <div class="dz-card__meta">Phần 1</div>
+          <h2 class="dz-section__title">Đặt Vấn Đề — Câu Chuyện Của Linh</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3 class="dz-card__title">Bối cảnh</h3>
+              <ul>
+                <li>Chuyên viên tuyển dụng, 27 tuổi, TP.HCM</li>
+                <li>Mỗi tuần viết hàng chục bài post tuyển dụng, soạn JD, gửi email ứng viên, sàng lọc CV, báo cáo sếp</li>
+                <li>Linh giỏi việc — nhưng mệt</li>
+                <li>Nghe lời đồng nghiệp → thử AI</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Trải nghiệm</h3>
+              <p>Linh mở ChatGPT, gõ thử: <b>"Viết bài đăng tuyển vị trí Marketing Executive cho Facebook."</b> </br>AI nhả ra một bài post trong 10 giây. Nhanh thật. Nhưng đọc lại, Linh cảm thấy thiếu thiếu — nó chưa phải "mình."</p>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-quote">"AI viết được, nhưng phải dạy nó viết đúng ý thì mới có giá trị. Vậy dạy thế nào?"</div>
+
+        </article>
+        
+        <article class="dz-page" id="4part">
+          <div class="dz-card__meta">Những cú trượt, vấp, té, ngã</div>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3 class="dz-card__title">Kết quả quá chung chung, phải sửa lại rất nhiều</h3>
+              <p>Nhờ AI viết bài đăng tuyển - kết quả: <em>"Tự viết còn nhanh hơn!"</em></p>
+              <ul>
+                <li>Đọc lên nghe như mọi công ty khác trên thị trường</li>
+                <li>Không có cá nhân hoá (personality), không có tone riêng, không phản ánh văn hóa "của mình"</li>
+                <li>Linh mất thêm 20 phút sửa lại</li>
+              </ul>
+              
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Chat một hồi, AI bắt đầu... lú</h3>
+              <p>Linh paste một tài liệu nội bộ dài 30 trang vào chat, yêu cầu AI phân tích từng phần. Ban đầu rất mạch lạc. Nhưng đến tin nhắn thứ 20, AI bắt đầu quên những gì đã nói, lặp ý cũ, thậm chí mâu thuẫn với chính mình.</p>
+            </div>
+             <div class="dz-card">
+              <h3 class="dz-card__title">Hỏi cùng câu mà ở đây ra cái này, ở kia ra cái nọ?</h3>
+              <p>Linh hỏi trên claude.ai: <b>"Viết email từ chối ứng viên lịch sự"</b> Được bản rất chuyên nghiệp. Rồi hỏi y hệt trên một app khác cũng dùng chung model với claude.ai — câu trả lời khác hẳn, ngắn hơn, tone khác.</p>
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Mỗi sáng mở chat mới, lại phải dạy lại từ đầu</h3>
+              <p>Hôm qua Linh đã giải thích: "Công ty tôi tone trẻ trung, hướng đến ứng viên Gen Z, bài post luôn có emoji, kết thúc bằng CTA rõ ràng." Hôm nay mở session mới — AI quên sạch. Phải nói đi nói lại nhiều lần.</p>
+            </div>  
+          </div>
+        </article>
+
+        <article class="dz-page" id="v1">
+          <div class="dz-card__meta">Trượt #1</div>
+          <h2 class="dz-section__title">Kết quả quá chung chung</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3 class="dz-card__title">Triệu chứng</h3>
+              <p>Viết post tuyển dụng→ output nghe như mọi công ty khác, mất 20 phút sửa lại.</p>
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Nguyên nhân</h3>
+              <p>AI hoạt động theo nguyên tắc dự đoán — nó sinh ra câu trả lời phù hợp nhất với ngữ cảnh bạn cung cấp. Nếu bạn chỉ nói "viết bài đăng tuyển," AI sẽ cho ra bản "trung bình" nhất — trung bình về tone, trung bình về format, trung bình về mọi thứ. Vì nó không biết bạn muốn cụ thể cái gì.</p>
+            </div>
+          </div>
+           <div class="dz-slide-media-card dz-slide-media-card--wide">
+            <img src="./media/truot_1.png" alt="Minh họa cho trượt lần 1: output AI quá chung chung">
+          </div>
+        </article>
+
+        <article class="dz-page" id="v2">
+          <div class="dz-card__meta">Vấp #2</div>
+          <h2 class="dz-section__title">Chat một hồi, AI bắt đầu “lú”</h2>
+          <div class="dz-grid dz-grid--two dz-media-split">
+            <div class="dz-slide-media-card">
+              <img src="./media/vap_2.png" alt="Minh họa cho vấp lần 2: context window và hiện tượng AI bị quá tải ngữ cảnh">
+            </div>
+            <div class="dz-media-split__content">
+              <div class="dz-card">
+                <h3 class="dz-card__title">Triệu chứng</h3>
+                <p>Đến tin nhắn thứ 20, AI quên, lặp ý, mâu thuẫn chính mình.</p>
+              </div>
+              <div class="dz-card">
+                <h3 class="dz-card__title">Nguyên nhân</h3>
+                <p><strong>Context Window</strong> là mặt bàn làm việc có giới hạn, tài liệu cũ bị “dọn” đi.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="v3">
+          <div class="dz-card__meta">Té #3</div>
+          <h2 class="dz-section__title">Cùng câu hỏi, kết quả khác nhau</h2>
+          <div class="dz-grid dz-grid--two dz-media-split">
+            <div class="dz-slide-media-card">
+              <img src="./media/te_3.png" alt="Minh họa cho té lần 3: cùng câu hỏi nhưng AI cho kết quả khác nhau ở các interface khác nhau">
+            </div>
+            <div class="dz-media-split__content">
+              <div class="dz-card">
+                <h3 class="dz-card__title">Triệu chứng</h3>
+                <p>Hỏi trên `claude.ai` và app khác → câu trả lời khác hẳn.</p>
+              </div>
+              <div class="dz-card">
+                <h3 class="dz-card__title">Nguyên nhân</h3>
+                <p><strong>System Prompt</strong> là bộ luật bí mật nhà cung cấp cài sẵn, định hình toàn bộ hành vi AI.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="v4">
+          <div class="dz-card__meta">Ngã #4</div>
+          <h2 class="dz-section__title">Mỗi sáng phải dạy lại từ đầu</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3 class="dz-card__title">Triệu chứng</h3>
+              <p>Hôm qua đã dặn tone, format, audience → hôm nay mở session mới → AI quên sạch.</p>
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Nguyên nhân</h3>
+              <p>Mỗi cuộc chat mới = <strong>session mới</strong> = AI không nhớ gì từ lần trước.</p>
+            </div>
+          </div>
+          <div class="dz-slide-media-card dz-slide-media-card--wide">
+            <img src="./media/nga_4.png" alt="Minh họa cho ngã lần 4: mỗi session mới AI lại quên toàn bộ bối cảnh cũ">
+          </div>
+        </article>
+
+        <article class="dz-page" id="reflection">
+          <div class="dz-card__meta">Câu hỏi để suy nghĩ</div>
+          <div class="dz-quote">Tuần vừa rồi, bạn đã dành bao nhiêu giờ chỉnh sửa kết quả AI cho “ra hồn”? Nếu AI cho kết quả đúng ý ngay từ lần đầu, bạn sẽ dùng những giờ ấy để làm gì?</div>
+        </article>
+
+        <article class="dz-page" id="part-2">
+          <div class="dz-card__meta">Phần 2</div>
+          <h2 class="dz-section__title">Khái niệm cốt lõi</h2>
+          <div class="dz-grid dz-grid--three">
+            <div class="dz-card"><h3 class="dz-card__title">AI Model</h3><p>Bộ não đã được huấn luyện.</p>
+            <h3 class="dz-card__title">LLM</h3><p>Khả năng ngôn ngữ của bộ não.</p></div>
+            <div class="dz-card"><h3 class="dz-card__title">Interface</h3><p>Nơi bạn tương tác như `claude.ai`, app, extension.</p></div>
+            <div class="dz-card"><h3 class="dz-card__title">Context Window</h3><p>Mặt bàn làm việc có giới hạn.</p></div>
+            <div class="dz-card"><h3 class="dz-card__title">Memory</h3><p>Nhớ ngắn hạn và dài hạn.</p></div>
+            <div class="dz-card"><h3 class="dz-card__title">Skills</h3><p>Nghề nghiệp đóng gói sẵn cho AI.</p></div>
+            <div class="dz-card"><h3 class="dz-card__title">MCP</h3><p>như cổng USB-C dành cho AI.</p></div>
+          </div>
+        </br>
+          <div class="dz-quote"><h3 class="dz-card__title">AI Agents</h3><p>= Bộ não (AI Model + LLM) + Cơ thể (Interface) đã được dạy nghề (Skills), có khả năng nhớ (Memory), và cầm được công cụ (Tools) để hành động trong thế giới thực.</p></div>
+      </br>
+          <img src="./media/core-concept.png" alt="Core concept">
+        </article>
+
+        <article class="dz-page" id="flashcard-concepts">
+          <div class="dz-card__meta">Flashcard</div>
+          <div class="dz-flashcard dz-flashcard--embedded" data-dz-flashcard>
+            <script type="application/json" class="dz-flashcard__data">
+              {
+                "title": "Thẻ AI",
+                "sourcesLabel": "Based on 4 training concepts",
+                "revealLabel": "See answer",
+                "hideLabel": "Hide answer",
+                "hintLabel": "Click card hoặc bấm Enter để lật thẻ",
+                "cards": [
+  {
+    "term": "AI Models",
+    "answer": "Mạng thần kinh nhân tạo cốt lõi thực hiện các phép tính và xử lý dữ liệu. Ví dụ: GPT-5.4, Claude 3.7."
+  },
+  {
+    "term": "LLMs",
+    "answer": "Mô hình ngôn ngữ lớn chuyên hiểu, xử lý và tạo ra ngôn ngữ tự nhiên. Ví dụ: Claude 3.7 Sonnet."
+  },
+  {
+    "term": "Context Window",
+    "answer": "Bộ nhớ làm việc ngắn hạn có giới hạn trong một phiên. Ví dụ: Giới hạn 200.000 token trong một lần chat."
+  },
+  {
+    "term": "Skill",
+    "answer": "Sổ tay nghiệp vụ đóng gói sẵn quy trình và tiêu chuẩn để AI làm việc. Ví dụ: Kỹ năng tự động đánh giá CV."
+  },
+  {
+    "term": "MCP",
+    "answer": "Cổng kết nối (Model Context Protocol) giúp AI truy cập dữ liệu bên ngoài. Ví dụ: Kết nối AI với Google Drive hoặc GitHub."
+  },
+  {
+    "term": "Memory",
+    "answer": "Trí nhớ dài hạn giúp AI nhớ thông tin xuyên suốt nhiều phiên làm việc. Ví dụ: AI tự động nhớ bạn làm ở bộ phận HR."
+  },
+  {
+    "term": "AI Agent",
+    "answer": "Nhân viên kỹ thuật số tự chủ kết hợp bộ não, kỹ năng và công cụ. Ví dụ: Trợ lý tự động đọc email, lọc CV và lên lịch phỏng vấn."
+  },
+  {
+    "term": "Interface",
+    "answer": "Giao diện tương tác nơi AI nhận lệnh và trả kết quả. Ví dụ: Khung chat trên web hoặc ứng dụng Claude Desktop."
+  },
+  {
+    "term": "Instructions",
+    "answer": "Hướng dẫn quy trình chi tiết (thường nằm trong tệp SKILL.md) để chỉ đạo AI cách thực hiện một tác vụ cụ thể. Ví dụ: Cung cấp hướng dẫn từng bước cho AI về cách phân tích và trích xuất thông tin từ CV ứng viên."
+  },
+  {
+    "term": "Hallucination",
+    "answer": "Hiện tượng AI tạo ra thông tin sai lệch hoặc bịa đặt nhưng nghe có vẻ rất tự tin và hợp lý, thường do thiếu dữ liệu hoặc dựa trên dự đoán từ tiếp theo. Ví dụ: AI tự tạo ra một đường link tài liệu tham khảo hoàn toàn không tồn tại."
+  },
+  {
+    "term": "Steerability",
+    "answer": "Khả năng mô hình AI tuân thủ các chỉ dẫn kiểm soát của người dùng về định dạng, giọng điệu hoặc giới hạn. Ví dụ: Yêu cầu AI trả lời chính xác dưới 100 từ và trình bày dưới dạng bảng."
+  },
+  {
+    "term": "Token",
+    "answer": "Đơn vị cơ bản nhất mà AI dùng để đọc và xử lý văn bản, tương đương khoảng 3/4 từ hoặc 4 ký tự. Ví dụ: Một trang văn bản thường dài khoảng 500 token. Mối quan hệ: Token là đơn vị đo lường sức chứa của Context Window và quyết định chi phí cũng như tốc độ xử lý của AI."
+  }
+]
+              }
+            </script>
+          </div>
+        </article>
+
+        
+
+        <article class="dz-page" id="part-3">
+          <div class="dz-card__meta">Phần 3</div>
+          <h2 class="dz-section__title">Demo thực tế</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3 class="dz-card__title">Gemini in Chrome</h3>
+              <p>AI nhìn thấy trang web đang mở.</p>
+              <p class="dz-mini">Dùng khi research LinkedIn, thao tác nhanh trên trình duyệt.</p>
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Claude Cowork</h3>
+              <p>AI đọc/ghi file trực tiếp trên máy.</p>
+              <p class="dz-mini">Dùng khi xử lý hàng loạt: CV, báo cáo, folder.</p>
+            </div>
+
+          </div>
+        </article>
+
+        <article class="dz-page" id="gemini-chrome-setup">
+          <div class="dz-card__meta">Gemini in Chrome</div>
+          <h2 class="dz-section__title">Cài đặt nhanh</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3 class="dz-card__title">Bước chuẩn bị</h3>
+              <ul>
+                <li>Dùng <strong>phiên bản Chrome mới nhất</strong></li>
+                <li>Vào <strong>Settings → About Chrome</strong> để kiểm tra và cập nhật trước khi bật Gemini</li>
+                <li>Sau khi update xong, mở lại Chrome nếu trình duyệt yêu cầu restart</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <h3 class="dz-card__title">Bật trong Settings</h3>
+              <ul>
+                <li>Nhấp <strong>Ba chấm</strong> góc trên phải → <strong>Settings</strong></li>
+                <li>Ở cột trái, chọn <strong>AI innovations</strong></li>
+                <li>Tìm mục <strong>Gemini in Chrome</strong> và chuyển sang <strong>On</strong></li>
+                <li>Bật tiếp <strong>Show Gemini at the top of the browser</strong> để ghim icon lên thanh công cụ</li>
+              </ul>
+            </div>
+          </div>
+          </br>
+          <img src="./media/gemini-in-chrome.png" alt="Minh họa phần cài đặt Gemini in Chrome trong Chrome Settings">
+        </article>
+
+        <article class="dz-page" id="demo-cv-screener-full">
+          <div class="dz-card__meta">Demo 1</div>
+          <h2 class="dz-section__title">`cv-screener`</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ul>
+                <li><strong>Mục tiêu:</strong> Sàng lọc nhanh và nhất quán, mỗi CV khoảng 2 phút thay vì 15 phút</li>
+                <li><strong>Trigger:</strong> “sàng lọc CV”, “đánh giá ứng viên”, “shortlist CV”, “review hồ sơ”, “xem giúp tôi CV này”</li>
+                <li><strong>Rule:</strong> Chỉ chấm theo thông tin hiển thị trên CV; thiếu dữ liệu thì ghi rõ là không đủ thông tin để đánh giá</li>
+                <li><strong>Output:</strong> Bảng điểm rõ ràng để HR ra quyết định shortlist ngay, thay vì nhận xét cảm tính</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li><strong>Rubric:</strong> 5 tiêu chí chuẩn, mỗi tiêu chí 0–20 điểm, tổng tối đa 100</li>
+                <li><strong>Decision gate:</strong> 80+ shortlist ngay; 65–79 xem xét; 50–64 dự phòng; dưới 50 không phù hợp</li>
+                <li><strong>Context:</strong> Có JD thì bám JD; không có JD thì hỏi 3 câu để dựng baseline đánh giá</li>
+                <li><strong>Scale:</strong> Nếu nhiều CV, tự tổng hợp thêm bảng shortlist so sánh ở cuối</li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <pre class="dz-pre">---
+name: cv-screener
+description: Sàng lọc và đánh giá CV ứng viên theo rubric 5 tiêu chí có điểm số và nhận xét cụ thể. Dùng skill này NGAY KHI user muốn "sàng lọc CV", "đánh giá ứng viên", "shortlist CV", "review hồ sơ", "chấm CV", "so sánh ứng viên", hoặc paste/upload CV và hỏi "người này thế nào?". Kích hoạt kể cả khi user chỉ nói "xem giúp tôi CV này" mà không dùng từ "sàng lọc" hay "đánh giá".
+---
+ 
+# CV Screener
+ 
+## Mục tiêu
+Sàng lọc nhanh và nhất quán — mỗi CV mất 2 phút thay vì 15 phút. Output là bảng điểm rõ ràng để ra quyết định shortlist ngay.
+ 
+## Khung đánh giá 5 tiêu chí (Rubric chuẩn)
+ 
+Mỗi tiêu chí cho điểm từ 0–20, tổng tối đa 100 điểm.
+ 
+### Tiêu chí 1 — Kinh nghiệm ngành (0–20 điểm)
+Mức độ liên quan của ngành/lĩnh vực đã làm việc với vị trí đang tuyển.
+- 17–20: Đúng ngành, đúng loại hình công ty (B2B/B2C, quy mô tương đương)
+- 12–16: Ngành liền kề hoặc chuyển ngành có lý do rõ ràng
+- 7–11: Ngành khác nhưng có kỹ năng transferable
+- 0–6: Không liên quan hoặc kinh nghiệm quá ít
+### Tiêu chí 2 — Kỹ năng chuyên môn (0–20 điểm)
+Mức độ đáp ứng các kỹ năng bắt buộc trong JD.
+- 17–20: Đáp ứng ≥90% kỹ năng bắt buộc, có chứng minh cụ thể (dự án, con số)
+- 12–16: Đáp ứng 70–89%, một số kỹ năng cần thêm thời gian ramp-up
+- 7–11: Đáp ứng 50–69%, cần đào tạo bổ sung
+- 0–6: Dưới 50% kỹ năng bắt buộc
+### Tiêu chí 3 — Học vấn &amp; Chứng chỉ (0–20 điểm)
+Phù hợp với yêu cầu học vấn tối thiểu trong JD.
+- 17–20: Vượt yêu cầu, trường/chứng chỉ có uy tín liên quan
+- 12–16: Đáp ứng yêu cầu, thêm chứng chỉ liên quan
+- 7–11: Đáp ứng yêu cầu tối thiểu
+- 0–6: Dưới yêu cầu (nếu JD không yêu cầu bằng cấp — cho điểm tối đa nhóm này)
+### Tiêu chí 4 — Kỹ năng mềm &amp; Leadership (0–20 điểm)
+Đánh giá qua cách trình bày CV, thành tích có đo lường, và dấu hiệu soft skills.
+- 17–20: CV trình bày impact rõ (số liệu, % tăng trưởng), có bằng chứng leadership/mentoring
+- 12–16: Có một số thành tích cụ thể, trình bày tốt
+- 7–11: Mô tả nhiệm vụ nhưng ít impact cụ thể
+- 0–6: CV chỉ liệt kê chức danh, không có bằng chứng đóng góp
+### Tiêu chí 5 — Phù hợp văn hóa &amp; Định hướng (0–20 điểm)
+Dấu hiệu alignment với văn hóa và stage công ty (startup/scale-up/enterprise).
+- 17–20: Background và trajectory rõ ràng phù hợp, cam kết lâu dài có cơ sở
+- 12–16: Phù hợp tốt, có thể cần clarify một vài điểm
+- 7–11: Phù hợp một phần, cần thảo luận thêm
+- 0–6: Dấu hiệu mismatch rõ (nhảy việc liên tục, kỳ vọng trái chiều)
+## Ngưỡng quyết định
+ 
+| Tổng điểm | Khuyến nghị |
+|---|---|
+| 80–100 | ✅ **Shortlist ngay** — Liên hệ trong 24 giờ |
+| 65–79 | 🟡 **Xem xét** — Đọc lại chi tiết, hỏi thêm nếu cần |
+| 50–64 | ⚠️ **Dự phòng** — Giữ lại nếu shortlist chưa đủ |
+| &lt;50 | ❌ **Không phù hợp** lần này |
+ 
+## Output format
+ 
+Với mỗi CV, trả ra theo cấu trúc sau:
+ 
+```
+## [Tên ứng viên] — [Vị trí ứng tuyển]
+ 
+| Tiêu chí | Điểm | Nhận xét |
+|---|---|---|
+| Kinh nghiệm ngành | X/20 | [1–2 câu cụ thể] |
+| Kỹ năng chuyên môn | X/20 | [điểm mạnh + gap nếu có] |
+| Học vấn | X/20 | [ngắn gọn] |
+| Kỹ năng mềm | X/20 | [dẫn chứng từ CV] |
+| Phù hợp văn hóa | X/20 | [nhận xét] |
+| **Tổng** | **X/100** | |
+ 
+**Khuyến nghị:** [✅/🟡/⚠️/❌] [Shortlist ngay / Xem xét / Dự phòng / Không phù hợp]
+ 
+**Điểm mạnh nổi bật:** [1–2 câu]
+**Điểm cần clarify nếu phỏng vấn:** [1–2 câu hoặc câu hỏi gợi ý]
+```
+ 
+Nếu có nhiều CV, tổng hợp thêm bảng so sánh ở cuối:
+ 
+```
+## Bảng tổng hợp shortlist
+ 
+| Ứng viên | Tổng | Khuyến nghị |
+|---|---|---|
+| [Tên A] | 85/100 | ✅ Shortlist ngay |
+| [Tên B] | 72/100 | 🟡 Xem xét |
+```
+ 
+## Cách dùng skill này
+ 
+**Trường hợp 1 — Có JD sẵn:** Paste JD + CV(s) → Skill đánh giá theo tiêu chí trong JD, tự điều chỉnh trọng số nếu cần.
+ 
+**Trường hợp 2 — Không có JD:** Hỏi user 3 câu: (1) Vị trí gì? (2) Kỹ năng bắt buộc là gì? (3) Yêu cầu học vấn tối thiểu? → Tiến hành đánh giá.
+ 
+**Trường hợp 3 — Rubric tùy chỉnh:** Nếu user cung cấp rubric riêng, ưu tiên rubric đó thay cho khung 5 tiêu chí mặc định.
+ 
+## Lưu ý quan trọng
+- CV được đánh giá dựa trên thông tin hiển thị — không suy đoán thêm
+- Với CV thiếu thông tin, ghi rõ "Không đủ thông tin để đánh giá" thay vì cho điểm đoán
+- Điểm số là công cụ hỗ trợ — quyết định cuối cùng thuộc về người HR</pre>
+        </article>
+
+        <article class="dz-page" id="demo-linkedin-extractor">
+          <div class="dz-card__meta">Demo 2</div>
+          <h2 class="dz-section__title">`linkedin-extractor`</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ul>
+                <li><strong>Mục tiêu:</strong> Trích xuất và cấu trúc hóa thông tin từ profile LinkedIn đang mở, không suy đoán, thiếu thì ghi `N/A`</li>
+                <li><strong>Trigger:</strong> “đọc profile LinkedIn”, “trích xuất thông tin ứng viên”, “profile này thế nào?”, “lấy thông tin người này”</li>
+                <li><strong>Input:</strong> Trang LinkedIn đang mở trên trình duyệt</li>
+                <li><strong>YOE:</strong> Chỉ ước tính khi có căn cứ từ timeline kinh nghiệm; không đủ dữ liệu thì nói rõ là không đủ</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li><strong>Output:</strong> Tên, headline, YOE, top 5 skills, 3 dự án nổi bật, công ty hiện tại, email public, URL</li>
+                <li><strong>Format:</strong> 2 phần cố định: danh sách Markdown + khối TSV để paste thẳng vào Google Sheets</li>
+                <li><strong>Rule:</strong> Ưu tiên Skills/Endorsement/Experience; nếu không có Projects thì lấy thành tích nổi bật nhất từ Experience</li>
+                <li><strong>Follow-up:</strong> “Bạn muốn tôi tạo thêm email outreach cá nhân hóa cho ứng viên này không?”</li>
+              </ul>
+            </div>
+          </div>
+        </br>
+          <pre class="dz-pre">---
+name: linkedin-extractor
+description: Trích xuất và cấu trúc hóa thông tin từ profile LinkedIn đang mở trên trình duyệt. Dùng skill này NGAY KHI user muốn "đọc profile LinkedIn", "trích xuất thông tin ứng viên", "lấy thông tin từ LinkedIn", "tóm tắt profile này", "phân tích hồ sơ LinkedIn", "copy info LinkedIn sang sheet", "extract LinkedIn profile", hoặc khi user đang mở một trang LinkedIn và hỏi bất kỳ điều gì về người đó. Kích hoạt kể cả khi user chỉ nói "profile này thế nào?" hay "lấy thông tin người này" mà không đề cập từ "LinkedIn".
+---
+ 
+# LinkedIn Profile Extractor
+ 
+## Mục tiêu
+Phân tích trang profile LinkedIn đang mở và trích xuất thông tin có cấu trúc — không suy đoán, không thêm thông tin không có trên trang. Output cuối bao gồm danh sách sạch và khối TSV để paste thẳng vào Google Sheets.
+ 
+## Nguyên tắc trích xuất (Bắt buộc tuân thủ)
+ 
+**Chỉ dùng thông tin hiển thị trên trang.** Không suy diễn, không điền giả định. Nếu một trường không có trên profile → ghi `N/A`.
+ 
+**Ước tính YOE phải có căn cứ.** Tính từ ngày bắt đầu công việc đầu tiên đến hiện tại theo kinh nghiệm làm việc được liệt kê, không tính thời gian học đại học trừ khi có internship. Nếu không đủ dữ liệu → ghi `Không đủ dữ liệu để ước tính`.
+ 
+**Top 5 kỹ năng** lấy theo thứ tự ưu tiên: (1) kỹ năng được endorsement nhiều nhất, (2) kỹ năng được liệt kê trong phần Skills, (3) kỹ năng được nhắc lặp lại trong phần Experience.
+ 
+**3 dự án tiêu biểu** ưu tiên lấy từ phần Projects nếu có; nếu không → lấy thành tích nổi bật nhất từ Experience (impact có số liệu > vai trò mô tả chung chung).
+ 
+## Các trường cần trích xuất
+ 
+1. **Tên ứng viên** — Tên đầy đủ như hiển thị trên profile
+2. **Headline** — Dòng chữ ngay dưới tên (giữ nguyên, không dịch)
+3. **Ước tính YOE** — Số năm kinh nghiệm, kèm ghi chú cách tính ngắn gọn
+4. **Top 5 kỹ năng nổi bật** — Danh sách có thứ tự, kèm context ngắn nếu cần
+5. **3 dự án tiêu biểu** — Tên + tóm tắt 1–2 câu mỗi dự án
+6. **Công ty hiện tại** — Tên công ty + chức danh + thời gian đảm nhiệm (nếu có)
+7. **Email** — Chỉ ghi nếu hiển thị công khai trong Contact Info
+8. **URL** — URL profile LinkedIn đang xem
+## Format output
+ 
+### Phần 1 — Danh sách có cấu trúc
+ 
+Trình bày theo mẫu sau, đúng thứ tự, dùng heading Markdown:
+ 
+```
+## Thông tin ứng viên
+ 
+- **Tên ứng viên:** [Họ và tên]
+- **Headline:** [Dòng headline nguyên văn]
+- **Ước tính YOE:** [X năm] — [ghi chú cách tính, VD: "Marketing Manager từ 2018, Software Engineer từ 2015 → ~9 năm"]
+- **Top 5 kỹ năng nổi bật:**
+  1. [Kỹ năng 1]
+  2. [Kỹ năng 2]
+  3. [Kỹ năng 3]
+  4. [Kỹ năng 4]
+  5. [Kỹ năng 5]
+- **3 dự án tiêu biểu:**
+  1. *[Tên dự án/vai trò]:* [Tóm tắt 1–2 câu, ưu tiên nêu impact nếu có]
+  2. *[Tên dự án/vai trò]:* [Tóm tắt]
+  3. *[Tên dự án/vai trò]:* [Tóm tắt]
+- **Công ty hiện tại:** [Tên công ty] · [Chức danh] · [Thời gian]
+- **Email:** [email hoặc N/A]
+- **URL:** [URL đầy đủ]
+```
+ 
+### Phần 2 — Khối TSV để paste vào Google Sheets
+ 
+Ngay sau danh sách, xuất khối TSV với format sau (headers ở dòng đầu, dữ liệu ở dòng 2):
+ 
+````
+```tsv
+Tên ứng viên	Headline	YOE (năm)	Kỹ năng 1	Kỹ năng 2	Kỹ năng 3	Kỹ năng 4	Kỹ năng 5	Dự án 1	Dự án 2	Dự án 3	Công ty hiện tại	Email	URL
+[Giá trị]	[Giá trị]	[Số]	[Giá trị]	[Giá trị]	[Giá trị]	[Giá trị]	[Giá trị]	[Tóm tắt ngắn]	[Tóm tắt ngắn]	[Tóm tắt ngắn]	[Tên công ty · Chức danh]	[email/N/A]	[URL]
+```
+````
+ 
+**Lưu ý TSV:** Nếu một ô chứa dấu phẩy hoặc tab, thay thế bằng dấu chấm phẩy để tránh lỗi mapping khi paste. Không wrap bằng dấu ngoặc kép trừ khi thực sự cần thiết.
+ 
+## Xử lý các trường hợp đặc biệt
+ 
+**Profile ở chế độ riêng tư / hiển thị giới hạn:** Chỉ trích xuất những gì thấy được, ghi chú rõ "Profile giới hạn — một số thông tin có thể không đầy đủ".
+ 
+**Nhiều vị trí hiện tại (freelancer/consultant):** Liệt kê tất cả trong trường Công ty hiện tại, ngăn cách bằng " | ".
+ 
+**Không có phần Projects:** Lấy 3 thành tích nổi bật nhất từ Experience, ưu tiên những mục có số liệu cụ thể (%, $, số người dùng...).
+ 
+**Profile bằng tiếng Anh:** Giữ nguyên Headline và tên kỹ năng bằng tiếng Anh, không dịch.
+ 
+## Sau khi hoàn thành
+Hỏi user: "Bạn muốn tôi tạo thêm email outreach cá nhân hóa cho ứng viên này không?" — để gợi ý kết hợp với skill `outreach-email`.</pre>
+          
+        </article>
+
+        <article class="dz-page" id="demo-outreach-email">
+          <div class="dz-card__meta">Demo 3</div>
+          <h2 class="dz-section__title">`outreach-email`</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ul>
+                <li><strong>Mục tiêu:</strong> Soạn email, tin nhắn LinkedIn, hoặc Zalo tiếp cận ứng viên tiềm năng theo hướng cá nhân hóa, ngắn gọn, rõ giá trị</li>
+                <li><strong>Trigger:</strong> “viết email ứng viên”, “nhắn tin LinkedIn”, “outreach candidate”, “tiếp cận passive candidate”, “invite phỏng vấn”</li>
+                <li><strong>Input:</strong> Loại tin nhắn, kênh gửi, tên ứng viên, 1–2 điểm nổi bật từ profile, tên vị trí đang tuyển, và điểm hấp dẫn nhất của job</li>
+                <li><strong>Rule:</strong> Bắt buộc nhắc ít nhất 1 chi tiết cụ thể từ profile; không được dùng template sáo rỗng hoặc mở đầu chung chung</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li><strong>Output:</strong> Cold outreach, follow-up, interview invite, hoặc rejection đúng theo bối cảnh tuyển dụng</li>
+                <li><strong>Length cap:</strong> Email cold tối đa 150 từ; LinkedIn message tối đa 100 từ; dài hơn phải cắt</li>
+                <li><strong>CTA:</strong> Cụ thể và dễ trả lời, ví dụ đề xuất 2 khung giờ rõ ràng thay vì “nếu quan tâm thì báo tôi”</li>
+                <li><strong>Follow-up:</strong> Sau khi viết xong, hỏi user có muốn tạo thêm phiên bản follow-up hoặc chỉnh tone không</li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <pre class="dz-pre">---
+name: outreach-email
+description: Soạn email, tin nhắn LinkedIn, hoặc Zalo tiếp cận ứng viên tiềm năng — cá nhân hóa theo profile từng người. Dùng skill này NGAY KHI user muốn "viết email ứng viên", "nhắn tin LinkedIn", "outreach candidate", "tiếp cận passive candidate", "invite phỏng vấn", "follow-up ứng viên", hoặc bất kỳ yêu cầu soạn thảo liên lạc nào với ứng viên. Kích hoạt kể cả khi user chỉ paste profile LinkedIn và hỏi "viết gì cho người này?"
+---
+ 
+# Outreach Email &amp; Message Writer
+ 
+## Mục tiêu
+Tạo tin nhắn tiếp cận ứng viên có tỷ lệ phản hồi cao — cá nhân hóa, ngắn gọn, rõ giá trị, không spam cảm.
+ 
+## Nguyên tắc cốt lõi (Phải tuân thủ)
+ 
+**Cá nhân hóa thực sự**: Đề cập ít nhất 1 chi tiết cụ thể từ profile ứng viên (dự án, công ty cũ, kỹ năng, bài viết). Không dùng template "Dear [Name]" sáo rỗng.
+ 
+**Giá trị trước, cơ hội sau**: Nói rõ TẠI SAO người này phù hợp, không phải công ty cần gì. Ứng viên giỏi nhận hàng chục tin nhắn/tuần — họ đọc vì thấy liên quan đến bản thân.
+ 
+**Ngắn gọn**: Email lần đầu tối đa 150 từ. LinkedIn message tối đa 100 từ. Nếu dài hơn, cắt bớt.
+ 
+**CTA rõ ràng và dễ thực hiện**: Không "hãy cho tôi biết nếu bạn quan tâm" — thay bằng lựa chọn cụ thể: "Bạn có rảnh 20 phút tuần tới không? Thứ Ba hoặc Thứ Tư đều okay với tôi."
+ 
+## Loại tin nhắn &amp; Format
+ 
+### Loại 1 — Cold Outreach (tiếp cận lần đầu)
+Dành cho: Passive candidates chưa apply, tìm thấy qua LinkedIn/GitHub/referral
+ 
+**Cấu trúc** (3 đoạn):
+1. Hook cá nhân hóa: "Tôi thấy bạn đã dẫn dắt X tại [Công ty cũ]..."
+2. Cơ hội cụ thể: Vị trí, 1–2 điểm hấp dẫn nhất liên quan đến background của họ
+3. CTA nhẹ, dễ nói có: Đặt câu hỏi yes/no hoặc đề xuất lịch cụ thể
+### Loại 2 — Follow-up (nhắc lại sau 5–7 ngày không phản hồi)
+Dành cho: Ứng viên đã nhận tin nhắn đầu nhưng chưa trả lời
+ 
+**Nguyên tắc**: Không xin lỗi vì đã nhắn, không nhắc lại toàn bộ. Thêm 1 thông tin mới (deadline, update về vị trí) hoặc dùng góc nhìn khác.
+ 
+### Loại 3 — Interview Invitation (mời phỏng vấn)
+Dành cho: Ứng viên đã apply hoặc đã thể hiện quan tâm
+ 
+**Cấu trúc**: Lời cảm ơn ngắn → Confirm vị trí và vòng phỏng vấn → Thông tin thực tế (hình thức, thời gian dự kiến, người phỏng vấn) → Đề xuất 2–3 khung giờ cụ thể → Link tự chọn lịch nếu có
+ 
+### Loại 4 — Rejection (từ chối ứng viên không đậu)
+Dành cho: Ứng viên đã phỏng vấn nhưng không được chọn
+ 
+**Nguyên tắc**: Cảm ơn thời gian, nêu lý do chung (không chi tiết đến mức gây khó chịu), để ngỏ cơ hội trong tương lai nếu phù hợp, kết thúc ấm áp.
+ 
+## Thông tin cần từ user
+ 
+Hỏi nhanh nếu chưa có:
+- Loại tin nhắn (cold / follow-up / invite / rejection)
+- Kênh gửi (Email / LinkedIn / Zalo)
+- Tên + 1–2 điểm nổi bật từ profile ứng viên
+- Tên vị trí đang tuyển
+- 1 điểm hấp dẫn nhất của vị trí hoặc công ty (để cá nhân hóa)
+## Ví dụ output tốt (Cold Outreach — LinkedIn)
+ 
+```
+Chào Minh,
+ 
+Tôi để ý bạn vừa hoàn thành migration hệ thống payment từ monolith sang microservices tại [Công ty cũ] — đúng thách thức mà team chúng tôi đang đối mặt.
+ 
+[Tên Công Ty] đang tìm Senior Backend Engineer để lead dự án tương tự, scale từ 50K lên 500K transactions/ngày. Vị trí này có technical ownership thực sự và làm việc trực tiếp với CTO.
+ 
+Bạn có rảnh 20 phút chat tuần này không? Thứ Tư hoặc Thứ Năm đều okay.
+ 
+[Tên HR]
+```
+ 
+## Ví dụ cần tránh
+- ❌ "Tôi tìm thấy profile của bạn và thấy rất ấn tượng" (sáo rỗng, không cụ thể)
+- ❌ Email dài 300 từ giới thiệu công ty trước khi hỏi ứng viên
+- ❌ CTA: "Nếu quan tâm hãy cho tôi biết" (quá thụ động)
+- ❌ Follow-up: "Xin lỗi vì đã làm phiền bạn lần nữa..."
+## Sau khi hoàn thành
+Hỏi user: "Bạn muốn tôi tạo thêm phiên bản follow-up cho ứng viên này không? Hoặc điều chỉnh tone cho phù hợp hơn?"</pre>
+        </article>
+
+        <article class="dz-page" id="cowork-def">
+          <div class="dz-card__meta">Claude Cowork</div>
+          <h2 class="dz-section__title">Định nghĩa</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <p>Claude Cowork là một <strong>không gian làm việc chuyên biệt</strong> bên trong Claude Desktop, hoạt động giống một <strong>đồng nghiệp kỹ thuật số</strong> hơn là chatbot hỏi đáp thông thường.</p>
+              <p><strong>Yêu cầu:</strong> Claude Desktop + gói <strong>Pro</strong> hoặc <strong>Max</strong>.</p>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li><strong>Đọc/ghi trực tiếp</strong> vào thư mục trên máy của bạn</li>
+                <li><strong>Kết nối công cụ</strong> như Gmail, Google Drive qua MCP khi cần</li>
+                <li><strong>Tự động chạy</strong> các tác vụ nhiều bước để tạo file hoàn chỉnh như Excel, Word, PowerPoint</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout"><strong>Khác với chat thường:</strong> bạn không chỉ hỏi rồi nhận văn bản trả lời, mà có thể giao hẳn một đầu việc để Cowork đọc dữ liệu, lập kế hoạch, xin phép ở bước quan trọng và lưu kết quả thành file thật.</div>
+          <div class="dz-slide-media-card dz-slide-media-card--wide">
+            <img src="./media/cowork.png" alt="Minh họa giao diện Claude Cowork trong Claude Desktop">
+          </div>
+
+        </article>
+
+         <article class="dz-page" id="cowork-steps">
+          <div class="dz-card__meta">Claude Cowork</div>
+          <h2 class="dz-section__title">Cách sử dụng</h2>
+          <div class="dz-flow">
+            <div class="dz-flow__step"><div class="dz-flow__index">1</div><div><p class="dz-flow__body">Tải <strong>Claude Desktop</strong> và đăng nhập bằng gói <strong>Pro</strong> hoặc <strong>Max</strong></p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">2</div><div><p class="dz-flow__body">Mở ứng dụng và chọn tab <strong>Cowork</strong> trên thanh công cụ</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">3</div><div><p class="dz-flow__body">Nhấp <strong>Work in a folder</strong> để cấp quyền cho Claude truy cập một thư mục cụ thể</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">4</div><div><p class="dz-flow__body">Giao việc bằng câu lệnh rõ ràng, ví dụ: đọc CV, so sánh JD, tạo `danh_sach.xlsx` lọc top ứng viên</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">5</div><div><p class="dz-flow__body">Claude sẽ tự lập kế hoạch, xin phép trước các thao tác quan trọng, rồi lưu file kết quả trực tiếp vào thư mục</p></div></div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Bạn có công việc lặp đi lặp lại nào như tổng hợp báo cáo hay sàng lọc tài liệu không? Ta có thể biến nó thành một workflow để Cowork làm thay.</div>
+        </article>
+
+        <article class="dz-page" id="cowork-case">
+          <div class="dz-card__meta">Claude Cowork</div>
+          <h2 class="dz-section__title">Use Case: Sàng Lọc CV</h2>
+          <pre class="dz-pre">/Recruitment/2026-Q2/
+├── 00_JD/jd-senior-pm.md
+├── 01_CV/
+├── 02_rubric.md
+└── 03_outputs/</pre>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Prompt: “Đọc tất cả PDF trong `01_CV/`, so sánh JD và rubric, tạo `shortlist.xlsx`: Tên, Score, điểm mạnh/yếu, Recommend.”</div>
+          <div class="dz-divider"></div>
+          <div class="dz-quote">15 CV × 15 phút = gần 4 giờ → <strong>20 phút</strong></div>
+        </article>
+
+        <article class="dz-page" id="part-4">
+          <div class="dz-card__meta">Phần 4</div>
+          <h2 class="dz-section__title">Skills</h2>
+          <div class="dz-artifact-list">
+            <div class="dz-artifact"><div class="dz-artifact__icon">1</div><div><h3 class="dz-artifact__title">Skills giải quyết vấn đề gì?</h3></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">3</div><div><h3 class="dz-artifact__title">Cấu trúc SKILL.md</h3></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">2</div><div><h3 class="dz-artifact__title">Markdown</h3></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">4</div><div><h3 class="dz-artifact__title">Skill creator</h3></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">5</div><div><h3 class="dz-artifact__title">Lưu ý khi tạo Skills</h3></div></div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="skills-solve">
+          <div class="dz-card__meta">Skills giải quyết những gì?</div>
+          <h2 class="dz-section__title">Vấn đề...</h2>
+           <div class="dz-flow">
+            <div class="dz-flow__step">
+              <div class="dz-flow__index">1</div>
+              <div>
+                <h3 class="dz-flow__title">Trượt #1, Ngã #4</h3>
+                <p>Output generic vì thiếu context, tone, format. Dạy lại mỗi sáng vì session mới = memory trắng.</p>
+                <p class="dz-mini">Thay vì phải giải thích lại quy trình, giọng văn hay bối cảnh mỗi khi mở phiên làm việc mới, chỉ cần đóng gói tất cả vào `SKILL.md` một lần để AI tự động áp dụng khi cần.</p>
+              </div>
+            </div>
+            <div class="dz-flow__step">
+              <div class="dz-flow__index">2</div>
+              <div>
+                <h3 class="dz-flow__title">Đảm bảo tính nhất quán</h3>
+                <p>Team không đồng bộ vì mỗi người prompt khác nhau.</p>
+                <p class="dz-mini">Mọi thành viên trong đội ngũ sẽ nhận được kết quả đầu ra theo cùng một tiêu chuẩn chung, không còn phụ thuộc vào kỹ năng viết prompt của từng cá nhân</p>
+              </div>
+            </div>
+            <div class="dz-flow__step">
+            <div class="dz-flow__index">3</div>
+            <div>
+              <h3 class="dz-card__title">Tiết kiệm token và ngữ cảnh</h3>
+              <p>Nhồi nhét một câu lệnh khổng lồ làm quá tải bộ nhớ.</p>
+              <p class="dz-mini">Skill sử dụng cơ chế "Tiết lộ dần" (Progressive Disclosure) để chỉ tải thông tin chi tiết vào cửa sổ ngữ cảnh khi thực sự cần thiết</p>
+            </div>
+          </div>
+          <div class="dz-flow__step">
+            <div class="dz-flow__index">4</div>
+            <div>
+              <h3 class="dz-card__title">Tính di động (Portability)</h3>
+              <p>Skill không gắn với một user cụ thể mà thuộc về dự án, nên dễ dàng chia sẻ trong nhóm và sử dụng chéo trên nhiều nền tảng AI khác nhau (như Claude, Cursor, Copilot)</p>
+            </div>
+          </div>
+          </div>
+          
+
+
+
+          </article>
+          <article class="dz-page" id="skills-flow">
+          <div class="dz-card__meta">Skills Flow</div>
+          <h2 class="dz-section__title">Tiết lộ dần giúp Skill mạnh hơn</h2>
+          <div class="dz-card">
+            <p>Cơ chế <strong>Tiết lộ dần</strong> (<strong>Progressive Disclosure</strong>): thay vì nhồi toàn bộ hướng dẫn vào bộ nhớ AI ngay từ đầu, hệ thống chia thông tin thành 3 tầng để chỉ tải đúng phần cần thiết vào đúng thời điểm.</p>
+          </div>
+          </br>
+
+          <div class="dz-flow">
+            <div class="dz-flow__step"><div class="dz-flow__index">1</div><div><h3 class="dz-flow__title">Tầng khởi động</h3><p class="dz-flow__body">Ban đầu AI chỉ nạp <code>name</code> và <code>description</code> ngắn gọn để nhận biết khi nào cần dùng Skill.</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">2</div><div><h3 class="dz-flow__title">Tầng kích hoạt</h3><p class="dz-flow__body">Chỉ khi câu lệnh của user khớp mô tả, AI mới tải toàn bộ hướng dẫn chi tiết trong <code>SKILL.md</code> vào bộ nhớ.</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">3</div><div><h3 class="dz-flow__title">Tầng tài nguyên</h3><p class="dz-flow__body">Các file tham chiếu như PDF, markdown, hoặc code chỉ được mở ra đọc khi thực sự cần trong quá trình xử lý.</p></div></div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Cách làm này giữ cho <strong>Context Window</strong> luôn gọn gàng, giúp AI tập trung hơn, xử lý chính xác hơn và giảm tối đa tình trạng “ảo giác”.</div>
+        </article>
+
+
+        <article class="dz-page" id="skills-definition">
+          <div class="dz-card__meta">Skill là gì?</div>
+          <div class="dz-card">
+            <p><strong>Skill (Kỹ năng)</strong> là một gói đóng gói sẵn các hướng dẫn, quy trình làm việc, tập lệnh và tài liệu tham khảo để dạy AI cách thực hiện một công việc chuyên môn cụ thể. Thường được lưu dưới dạng một thư mục chứa tệp <strong>SKILL.md</strong>, <strong>Skill</strong> giúp AI tự động ghi nhớ cách làm việc chuẩn xác mà bạn không cần phải gõ lại các câu lệnh (prompt) dài dòng mỗi lần mở phiên làm việc mới</p>
+          </div>
+        </br>
+<div class="dz-card">
+              <p>Skills là open standard ra mắt 18/12/2025 tại `agentskills.io`.</p>
+              <p>Hiện được <strong>26+ nền tảng</strong> áp dụng: Claude, OpenAI Codex, Gemini CLI, GitHub Copilot...</p>
+            </div>
+</br>
+            <div class="dz-card">
+              <div class="dz-quote">Tools = búa, cưa, đinh<br>Skills = bản vẽ kỹ thuật hướng dẫn cách đóng tủ sách</div>
+            </div>
+            
+
+        </article>
+        <article class="dz-page" id="skill-folder">
+          <div class="dz-card__meta">Cấu trúc</div>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <h3>Cấu trúc thư mục Skill</h3>
+               <pre class="dz-pre">jd-writer/
+├── SKILL.md        ← BẮT BUỘC
+├── references/
+│   ├── jd-template.md
+│   └── tone-of-voice.md
+└── assets/
+    └── benefits-list.md</pre>
+            </div>
+            <div class="dz-card">
+              <h3>File SKILL.md</h3>
+              <pre class="dz-pre">---
+name: jd-writer
+description: Viết JD chuẩn brand. Kích hoạt khi nhắc
+  "JD", "tuyển", "mô tả công việc".
+---
+
+## Bối cảnh thương hiệu
+- Văn phong: chuyên nghiệp, ấm áp
+- Tránh: "rockstar", "ninja"
+
+## Cấu trúc JD bắt buộc
+1. Job Title + level
+2. Về công ty
+3. Trách nhiệm
+4. Yêu cầu
+5. Quyền lợi</pre>
+            </div>
+          </div>           
+        </article>
+        <article class="dz-page" id="markdown-soul">
+      
+          <div class="dz-card__meta">Markdown</div>
+          <!-- <h2 class="dz-section__title">Markdown là linh hồn của Skill</h2> -->
+          <!-- <div class="dz-slide-media-card dz-slide-media-card--wide"> -->
+            <img src="./media/markdown-1.png" alt="">
+          <!-- </div> -->
+          <!-- <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <p><strong>Markdown</strong> là ngôn ngữ đánh dấu siêu nhẹ (`.md`), dùng `#`, `*`, `-`, `|`.</p>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li>AI hiểu cấu trúc tốt hơn</li>
+                <li>Tiết kiệm token</li>
+                <li>Chuẩn chung: `SKILL.md`, `CLAUDE.md`, brand brief</li>
+              </ul>
+            </div>
+          </div> -->
+        </article>
+        <article class="dz-page" id="markdown-syntax">
+      
+          <div class="dz-card__meta">Markdown</div>
+            <img src="./media/markdown-2.png" alt="">
+         
+        </article>
+
+        <article class="dz-page" id="markdown-tools">
+        <div class="dz-card__meta">Markdown</div>
+        <h2 class="dz-section__title">Tài liệu &amp; công cụ nên dùng</h2>
+        <div class="dz-grid dz-grid--two">
+          <div class="dz-card">
+            <h3 class="dz-card__title">Tài liệu học nhanh</h3>
+            <ul>
+              <li><a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener noreferrer">Markdown Cheat Sheet</a></li>
+              <li><a href="https://www.markdownguide.org/basic-syntax/" target="_blank" rel="noopener noreferrer">Basic Syntax</a></li>
+              <li><a href="https://www.markdownguide.org/extended-syntax/" target="_blank" rel="noopener noreferrer">Extended Syntax</a></li>
+              <li><a href="https://www.markdownguide.org/tools/" target="_blank" rel="noopener noreferrer">Markdown Tools</a></li>
+            </ul>
+          </div>
+          <div class="dz-card">
+            <h3 class="dz-card__title">Công cụ viết Markdown</h3>
+            <ul>
+              <li><a href="https://obsidian.md" target="_blank" rel="noopener noreferrer">Obsidian</a> — ghi chú, liên kết tài liệu, quản lý kho skill/reference rất tiện</li>
+              <li><a href="https://stackedit.io/app#" target="_blank" rel="noopener noreferrer">StackEdit</a> — soạn Markdown trực tiếp trên web, có preview ngay</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dz-divider"></div>
+        <div class="dz-callout">Gợi ý thực hành: mở `Cheat Sheet` ở một tab, viết thử trong Obsidian hoặc StackEdit, rồi copy sang `SKILL.md` để quen tay thật nhanh.</div>
+        </article>
+
+        <article class="dz-page" id="skill-creator">
+          <div class="dz-card__meta">Skill Creator</div>
+          <h2 class="dz-section__title">Tạo Skill bằng Skill Creator trong Claude</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ol>
+                <li><strong>Kích hoạt công cụ:</strong> Vào `Settings → Capabilities` và bật `Skill creator`, hoặc gọi lệnh `/skill-creator`</li>
+                <li><strong>Ra lệnh tạo Skill:</strong> Nhập mục tiêu rõ ràng, ví dụ: “Dùng skill-creator giúp tôi tạo skill đánh giá CV ứng viên”</li>
+                <li><strong>Trả lời phỏng vấn:</strong> Claude sẽ hỏi Skill làm gì, khi nào kích hoạt, output mong muốn là gì; bạn chỉ cần trả lời hoặc chọn gợi ý</li>
+                <li><strong>Đánh giá và cài đặt:</strong> Khi đủ thông tin, AI sinh ra cả thư mục chuẩn, bạn có thể chạy `Eval` rồi tải lên mục Skills để dùng</li>
+              </ol>
+            </div>
+            <div class="dz-card">
+              <p><strong>Điểm mạnh của Skill Creator:</strong> tạo skill rất nhanh qua hình thức hỏi - đáp, không cần tự dựng tay cả cấu trúc thư mục từ đầu.</p>
+              <p class="dz-mini">Prompt mẫu: “Dùng skill-creator giúp tôi tạo skill `cv-screener` để chấm CV theo rubric 5 tiêu chí và xuất bảng shortlist.”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="skill-creator-modes">
+          <div class="dz-card__meta">Skill Creator</div>
+          <h2 class="dz-section__title">4 chế độ trong Skill Creator</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ul>
+                <li><strong>Create:</strong> Phỏng vấn bạn và tự động sinh ra toàn bộ thư mục cấu trúc chuẩn của skill</li>
+                <li><strong>Eval:</strong> Chạy thử và đánh giá chất lượng đầu ra của skill trên các tập dữ liệu kiểm tra</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li><strong>Improve:</strong> Hỗ trợ tinh chỉnh và nâng cấp các skill bạn đã tạo</li>
+                <li><strong>Benchmark:</strong> Đo lường và chấm điểm hiệu năng thực tế của skill</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Flow khuyến nghị: <strong>Create → Eval → Improve → Benchmark</strong>. Đừng dừng ở bước tạo xong; giá trị thật nằm ở vòng lặp tinh chỉnh.</div>
+        </article>
+
+        <article class="dz-page" id="skill-creator-practice">
+          <div class="dz-card__meta">Skill Creator</div>
+          <h2 class="dz-section__title">Thực hành: tạo skill viết post tuyển dụng</h2>
+          <div class="dz-flow">
+            <div class="dz-flow__step"><div class="dz-flow__index">1</div><div><p class="dz-flow__body"><strong>Kích hoạt:</strong> Gõ lệnh <code>/skill-creator</code> trong Claude và chọn chế độ <strong>Create</strong></p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">2</div><div><p class="dz-flow__body"><strong>Ra lệnh mở đầu:</strong> “Hãy tạo một skill tên <code>post-tuyen-dung</code> chuyên viết bài đăng tìm ứng viên trên mạng xã hội. Skill này sẽ kích hoạt khi tôi gõ ‘viết post tuyển dụng’ hoặc ‘đăng bài tìm người’.”</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">3</div><div><p class="dz-flow__body"><strong>Nạp dữ liệu thực tế:</strong> Tải lên 2–3 bài post mẫu, tài liệu <em>tone of voice</em>, và chính sách phúc lợi của công ty</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">4</div><div><p class="dz-flow__body"><strong>Trả lời phỏng vấn:</strong> Claude sẽ hỏi độ dài bài viết, thông tin bắt buộc, CTA, kênh đăng; bạn chỉ cần trả lời ngắn gọn theo ý mình</p></div></div>
+            <div class="dz-flow__step"><div class="dz-flow__index">5</div><div><p class="dz-flow__body"><strong>Hoàn tất và đánh giá:</strong> Khi AI sinh ra <code>SKILL.md</code> và thư mục đi kèm, dùng <strong>Eval</strong> để chạy thử với yêu cầu như “Viết post tuyển Marketing Executive”</p></div></div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Mẹo: chất lượng skill phụ thuộc rất mạnh vào <strong>post mẫu</strong> và <strong>brand voice</strong> bạn nạp vào ngay từ đầu.</div>
+        </article>
+
+        <article class="dz-page" id="skill-notes">
+          <div class="dz-card__meta">Skill Creator</div>
+          <h2 class="dz-section__title">3 lưu ý khi dùng Skill Creator</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ul>
+                <li><strong>Cung cấp chuyên môn thực tế:</strong> Hãy đưa cho nó tài liệu nội bộ, mẫu báo cáo, hoặc quy trình bạn đã làm thành công thay vì để AI tự nghĩ ra quy trình chung chung</li>
+                <li><strong>Tập trung vào description:</strong> Mô tả cần rõ ràng, mang tính mệnh lệnh và chứa từ khóa cụ thể để hệ thống nhận diện đúng thời điểm kích hoạt</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li><strong>Chạy thử và tinh chỉnh:</strong> Đừng kỳ vọng skill hoàn hảo ngay lần đầu; hãy dùng việc thật để xem output lệch ở đâu rồi quay lại sửa</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Quy tắc thực tế: càng cụ thể ở đầu vào, Skill Creator càng sinh ra skill dùng được ngay ở đầu ra.</div>
+        </article>
+
+        <article class="dz-page" id="skill-security">
+          <div class="dz-card__meta">Bảo mật Skill</div>
+          <h2 class="dz-section__title">4 lưu ý bảo mật khi dùng Agent Skill</h2>
+          <div class="dz-artifact-list">
+            <div class="dz-artifact"><div class="dz-artifact__icon">1</div><div><h3 class="dz-artifact__title">Prompt Injection</h3><p class="dz-artifact__body">Kẻ tấn công có thể nhúng hướng dẫn độc hại vào `SKILL.md` hoặc file tham chiếu để đánh lừa AI làm những việc ngoài ý muốn như lộ dữ liệu nhạy cảm.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">2</div><div><h3 class="dz-artifact__title">Executable Scripts</h3><p class="dz-artifact__body">Skill có đính kèm mã lệnh để AI chạy trực tiếp thường có nguy cơ chứa lỗ hổng bảo mật cao hơn <strong>2,12 lần</strong> so với Skill chỉ có văn bản hướng dẫn.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">3</div><div><h3 class="dz-artifact__title">Supply Chain</h3><p class="dz-artifact__body">Luôn kiểm tra thư viện phụ thuộc, tránh gói bị mạo danh (typosquatting), ghim phiên bản và dùng lockfile trước khi để AI tự động cài thêm package.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">4</div><div><h3 class="dz-artifact__title">Trust Gating</h3><p class="dz-artifact__body">Với Skill tải từ cộng đồng, không cấp quyền toàn hệ thống ngay lập tức. Hãy áp dụng nguyên tắc đặc quyền tối thiểu và giới hạn tool qua `allowed-tools`.</p></div></div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">Quy tắc an toàn: <strong>text-only trước, quyền tối thiểu trước, kiểm tra dependency trước</strong>. Chỉ mở rộng quyền khi bạn hiểu rõ Skill đó sẽ làm gì.</div>
+        </article>
+
+        <article class="dz-page" id="part-5">
+          <div class="dz-card__meta">Phần 5</div>
+          <h2 class="dz-section__title">Q&amp;A</h2>
+        </article>
+
+        <article class="dz-page" id="qa-1">
+          <div class="dz-card__meta">Q&amp;A</div>
+          <h2 class="dz-section__title">Câu hỏi thường gặp</h2>
+          <div class="dz-artifact-list">
+            <div class="dz-artifact"><div class="dz-artifact__icon">Q</div><div><h3 class="dz-artifact__title">Dữ liệu CV ứng viên có an toàn không?</h3><p class="dz-artifact__body">Team/Enterprise: Anthropic không train trên dữ liệu của bạn. Pro: kiểm tra Privacy Policy. Không đưa CCCD, tài khoản ngân hàng vào AI.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">Q</div><div><h3 class="dz-artifact__title">Skills có dùng được trên ChatGPT, Gemini không?</h3><p class="dz-artifact__body">Có. Skills là open standard, nhưng Claude hỗ trợ tốt nhất vì Anthropic là người phát triển chuẩn này.</p></div></div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="qa-2">
+          <div class="dz-card__meta">Q&amp;A</div>
+          <h2 class="dz-section__title">Tiếp theo</h2>
+          <div class="dz-artifact-list">
+            <div class="dz-artifact"><div class="dz-artifact__icon">Q</div><div><h3 class="dz-artifact__title">AI cho kết quả sai thì sao?</h3><p class="dz-artifact__body">AI tạo bản nháp nhanh, bạn chịu trách nhiệm review và phán quyết cuối cùng.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">Q</div><div><h3 class="dz-artifact__title">Cowork có thể xóa file không?</h3><p class="dz-artifact__body">Có thể đổi tên/di chuyển nếu bạn cho phép. Luôn backup trước và trỏ vào folder test nhỏ.</p></div></div>
+            <div class="dz-artifact"><div class="dz-artifact__icon">Q</div><div><h3 class="dz-artifact__title">Mất bao lâu để xây bộ Skill cho team?</h3><p class="dz-artifact__body">1 skill ≈ 30–60 phút. Bộ 5 skill cơ bản ≈ 1 tuần. Lần sau nhanh hơn vì đã quen format.</p></div></div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="part-6">
+          <div class="dz-card__meta">Phần 6</div>
+          <h2 class="dz-section__title">Bài Tập Về Nhà</h2>
+        </article>
+
+        <article class="dz-page" id="day-1">
+          <div class="dz-card__meta">Ngày 1</div>
+          <h2 class="dz-section__title">Làm Quen &amp; Prompt</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <p><strong>Bài tập 1:</strong> Lấy 1 JD cũ → viết lại bằng Markdown → so sánh output AI có/không có Markdown.</p>
+            </div>
+            <div class="dz-card">
+              <p><strong>Bài tập 2:</strong> Viết 2 prompt cho cùng 1 bài đăng tuyển (A: chung chung / B: chi tiết) → chụp màn hình so sánh và chia sẻ với team.</p>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">✅ Thành công khi: AI cho ra bài post và email gần như dùng được ngay.</div>
+        </article>
+
+        <article class="dz-page" id="day-2">
+          <div class="dz-card__meta">Ngày 2</div>
+          <h2 class="dz-section__title">Xây Skill Đầu Tiên</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <p><strong>Bài tập 3:</strong> Bật Skill Creator → gõ `/skill-creator` → tạo `jd-writer` với 2 JD mẫu của công ty.</p>
+            </div>
+            <div class="dz-card">
+              <p><strong>Bài tập 4:</strong> Test skill → gõ “viết JD Senior Designer” → so sánh có/không có skill → dùng <strong>Improve</strong> nếu chưa đúng ý.</p>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">✅ Thành công khi: gọi skill → AI ra đúng kết quả, không cần giải thích thêm.</div>
+        </article>
+
+        <article class="dz-page" id="day-3">
+          <div class="dz-card__meta">Ngày 3</div>
+          <h2 class="dz-section__title">Mở Rộng &amp; Thử Cowork</h2>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <p><strong>Bài tập 5:</strong> Tạo thêm `outreach-email` và `cv-screener` với rubric 5 tiêu chí phù hợp công ty.</p>
+            </div>
+            <div class="dz-card">
+              <p><strong>Bài tập 6:</strong> Cài Claude Desktop → mở Cowork → trỏ vào folder Demo-CV → tạo Excel shortlist từ 3 CV mẫu.</p>
+            </div>
+          </div>
+          <div class="dz-divider"></div>
+          <div class="dz-callout">✅ Thành công khi: có bộ 3 skill + Cowork tạo được file Excel shortlist.</div>
+        </article>
+
+        <article class="dz-page" id="checklist">
+          <div class="dz-card__meta">Checklist tự đánh giá</div>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <ul>
+                <li>Viết được prompt Markdown đầy đủ heading + bảng + bullet</li>
+                <li>Giải thích được các khái niệm cốt lõi cho đồng nghiệp</li>
+                <li>Hiểu tại sao Skills giải quyết vấp #1 và #4</li>
+                <li>Đã tạo được ít nhất 1 Skill bằng Skill Creator</li>
+              </ul>
+            </div>
+            <div class="dz-card">
+              <ul>
+                <li>Đã cài Claude Desktop và mở được tab Cowork</li>
+                <li>Đã cài Claude in Chrome, biết bật/tắt permission</li>
+                <li>Hiểu rủi ro prompt injection và cách hạn chế</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="dz-page" id="thanks">
+          <div class="dz-card__meta">Closing</div>
+          <p class="dz-kicker">DZ Academy · AI Training</p>
+          <h2 class="dz-section__title">Cảm ơn bạn</h2>
+          <div class="dz-divider"></div>
+          <div class="dz-quote">Bắt đầu từ một công việc lặp lại nhất trong tuần này. Đóng gói nó thành một Skill. Sau đó để AI làm cùng bạn, thay vì làm lại từ đầu mỗi ngày.</div>
+          <div class="dz-divider"></div>
+          <div class="dz-pill-grid">
+            <span class="dz-pill">Tạo skill đầu tiên</span>
+            <span class="dz-pill">Thử Cowork workflow</span>
+            <span class="dz-pill">Đo thời gian tiết kiệm</span>
+          </div>
+        </article>
+
+        <article class="dz-page" id="join-group">
+          <div class="dz-card__meta">Community</div>
+          <p class="dz-kicker">DZ Academy · AI Training</p>
+          <h2 class="dz-section__title">Tham gia nhóm học chung</h2>
+          <div class="dz-divider"></div>
+          <div class="dz-grid dz-grid--two">
+            <div class="dz-card">
+              <p>Scan QR để vào nhóm Zalo, nhận tài liệu cập nhật và trao đổi thêm sau buổi học.</p>
+              <p><a href="https://zalo.me/g/49gnzzajlrsw9k12nfal" target="_blank" rel="noopener noreferrer">https://zalo.me/g/49gnzzajlrsw9k12nfal</a></p>
+            </div>
+            <div class="dz-slide-media-card">
+              <img src="./media/qr_group.png" alt="QR tham gia nhóm học chung Zalo">
+            </div>
+          </div>
+        </article>
+
+
+      <div class="dz-paged__controls">
+        <div class="dz-paged__meta">Page <span data-dz-page-index>1 / 50</span></div>
+        <div class="dz-actions">
+          <button class="dz-button dz-button--ghost" type="button" data-dz-prev>Previous</button>
+          <button class="dz-button dz-button--primary" type="button" data-dz-next>Next</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="dz-container dz-footer">
+      <div class="dz-footer__line">
+        <span class="dz-footer__brand" data-dz-footer-brand>dz-academy</span>
+        <span class="dz-footer__sep" aria-hidden="true">·</span>
+        <span data-dz-footer-owner>Vô Tận Đăng</span>
+        <span class="dz-footer__sep" aria-hidden="true">·</span>
+        <span data-dz-footer-site>dz-ai.vn</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./assets/flashcard.js"></script>
+  <script src="./assets/core.js"></script>
+  <script>
+    (function () {
+      const COPY_LABEL = "Copy";
+      const COPIED_LABEL = "Copied";
+      const ERROR_LABEL = "Copy failed";
+
+      function fallbackCopy(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+        textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+        const success = document.execCommand("copy");
+        textarea.remove();
+        return success;
+      }
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        return fallbackCopy(text);
+      }
+
+      function setButtonState(button, label, copied) {
+        button.textContent = label;
+        button.classList.toggle("is-copied", copied);
+      }
+
+      function installCopyButtons() {
+        document.querySelectorAll("pre.dz-pre").forEach((pre) => {
+          if (pre.dataset.copyReady === "true") {
+            return;
+          }
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "dz-pre-wrap";
+          pre.parentNode.insertBefore(wrapper, pre);
+          wrapper.appendChild(pre);
+
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "dz-copy-button";
+          button.textContent = COPY_LABEL;
+          button.setAttribute("aria-label", "Copy code block");
+          wrapper.appendChild(button);
+
+          pre.dataset.copyReady = "true";
+
+          button.addEventListener("click", async () => {
+            const text = pre.textContent || "";
+
+            try {
+              const ok = await copyText(text);
+              setButtonState(button, ok ? COPIED_LABEL : ERROR_LABEL, ok);
+            } catch (error) {
+              setButtonState(button, ERROR_LABEL, false);
+            }
+
+            window.setTimeout(() => {
+              setButtonState(button, COPY_LABEL, false);
+            }, 1600);
+          });
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", installCopyButtons, { once: true });
+      } else {
+        installCopyButtons();
+      }
+    })();
+  </script>
+</body>
+</html>

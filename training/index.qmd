@@ -1,0 +1,40 @@
+---
+title: "Training"
+description: "Khoá học, slide deck, và tài liệu đào tạo thực chiến của DZ AI Academy."
+---
+
+::: {.dz-section}
+::: {.dz-section__header}
+## Training Library {.dz-section__title}
+
+[Các khoá học được tổ chức theo từng thư mục độc lập để dễ mở rộng, bảo trì, và publish lên GitHub Pages sau này.]{.dz-section__intro}
+:::
+
+::: {.dz-grid .dz-grid--two}
+
+::: {.dz-card}
+[Khoá học]{.dz-card__meta}
+
+### AI Thực Chiến Cho Đội Tuyển Dụng
+
+Slide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đến skill, workflow, Cowork, Chrome, và bảo mật khi dùng Agent Skill.
+
+[Mở trang khoá học →](ai-thuc-chien-cho-doi-tuyen-dung/index.qmd)
+:::
+
+::: {.dz-card}
+[Kiến trúc]{.dz-card__meta}
+
+### Cách tổ chức để mở rộng
+
+Mỗi khoá nên có:
+
+- `training/<slug>/index.qmd` cho landing page
+- `training/<slug>/slides/` cho HTML deck và assets
+- `training/<slug>/materials/` nếu có handout, dataset, workbook
+
+Nhờ vậy, mỗi khoá có thể xuất bản độc lập nhưng vẫn nằm trong cùng hệ sinh thái `dz-academy`.
+:::
+
+:::
+:::

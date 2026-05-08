@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.37">
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e365b28d8a0182811adae2bd819f4b55.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e5d11d57a0c8991fba98e8a94a9b7bb0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-81d35ab2fd24d424774b648e243cf6be.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,13 +71,28 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
 
 
+<link rel="stylesheet" href="../assets/dz-tokens.css">
 <meta property="og:title" content="Roadmap học tập – DZ AI Academy">
-<meta property="og:description" content="Chia sẻ tri thức Data Analytics, Python và AI cho cộng đồng Việt Nam">
+<meta property="og:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
 <meta property="og:site_name" content="DZ AI Academy">
 <meta name="twitter:title" content="Roadmap học tập – DZ AI Academy">
-<meta name="twitter:description" content="Chia sẻ tri thức Data Analytics, Python và AI cho cộng đồng Việt Nam">
+<meta name="twitter:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -88,6 +103,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">DZ AI Academy</span>
     </a>
@@ -98,6 +117,10 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../posts/index.html"> 
 <span class="menu-text">Bài viết</span></a>
@@ -181,6 +204,101 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

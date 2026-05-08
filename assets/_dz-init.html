@@ -1,0 +1,95 @@
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+  });
+})();
+</script>

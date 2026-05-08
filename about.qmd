@@ -3,24 +3,45 @@ title: "Về tôi"
 toc: false
 ---
 
-## dz — Data Practitioner
+## Đèn nhỏ tỏ muôn hướng
 
-Tôi làm việc trong lĩnh vực Data Analytics và Python. Trang này là nơi tôi ghi lại những gì tôi học được, những vấn đề tôi đã giải quyết, và những tool tôi thực sự dùng hàng ngày.
+`dz-academy` là nơi tôi chia sẻ kiến thức nền tảng về Data Analytics, Python và AI bằng tiếng Việt. Mục tiêu không phải là chạy theo mọi công cụ mới, mà là giúp người học xây nền tảng đủ vững để hiểu đúng, làm được, và tiếp tục tự học lâu dài.
 
-Nội dung ở đây không phải từ sách giáo khoa — mà từ công việc thực tế.
+Tôi xây nội dung này từ trải nghiệm làm việc thực tế, nhưng trình bày theo cách có cấu trúc, dễ bắt đầu và có thể áp dụng ngay.
 
-## Tại sao tôi tạo trang này
+## Vì sao có `dz-academy`
 
-Khi học data analytics, tôi phải tự lắp ghép từ quá nhiều nguồn rời rạc. Không có roadmap rõ ràng, không có nội dung tiếng Việt đủ sâu, và không có môi trường thực hành dễ bắt đầu.
+Trong thời đại AI, thông tin có rất nhiều nhưng nền tảng lại thường bị bỏ qua. Nhiều người học phải tự ghép kiến thức từ các nguồn rời rạc, thiếu lộ trình rõ ràng, thiếu ví dụ sát công việc, và thiếu một nơi có thể bắt đầu mà không bị ngợp.
 
-DZ AI Academy là thứ tôi ước mình có khi bắt đầu.
+`dz-academy` được tạo ra để giải quyết đúng khoảng trống đó: học từ căn bản, đi từng bước, dùng ví dụ thực tế, và ưu tiên những gì thật sự giúp bạn làm việc tốt hơn.
 
-## Nội dung tôi chia sẻ
+## Bạn sẽ tìm thấy gì ở đây
 
-- **Data Analytics**: Pandas, SQL, visualization, EDA
-- **Developing**: Python thực tế, automation, APIs
-- **AI/LLM**: Concepts, RAG, AI agents
+- **Bài viết nền tảng**: giải thích concept rõ ràng, bớt jargon, bám vào vấn đề thực tế
+- **Tutorials có code**: notebook và hướng dẫn từng bước để bạn chạy thử ngay
+- **Roadmap học tập**: giúp biết nên học gì trước, gì sau, và vì sao
+- **Demos và công cụ**: học bằng tương tác, không chỉ đọc lý thuyết
+
+## Phù hợp với ai
+
+`dz-academy` dành cho người muốn xây nền tảng kỹ thuật vững hơn trong công việc:
+
+- sinh viên đang tìm điểm bắt đầu rõ ràng
+- người đi làm muốn học Data Analytics, Python hoặc AI theo hướng thực dụng
+- người chưa có nền tảng kỹ thuật nhưng muốn tăng giá trị bản thân trong thời đại AI
+- team hoặc doanh nghiệp cần nội dung đào tạo có cấu trúc và dùng được thật
+
+## Cách tôi xây nội dung
+
+Tôi ưu tiên một phương pháp đơn giản: học điều cốt lõi trước, hiểu bản chất, rồi mới mở rộng sang công cụ và ứng dụng. Mỗi bài nên trả lời được ít nhất một câu hỏi quan trọng:
+
+- điều này là gì
+- dùng khi nào
+- làm sao để áp dụng vào công việc
+
+Nếu một nội dung không giúp người học tiến thêm một bước rõ ràng, nó không thuộc về `dz-academy`.
 
 ## Liên hệ
 
 - GitHub: [github.com/dzai-vn](https://github.com/dzai-vn)
+- Website: `dz-ai.vn`

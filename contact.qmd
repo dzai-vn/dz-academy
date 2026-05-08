@@ -1,0 +1,25 @@
+---
+title: "Contact"
+toc: false
+---
+
+## Liên hệ
+
+Nếu bạn muốn:
+
+- nhận thông báo khi có tutorial hoặc notebook lesson mới
+- trao đổi về workshop, mentoring, hoặc đào tạo nội bộ
+- góp ý cho `dz-academy`, `dz-app`, hoặc `dz-news`
+
+hãy kết nối qua các kênh sau:
+
+- GitHub: [github.com/dzai-vn](https://github.com/dzai-vn)
+- Website: `dz-ai.vn`
+
+## Định hướng hợp tác
+
+`dz` ưu tiên các hợp tác tập trung vào:
+
+- nền tảng kỹ thuật rõ ràng
+- nội dung có tính ứng dụng thật
+- công cụ hoặc workflow giúp người Việt học và làm tốt hơn trong thời đại AI

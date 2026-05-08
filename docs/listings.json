@@ -2,7 +2,11 @@
   {
     "listing": "/posts/index.html",
     "items": [
-      "/posts/data-analytics/pandas-groupby-co-ban.html"
+      "/posts/ai/tu-ket-qua-chung-chung-den-dong-nghiep-ky-thuat-so.html"
     ]
+  },
+  {
+    "listing": "/tutorials/index.html",
+    "items": []
   }
 ]

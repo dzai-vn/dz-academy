@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Vì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.">
+
+<title>Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng – DZ AI Academy</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-81d35ab2fd24d424774b648e243cf6be.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
+
+
+<link rel="stylesheet" href="../../assets/dz-tokens.css">
+<meta property="og:title" content="Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng – DZ AI Academy">
+<meta property="og:description" content="Vì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.">
+<meta property="og:site_name" content="DZ AI Academy">
+<meta name="twitter:title" content="Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng – DZ AI Academy">
+<meta name="twitter:description" content="Vì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">DZ AI Academy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html"> 
+<span class="menu-text">Bài viết</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials/index.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../demos/index.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../roadmap/index.html"> 
+<span class="menu-text">Roadmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Về tôi</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dzai-vn"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#trước-khi-cánh-cửa-mở" id="toc-trước-khi-cánh-cửa-mở" class="nav-link active" data-scroll-target="#trước-khi-cánh-cửa-mở">Trước khi cánh cửa mở</a></li>
+  <li><a href="#khoảnh-khắc-lịch-sử" id="toc-khoảnh-khắc-lịch-sử" class="nav-link" data-scroll-target="#khoảnh-khắc-lịch-sử">Khoảnh khắc lịch sử</a></li>
+  <li><a href="#những-cú-vấp-ai-cũng-gặp" id="toc-những-cú-vấp-ai-cũng-gặp" class="nav-link" data-scroll-target="#những-cú-vấp-ai-cũng-gặp">Những cú vấp ai cũng gặp</a>
+  <ul class="collapse">
+  <li><a href="#trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều" id="toc-trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều" class="nav-link" data-scroll-target="#trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều">Trượt lần 1: “Kết quả quá chung chung, phải sửa lại rất nhiều”</a></li>
+  <li><a href="#vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú" id="toc-vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú" class="nav-link" data-scroll-target="#vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú">Vấp lần 2: “Chat một hồi, AI bắt đầu… lú”</a></li>
+  <li><a href="#té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác" id="toc-té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác" class="nav-link" data-scroll-target="#té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác">Té lần 3: “Hỏi cùng câu mà ở đây ra khác, ở kia ra khác?”</a></li>
+  <li><a href="#ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu" id="toc-ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu" class="nav-link" data-scroll-target="#ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu">Ngã lần 4: “Mỗi sáng mở chat mới, lại phải dạy lại từ đầu”</a></li>
+  </ul></li>
+  <li><a href="#bước-ngoặt-học-cách-ra-lệnh-đúng" id="toc-bước-ngoặt-học-cách-ra-lệnh-đúng" class="nav-link" data-scroll-target="#bước-ngoặt-học-cách-ra-lệnh-đúng">Bước ngoặt: học cách “ra lệnh” đúng</a></li>
+  <li><a href="#giải-quyết-gốc-rễ-skills-memory-và-mcp" id="toc-giải-quyết-gốc-rễ-skills-memory-và-mcp" class="nav-link" data-scroll-target="#giải-quyết-gốc-rễ-skills-memory-và-mcp">Giải quyết gốc rễ: Skills, Memory, và MCP</a>
+  <ul class="collapse">
+  <li><a href="#skills-bộ-nghề-đóng-gói-sẵn-cho-ai" id="toc-skills-bộ-nghề-đóng-gói-sẵn-cho-ai" class="nav-link" data-scroll-target="#skills-bộ-nghề-đóng-gói-sẵn-cho-ai">Skills — “Bộ nghề” đóng gói sẵn cho AI</a></li>
+  <li><a href="#memory-ai-bắt-đầu-nhớ-linh" id="toc-memory-ai-bắt-đầu-nhớ-linh" class="nav-link" data-scroll-target="#memory-ai-bắt-đầu-nhớ-linh">Memory — AI bắt đầu “nhớ” Linh</a></li>
+  <li><a href="#mcp-ai-bước-ra-khỏi-hộp-chat" id="toc-mcp-ai-bước-ra-khỏi-hộp-chat" class="nav-link" data-scroll-target="#mcp-ai-bước-ra-khỏi-hộp-chat">MCP — AI bước ra khỏi “hộp chat”</a></li>
+  </ul></li>
+  <li><a href="#ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số" id="toc-ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số" class="nav-link" data-scroll-target="#ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số">Ghép lại: từ chatbot đến đồng nghiệp kỹ thuật số</a></li>
+  <li><a href="#bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn" id="toc-bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn" class="nav-link" data-scroll-target="#bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn">Bước tiếp theo: xây “bộ nghề” AI cho chính bạn</a></li>
+  <li><a href="#prompt-đầu-tiên-copy-và-dùng-ngay" id="toc-prompt-đầu-tiên-copy-và-dùng-ngay" class="nav-link" data-scroll-target="#prompt-đầu-tiên-copy-và-dùng-ngay">🚀 Prompt đầu tiên — copy và dùng ngay</a></li>
+  <li><a href="#tài-liệu-tham-khảo-chính" id="toc-tài-liệu-tham-khảo-chính" class="nav-link" data-scroll-target="#tài-liệu-tham-khảo-chính">Tài liệu tham khảo chính</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">HR</div>
+    <div class="quarto-category">Tuyển dụng</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Vì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">6 tháng 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Linh, 27 tuổi, chuyên viên tuyển dụng tại một công ty vừa ở TP.HCM. Mỗi tuần, cô viết hàng chục bài đăng tuyển trên LinkedIn và Facebook, soạn JD cho các vị trí mới, gửi email tiếp cận ứng viên, sàng lọc CV, lên kịch bản phỏng vấn, rồi tổng hợp báo cáo cho sếp. Cô giỏi việc, nhưng mệt.</p>
+<p>Rồi một ngày, đồng nghiệp bảo: <em>“Thử dùng AI đi, nhanh lắm.”</em></p>
+<p>Linh mở ChatGPT, gõ thử: <em>“Viết bài đăng tuyển vị trí Marketing Executive cho Facebook.”</em> AI nhả ra một bài post trong 10 giây. Nhanh thật. Nhưng đọc lại, Linh cảm thấy thiếu thiếu, <em>nó chưa phải “mình.”</em></p>
+<p><em>AI viết được, nhưng mình phải dạy nó viết đúng ý thì mới có giá trị. Vậy dạy thế nào?</em></p>
+<p>Đây là câu chuyện của Linh. Và rất có thể, cũng là câu chuyện của bạn.</p>
+<section id="trước-khi-cánh-cửa-mở" class="level2">
+<h2 class="anchored" data-anchor-id="trước-khi-cánh-cửa-mở">Trước khi cánh cửa mở</h2>
+<p>Linh không biết rằng chỉ vài năm trước, AI từng là thứ chỉ kỹ sư mới chạm vào. Muốn dùng nó? Bạn phải viết code, hiểu cấu trúc dữ liệu, giao tiếp kỹ thuật với máy tính. Người bình thường? Không có cửa.</p>
+<p>Thực ra, Linh vẫn chạm vào AI mỗi ngày mà không biết, khi Netflix gợi ý phim, khi Gmail lọc email rác, khi Google Maps dự đoán kẹt xe. Nhưng tất cả đều chạy ngầm phía sau. Không ai <em>nói chuyện</em> trực tiếp với AI được.</p>
+<p>Cho đến một ngày cuối tháng 11 năm 2022.</p>
+</section>
+<section id="khoảnh-khắc-lịch-sử" class="level2">
+<h2 class="anchored" data-anchor-id="khoảnh-khắc-lịch-sử">Khoảnh khắc lịch sử</h2>
+<p><strong>30 tháng 11 năm 2022.</strong> OpenAI ra mắt ChatGPT. Lần đầu tiên, bất kỳ ai, kể cả Linh, cũng có thể <em>nói chuyện</em> với AI bằng ngôn ngữ bình thường. Không cần code. Chỉ cần gõ câu hỏi, như nhắn tin cho bạn bè.</p>
+<p>Một triệu người dùng chỉ sau 5 ngày. Đến đầu 2026, con số đã lên tới <strong>900 triệu người dùng mỗi tuần.</strong></p>
+<p>Điều thần kỳ đằng sau? Một thứ gọi là <strong>LLM — Large Language Model</strong> (Mô hình ngôn ngữ lớn). Hãy hình dung: một đứa trẻ lớn lên trong thư viện khổng lồ nhất thế giới, đọc hàng tỷ trang sách, báo, tài liệu. Sau khi “đọc” xong, nó có thể trả lời gần như mọi câu hỏi mà không cần tra cứu lại. LLM chính là <strong>“khả năng ngôn ngữ”</strong> của AI, giống như “tài ăn nói” là một phần trong trí tuệ con người.</p>
+<p>Và Linh, cùng hàng trăm triệu người khác, bắt đầu bước vào thế giới mới đó.</p>
+</section>
+<section id="những-cú-vấp-ai-cũng-gặp" class="level2">
+<h2 class="anchored" data-anchor-id="những-cú-vấp-ai-cũng-gặp">Những cú vấp ai cũng gặp</h2>
+<p>Linh dùng AI mỗi ngày. Viết bài social media, soạn JD, gửi email. Hào hứng lắm. Nhưng rồi cô gặp đúng những vấn đề mà phần lớn đồng nghiệp cũng gặp.</p>
+<section id="trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều" class="level3">
+<h3 class="anchored" data-anchor-id="trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều">Trượt lần 1: “Kết quả quá chung chung, phải sửa lại rất nhiều”</h3>
+<p>Đây là nỗi đau lớn nhất. Linh nhờ AI viết bài đăng tuyển, nhưng kết quả đọc lên nghe như mọi công ty khác trên thị trường. Không có cá nhân hóa, không có tone riêng, không phản ánh văn hóa “của mình.” Kết quả? Linh mất thêm 20 phút sửa lại, thỉnh thoảng nghĩ thầm <em>“tự viết còn nhanh hơn.”</em></p>
+<p>Tại sao? Vì AI hoạt động theo nguyên tắc <strong>dự đoán</strong>. Nó sinh ra câu trả lời phù hợp nhất với ngữ cảnh bạn cung cấp. Nếu bạn chỉ nói “viết bài đăng tuyển”, AI sẽ cho ra bản “trung bình” nhất: trung bình về tone, trung bình về format, trung bình về mọi thứ. Vì nó không biết bạn muốn gì cụ thể.</p>
+</section>
+<section id="vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú" class="level3">
+<h3 class="anchored" data-anchor-id="vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú">Vấp lần 2: “Chat một hồi, AI bắt đầu… lú”</h3>
+<p>Linh paste một tài liệu nội bộ dài 30 trang vào chat, yêu cầu AI phân tích từng phần. Ban đầu rất mạch lạc. Nhưng đến tin nhắn thứ 20, AI bắt đầu quên những gì đã nói, lặp ý cũ, thậm chí mâu thuẫn với chính mình.</p>
+<p>Thủ phạm: <strong>Context Window — cửa sổ ngữ cảnh.</strong> Hãy tưởng tượng bạn đang làm việc trên một cái bàn. Context window là diện tích mặt bàn: bạn chỉ trải được bao nhiêu tài liệu trên đó. Khi bàn đầy, bạn phải dọn bớt giấy cũ để nhường chỗ cho giấy mới. Tài liệu bị dọn = AI “quên.”</p>
+<p>Còn tệ hơn: các nhà nghiên cứu phát hiện hiện tượng <strong>“Lost in the Middle”</strong>. AI xử lý tốt thông tin ở đầu và cuối cuộc hội thoại, nhưng thông tin nằm ở giữa hay bị “bỏ sót.” Giống như đọc một cuốn sách dày: bạn nhớ rõ chương đầu và chương cuối, nhưng mấy chương giữa thì mờ mờ.</p>
+</section>
+<section id="té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác" class="level3">
+<h3 class="anchored" data-anchor-id="té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác">Té lần 3: “Hỏi cùng câu mà ở đây ra khác, ở kia ra khác?”</h3>
+<p>Linh hỏi trên <code>claude.ai</code>: <em>“Viết email từ chối ứng viên lịch sự.”</em> Được bản rất chuyên nghiệp. Rồi hỏi y hệt trên một app khác cũng dùng chung model với <code>claude.ai</code>, câu trả lời khác hẳn, ngắn hơn, tone khác.</p>
+<p>Bí mật? <strong>System Prompt</strong> — một “bộ luật bí mật” mà nhà cung cấp cài sẵn trước khi chatbot nhận câu hỏi. Claude.ai có system prompt dài tới 16.739 từ, định hình hoàn toàn cách AI phản ứng. App khác viết luật khác.</p>
+<p>Giống như cùng một bác sĩ: khi làm ở bệnh viện công thì theo quy trình công, sang phòng khám tư thì theo quy trình tư. Cùng một con người, nhưng hành vi thay đổi theo “quy tắc” từng nơi.</p>
+</section>
+<section id="ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu" class="level3">
+<h3 class="anchored" data-anchor-id="ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu">Ngã lần 4: “Mỗi sáng mở chat mới, lại phải dạy lại từ đầu”</h3>
+<p>Hôm qua Linh đã giải thích: <em>“Công ty tôi tone trẻ trung, hướng đến ứng viên Gen Z, bài post luôn có emoji, kết thúc bằng CTA rõ ràng.”</em> Hôm nay mở session mới, AI quên sạch. Phải dạy lại. Mỗi. Lần.</p>
+<p>Cảm giác như có một trợ lý rất giỏi nhưng mỗi sáng đều bị mất trí nhớ. Lý do: mỗi cuộc chat mới là một <strong>session</strong> mới, AI không giữ lại gì từ lần trước.</p>
+<blockquote class="blockquote">
+<p><em>Dừng lại một giây. Hãy nghĩ xem: tuần vừa rồi, bạn đã dành bao nhiêu giờ viết bài đăng tuyển, soạn email, chỉnh sửa kết quả AI cho “ra hồn”? 5 giờ? 10 giờ? Nếu AI cho kết quả đúng ý ngay từ lần đầu, bạn sẽ dùng những giờ ấy để làm gì?</em></p>
+</blockquote>
+</section>
+</section>
+<section id="bước-ngoặt-học-cách-ra-lệnh-đúng" class="level2">
+<h2 class="anchored" data-anchor-id="bước-ngoặt-học-cách-ra-lệnh-đúng">Bước ngoặt: học cách “ra lệnh” đúng</h2>
+<p>Linh không bỏ cuộc. Cô đọc thêm, thử thêm, và nhận ra điều then chốt: <strong>cách bạn hỏi quyết định 90% chất lượng câu trả lời.</strong> Kết quả “chung chung” không phải lỗi của AI, mà vì câu hỏi quá chung chung.</p>
+<p>So sánh:</p>
+<p>❌ <em>“Viết bài đăng tuyển vị trí Marketing Executive cho Facebook”</em></p>
+<p>✅ <em>“Bạn là chuyên viên tuyển dụng tại công ty tech startup Việt Nam, 200 nhân viên, văn hóa trẻ trung và năng động. Viết bài đăng tuyển Facebook cho vị trí Marketing Executive, cấp mid-level. Tone: vui, gần gũi Gen Z, có emoji. Cấu trúc: hook gây tò mò (1 câu), mô tả ngắn công ty (2 câu), 5 bullet trách nhiệm chính, yêu cầu ứng viên, quyền lợi hấp dẫn, CTA rõ ràng. Tổng dài dưới 200 từ.”</em></p>
+<p>Bài post từ prompt thứ hai có personality, đúng tone công ty, gần như dùng được ngay, trong khi prompt thứ nhất cho ra nội dung generic mà bất kỳ ai cũng viết được.</p>
+<p>Đây chính là <strong>Prompt Engineering</strong>. Không phải khoa học kỹ thuật, chỉ là mấy nguyên tắc đơn giản:</p>
+<ul>
+<li><strong>Gán vai trò</strong>: “Bạn là chuyên viên tuyển dụng…”</li>
+<li><strong>Cho context cụ thể</strong>: ngành, quy mô, văn hóa công ty, đối tượng ứng viên</li>
+<li><strong>Chỉ rõ format</strong>: cấu trúc bài, độ dài, tone giọng</li>
+<li><strong>Cho ví dụ mẫu</strong>: đưa 1-2 bài post cũ mà team thấy hiệu quả để AI học theo</li>
+</ul>
+<p>Theo chuyên gia Aakash Gupta (cựu PM tại OpenAI): <em>“Một prompt tốt có thể nhân x100 giá trị thu được từ AI.”</em></p>
+<p>Linh bắt đầu viết prompt tốt hơn. Kết quả cải thiện rõ rệt: bài social media ra đúng tone, JD chi tiết đúng format, email có tính cá nhân hóa. Nhưng cô vẫn phải gõ lại prompt mỗi sáng.</p>
+</section>
+<section id="giải-quyết-gốc-rễ-skills-memory-và-mcp" class="level2">
+<h2 class="anchored" data-anchor-id="giải-quyết-gốc-rễ-skills-memory-và-mcp">Giải quyết gốc rễ: Skills, Memory, và MCP</h2>
+<p>Nhớ bốn cú trượt, vấp, té, ngã của Linh không? Đây là lúc mọi thứ thực sự thay đổi.</p>
+<section id="skills-bộ-nghề-đóng-gói-sẵn-cho-ai" class="level3">
+<h3 class="anchored" data-anchor-id="skills-bộ-nghề-đóng-gói-sẵn-cho-ai">Skills — “Bộ nghề” đóng gói sẵn cho AI</h3>
+<p>Thay vì mỗi sáng gõ lại: <em>“Bạn là TA chuyên viết content tuyển dụng, tone Gen Z, có emoji, dưới 200 từ, CTA rõ…”</em> Linh đóng gói tất cả vào một <strong>Skill</strong> tên <code>recruitment-post</code>. Lần sau, chỉ cần gọi skill đó, AI lập tức “biết nghề”, biết tone, biết format, biết cả audience.</p>
+<p>Skill là gì? Đơn giản là một thư mục chứa file hướng dẫn (<code>SKILL.md</code>) gồm tên, mô tả, và chỉ dẫn chi tiết.</p>
+<blockquote class="blockquote">
+<p><em>Ví dụ dễ nhớ: Tools là búa, cưa, đinh. Skills là bản vẽ kỹ thuật hướng dẫn cách đóng một tủ sách. AI có đầy đủ công cụ, nhưng không có skill thì không biết phải dùng cái nào, theo thứ tự nào.</em></p>
+</blockquote>
+<p>Linh bắt đầu xây bộ skill cho riêng mình, đúng theo những tác vụ cô và team làm mỗi ngày:</p>
+<ul>
+<li><code>recruitment-post</code> — viết bài đăng tuyển Facebook/LinkedIn đúng tone Employer Branding công ty</li>
+<li><code>jd-writer</code> — soạn JD theo format và tone chuẩn, tự điều chỉnh theo cấp bậc vị trí</li>
+<li><code>outreach-email</code> — soạn email/tin nhắn tiếp cận ứng viên, cá nhân hóa theo tên và background</li>
+<li><code>cv-screener</code> — sàng lọc CV theo 5 tiêu chí: kinh nghiệm ngành, kỹ năng chuyên môn, học vấn, kỹ năng mềm, và mức phù hợp văn hóa công ty</li>
+<li><code>interview-questions</code> — tạo bộ câu hỏi phỏng vấn theo vị trí, cấp bậc, và năng lực cần đánh giá</li>
+</ul>
+<p>Skills được phát triển tại Anthropic, chính thức thành chuẩn mở vào tháng 12/2025, hiện có hơn 26 nền tảng áp dụng, từ Claude, OpenAI Codex, Gemini CLI đến GitHub Copilot, VS Code.</p>
+</section>
+<section id="memory-ai-bắt-đầu-nhớ-linh" class="level3">
+<h3 class="anchored" data-anchor-id="memory-ai-bắt-đầu-nhớ-linh">Memory — AI bắt đầu “nhớ” Linh</h3>
+<blockquote class="blockquote">
+<p><em>Nếu Skills giải quyết “phải nhắc lại cách làm việc mỗi session”, thì Memory giải quyết “phải nhắc lại thông tin về bạn.”</em></p>
+</blockquote>
+<p>Linh nói: <em>“Nhớ là tôi tuyển dụng cho công ty tech 200 nhân viên ở TP.HCM, chủ yếu tuyển IT và marketing, sếp thích báo cáo ngắn gọn dưới 1 trang, tone EB là trẻ trung và năng động.”</em> Từ đó, mỗi session mới, AI đã biết Linh là ai, làm gì, cần gì.</p>
+<p>ChatGPT đã triển khai Memory từ tháng 4/2025. Claude cũng đang phát triển tính năng tương tự. Bạn có thể tắt Memory trong Settings nếu lo ngại bảo mật.</p>
+</section>
+<section id="mcp-ai-bước-ra-khỏi-hộp-chat" class="level3">
+<h3 class="anchored" data-anchor-id="mcp-ai-bước-ra-khỏi-hộp-chat">MCP — AI bước ra khỏi “hộp chat”</h3>
+<p>Linh đã có skill, có memory. Nhưng vẫn còn rào cản: <strong>AI bị “nhốt” trong hộp chat.</strong> Muốn phân tích file CV? Phải tải lên. Cập nhật tracking sheet? Copy-paste thủ công. Gửi email? Chuyển sang Outlook.</p>
+<p>Cho đến khi <strong>MCP (Model Context Protocol)</strong> xuất hiện. Hãy nghĩ nó như <strong>cổng USB-C dành cho AI.</strong> Giống USB-C cho phép laptop kết nối với màn hình, ổ cứng, máy chiếu bằng một cổng chuẩn, MCP cho phép AI kết nối với Google Drive, Gmail, Slack, Notion qua một giao thức thống nhất.</p>
+<p>Hình dung ngày làm việc mới của Linh khi đã có MCP:</p>
+<ol type="1">
+<li>Linh nói: <em>“Kiểm tra folder CV mới trong Google Drive”</em></li>
+<li>AI <strong>trực tiếp đọc</strong> 15 CV mới, không cần tải về</li>
+<li>AI sàng lọc theo skill <code>cv-screener</code>, xếp hạng và highlight top 5</li>
+<li>AI <strong>tự ghi kết quả</strong> vào Google Sheets tracking</li>
+<li>AI <strong>soạn email mời phỏng vấn</strong> cho top 5 theo skill <code>outreach-email</code></li>
+<li>Linh review, bấm gửi</li>
+</ol>
+<p>Trước đây: 15 phút đọc mỗi CV × 15 CV = gần 4 giờ. Giờ: AI sàng lọc sơ bộ trong 5 phút, Linh review top 5 trong 15 phút. <strong>Từ gần 4 giờ xuống còn 20 phút.</strong></p>
+<p><em>(Lưu ý: kết nối MCP cần team IT hỗ trợ thiết lập ban đầu, nhưng một khi đã xong, workflow này chạy tự động mỗi ngày.)</em></p>
+<p>Lần đầu tiên Linh gọi skill <code>cv-screener</code> và thấy AI sàng lọc 15 CV trong 2 phút, cô ngồi lặng một lúc. Không phải vì sốc, mà vì nhận ra mình vừa lấy lại được cả buổi chiều.</p>
+<p>MCP được Anthropic mã nguồn mở tháng 11/2024. OpenAI áp dụng tháng 3/2025. Cuối 2025, The Linux Foundation tiếp quản như dự án cộng đồng mở.</p>
+</section>
+</section>
+<section id="ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số" class="level2">
+<h2 class="anchored" data-anchor-id="ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số">Ghép lại: từ chatbot đến đồng nghiệp kỹ thuật số</h2>
+<p>Linh đã đi một hành trình dài: từ gõ thử ChatGPT lần đầu, đến viết prompt tốt, xây skill, dạy AI nhớ, rồi kết nối AI với công cụ làm việc. Tất cả hợp lại thành một khái niệm: <strong>AI Agent.</strong></p>
+<blockquote class="blockquote">
+<p><strong>AI Agent = Bộ não (LLM) + Cơ thể (Interface) đã được dạy nghề (Skills), có khả năng nhớ (Memory), và cầm được công cụ (Tools) để hành động trong thế giới thực.</strong></p>
+</blockquote>
+<p>Hãy nghĩ về nhân viên mới vào công ty. Ngày đầu, anh ta chỉ có kiến thức, chưa biết quy trình, chưa nhớ ai, chưa biết dùng công cụ gì. Sau vài tháng: có sổ tay quy trình (Skills), nhớ đồng nghiệp và dự án (Memory), biết dùng hệ thống nội bộ (Tools via MCP). AI Agent đang tiến hóa theo đúng con đường đó.</p>
+<p>Linh từng lo: <em>AI có thay thế mình không?</em> Nhưng sau vài tháng, cô hiểu: AI không thay thế người tuyển dụng, nó thay thế những <strong>việc nhàm chán</strong> mà người tuyển dụng phải làm. Linh vẫn là người quyết định ai phù hợp văn hóa công ty, ai nên được phỏng vấn, content EB nào thể hiện đúng “chất” của tổ chức. AI chỉ giúp cô có thêm thời gian để làm những việc đó tốt hơn.</p>
+<p>Nếu bạn là quản lý phòng HR: một chuyên viên tuyển dụng trang bị bộ AI skill có thể xử lý khối lượng gấp 3 lần, với cùng chất lượng. <code>$20/tháng</code> cho Claude Pro, đổi lại hàng chục giờ lao động. Đó không phải chi phí, đó là đầu tư.</p>
+<p>Nếu bạn muốn nhớ nhanh 7 khái niệm cốt lõi:</p>
+<ul>
+<li><strong>AI Model</strong> — bộ não, mạng thần kinh đã được huấn luyện (GPT-4o, Claude Sonnet 4, Gemini 2.5 Pro)</li>
+<li><strong>LLM</strong> — khả năng ngôn ngữ của bộ não, biết nói biết viết</li>
+<li><strong>Interface</strong> — cơ thể, nơi bạn tương tác (<code>Claude.ai</code>, ChatGPT app, Notion AI)</li>
+<li><strong>Skills</strong> — nghề nghiệp, kịch bản làm việc đóng gói sẵn (<code>recruitment-post</code>, <code>cv-screener</code>)</li>
+<li><strong>Tools</strong> — công cụ bên ngoài, thường qua MCP (đọc file, gửi email, search web)</li>
+<li><strong>Memory</strong> — bộ nhớ ngắn hạn (context window) và dài hạn (saved memories)</li>
+<li><strong>AI Agent</strong> — tất cả kết hợp lại: bộ não + cơ thể + nghề + nhớ + công cụ</li>
+</ul>
+</section>
+<section id="bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn" class="level2">
+<h2 class="anchored" data-anchor-id="bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn">Bước tiếp theo: xây “bộ nghề” AI cho chính bạn</h2>
+<p>Linh bắt đầu với ChatGPT, nhưng khi tìm hiểu sâu hơn về Skills và hệ sinh thái agent, cô chuyển sang Claude, nền tảng hỗ trợ Skills như một chuẩn mở ngay từ đầu.</p>
+<p><strong>Tuần 0 — Chuẩn bị:</strong><br>
+Trao đổi với sếp và team IT về chính sách sử dụng AI. CV chứa thông tin cá nhân nhạy cảm, hãy hỏi rõ: dùng plan nào (gói trả phí như Claude Pro hay ChatGPT Plus đảm bảo dữ liệu không bị dùng để huấn luyện AI), dữ liệu nào được phép đưa vào, có cần IT thiết lập kênh riêng không.<br>
+<em>→ Thành công khi: bạn có “giấy phép” rõ ràng để bắt đầu.</em></p>
+<p><strong>Tuần 1 — Làm quen:</strong><br>
+Đăng ký Claude tại <a href="https://claude.ai">claude.ai</a>. Thử viết prompt cho công việc thực tế: bài đăng tuyển, email, tóm tắt JD.<br>
+<em>→ Thành công khi: bạn đã dùng AI soạn được 1 bài post và 1 email cho công việc thật.</em></p>
+<p><strong>Tuần 2 — Viết prompt tốt:</strong><br>
+Áp dụng Prompt Engineering: gán vai trò chuyên viên tuyển dụng, cho context công ty, chỉ rõ tone và format. So sánh kết quả, bạn sẽ thấy sự khác biệt rõ ràng giữa prompt sơ sài và prompt có đầu tư.<br>
+<em>→ Thành công khi: kết quả AI gần như dùng được ngay, chỉ cần chỉnh nhẹ.</em></p>
+<p><strong>Tuần 3 — Xây skill đầu tiên:</strong><br>
+Chọn tác vụ lặp lại nhiều nhất. Soạn file <code>SKILL.md</code>. Ví dụ: skill <code>recruitment-post</code> với tone, format, và ví dụ mẫu chuẩn của team.<br>
+<em>→ Thành công khi: gọi skill và AI cho kết quả đúng mong muốn mà không cần giải thích thêm.</em></p>
+<p><strong>Tuần 4 — Mở rộng bộ skill:</strong><br>
+Thêm 2-3 skill: <code>jd-writer</code>, <code>outreach-email</code>, <code>cv-screener</code>. Lúc này bạn đã có “bộ nghề” tuyển dụng cho AI.<br>
+<em>→ Thành công khi: mở session mới, gọi skill, bắt đầu làm việc ngay.</em></p>
+</section>
+<section id="prompt-đầu-tiên-copy-và-dùng-ngay" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-đầu-tiên-copy-và-dùng-ngay">🚀 Prompt đầu tiên — copy và dùng ngay</h2>
+<p>Nếu bạn muốn bắt đầu ngay bây giờ, đây là một prompt viết bài đăng tuyển mà bạn có thể copy-paste vào Claude hoặc ChatGPT:</p>
+<blockquote class="blockquote">
+<p><em>Bạn là chuyên viên tuyển dụng tại công ty tech Việt Nam, 200 nhân viên, văn hóa startup trẻ trung. Viết bài đăng tuyển Facebook cho vị trí [TÊN VỊ TRÍ], cấp [CẤP BẬC]. Tone: vui, gần gũi Gen Z, có emoji phù hợp. Cấu trúc: 1 câu hook gây tò mò → giới thiệu ngắn công ty (2 câu) → 5 bullet trách nhiệm chính → yêu cầu ứng viên → quyền lợi hấp dẫn → CTA rõ ràng. Tổng dưới 200 từ.</em></p>
+</blockquote>
+<p>Thay <code>[TÊN VỊ TRÍ]</code> và <code>[CẤP BẬC]</code> bằng thông tin thực, và bạn sẽ thấy ngay sự khác biệt so với “viết bài đăng tuyển cho tôi.”</p>
+<p>Vài tháng sau khi bắt đầu xây bộ skill đầu tiên, Linh có 8 skill tuyển dụng, AI nhớ tone EB của công ty, và thời gian soạn content tuyển dụng mỗi tuần giảm hơn một nửa.</p>
+<p>Linh từng nghĩ AI cho kết quả chung chung. Giờ cô biết: <strong>không phải AI chung chung, mà là câu hỏi chung chung.</strong> Khi bạn dạy AI đúng nghề của bạn, nó trở thành đồng nghiệp hiểu bạn nhất phòng.</p>
+<p>Và prompt đầu tiên tốt nhất? Chính là prompt cho công việc bạn đang làm ngày mai.</p>
+<p><em>Bài viết được tổng hợp từ nghiên cứu tháng 5/2026.</em></p>
+</section>
+<section id="tài-liệu-tham-khảo-chính" class="level2">
+<h2 class="anchored" data-anchor-id="tài-liệu-tham-khảo-chính">Tài liệu tham khảo chính</h2>
+<ul>
+<li>GaussAlgo — <a href="https://www.gaussalgo.com/knowledge-base/a-brief-history-of-ai-and-the-rise-of-chatgpt">A Brief History of AI and the Rise of ChatGPT</a></li>
+<li>History.com — <a href="https://www.history.com/this-day-in-history/november-30/chatgpt-released-openai">ChatGPT is released to the public</a></li>
+<li>IBM — <a href="https://www.ibm.com/think/topics/context-window">What is a context window?</a></li>
+<li>agentskills.io — <a href="https://agentskills.io/home">Agent Skills Overview</a></li>
+<li>modelcontextprotocol.io — <a href="https://modelcontextprotocol.io/docs/getting-started/intro">MCP Introduction</a></li>
+<li>OpenAI — <a href="https://help.openai.com/en/articles/8590148-memory-faq">Memory FAQ</a></li>
+<li>Aakash Gupta — <a href="https://www.news.aakashg.com/p/prompt-engineering">Prompt Engineering in 2025</a></li>
+<li>Anthropic — <a href="https://www.anthropic.com/news/model-context-protocol">Introducing MCP</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dz-academy\.pages\.dev");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 DZ AI Academy · <a href="https://github.com/dzai-vn">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

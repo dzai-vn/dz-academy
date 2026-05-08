@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-05-02">
-<meta name="description" content="GroupBy là một trong những thao tác quan trọng nhất trong Pandas. Bài này giải thích cách hoạt động và các use cases thực tế.">
 
-<title>Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế – DZ AI Academy</title>
+<title>Contact – DZ AI Academy</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,61 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e365b28d8a0182811adae2bd819f4b55.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e5d11d57a0c8991fba98e8a94a9b7bb0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-81d35ab2fd24d424774b648e243cf6be.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,24 +71,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
 
 
-<meta property="og:title" content="Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế – DZ AI Academy">
-<meta property="og:description" content="GroupBy là một trong những thao tác quan trọng nhất trong Pandas. Bài này giải thích cách hoạt động và các use cases thực tế.">
+<link rel="stylesheet" href="assets/dz-tokens.css">
+<meta property="og:title" content="Contact – DZ AI Academy">
+<meta property="og:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
 <meta property="og:site_name" content="DZ AI Academy">
-<meta name="twitter:title" content="Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế – DZ AI Academy">
-<meta name="twitter:description" content="GroupBy là một trong những thao tác quan trọng nhất trong Pandas. Bài này giải thích cách hoạt động và các use cases thực tế.">
+<meta name="twitter:title" content="Contact – DZ AI Academy">
+<meta name="twitter:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="./assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">DZ AI Academy</span>
     </a>
   </div>
@@ -136,25 +118,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../posts/index.html"> 
+    <a class="nav-link" href="./training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts/index.html"> 
 <span class="menu-text">Bài viết</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials/index.html"> 
+    <a class="nav-link" href="./tutorials/index.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../demos/index.html"> 
+    <a class="nav-link" href="./demos/index.html"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../roadmap/index.html"> 
+    <a class="nav-link" href="./roadmap/index.html"> 
 <span class="menu-text">Roadmap</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">Về tôi</span></a>
   </li>  
   <li class="nav-item compact">
@@ -173,46 +159,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#groupby-là-gì" id="toc-groupby-là-gì" class="nav-link active" data-scroll-target="#groupby-là-gì">GroupBy là gì?</a></li>
-  <li><a href="#các-aggregation-phổ-biến" id="toc-các-aggregation-phổ-biến" class="nav-link" data-scroll-target="#các-aggregation-phổ-biến">Các aggregation phổ biến</a></li>
-  <li><a href="#groupby-với-nhiều-columns" id="toc-groupby-với-nhiều-columns" class="nav-link" data-scroll-target="#groupby-với-nhiều-columns">GroupBy với nhiều columns</a></li>
-  <li><a href="#transform-vs-aggregate" id="toc-transform-vs-aggregate" class="nav-link" data-scroll-target="#transform-vs-aggregate">Transform vs Aggregate</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">data-analytics</div>
-    <div class="quarto-category">pandas</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    GroupBy là một trong những thao tác quan trọng nhất trong Pandas. Bài này giải thích cách hoạt động và các use cases thực tế.
-  </div>
+<h1 class="title">Contact</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 2, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -222,54 +182,128 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="groupby-là-gì" class="level2">
-<h2 class="anchored" data-anchor-id="groupby-là-gì">GroupBy là gì?</h2>
-<p><code>groupby()</code> trong Pandas cho phép bạn chia dữ liệu thành các nhóm, áp dụng một hàm, rồi kết hợp kết quả lại.</p>
-<p>Pattern cơ bản: <strong>Split → Apply → Combine</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'region'</span>: [<span class="st">'North'</span>, <span class="st">'South'</span>, <span class="st">'North'</span>, <span class="st">'South'</span>, <span class="st">'North'</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'sales'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">120</span>, <span class="dv">180</span>],</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'month'</span>: [<span class="st">'Jan'</span>, <span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Tổng sales theo region</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'region'</span>)[<span class="st">'sales'</span>].<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="các-aggregation-phổ-biến" class="level2">
-<h2 class="anchored" data-anchor-id="các-aggregation-phổ-biến">Các aggregation phổ biến</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nhiều aggregation cùng lúc</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'region'</span>)[<span class="st">'sales'</span>].agg([<span class="st">'sum'</span>, <span class="st">'mean'</span>, <span class="st">'count'</span>])</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Đặt tên cho output columns</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'region'</span>).agg(</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    total_sales<span class="op">=</span>(<span class="st">'sales'</span>, <span class="st">'sum'</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    avg_sales<span class="op">=</span>(<span class="st">'sales'</span>, <span class="st">'mean'</span>),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    num_transactions<span class="op">=</span>(<span class="st">'sales'</span>, <span class="st">'count'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="groupby-với-nhiều-columns" class="level2">
-<h2 class="anchored" data-anchor-id="groupby-với-nhiều-columns">GroupBy với nhiều columns</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group theo nhiều điều kiện</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.groupby([<span class="st">'region'</span>, <span class="st">'month'</span>])[<span class="st">'sales'</span>].<span class="bu">sum</span>().reset_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="transform-vs-aggregate" class="level2">
-<h2 class="anchored" data-anchor-id="transform-vs-aggregate">Transform vs Aggregate</h2>
+<section id="liên-hệ" class="level2">
+<h2 class="anchored" data-anchor-id="liên-hệ">Liên hệ</h2>
+<p>Nếu bạn muốn:</p>
 <ul>
-<li><code>agg()</code> → thu nhỏ DataFrame (mỗi group → 1 row)</li>
-<li><code>transform()</code> → giữ nguyên shape, broadcast kết quả về từng row</li>
+<li>nhận thông báo khi có tutorial hoặc notebook lesson mới</li>
+<li>trao đổi về workshop, mentoring, hoặc đào tạo nội bộ</li>
+<li>góp ý cho <code>dz-academy</code>, <code>dz-app</code>, hoặc <code>dz-news</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Thêm cột "% so với tổng của region"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'region_total'</span>] <span class="op">=</span> df.groupby(<span class="st">'region'</span>)[<span class="st">'sales'</span>].transform(<span class="st">'sum'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'pct_of_region'</span>] <span class="op">=</span> df[<span class="st">'sales'</span>] <span class="op">/</span> df[<span class="st">'region_total'</span>] <span class="op">*</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-<p><em>Bài tiếp theo: <a href="#">Merge &amp; Join trong Pandas</a></em></p>
+<p>hãy kết nối qua các kênh sau:</p>
+<ul>
+<li>GitHub: <a href="https://github.com/dzai-vn">github.com/dzai-vn</a></li>
+<li>Website: <code>dz-ai.vn</code></li>
+</ul>
+</section>
+<section id="định-hướng-hợp-tác" class="level2">
+<h2 class="anchored" data-anchor-id="định-hướng-hợp-tác">Định hướng hợp tác</h2>
+<p><code>dz</code> ưu tiên các hợp tác tập trung vào:</p>
+<ul>
+<li>nền tảng kỹ thuật rõ ràng</li>
+<li>nội dung có tính ứng dụng thật</li>
+<li>công cụ hoặc workflow giúp người Việt học và làm tốt hơn trong thời đại AI</li>
+</ul>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+    });
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -693,5 +727,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

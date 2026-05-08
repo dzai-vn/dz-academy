@@ -8,189 +8,201 @@
 <title>DZ AI Academy</title>
 <link>https://dz-academy.pages.dev/posts/</link>
 <atom:link href="https://dz-academy.pages.dev/posts/index.xml" rel="self" type="application/rss+xml"/>
-<description>Chia sẻ tri thức Data Analytics, Python và AI cho cộng đồng Việt Nam</description>
+<description>Chia sẻ tri thức cho cộng đồng Việt Nam</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Sat, 02 May 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 05 May 2026 17:00:00 GMT</lastBuildDate>
 <item>
-  <title>Pandas GroupBy: Hướng dẫn từ cơ bản đến thực tế</title>
-  <link>https://dz-academy.pages.dev/posts/data-analytics/pandas-groupby-co-ban.html</link>
+  <title>Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng</title>
+  <link>https://dz-academy.pages.dev/posts/ai/tu-ket-qua-chung-chung-den-dong-nghiep-ky-thuat-so.html</link>
   <description><![CDATA[ 
 
 
 
 
-<section id="groupby-là-gì" class="level2">
-<h2 class="anchored" data-anchor-id="groupby-là-gì">GroupBy là gì?</h2>
-<p><code>groupby()</code> trong Pandas cho phép bạn chia dữ liệu thành các nhóm, áp dụng một hàm, rồi kết hợp kết quả lại.</p>
-<p>Pattern cơ bản: <strong>Split → Apply → Combine</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb1-2"></span>
-<span id="cb1-3">df <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.DataFrame({</span>
-<span id="cb1-4">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region'</span>: [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'North'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'South'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'North'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'South'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'North'</span>],</span>
-<span id="cb1-5">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>: [<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">200</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">150</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">120</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">180</span>],</span>
-<span id="cb1-6">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'month'</span>: [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Jan'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Jan'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Feb'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Feb'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Mar'</span>]</span>
-<span id="cb1-7">})</span>
-<span id="cb1-8"></span>
-<span id="cb1-9"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Tổng sales theo region</span></span>
-<span id="cb1-10">df.groupby(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region'</span>)[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>].<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">sum</span>()</span></code></pre></div></div>
+<p>Linh, 27 tuổi, chuyên viên tuyển dụng tại một công ty vừa ở TP.HCM. Mỗi tuần, cô viết hàng chục bài đăng tuyển trên LinkedIn và Facebook, soạn JD cho các vị trí mới, gửi email tiếp cận ứng viên, sàng lọc CV, lên kịch bản phỏng vấn, rồi tổng hợp báo cáo cho sếp. Cô giỏi việc, nhưng mệt.</p>
+<p>Rồi một ngày, đồng nghiệp bảo: <em>“Thử dùng AI đi, nhanh lắm.”</em></p>
+<p>Linh mở ChatGPT, gõ thử: <em>“Viết bài đăng tuyển vị trí Marketing Executive cho Facebook.”</em> AI nhả ra một bài post trong 10 giây. Nhanh thật. Nhưng đọc lại, Linh cảm thấy thiếu thiếu, <em>nó chưa phải “mình.”</em></p>
+<p><em>AI viết được, nhưng mình phải dạy nó viết đúng ý thì mới có giá trị. Vậy dạy thế nào?</em></p>
+<p>Đây là câu chuyện của Linh. Và rất có thể, cũng là câu chuyện của bạn.</p>
+<section id="trước-khi-cánh-cửa-mở" class="level2">
+<h2 class="anchored" data-anchor-id="trước-khi-cánh-cửa-mở">Trước khi cánh cửa mở</h2>
+<p>Linh không biết rằng chỉ vài năm trước, AI từng là thứ chỉ kỹ sư mới chạm vào. Muốn dùng nó? Bạn phải viết code, hiểu cấu trúc dữ liệu, giao tiếp kỹ thuật với máy tính. Người bình thường? Không có cửa.</p>
+<p>Thực ra, Linh vẫn chạm vào AI mỗi ngày mà không biết, khi Netflix gợi ý phim, khi Gmail lọc email rác, khi Google Maps dự đoán kẹt xe. Nhưng tất cả đều chạy ngầm phía sau. Không ai <em>nói chuyện</em> trực tiếp với AI được.</p>
+<p>Cho đến một ngày cuối tháng 11 năm 2022.</p>
 </section>
-<section id="các-aggregation-phổ-biến" class="level2">
-<h2 class="anchored" data-anchor-id="các-aggregation-phổ-biến">Các aggregation phổ biến</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Nhiều aggregation cùng lúc</span></span>
-<span id="cb2-2">df.groupby(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region'</span>)[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>].agg([<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sum'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'mean'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'count'</span>])</span>
-<span id="cb2-3"></span>
-<span id="cb2-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Đặt tên cho output columns</span></span>
-<span id="cb2-5">df.groupby(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region'</span>).agg(</span>
-<span id="cb2-6">    total_sales<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sum'</span>),</span>
-<span id="cb2-7">    avg_sales<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'mean'</span>),</span>
-<span id="cb2-8">    num_transactions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'count'</span>)</span>
-<span id="cb2-9">)</span></code></pre></div></div>
+<section id="khoảnh-khắc-lịch-sử" class="level2">
+<h2 class="anchored" data-anchor-id="khoảnh-khắc-lịch-sử">Khoảnh khắc lịch sử</h2>
+<p><strong>30 tháng 11 năm 2022.</strong> OpenAI ra mắt ChatGPT. Lần đầu tiên, bất kỳ ai, kể cả Linh, cũng có thể <em>nói chuyện</em> với AI bằng ngôn ngữ bình thường. Không cần code. Chỉ cần gõ câu hỏi, như nhắn tin cho bạn bè.</p>
+<p>Một triệu người dùng chỉ sau 5 ngày. Đến đầu 2026, con số đã lên tới <strong>900 triệu người dùng mỗi tuần.</strong></p>
+<p>Điều thần kỳ đằng sau? Một thứ gọi là <strong>LLM — Large Language Model</strong> (Mô hình ngôn ngữ lớn). Hãy hình dung: một đứa trẻ lớn lên trong thư viện khổng lồ nhất thế giới, đọc hàng tỷ trang sách, báo, tài liệu. Sau khi “đọc” xong, nó có thể trả lời gần như mọi câu hỏi mà không cần tra cứu lại. LLM chính là <strong>“khả năng ngôn ngữ”</strong> của AI, giống như “tài ăn nói” là một phần trong trí tuệ con người.</p>
+<p>Và Linh, cùng hàng trăm triệu người khác, bắt đầu bước vào thế giới mới đó.</p>
 </section>
-<section id="groupby-với-nhiều-columns" class="level2">
-<h2 class="anchored" data-anchor-id="groupby-với-nhiều-columns">GroupBy với nhiều columns</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Group theo nhiều điều kiện</span></span>
-<span id="cb3-2">df.groupby([<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'month'</span>])[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>].<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">sum</span>().reset_index()</span></code></pre></div></div>
+<section id="những-cú-vấp-ai-cũng-gặp" class="level2">
+<h2 class="anchored" data-anchor-id="những-cú-vấp-ai-cũng-gặp">Những cú vấp ai cũng gặp</h2>
+<p>Linh dùng AI mỗi ngày. Viết bài social media, soạn JD, gửi email. Hào hứng lắm. Nhưng rồi cô gặp đúng những vấn đề mà phần lớn đồng nghiệp cũng gặp.</p>
+<section id="trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều" class="level3">
+<h3 class="anchored" data-anchor-id="trượt-lần-1-kết-quả-quá-chung-chung-phải-sửa-lại-rất-nhiều">Trượt lần 1: “Kết quả quá chung chung, phải sửa lại rất nhiều”</h3>
+<p>Đây là nỗi đau lớn nhất. Linh nhờ AI viết bài đăng tuyển, nhưng kết quả đọc lên nghe như mọi công ty khác trên thị trường. Không có cá nhân hóa, không có tone riêng, không phản ánh văn hóa “của mình.” Kết quả? Linh mất thêm 20 phút sửa lại, thỉnh thoảng nghĩ thầm <em>“tự viết còn nhanh hơn.”</em></p>
+<p>Tại sao? Vì AI hoạt động theo nguyên tắc <strong>dự đoán</strong>. Nó sinh ra câu trả lời phù hợp nhất với ngữ cảnh bạn cung cấp. Nếu bạn chỉ nói “viết bài đăng tuyển”, AI sẽ cho ra bản “trung bình” nhất: trung bình về tone, trung bình về format, trung bình về mọi thứ. Vì nó không biết bạn muốn gì cụ thể.</p>
 </section>
-<section id="transform-vs-aggregate" class="level2">
-<h2 class="anchored" data-anchor-id="transform-vs-aggregate">Transform vs Aggregate</h2>
+<section id="vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú" class="level3">
+<h3 class="anchored" data-anchor-id="vấp-lần-2-chat-một-hồi-ai-bắt-đầu-lú">Vấp lần 2: “Chat một hồi, AI bắt đầu… lú”</h3>
+<p>Linh paste một tài liệu nội bộ dài 30 trang vào chat, yêu cầu AI phân tích từng phần. Ban đầu rất mạch lạc. Nhưng đến tin nhắn thứ 20, AI bắt đầu quên những gì đã nói, lặp ý cũ, thậm chí mâu thuẫn với chính mình.</p>
+<p>Thủ phạm: <strong>Context Window — cửa sổ ngữ cảnh.</strong> Hãy tưởng tượng bạn đang làm việc trên một cái bàn. Context window là diện tích mặt bàn: bạn chỉ trải được bao nhiêu tài liệu trên đó. Khi bàn đầy, bạn phải dọn bớt giấy cũ để nhường chỗ cho giấy mới. Tài liệu bị dọn = AI “quên.”</p>
+<p>Còn tệ hơn: các nhà nghiên cứu phát hiện hiện tượng <strong>“Lost in the Middle”</strong>. AI xử lý tốt thông tin ở đầu và cuối cuộc hội thoại, nhưng thông tin nằm ở giữa hay bị “bỏ sót.” Giống như đọc một cuốn sách dày: bạn nhớ rõ chương đầu và chương cuối, nhưng mấy chương giữa thì mờ mờ.</p>
+</section>
+<section id="té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác" class="level3">
+<h3 class="anchored" data-anchor-id="té-lần-3-hỏi-cùng-câu-mà-ở-đây-ra-khác-ở-kia-ra-khác">Té lần 3: “Hỏi cùng câu mà ở đây ra khác, ở kia ra khác?”</h3>
+<p>Linh hỏi trên <code>claude.ai</code>: <em>“Viết email từ chối ứng viên lịch sự.”</em> Được bản rất chuyên nghiệp. Rồi hỏi y hệt trên một app khác cũng dùng chung model với <code>claude.ai</code>, câu trả lời khác hẳn, ngắn hơn, tone khác.</p>
+<p>Bí mật? <strong>System Prompt</strong> — một “bộ luật bí mật” mà nhà cung cấp cài sẵn trước khi chatbot nhận câu hỏi. Claude.ai có system prompt dài tới 16.739 từ, định hình hoàn toàn cách AI phản ứng. App khác viết luật khác.</p>
+<p>Giống như cùng một bác sĩ: khi làm ở bệnh viện công thì theo quy trình công, sang phòng khám tư thì theo quy trình tư. Cùng một con người, nhưng hành vi thay đổi theo “quy tắc” từng nơi.</p>
+</section>
+<section id="ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu" class="level3">
+<h3 class="anchored" data-anchor-id="ngã-lần-4-mỗi-sáng-mở-chat-mới-lại-phải-dạy-lại-từ-đầu">Ngã lần 4: “Mỗi sáng mở chat mới, lại phải dạy lại từ đầu”</h3>
+<p>Hôm qua Linh đã giải thích: <em>“Công ty tôi tone trẻ trung, hướng đến ứng viên Gen Z, bài post luôn có emoji, kết thúc bằng CTA rõ ràng.”</em> Hôm nay mở session mới, AI quên sạch. Phải dạy lại. Mỗi. Lần.</p>
+<p>Cảm giác như có một trợ lý rất giỏi nhưng mỗi sáng đều bị mất trí nhớ. Lý do: mỗi cuộc chat mới là một <strong>session</strong> mới, AI không giữ lại gì từ lần trước.</p>
+<blockquote class="blockquote">
+<p><em>Dừng lại một giây. Hãy nghĩ xem: tuần vừa rồi, bạn đã dành bao nhiêu giờ viết bài đăng tuyển, soạn email, chỉnh sửa kết quả AI cho “ra hồn”? 5 giờ? 10 giờ? Nếu AI cho kết quả đúng ý ngay từ lần đầu, bạn sẽ dùng những giờ ấy để làm gì?</em></p>
+</blockquote>
+</section>
+</section>
+<section id="bước-ngoặt-học-cách-ra-lệnh-đúng" class="level2">
+<h2 class="anchored" data-anchor-id="bước-ngoặt-học-cách-ra-lệnh-đúng">Bước ngoặt: học cách “ra lệnh” đúng</h2>
+<p>Linh không bỏ cuộc. Cô đọc thêm, thử thêm, và nhận ra điều then chốt: <strong>cách bạn hỏi quyết định 90% chất lượng câu trả lời.</strong> Kết quả “chung chung” không phải lỗi của AI, mà vì câu hỏi quá chung chung.</p>
+<p>So sánh:</p>
+<p>❌ <em>“Viết bài đăng tuyển vị trí Marketing Executive cho Facebook”</em></p>
+<p>✅ <em>“Bạn là chuyên viên tuyển dụng tại công ty tech startup Việt Nam, 200 nhân viên, văn hóa trẻ trung và năng động. Viết bài đăng tuyển Facebook cho vị trí Marketing Executive, cấp mid-level. Tone: vui, gần gũi Gen Z, có emoji. Cấu trúc: hook gây tò mò (1 câu), mô tả ngắn công ty (2 câu), 5 bullet trách nhiệm chính, yêu cầu ứng viên, quyền lợi hấp dẫn, CTA rõ ràng. Tổng dài dưới 200 từ.”</em></p>
+<p>Bài post từ prompt thứ hai có personality, đúng tone công ty, gần như dùng được ngay, trong khi prompt thứ nhất cho ra nội dung generic mà bất kỳ ai cũng viết được.</p>
+<p>Đây chính là <strong>Prompt Engineering</strong>. Không phải khoa học kỹ thuật, chỉ là mấy nguyên tắc đơn giản:</p>
 <ul>
-<li><code>agg()</code> → thu nhỏ DataFrame (mỗi group → 1 row)</li>
-<li><code>transform()</code> → giữ nguyên shape, broadcast kết quả về từng row</li>
+<li><strong>Gán vai trò</strong>: “Bạn là chuyên viên tuyển dụng…”</li>
+<li><strong>Cho context cụ thể</strong>: ngành, quy mô, văn hóa công ty, đối tượng ứng viên</li>
+<li><strong>Chỉ rõ format</strong>: cấu trúc bài, độ dài, tone giọng</li>
+<li><strong>Cho ví dụ mẫu</strong>: đưa 1-2 bài post cũ mà team thấy hiệu quả để AI học theo</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Thêm cột "% so với tổng của region"</span></span>
-<span id="cb4-2">df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region_total'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df.groupby(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region'</span>)[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>].transform(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sum'</span>)</span>
-<span id="cb4-3">df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'pct_of_region'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'sales'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'region_total'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span></span></code></pre></div></div>
-<hr>
-<p><em>Bài tiếp theo: Merge &amp; Join trong Pandas</em></p>
+<p>Theo chuyên gia Aakash Gupta (cựu PM tại OpenAI): <em>“Một prompt tốt có thể nhân x100 giá trị thu được từ AI.”</em></p>
+<p>Linh bắt đầu viết prompt tốt hơn. Kết quả cải thiện rõ rệt: bài social media ra đúng tone, JD chi tiết đúng format, email có tính cá nhân hóa. Nhưng cô vẫn phải gõ lại prompt mỗi sáng.</p>
+</section>
+<section id="giải-quyết-gốc-rễ-skills-memory-và-mcp" class="level2">
+<h2 class="anchored" data-anchor-id="giải-quyết-gốc-rễ-skills-memory-và-mcp">Giải quyết gốc rễ: Skills, Memory, và MCP</h2>
+<p>Nhớ bốn cú trượt, vấp, té, ngã của Linh không? Đây là lúc mọi thứ thực sự thay đổi.</p>
+<section id="skills-bộ-nghề-đóng-gói-sẵn-cho-ai" class="level3">
+<h3 class="anchored" data-anchor-id="skills-bộ-nghề-đóng-gói-sẵn-cho-ai">Skills — “Bộ nghề” đóng gói sẵn cho AI</h3>
+<p>Thay vì mỗi sáng gõ lại: <em>“Bạn là TA chuyên viết content tuyển dụng, tone Gen Z, có emoji, dưới 200 từ, CTA rõ…”</em> Linh đóng gói tất cả vào một <strong>Skill</strong> tên <code>recruitment-post</code>. Lần sau, chỉ cần gọi skill đó, AI lập tức “biết nghề”, biết tone, biết format, biết cả audience.</p>
+<p>Skill là gì? Đơn giản là một thư mục chứa file hướng dẫn (<code>SKILL.md</code>) gồm tên, mô tả, và chỉ dẫn chi tiết.</p>
+<blockquote class="blockquote">
+<p><em>Ví dụ dễ nhớ: Tools là búa, cưa, đinh. Skills là bản vẽ kỹ thuật hướng dẫn cách đóng một tủ sách. AI có đầy đủ công cụ, nhưng không có skill thì không biết phải dùng cái nào, theo thứ tự nào.</em></p>
+</blockquote>
+<p>Linh bắt đầu xây bộ skill cho riêng mình, đúng theo những tác vụ cô và team làm mỗi ngày:</p>
+<ul>
+<li><code>recruitment-post</code> — viết bài đăng tuyển Facebook/LinkedIn đúng tone Employer Branding công ty</li>
+<li><code>jd-writer</code> — soạn JD theo format và tone chuẩn, tự điều chỉnh theo cấp bậc vị trí</li>
+<li><code>outreach-email</code> — soạn email/tin nhắn tiếp cận ứng viên, cá nhân hóa theo tên và background</li>
+<li><code>cv-screener</code> — sàng lọc CV theo 5 tiêu chí: kinh nghiệm ngành, kỹ năng chuyên môn, học vấn, kỹ năng mềm, và mức phù hợp văn hóa công ty</li>
+<li><code>interview-questions</code> — tạo bộ câu hỏi phỏng vấn theo vị trí, cấp bậc, và năng lực cần đánh giá</li>
+</ul>
+<p>Skills được phát triển tại Anthropic, chính thức thành chuẩn mở vào tháng 12/2025, hiện có hơn 26 nền tảng áp dụng, từ Claude, OpenAI Codex, Gemini CLI đến GitHub Copilot, VS Code.</p>
+</section>
+<section id="memory-ai-bắt-đầu-nhớ-linh" class="level3">
+<h3 class="anchored" data-anchor-id="memory-ai-bắt-đầu-nhớ-linh">Memory — AI bắt đầu “nhớ” Linh</h3>
+<blockquote class="blockquote">
+<p><em>Nếu Skills giải quyết “phải nhắc lại cách làm việc mỗi session”, thì Memory giải quyết “phải nhắc lại thông tin về bạn.”</em></p>
+</blockquote>
+<p>Linh nói: <em>“Nhớ là tôi tuyển dụng cho công ty tech 200 nhân viên ở TP.HCM, chủ yếu tuyển IT và marketing, sếp thích báo cáo ngắn gọn dưới 1 trang, tone EB là trẻ trung và năng động.”</em> Từ đó, mỗi session mới, AI đã biết Linh là ai, làm gì, cần gì.</p>
+<p>ChatGPT đã triển khai Memory từ tháng 4/2025. Claude cũng đang phát triển tính năng tương tự. Bạn có thể tắt Memory trong Settings nếu lo ngại bảo mật.</p>
+</section>
+<section id="mcp-ai-bước-ra-khỏi-hộp-chat" class="level3">
+<h3 class="anchored" data-anchor-id="mcp-ai-bước-ra-khỏi-hộp-chat">MCP — AI bước ra khỏi “hộp chat”</h3>
+<p>Linh đã có skill, có memory. Nhưng vẫn còn rào cản: <strong>AI bị “nhốt” trong hộp chat.</strong> Muốn phân tích file CV? Phải tải lên. Cập nhật tracking sheet? Copy-paste thủ công. Gửi email? Chuyển sang Outlook.</p>
+<p>Cho đến khi <strong>MCP (Model Context Protocol)</strong> xuất hiện. Hãy nghĩ nó như <strong>cổng USB-C dành cho AI.</strong> Giống USB-C cho phép laptop kết nối với màn hình, ổ cứng, máy chiếu bằng một cổng chuẩn, MCP cho phép AI kết nối với Google Drive, Gmail, Slack, Notion qua một giao thức thống nhất.</p>
+<p>Hình dung ngày làm việc mới của Linh khi đã có MCP:</p>
+<ol type="1">
+<li>Linh nói: <em>“Kiểm tra folder CV mới trong Google Drive”</em></li>
+<li>AI <strong>trực tiếp đọc</strong> 15 CV mới, không cần tải về</li>
+<li>AI sàng lọc theo skill <code>cv-screener</code>, xếp hạng và highlight top 5</li>
+<li>AI <strong>tự ghi kết quả</strong> vào Google Sheets tracking</li>
+<li>AI <strong>soạn email mời phỏng vấn</strong> cho top 5 theo skill <code>outreach-email</code></li>
+<li>Linh review, bấm gửi</li>
+</ol>
+<p>Trước đây: 15 phút đọc mỗi CV × 15 CV = gần 4 giờ. Giờ: AI sàng lọc sơ bộ trong 5 phút, Linh review top 5 trong 15 phút. <strong>Từ gần 4 giờ xuống còn 20 phút.</strong></p>
+<p><em>(Lưu ý: kết nối MCP cần team IT hỗ trợ thiết lập ban đầu, nhưng một khi đã xong, workflow này chạy tự động mỗi ngày.)</em></p>
+<p>Lần đầu tiên Linh gọi skill <code>cv-screener</code> và thấy AI sàng lọc 15 CV trong 2 phút, cô ngồi lặng một lúc. Không phải vì sốc, mà vì nhận ra mình vừa lấy lại được cả buổi chiều.</p>
+<p>MCP được Anthropic mã nguồn mở tháng 11/2024. OpenAI áp dụng tháng 3/2025. Cuối 2025, The Linux Foundation tiếp quản như dự án cộng đồng mở.</p>
+</section>
+</section>
+<section id="ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số" class="level2">
+<h2 class="anchored" data-anchor-id="ghép-lại-từ-chatbot-đến-đồng-nghiệp-kỹ-thuật-số">Ghép lại: từ chatbot đến đồng nghiệp kỹ thuật số</h2>
+<p>Linh đã đi một hành trình dài: từ gõ thử ChatGPT lần đầu, đến viết prompt tốt, xây skill, dạy AI nhớ, rồi kết nối AI với công cụ làm việc. Tất cả hợp lại thành một khái niệm: <strong>AI Agent.</strong></p>
+<blockquote class="blockquote">
+<p><strong>AI Agent = Bộ não (LLM) + Cơ thể (Interface) đã được dạy nghề (Skills), có khả năng nhớ (Memory), và cầm được công cụ (Tools) để hành động trong thế giới thực.</strong></p>
+</blockquote>
+<p>Hãy nghĩ về nhân viên mới vào công ty. Ngày đầu, anh ta chỉ có kiến thức, chưa biết quy trình, chưa nhớ ai, chưa biết dùng công cụ gì. Sau vài tháng: có sổ tay quy trình (Skills), nhớ đồng nghiệp và dự án (Memory), biết dùng hệ thống nội bộ (Tools via MCP). AI Agent đang tiến hóa theo đúng con đường đó.</p>
+<p>Linh từng lo: <em>AI có thay thế mình không?</em> Nhưng sau vài tháng, cô hiểu: AI không thay thế người tuyển dụng, nó thay thế những <strong>việc nhàm chán</strong> mà người tuyển dụng phải làm. Linh vẫn là người quyết định ai phù hợp văn hóa công ty, ai nên được phỏng vấn, content EB nào thể hiện đúng “chất” của tổ chức. AI chỉ giúp cô có thêm thời gian để làm những việc đó tốt hơn.</p>
+<p>Nếu bạn là quản lý phòng HR: một chuyên viên tuyển dụng trang bị bộ AI skill có thể xử lý khối lượng gấp 3 lần, với cùng chất lượng. <code>$20/tháng</code> cho Claude Pro, đổi lại hàng chục giờ lao động. Đó không phải chi phí, đó là đầu tư.</p>
+<p>Nếu bạn muốn nhớ nhanh 7 khái niệm cốt lõi:</p>
+<ul>
+<li><strong>AI Model</strong> — bộ não, mạng thần kinh đã được huấn luyện (GPT-4o, Claude Sonnet 4, Gemini 2.5 Pro)</li>
+<li><strong>LLM</strong> — khả năng ngôn ngữ của bộ não, biết nói biết viết</li>
+<li><strong>Interface</strong> — cơ thể, nơi bạn tương tác (<code>Claude.ai</code>, ChatGPT app, Notion AI)</li>
+<li><strong>Skills</strong> — nghề nghiệp, kịch bản làm việc đóng gói sẵn (<code>recruitment-post</code>, <code>cv-screener</code>)</li>
+<li><strong>Tools</strong> — công cụ bên ngoài, thường qua MCP (đọc file, gửi email, search web)</li>
+<li><strong>Memory</strong> — bộ nhớ ngắn hạn (context window) và dài hạn (saved memories)</li>
+<li><strong>AI Agent</strong> — tất cả kết hợp lại: bộ não + cơ thể + nghề + nhớ + công cụ</li>
+</ul>
+</section>
+<section id="bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn" class="level2">
+<h2 class="anchored" data-anchor-id="bước-tiếp-theo-xây-bộ-nghề-ai-cho-chính-bạn">Bước tiếp theo: xây “bộ nghề” AI cho chính bạn</h2>
+<p>Linh bắt đầu với ChatGPT, nhưng khi tìm hiểu sâu hơn về Skills và hệ sinh thái agent, cô chuyển sang Claude, nền tảng hỗ trợ Skills như một chuẩn mở ngay từ đầu.</p>
+<p><strong>Tuần 0 — Chuẩn bị:</strong><br>
+Trao đổi với sếp và team IT về chính sách sử dụng AI. CV chứa thông tin cá nhân nhạy cảm, hãy hỏi rõ: dùng plan nào (gói trả phí như Claude Pro hay ChatGPT Plus đảm bảo dữ liệu không bị dùng để huấn luyện AI), dữ liệu nào được phép đưa vào, có cần IT thiết lập kênh riêng không.<br>
+<em>→ Thành công khi: bạn có “giấy phép” rõ ràng để bắt đầu.</em></p>
+<p><strong>Tuần 1 — Làm quen:</strong><br>
+Đăng ký Claude tại <a href="https://claude.ai">claude.ai</a>. Thử viết prompt cho công việc thực tế: bài đăng tuyển, email, tóm tắt JD.<br>
+<em>→ Thành công khi: bạn đã dùng AI soạn được 1 bài post và 1 email cho công việc thật.</em></p>
+<p><strong>Tuần 2 — Viết prompt tốt:</strong><br>
+Áp dụng Prompt Engineering: gán vai trò chuyên viên tuyển dụng, cho context công ty, chỉ rõ tone và format. So sánh kết quả, bạn sẽ thấy sự khác biệt rõ ràng giữa prompt sơ sài và prompt có đầu tư.<br>
+<em>→ Thành công khi: kết quả AI gần như dùng được ngay, chỉ cần chỉnh nhẹ.</em></p>
+<p><strong>Tuần 3 — Xây skill đầu tiên:</strong><br>
+Chọn tác vụ lặp lại nhiều nhất. Soạn file <code>SKILL.md</code>. Ví dụ: skill <code>recruitment-post</code> với tone, format, và ví dụ mẫu chuẩn của team.<br>
+<em>→ Thành công khi: gọi skill và AI cho kết quả đúng mong muốn mà không cần giải thích thêm.</em></p>
+<p><strong>Tuần 4 — Mở rộng bộ skill:</strong><br>
+Thêm 2-3 skill: <code>jd-writer</code>, <code>outreach-email</code>, <code>cv-screener</code>. Lúc này bạn đã có “bộ nghề” tuyển dụng cho AI.<br>
+<em>→ Thành công khi: mở session mới, gọi skill, bắt đầu làm việc ngay.</em></p>
+</section>
+<section id="prompt-đầu-tiên-copy-và-dùng-ngay" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-đầu-tiên-copy-và-dùng-ngay">🚀 Prompt đầu tiên — copy và dùng ngay</h2>
+<p>Nếu bạn muốn bắt đầu ngay bây giờ, đây là một prompt viết bài đăng tuyển mà bạn có thể copy-paste vào Claude hoặc ChatGPT:</p>
+<blockquote class="blockquote">
+<p><em>Bạn là chuyên viên tuyển dụng tại công ty tech Việt Nam, 200 nhân viên, văn hóa startup trẻ trung. Viết bài đăng tuyển Facebook cho vị trí [TÊN VỊ TRÍ], cấp [CẤP BẬC]. Tone: vui, gần gũi Gen Z, có emoji phù hợp. Cấu trúc: 1 câu hook gây tò mò → giới thiệu ngắn công ty (2 câu) → 5 bullet trách nhiệm chính → yêu cầu ứng viên → quyền lợi hấp dẫn → CTA rõ ràng. Tổng dưới 200 từ.</em></p>
+</blockquote>
+<p>Thay <code>[TÊN VỊ TRÍ]</code> và <code>[CẤP BẬC]</code> bằng thông tin thực, và bạn sẽ thấy ngay sự khác biệt so với “viết bài đăng tuyển cho tôi.”</p>
+<p>Vài tháng sau khi bắt đầu xây bộ skill đầu tiên, Linh có 8 skill tuyển dụng, AI nhớ tone EB của công ty, và thời gian soạn content tuyển dụng mỗi tuần giảm hơn một nửa.</p>
+<p>Linh từng nghĩ AI cho kết quả chung chung. Giờ cô biết: <strong>không phải AI chung chung, mà là câu hỏi chung chung.</strong> Khi bạn dạy AI đúng nghề của bạn, nó trở thành đồng nghiệp hiểu bạn nhất phòng.</p>
+<p>Và prompt đầu tiên tốt nhất? Chính là prompt cho công việc bạn đang làm ngày mai.</p>
+<p><em>Bài viết được tổng hợp từ nghiên cứu tháng 5/2026.</em></p>
+</section>
+<section id="tài-liệu-tham-khảo-chính" class="level2">
+<h2 class="anchored" data-anchor-id="tài-liệu-tham-khảo-chính">Tài liệu tham khảo chính</h2>
+<ul>
+<li>GaussAlgo — <a href="https://www.gaussalgo.com/knowledge-base/a-brief-history-of-ai-and-the-rise-of-chatgpt">A Brief History of AI and the Rise of ChatGPT</a></li>
+<li>History.com — <a href="https://www.history.com/this-day-in-history/november-30/chatgpt-released-openai">ChatGPT is released to the public</a></li>
+<li>IBM — <a href="https://www.ibm.com/think/topics/context-window">What is a context window?</a></li>
+<li>agentskills.io — <a href="https://agentskills.io/home">Agent Skills Overview</a></li>
+<li>modelcontextprotocol.io — <a href="https://modelcontextprotocol.io/docs/getting-started/intro">MCP Introduction</a></li>
+<li>OpenAI — <a href="https://help.openai.com/en/articles/8590148-memory-faq">Memory FAQ</a></li>
+<li>Aakash Gupta — <a href="https://www.news.aakashg.com/p/prompt-engineering">Prompt Engineering in 2025</a></li>
+<li>Anthropic — <a href="https://www.anthropic.com/news/model-context-protocol">Introducing MCP</a></li>
+</ul>
 
 
 </section>
 
  ]]></description>
-  <category>data-analytics</category>
-  <category>pandas</category>
-  <guid>https://dz-academy.pages.dev/posts/data-analytics/pandas-groupby-co-ban.html</guid>
-  <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+  <category>AI</category>
+  <category>HR</category>
+  <category>Tuyển dụng</category>
+  <guid>https://dz-academy.pages.dev/posts/ai/tu-ket-qua-chung-chung-den-dong-nghiep-ky-thuat-so.html</guid>
+  <pubDate>Tue, 05 May 2026 17:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

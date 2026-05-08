@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!--
+    dz · Open Graph Image / Twitter Card
+    1200×630px | Export PNG trước khi dùng
+    Dùng cho: meta og:image, Twitter card, link preview khi share website
+  -->
+  <defs>
+    <pattern id="circ-og" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="40" x2="80" y2="40" stroke="#006FA0" stroke-width="1"/>
+      <line x1="40" y1="0" x2="40" y2="80" stroke="#006FA0" stroke-width="1"/>
+      <circle cx="40" cy="40" r="3" fill="#006FA0"/>
+      <circle cx="0"  cy="0"  r="2" fill="#006FA0"/>
+      <circle cx="80" cy="0"  r="2" fill="#006FA0"/>
+      <circle cx="0"  cy="80" r="2" fill="#006FA0"/>
+      <circle cx="80" cy="80" r="2" fill="#006FA0"/>
+    </pattern>
+    <path id="dTk-og" d="M 260,0 L 260,180 M 260,110 L 190,110 A 70,70 0 0,0 120,180 A 70,70 0 0,0 190,250 A 70,70 0 0,0 260,180"/>
+    <path id="dTn-og" d="M 260,40 L 260,180 M 260,110 L 190,110 A 70,70 0 0,0 120,180 A 70,70 0 0,0 190,250 A 70,70 0 0,0 260,180"/>
+    <clipPath id="dCl-og">
+      <path d="M 300,300 L 0,300 L 0,50 L 242,50 C 242,22.5 258,0 278,0 L 300,0 Z"/>
+    </clipPath>
+    <path id="zP-og" d="M 260,110 L 400,110 L 300,250 L 430,250"/>
+    <clipPath id="zCl-og">
+      <path d="M 240,0 L 420,0 L 420,150 L 600,150 L 600,300 L 280,300 L 280,200 L 240,200 Z"/>
+    </clipPath>
+    <radialGradient id="glow-og" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#006FA0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFFDF5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background: Biển Đêm -->
+  <rect width="1200" height="630" fill="#FFFDF5"/>
+  <rect width="1200" height="630" fill="url(#circ-og)" opacity="0.07"/>
+  <rect width="1200" height="630" fill="url(#glow-og)"/>
+
+  <!-- Top + bottom accent bars -->
+  <rect x="0" y="0"   width="1200" height="8" fill="#E8A21A"/>
+  <rect x="0" y="622" width="1200" height="8" fill="#E8A21A"/>
+  <!-- Left accent -->
+  <rect x="0" y="0" width="8" height="630" fill="#E8A21A"/>
+
+  <!-- LOGO — centered top area -->
+  <!-- Scale 0.65, content x=90→455 (w=365), y=0→270 (h=270) -->
+  <!-- At scale 0.65: w=237.25, h=175.5 -->
+  <!-- Center x=600: tx=600-237.25/2-90*0.65=600-118.6-58.5=422.9≈423 -->
+  <!-- y position at 60: ty=60 -->
+  <g transform="translate(423, 60) scale(0.65)">
+    <use href="#dTk-og" fill="none" stroke="#E8A21A" stroke-width="36" stroke-linecap="round" clip-path="url(#dCl-og)"/>
+    <use href="#zP-og"  fill="none" stroke="#E8A21A" stroke-width="36" stroke-linecap="round" clip-path="url(#zCl-og)"/>
+    <use href="#dTn-og" fill="none" stroke="#001233" stroke-width="4"  stroke-linecap="round"/>
+    <use href="#zP-og"  fill="none" stroke="#001233" stroke-width="4"  stroke-linecap="round" clip-path="url(#zCl-og)"/>
+    <circle cx="260" cy="40"  r="7" fill="#001233"/>
+    <circle cx="120" cy="180" r="7" fill="#001233"/>
+    <circle cx="400" cy="110" r="7" fill="#001233"/>
+    <circle cx="350" cy="180" r="7" fill="#001233"/>
+    <circle cx="430" cy="250" r="7" fill="#001233"/>
+  </g>
+  <!-- Logo: y=60→60+175.5=235.5, x=423+90*0.65=423+58.5=481.5→423+455*0.65=423+295.75=718.75 -->
+
+  <!-- Person name -->
+  <text x="600" y="306" text-anchor="middle"
+        font-family="'Space Grotesk', Arial, sans-serif"
+        font-weight="600" font-size="38" fill="#001233" letter-spacing="-0.5">Nguyễn Huỳnh Minh Duy</text>
+
+  <!-- Role -->
+  <text x="600" y="348" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', Arial, sans-serif"
+        font-size="26" fill="#5D6B80">Tech Educator</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="375" x2="800" y2="375" stroke="#E8A21A" stroke-width="2"/>
+
+  <!-- Tagline — main center -->
+  <text x="600" y="428" text-anchor="middle"
+        font-family="'Space Grotesk', Arial, sans-serif"
+        font-weight="600" font-size="44" fill="#001233" letter-spacing="-0.5">Đèn nhỏ tỏ muôn hướng</text>
+
+  <!-- Brand question -->
+  <text x="600" y="478" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', Arial, sans-serif"
+        font-size="26" font-style="italic" fill="#5D6B80">"Bạn là ai — khi có AI?"</text>
+
+  <!-- Sub-brand pills centered -->
+  <!-- dz-academy: x=340, dz-app: x=530, dz-news: x=710 -->
+  <rect x="330" y="512" width="148" height="36" rx="6" fill="#EEF6F1"/>
+  <text x="404" y="536" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', Arial, sans-serif"
+        font-size="17" font-weight="600" fill="#E8A21A">dz-academy</text>
+
+  <rect x="492" y="512" width="96" height="36" rx="6" fill="#F1F1F1"/>
+  <text x="540" y="536" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', Arial, sans-serif"
+        font-size="17" font-weight="600" fill="#006FA0">dz-app</text>
+
+  <rect x="602" y="512" width="100" height="36" rx="6" fill="#FFFDF5" stroke="#006FA0" stroke-width="1.5"/>
+  <text x="652" y="536" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', Arial, sans-serif"
+        font-size="17" font-weight="600" fill="#006FA0">dz-news</text>
+
+  <!-- Domain -->
+  <text x="600" y="596" text-anchor="middle"
+        font-family="'Space Grotesk', Arial, sans-serif"
+        font-weight="600" font-size="26" fill="#C85A00" letter-spacing="1">dz-ai.vn</text>
+</svg>

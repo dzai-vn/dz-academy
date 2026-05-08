@@ -1,69 +1,486 @@
 /*-- scss:defaults --*/
-$primary: #2563eb;
-$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-$font-family-monospace: "JetBrains Mono", "Fira Code", monospace;
+
+// === DZ Design System — Bootstrap Variable Overrides (compile-time, light mode base) ===
+
+// Typography
+$font-family-sans-serif: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+$font-family-monospace: "JetBrains Mono", "Courier New", monospace;
+$headings-font-weight: 700;
+$line-height-base: 1.65;
+
+// DZ Palette — light mode base values
+$primary:    #e8a21a;   // lamp
+$secondary:  #8892a4;   // mist
+$body-bg:    #fffdf5;   // candle
+$body-color: #001233;   // ocean
+$link-color: #006fa0;   // flow
+
+// Shadows
+$box-shadow:    0 16px 40px rgba(0, 0, 0, 0.16);
+$box-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.10);
+$box-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.28);
+
+// Borders
+$border-radius:    1.25rem;
+$border-radius-sm: 0.75rem;
+$border-radius-lg: 1.75rem;
+$border-color:     rgba(0, 18, 51, 0.12);
+
+// Card
+$card-bg:            rgba(255, 255, 255, 0.84);
+$card-border-color:  rgba(0, 18, 51, 0.10);
+$card-border-radius: 1.25rem;
+
+// Navbar
+$navbar-padding-y: 0.875rem;
+
+// Code
+$code-color: #006fa0;
+$pre-bg:     rgba(0, 18, 51, 0.04);
+$pre-color:  #001233;
 
 /*-- scss:rules --*/
-.hero-banner {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
-  border-radius: 1rem;
-  margin-bottom: 3rem;
-  text-align: center;
+
+// ============================================================
+// BOOTSTRAP DARK MODE SYNC
+// When data-bs-theme="dark" is set (by our JS), override
+// Bootstrap's own CSS custom properties to use DZ dark values.
+// ============================================================
+
+[data-bs-theme="dark"] {
+  --bs-body-bg:          #001233;
+  --bs-body-bg-rgb:      0, 18, 51;
+  --bs-body-color:       #ffffff;
+  --bs-body-color-rgb:   255, 255, 255;
+  --bs-link-color:       #00d4ff;
+  --bs-link-hover-color: #00b8dd;
+  --bs-border-color:     rgba(255, 255, 255, 0.12);
+  --bs-card-bg:          rgba(14, 36, 79, 0.88);
+  --bs-card-border-color: rgba(255, 255, 255, 0.10);
+  --bs-code-color:       #00d4ff;
+  --bs-pre-bg:           rgba(255, 255, 255, 0.06);
+  color-scheme: dark;
 }
 
-.hero-banner h1 {
-  font-size: 2.5rem;
+// ============================================================
+// TYPOGRAPHY — Space Grotesk for all headings globally
+// ============================================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--dz-heading, #001233);
+}
+
+h1 { letter-spacing: -0.03em; }
+
+.quarto-title h1,
+#title-block-header h1 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+// ============================================================
+// BODY — Grid background with DZ line token
+// ============================================================
+
+body {
+  color: var(--dz-text, #001233);
+  background-color: var(--dz-bg, #fffdf5);
+}
+
+// ============================================================
+// NAVBAR — DZ topbar style
+// ============================================================
+
+.navbar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--dz-bg, #fffdf5) 80%, transparent) !important;
+  border-bottom: 1px solid var(--dz-panel-border, rgba(0, 18, 51, 0.12));
+  box-shadow: none !important;
+}
+
+.navbar-container {
+  align-items: center;
+}
+
+.navbar-brand-container {
+  display: flex !important;
+  align-items: center;
+  gap: 14px;
+  margin-left: 0 !important;
+  margin-right: 28px !important;
+}
+
+.navbar-brand.navbar-brand-logo {
+  display: inline-flex !important;
+  align-items: center;
+  line-height: 1;
+  margin-right: 0;
+
+  img.navbar-logo {
+    display: block;
+    height: 28px;
+    width: auto;
+    transform: none;
+  }
+}
+
+.navbar-brand {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: none;
+
+  .navbar-title {
+    display: block;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--dz-heading, #001233);
+    transform: none;
+  }
+}
+
+.navbar-brand:not(.navbar-brand-logo) {
+  line-height: 1;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--dz-text, #001233) 70%, transparent) !important;
+  transition: color 0.15s;
+
+  &:hover,
+  &.active {
+    color: var(--dz-accent, #e8a21a) !important;
+  }
+}
+
+// DZ theme toggle button (injected by _dz-init.html)
+.dz-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--dz-panel-border, rgba(0, 18, 51, 0.14));
+  background: var(--dz-card, rgba(255, 255, 255, 0.84));
+  color: var(--dz-text, #001233);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, border-color 0.2s;
+  margin-left: 8px;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--dz-accent, #e8a21a);
+  }
+
+  &[aria-pressed="true"] {
+    border-color: color-mix(in srgb, var(--dz-accent, #e8a21a) 60%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--dz-accent, #e8a21a) 40%, transparent);
+  }
+}
+
+// ============================================================
+// FOOTER
+// ============================================================
+
+.nav-footer {
+  border-top: 1px solid var(--dz-line, rgba(0, 18, 51, 0.12));
+  background: color-mix(in srgb, var(--dz-bg, #fffdf5) 92%, transparent);
+  color: var(--dz-text-muted, #8892a4);
+  font-size: 0.88rem;
+
+  a {
+    color: var(--dz-link, #006fa0);
+    &:hover { color: var(--dz-accent, #e8a21a); }
+  }
+}
+
+// ============================================================
+// QUARTO TOC SIDEBAR
+// ============================================================
+
+.sidebar nav[role="doc-toc"] {
+  .sidebar-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dz-heading, #001233);
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+    color: var(--dz-text-muted, #8892a4);
+
+    &.active,
+    &:hover {
+      color: var(--dz-heading, #001233);
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================================
+// QUARTO LISTING CARDS
+// ============================================================
+
+.quarto-grid-item {
+  border: 1px solid var(--dz-card-border, rgba(0, 18, 51, 0.10)) !important;
+  border-radius: 20px !important;
+  background: var(--dz-card, rgba(255, 255, 255, 0.84)) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14) !important;
+  }
+
+  .card-title a {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    color: var(--dz-heading, #001233);
+    letter-spacing: -0.01em;
+  }
+}
+
+.quarto-category {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: rgba(232, 162, 26, 0.1);
+  color: #a35d00;
+  border: 1px solid rgba(232, 162, 26, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+html[data-theme="dark"] .quarto-category,
+[data-bs-theme="dark"] .quarto-category {
+  background: rgba(232, 162, 26, 0.12);
+  color: #f1be61;
+  border-color: rgba(232, 162, 26, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+// ============================================================
+// CODE BLOCKS
+// ============================================================
+
+pre, code {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+}
+
+pre.sourceCode {
+  border: 1px solid var(--dz-card-border, rgba(0, 18, 51, 0.10));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--dz-bg, #fffdf5) 92%, var(--dz-ocean, #001233)) !important;
+}
+
+p code,
+li code,
+td code,
+th code,
+blockquote code,
+.callout-body code,
+.sidebar code,
+.toc-actions code,
+.nav-link code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  display: inline-block;
+  padding: 0.14em 0.38em;
+  border: 1px solid var(--dz-inline-code-border, rgba(0, 18, 51, 0.1));
+  border-radius: 0.28rem;
+  background: var(--dz-inline-code-bg, rgba(0, 111, 160, 0.07));
+  color: var(--dz-inline-code-text, #006fa0);
+  font-size: 0.88em;
+  font-weight: 500;
+  line-height: 1.15;
+  box-shadow: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+// ============================================================
+// DZ COMPONENT CLASSES — all using CSS custom properties
+// ============================================================
+
+// --- Hero ---
+
+.dz-hero {
+  padding: 48px 0 24px;
+}
+
+.dz-hero__panel {
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid var(--dz-panel-border, rgba(0, 18, 51, 0.12));
+  border-radius: 28px;
+  background: var(--dz-bg-hero, linear-gradient(160deg, rgba(255,253,245,0.97) 0%, rgba(248,244,232,0.97) 100%));
+  box-shadow: var(--dz-shadow-soft, 0 20px 56px rgba(0,0,0,0.12));
+  margin-bottom: 2.5rem;
+}
+
+.dz-hero__logo {
+  display: block;
+  width: min(180px, 34vw);
+  height: auto;
+  margin: 0 0 18px;
+}
+
+.dz-kicker {
+  display: block;
+  margin: 0 0 16px;
+  color: var(--dz-accent-alt, #006fa0);
+  font-size: 0.82rem;
   font-weight: 700;
-  color: #1e3a5f;
-  margin-bottom: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-.hero-banner p {
-  font-size: 1.15rem;
-  color: #4b6584;
-  margin-bottom: 2rem;
+.dz-subtitle {
+  display: block;
+  max-width: 60ch;
+  margin: 16px 0 28px;
+  color: var(--dz-text-muted, #8892a4);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
+
+// --- Grid ---
+
+.dz-grid {
+  display: grid;
+  gap: 20px;
+
+  &--two   { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  &--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  &--four  { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  &--five  { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+  @media (max-width: 1024px) {
+    &--four  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    &--five  { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 640px) {
+    &--two, &--three, &--four, &--five { grid-template-columns: 1fr; }
+  }
+}
+
+// --- Card ---
+
+.dz-card {
+  padding: 24px;
+  border: 1px solid var(--dz-card-border, rgba(0, 18, 51, 0.10));
+  border-radius: 20px;
+  background: var(--dz-card, rgba(255, 255, 255, 0.84));
+  box-shadow: var(--dz-shadow-soft, 0 8px 28px rgba(0,0,0,0.08));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--dz-text, #001233);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+    color: var(--dz-text, #001233);
+  }
+
+  h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--dz-heading, #001233);
+    margin: 0 0 10px;
+  }
+
+  p {
+    margin: 0 0 14px;
+    color: var(--dz-text-muted, #8892a4);
+  }
+
+  a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+.dz-card__meta {
+  display: inline-block;
+  margin: 0 0 12px;
+  color: var(--dz-accent, #e8a21a);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+// --- Section ---
+
+.dz-section {
+  margin: 56px 0;
+}
+
+.dz-section__header {
+  margin-bottom: 24px;
+}
+
+.dz-section__title {
+  margin-bottom: 10px;
+}
+
+.dz-section__intro {
+  color: var(--dz-text-muted, #8892a4);
+}
+
+// --- CTA ---
+
+.dz-cta {
+  padding: 28px;
+  border: 1px solid var(--dz-panel-border, rgba(0, 18, 51, 0.12));
+  border-radius: 24px;
+  background: var(--dz-card, rgba(255,255,255,0.84));
+  box-shadow: var(--dz-shadow-soft, 0 8px 28px rgba(0,0,0,0.08));
+}
+
+// --- Generic feature cards used in roadmap ---
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature-card {
-  padding: 1.5rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.75rem;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.feature-card:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-}
-
-.feature-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.markmap {
-  height: 600px;
-  width: 100%;
-}
-
-.newsletter-cta {
-  background: #1e3a5f;
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  margin: 3rem 0;
-}
-
-.newsletter-cta h2 {
-  color: white;
+  padding: 24px;
+  border: 1px solid var(--dz-card-border, rgba(0, 18, 51, 0.10));
+  border-radius: 20px;
+  background: var(--dz-card, rgba(255, 255, 255, 0.84));
+  box-shadow: var(--dz-shadow-soft, 0 8px 28px rgba(0,0,0,0.08));
 }

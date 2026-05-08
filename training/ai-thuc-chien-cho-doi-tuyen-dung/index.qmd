@@ -1,0 +1,44 @@
+---
+title: "AI Thực Chiến Cho Đội Tuyển Dụng"
+description: "Khoá training thực chiến về Skills, Cowork, Claude in Chrome, Gemini in Chrome và workflow AI cho đội tuyển dụng."
+---
+
+::: {.dz-section}
+::: {.dz-section__header}
+## AI Thực Chiến Cho Đội Tuyển Dụng {.dz-section__title}
+
+[Khoá học thực chiến dành cho đội HR/Tuyển dụng, tập trung vào cách biến AI từ chatbot trả lời chung chung thành trợ lý làm việc theo quy trình và theo nghề.]{.dz-section__intro}
+:::
+
+::: {.dz-grid .dz-grid--two}
+
+::: {.dz-card}
+[Thông tin]{.dz-card__meta}
+
+### Nội dung chính
+
+- Kết quả AI vì sao hay “generic”
+- Skills, Progressive Disclosure, Context Window
+- Demo `linkedin-extractor`, `outreach-email`, `cv-screener`
+- Skill Creator, Cowork, Claude in Chrome, Gemini in Chrome
+- Bảo mật khi dùng Agent Skill
+
+[Mở slide deck →](slides/index.html){.dz-button .dz-button--primary}
+:::
+
+::: {.dz-card}
+[Tổ chức nội dung]{.dz-card__meta}
+
+### Cấu trúc publish
+
+- `slides/`: toàn bộ HTML presentation, assets, media
+- Sau này có thể thêm:
+  - `materials/`: workbook, handout, checklist
+  - `examples/`: skill demo, dataset mẫu
+  - `follow-up/`: bài tập sau buổi học
+
+Mỗi khóa là một “package” riêng nên rất thuận tiện để tái sử dụng hoặc nhân bản cho khóa tiếp theo.
+:::
+
+:::
+:::

@@ -1,8 +1,10 @@
 ---
 title: "Tutorials"
+listing:
+  contents: "*.ipynb"
+  sort: "date desc"
+  type: grid
+  categories: true
+  fields: [date, title, categories, description]
 page-layout: full
 ---
-
-Jupyter notebooks với code thực thi — từng bước, có giải thích bằng tiếng Việt.
-
-*Tutorials đang được chuẩn bị — sẽ có sớm.*

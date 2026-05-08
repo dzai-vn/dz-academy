@@ -1,0 +1,6 @@
+lang: vi
+title-block-banner: false
+format:
+  html:
+    toc: true
+    toc-depth: 3

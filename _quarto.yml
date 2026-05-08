@@ -1,15 +1,25 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - training/**/slides/assets/**
+    - training/**/slides/media/**
 
 website:
   title: "DZ AI Academy"
-  description: "Chia sẻ tri thức Data Analytics, Python và AI cho cộng đồng Việt Nam"
+  description: "Chia sẻ tri thức cho cộng đồng Việt Nam"
+  site-url: "https://dz-academy.pages.dev"
+  open-graph: true
+  twitter-card: true
 
   navbar:
-    background: primary
+    logo: assets/01-logos/master/dz-academy.svg
+    logo-alt: "DZ AI Academy"
+    background: light
     search: true
     left:
+      - text: "Training"
+        href: training/index.qmd
       - text: "Bài viết"
         href: posts/index.qmd
       - text: "Tutorials"
@@ -27,15 +37,17 @@ website:
   page-footer:
     center: "© 2026 DZ AI Academy · [GitHub](https://github.com/dzai-vn)"
 
-  site-url: "https://dz-academy.pages.dev"
-  open-graph: true
-  twitter-card: true
+metadata-files:
+  - _metadata.yml
 
 format:
   html:
     theme:
       - cosmo
       - assets/styles.scss
+    css: assets/dz-tokens.css
+    include-in-header: assets/_head.html
+    include-after-body: assets/_dz-init.html
     toc: true
     toc-depth: 3
     link-external-newwindow: true
