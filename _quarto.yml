@@ -4,6 +4,7 @@ project:
   resources:
     - training/**/slides/assets/**
     - training/**/slides/media/**
+    - training/**/google-apps-script/**
 
 website:
   title: "DZ AI Academy"

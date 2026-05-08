@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dz-academy.pages.dev/training/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.621Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dz-academy.pages.dev/tutorials/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.622Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dz-academy.pages.dev/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.557Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dz-academy.pages.dev/posts/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.558Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dz-academy.pages.dev/roadmap/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.558Z</lastmod>
-  </url>
-  <url>
     <loc>https://dz-academy.pages.dev/demos/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.482Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dz-academy.pages.dev/roadmap/data-analytics.html</loc>
-    <lastmod>2026-05-08T04:01:41.558Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dz-academy.pages.dev/posts/ai/tu-ket-qua-chung-chung-den-dong-nghiep-ky-thuat-so.html</loc>
-    <lastmod>2026-05-08T04:01:41.558Z</lastmod>
+    <lastmod>2026-05-05T14:49:00.718Z</lastmod>
   </url>
   <url>
     <loc>https://dz-academy.pages.dev/about.html</loc>
-    <lastmod>2026-05-08T04:01:41.479Z</lastmod>
+    <lastmod>2026-05-08T04:31:15.717Z</lastmod>
   </url>
   <url>
-    <loc>https://dz-academy.pages.dev/contact.html</loc>
-    <lastmod>2026-05-08T04:01:41.481Z</lastmod>
+    <loc>https://dz-academy.pages.dev/training/index.html</loc>
+    <lastmod>2026-05-08T05:07:02.571Z</lastmod>
   </url>
   <url>
     <loc>https://dz-academy.pages.dev/training/ai-thuc-chien-cho-doi-tuyen-dung/index.html</loc>
-    <lastmod>2026-05-08T04:01:41.558Z</lastmod>
+    <lastmod>2026-05-08T05:07:02.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/roadmap/index.html</loc>
+    <lastmod>2026-05-05T12:56:26.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/posts/index.html</loc>
+    <lastmod>2026-05-05T14:49:00.624Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/contact.html</loc>
+    <lastmod>2026-05-05T13:05:26.977Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/posts/ai/tu-ket-qua-chung-chung-den-dong-nghiep-ky-thuat-so.html</loc>
+    <lastmod>2026-05-07T08:00:32.466Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/roadmap/data-analytics.html</loc>
+    <lastmod>2026-05-05T12:56:59.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/training/course-feedback/index.html</loc>
+    <lastmod>2026-05-08T05:07:02.571Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/index.html</loc>
+    <lastmod>2026-05-08T03:46:23.276Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dz-academy.pages.dev/tutorials/index.html</loc>
+    <lastmod>2026-05-05T14:49:00.524Z</lastmod>
   </url>
 </urlset>

@@ -23,6 +23,16 @@ Slide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đ
 :::
 
 ::: {.dz-card}
+[Khảo sát]{.dz-card__meta}
+
+### Khảo sát sau khóa học
+
+Trang feedback dùng lại cho nhiều khóa: chọn khóa đã học, chấm điểm nội dung, đánh giá giảng viên, và gửi phản hồi thẳng về Google Sheets qua Google Apps Script.
+
+[Mở trang khảo sát →](course-feedback/index.qmd)
+:::
+
+::: {.dz-card}
 [Kiến trúc]{.dz-card__meta}
 
 ### Cách tổ chức để mở rộng
@@ -31,6 +41,7 @@ Mỗi khoá nên có:
 
 - `training/<slug>/index.qmd` cho landing page
 - `training/<slug>/slides/` cho HTML deck và assets
+- `training/course-feedback/index.qmd` cho trang khảo sát chung
 - `training/<slug>/materials/` nếu có handout, dataset, workbook
 
 Nhờ vậy, mỗi khoá có thể xuất bản độc lập nhưng vẫn nằm trong cùng hệ sinh thái `dz-academy`.

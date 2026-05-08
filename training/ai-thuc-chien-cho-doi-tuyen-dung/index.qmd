@@ -24,6 +24,7 @@ description: "Khoá training thực chiến về Skills, Cowork, Claude in Chrom
 - Bảo mật khi dùng Agent Skill
 
 [Mở slide deck →](slides/index.html){.dz-button .dz-button--primary}
+[Khảo sát sau khóa học →](../course-feedback/index.qmd){.dz-button}
 :::
 
 ::: {.dz-card}

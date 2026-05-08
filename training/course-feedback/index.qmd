@@ -1,0 +1,153 @@
+---
+title: "Khảo sát sau khóa học"
+description: "Mẫu khảo sát sau khóa học của DZ AI Academy."
+toc: false
+---
+
+## Khảo sát sau khóa học
+
+[Cảm ơn bạn đã tham gia khóa học. Phản hồi của bạn sẽ giúp DZ AI Academy cải thiện nội dung, cách dạy và trải nghiệm học tập cho các khóa sau.]{.lead}
+
+```{=html}
+<div class="course-feedback-form">
+  <form id="course-feedback-form" class="course-feedback-form__form">
+    <div class="mb-4">
+      <label class="form-label fw-semibold" for="course_slug">1. Bạn đã học khóa nào?</label>
+      <select id="course_slug" name="course_slug" class="form-select" required>
+        <option value="">Chọn khóa học</option>
+        <option value="ai-thuc-chien-cho-doi-tuyen-dung">AI Thực Chiến Cho Đội Tuyển Dụng</option>
+      </select>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <label class="form-label fw-semibold" for="content_rating">2.1 Chất lượng nội dung</label>
+        <select id="content_rating" name="content_rating" class="form-select" required>
+          <option value="">Chọn mức đánh giá</option>
+          <option value="5">5 - Rất tốt</option>
+          <option value="4">4 - Tốt</option>
+          <option value="3">3 - Ổn</option>
+          <option value="2">2 - Cần cải thiện</option>
+          <option value="1">1 - Chưa tốt</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-semibold" for="instructor_rating">2.2 Đánh giá giảng viên</label>
+        <select id="instructor_rating" name="instructor_rating" class="form-select" required>
+          <option value="">Chọn mức đánh giá</option>
+          <option value="5">5 - Rất tốt</option>
+          <option value="4">4 - Tốt</option>
+          <option value="3">3 - Ổn</option>
+          <option value="2">2 - Cần cải thiện</option>
+          <option value="1">1 - Chưa tốt</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <label class="form-label fw-semibold" for="strengths">2.3 Những điểm làm tốt</label>
+      <textarea id="strengths" name="strengths" class="form-control" rows="5" maxlength="2000" placeholder="Ví dụ: nội dung thực tế, demo dễ hiểu, tài liệu rõ ràng..." required></textarea>
+    </div>
+
+    <div class="mt-4">
+      <label class="form-label fw-semibold" for="improvements">2.4 Những điểm chưa làm tốt / cần cải thiện</label>
+      <textarea id="improvements" name="improvements" class="form-control" rows="5" maxlength="2000" placeholder="Ví dụ: cần thêm bài tập, cần chậm hơn ở phần demo, cần thêm tài liệu follow-up..." required></textarea>
+    </div>
+
+    <input type="hidden" id="course_name" name="course_name" value="">
+    <input type="hidden" id="source_page" name="source_page" value="">
+
+    <div class="mt-4 d-flex flex-wrap gap-3 align-items-center">
+      <button type="submit" class="btn btn-primary btn-lg" id="course-feedback-submit">Gửi khảo sát</button>
+      <span id="course-feedback-status" class="text-muted"></span>
+    </div>
+  </form>
+</div>
+```
+
+```{=html}
+<style>
+  .course-feedback-form__form {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 28px;
+    border: 1px solid rgba(0, 18, 51, 0.1);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 18px 48px rgba(0, 18, 51, 0.08);
+  }
+
+  .course-feedback-form .form-label {
+    color: #001233;
+  }
+
+  .course-feedback-form .form-control,
+  .course-feedback-form .form-select {
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    border-color: rgba(0, 18, 51, 0.14);
+  }
+
+  .course-feedback-form .form-control:focus,
+  .course-feedback-form .form-select:focus {
+    border-color: #006fa0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 111, 160, 0.15);
+  }
+</style>
+
+<script>
+  (() => {
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwtnzHrH918IUMZzK4OkGUQrK2sSwSf0LPIkgTB0Yibcjy1uS6teC4Dui-ecK0SBDWrSQ/exec";
+    const form = document.getElementById("course-feedback-form");
+    const statusNode = document.getElementById("course-feedback-status");
+    const submitButton = document.getElementById("course-feedback-submit");
+    const courseNameInput = document.getElementById("course_name");
+    const sourcePageInput = document.getElementById("source_page");
+
+    if (!form) return;
+
+    sourcePageInput.value = window.location.href;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const courseSelect = document.getElementById("course_slug");
+      courseNameInput.value = courseSelect.options[courseSelect.selectedIndex]?.text || "";
+      const formData = new FormData(form);
+
+      const payload = Object.fromEntries(formData.entries());
+      payload.user_agent = navigator.userAgent;
+
+      submitButton.disabled = true;
+      statusNode.textContent = "Đang gửi khảo sát...";
+      statusNode.className = "text-muted";
+
+      try {
+        const response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.ok) {
+          throw new Error(result.error || "Không thể lưu khảo sát.");
+        }
+
+        form.reset();
+        courseNameInput.value = "";
+        sourcePageInput.value = window.location.href;
+        statusNode.textContent = "Đã gửi khảo sát thành công. Cảm ơn bạn.";
+        statusNode.className = "text-success";
+      } catch (error) {
+        statusNode.textContent = error.message || "Có lỗi xảy ra khi gửi khảo sát.";
+        statusNode.className = "text-danger";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  })();
+</script>
+```
