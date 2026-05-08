@@ -1,17 +1,52 @@
 [
   {
-    "objectID": "demos/index.html",
-    "href": "demos/index.html",
-    "title": "Demos",
+    "objectID": "training/index.html",
+    "href": "training/index.html",
+    "title": "Training",
     "section": "",
-    "text": "Các ứng dụng tương tác — khám phá bằng tay, không cần cài đặt gì."
+    "text": "Các khoá học được tổ chức theo từng thư mục độc lập để dễ mở rộng, bảo trì, và publish lên GitHub Pages sau này.\n\n\n\nKhoá học\n\n\nSlide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đến skill, workflow, Cowork, Chrome, và bảo mật khi dùng Agent Skill.\nMở trang khoá học →\n\n\n\nKhảo sát\n\n\nTrang feedback dùng lại cho nhiều khóa: chọn khóa đã học, chấm điểm nội dung, đánh giá giảng viên, và gửi phản hồi thẳng về Google Sheets qua Google Apps Script.\nMở trang khảo sát →\n\n\n\nKiến trúc\n\n\nMỗi khoá nên có:\n\ntraining/&lt;slug&gt;/index.qmd cho landing page\ntraining/&lt;slug&gt;/slides/ cho HTML deck và assets\ntraining/course-feedback/index.qmd cho trang khảo sát chung\ntraining/&lt;slug&gt;/materials/ nếu có handout, dataset, workbook\n\nNhờ vậy, mỗi khoá có thể xuất bản độc lập nhưng vẫn nằm trong cùng hệ sinh thái dz-academy."
   },
   {
-    "objectID": "demos/index.html#chart-selection-guide",
-    "href": "demos/index.html#chart-selection-guide",
-    "title": "Demos",
-    "section": "Chart Selection Guide",
-    "text": "Chart Selection Guide\nKhông biết dùng biểu đồ gì cho dữ liệu của bạn? Tool này giúp bạn chọn đúng.\n\n13 loại biểu đồ phổ biến\nLive preview với Chart.js\nSo sánh ưu/nhược điểm\n\nMở Chart Selection Guide →\n\nThêm demos sẽ được thêm vào đây theo thời gian."
+    "objectID": "training/index.html#training-library",
+    "href": "training/index.html#training-library",
+    "title": "Training",
+    "section": "",
+    "text": "Các khoá học được tổ chức theo từng thư mục độc lập để dễ mở rộng, bảo trì, và publish lên GitHub Pages sau này."
+  },
+  {
+    "objectID": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html",
+    "href": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html",
+    "title": "AI Thực Chiến Cho Đội Tuyển Dụng",
+    "section": "",
+    "text": "Khoá học thực chiến dành cho đội HR/Tuyển dụng, tập trung vào cách biến AI từ chatbot trả lời chung chung thành trợ lý làm việc theo quy trình và theo nghề.\n\n\n\nThông tin\n\n\n\nKết quả AI vì sao hay “generic”\nSkills, Progressive Disclosure, Context Window\nDemo linkedin-extractor, outreach-email, cv-screener\nSkill Creator, Cowork, Claude in Chrome, Gemini in Chrome\nBảo mật khi dùng Agent Skill\n\nMở slide deck → Khảo sát sau khóa học →\n\n\n\nTổ chức nội dung\n\n\n\nslides/: toàn bộ HTML presentation, assets, media\nSau này có thể thêm:\n\nmaterials/: workbook, handout, checklist\nexamples/: skill demo, dataset mẫu\nfollow-up/: bài tập sau buổi học\n\n\nMỗi khóa là một “package” riêng nên rất thuận tiện để tái sử dụng hoặc nhân bản cho khóa tiếp theo."
+  },
+  {
+    "objectID": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html#ai-thực-chiến-cho-đội-tuyển-dụng",
+    "href": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html#ai-thực-chiến-cho-đội-tuyển-dụng",
+    "title": "AI Thực Chiến Cho Đội Tuyển Dụng",
+    "section": "",
+    "text": "Khoá học thực chiến dành cho đội HR/Tuyển dụng, tập trung vào cách biến AI từ chatbot trả lời chung chung thành trợ lý làm việc theo quy trình và theo nghề."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Nếu bạn muốn:\n\nnhận thông báo khi có tutorial hoặc notebook lesson mới\ntrao đổi về workshop, mentoring, hoặc đào tạo nội bộ\ngóp ý cho dz-academy, dz-app, hoặc dz-news\n\nhãy kết nối qua các kênh sau:\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
+  },
+  {
+    "objectID": "contact.html#liên-hệ",
+    "href": "contact.html#liên-hệ",
+    "title": "Contact",
+    "section": "",
+    "text": "Nếu bạn muốn:\n\nnhận thông báo khi có tutorial hoặc notebook lesson mới\ntrao đổi về workshop, mentoring, hoặc đào tạo nội bộ\ngóp ý cho dz-academy, dz-app, hoặc dz-news\n\nhãy kết nối qua các kênh sau:\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
+  },
+  {
+    "objectID": "contact.html#định-hướng-hợp-tác",
+    "href": "contact.html#định-hướng-hợp-tác",
+    "title": "Contact",
+    "section": "Định hướng hợp tác",
+    "text": "Định hướng hợp tác\ndz ưu tiên các hợp tác tập trung vào:\n\nnền tảng kỹ thuật rõ ràng\nnội dung có tính ứng dụng thật\ncông cụ hoặc workflow giúp người Việt học và làm tốt hơn trong thời đại AI"
   },
   {
     "objectID": "about.html",
@@ -61,69 +96,6 @@
     "title": "Về tôi",
     "section": "Liên hệ",
     "text": "Liên hệ\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
-  },
-  {
-    "objectID": "training/index.html",
-    "href": "training/index.html",
-    "title": "Training",
-    "section": "",
-    "text": "Các khoá học được tổ chức theo từng thư mục độc lập để dễ mở rộng, bảo trì, và publish lên GitHub Pages sau này.\n\n\n\nKhoá học\n\n\nSlide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đến skill, workflow, Cowork, Chrome, và bảo mật khi dùng Agent Skill.\nMở trang khoá học →\n\n\n\nKhảo sát\n\n\nTrang feedback dùng lại cho nhiều khóa: chọn khóa đã học, chấm điểm nội dung, đánh giá giảng viên, và gửi phản hồi thẳng về Google Sheets qua Google Apps Script.\nMở trang khảo sát →\n\n\n\nKiến trúc\n\n\nMỗi khoá nên có:\n\ntraining/&lt;slug&gt;/index.qmd cho landing page\ntraining/&lt;slug&gt;/slides/ cho HTML deck và assets\ntraining/course-feedback/index.qmd cho trang khảo sát chung\ntraining/&lt;slug&gt;/materials/ nếu có handout, dataset, workbook\n\nNhờ vậy, mỗi khoá có thể xuất bản độc lập nhưng vẫn nằm trong cùng hệ sinh thái dz-academy."
-  },
-  {
-    "objectID": "training/index.html#training-library",
-    "href": "training/index.html#training-library",
-    "title": "Training",
-    "section": "",
-    "text": "Các khoá học được tổ chức theo từng thư mục độc lập để dễ mở rộng, bảo trì, và publish lên GitHub Pages sau này."
-  },
-  {
-    "objectID": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html",
-    "href": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html",
-    "title": "AI Thực Chiến Cho Đội Tuyển Dụng",
-    "section": "",
-    "text": "Khoá học thực chiến dành cho đội HR/Tuyển dụng, tập trung vào cách biến AI từ chatbot trả lời chung chung thành trợ lý làm việc theo quy trình và theo nghề.\n\n\n\nThông tin\n\n\n\nKết quả AI vì sao hay “generic”\nSkills, Progressive Disclosure, Context Window\nDemo linkedin-extractor, outreach-email, cv-screener\nSkill Creator, Cowork, Claude in Chrome, Gemini in Chrome\nBảo mật khi dùng Agent Skill\n\nMở slide deck → Khảo sát sau khóa học →\n\n\n\nTổ chức nội dung\n\n\n\nslides/: toàn bộ HTML presentation, assets, media\nSau này có thể thêm:\n\nmaterials/: workbook, handout, checklist\nexamples/: skill demo, dataset mẫu\nfollow-up/: bài tập sau buổi học\n\n\nMỗi khóa là một “package” riêng nên rất thuận tiện để tái sử dụng hoặc nhân bản cho khóa tiếp theo."
-  },
-  {
-    "objectID": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html#ai-thực-chiến-cho-đội-tuyển-dụng",
-    "href": "training/ai-thuc-chien-cho-doi-tuyen-dung/index.html#ai-thực-chiến-cho-đội-tuyển-dụng",
-    "title": "AI Thực Chiến Cho Đội Tuyển Dụng",
-    "section": "",
-    "text": "Khoá học thực chiến dành cho đội HR/Tuyển dụng, tập trung vào cách biến AI từ chatbot trả lời chung chung thành trợ lý làm việc theo quy trình và theo nghề."
-  },
-  {
-    "objectID": "roadmap/index.html",
-    "href": "roadmap/index.html",
-    "title": "Roadmap học tập",
-    "section": "",
-    "text": "Chọn lộ trình học tập theo mục tiêu của bạn.\n\n\n📊 Data Analytics\nPython → Pandas → SQL → Visualization → Dashboard\nXem roadmap →\n\n\n💻 Developing\nPython Basics → OOP → APIs → Automation → Tools\nComing soon\n\n\n🤖 AI / LLM\nML Basics → LLM Concepts → RAG → AI Agents\nComing soon"
-  },
-  {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Bài viết",
-    "section": "",
-    "text": "Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng\n\n\n\nAI\n\nHR\n\nTuyển dụng\n\n\n\nVì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.\n\n\n\n6 thg 5, 2026\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Nếu bạn muốn:\n\nnhận thông báo khi có tutorial hoặc notebook lesson mới\ntrao đổi về workshop, mentoring, hoặc đào tạo nội bộ\ngóp ý cho dz-academy, dz-app, hoặc dz-news\n\nhãy kết nối qua các kênh sau:\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
-  },
-  {
-    "objectID": "contact.html#liên-hệ",
-    "href": "contact.html#liên-hệ",
-    "title": "Contact",
-    "section": "",
-    "text": "Nếu bạn muốn:\n\nnhận thông báo khi có tutorial hoặc notebook lesson mới\ntrao đổi về workshop, mentoring, hoặc đào tạo nội bộ\ngóp ý cho dz-academy, dz-app, hoặc dz-news\n\nhãy kết nối qua các kênh sau:\n\nGitHub: github.com/dzai-vn\nWebsite: dz-ai.vn"
-  },
-  {
-    "objectID": "contact.html#định-hướng-hợp-tác",
-    "href": "contact.html#định-hướng-hợp-tác",
-    "title": "Contact",
-    "section": "Định hướng hợp tác",
-    "text": "Định hướng hợp tác\ndz ưu tiên các hợp tác tập trung vào:\n\nnền tảng kỹ thuật rõ ràng\nnội dung có tính ứng dụng thật\ncông cụ hoặc workflow giúp người Việt học và làm tốt hơn trong thời đại AI"
   },
   {
     "objectID": "posts/ai/tu-ket-qua-chung-chung-den-dong-nghiep-ky-thuat-so.html",
@@ -238,18 +210,32 @@
     "text": "5. Dashboard & Reporting\n\nPlotly Dash\n\nLayout & Components\nCallbacks\nDeploy\n\n\n\nQuarto Reports\n\nParameterized Reports\nAutomated Reporting"
   },
   {
-    "objectID": "training/course-feedback/index.html",
-    "href": "training/course-feedback/index.html",
-    "title": "Khảo sát sau khóa học",
+    "objectID": "demos/index.html",
+    "href": "demos/index.html",
+    "title": "Demos",
     "section": "",
-    "text": "Cảm ơn bạn đã tham gia khóa học. Phản hồi của bạn sẽ giúp DZ AI Academy cải thiện nội dung, cách dạy và trải nghiệm học tập cho các khóa sau.\n\n  \n    \n      1. Bạn đã học khóa nào?\n      \n        Chọn khóa học\n        AI Thực Chiến Cho Đội Tuyển Dụng\n      \n    \n\n    \n      \n        2.1 Chất lượng nội dung\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n      \n        2.2 Đánh giá giảng viên\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n    \n\n    \n      2.3 Những điểm làm tốt\n      \n    \n\n    \n      2.4 Những điểm chưa làm tốt / cần cải thiện\n      \n    \n\n    \n    \n\n    \n      Gửi khảo sát"
+    "text": "Các ứng dụng tương tác — khám phá bằng tay, không cần cài đặt gì."
   },
   {
-    "objectID": "training/course-feedback/index.html#khảo-sát-sau-khóa-học",
-    "href": "training/course-feedback/index.html#khảo-sát-sau-khóa-học",
-    "title": "Khảo sát sau khóa học",
+    "objectID": "demos/index.html#chart-selection-guide",
+    "href": "demos/index.html#chart-selection-guide",
+    "title": "Demos",
+    "section": "Chart Selection Guide",
+    "text": "Chart Selection Guide\nKhông biết dùng biểu đồ gì cho dữ liệu của bạn? Tool này giúp bạn chọn đúng.\n\n13 loại biểu đồ phổ biến\nLive preview với Chart.js\nSo sánh ưu/nhược điểm\n\nMở Chart Selection Guide →\n\nThêm demos sẽ được thêm vào đây theo thời gian."
+  },
+  {
+    "objectID": "roadmap/index.html",
+    "href": "roadmap/index.html",
+    "title": "Roadmap học tập",
     "section": "",
-    "text": "Cảm ơn bạn đã tham gia khóa học. Phản hồi của bạn sẽ giúp DZ AI Academy cải thiện nội dung, cách dạy và trải nghiệm học tập cho các khóa sau.\n\n  \n    \n      1. Bạn đã học khóa nào?\n      \n        Chọn khóa học\n        AI Thực Chiến Cho Đội Tuyển Dụng\n      \n    \n\n    \n      \n        2.1 Chất lượng nội dung\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n      \n        2.2 Đánh giá giảng viên\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n    \n\n    \n      2.3 Những điểm làm tốt\n      \n    \n\n    \n      2.4 Những điểm chưa làm tốt / cần cải thiện\n      \n    \n\n    \n    \n\n    \n      Gửi khảo sát"
+    "text": "Chọn lộ trình học tập theo mục tiêu của bạn.\n\n\n📊 Data Analytics\nPython → Pandas → SQL → Visualization → Dashboard\nXem roadmap →\n\n\n💻 Developing\nPython Basics → OOP → APIs → Automation → Tools\nComing soon\n\n\n🤖 AI / LLM\nML Basics → LLM Concepts → RAG → AI Agents\nComing soon"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Bài viết",
+    "section": "",
+    "text": "Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số — Câu Chuyện AI Của Phòng Tuyển Dụng\n\n\n\nAI\n\nHR\n\nTuyển dụng\n\n\n\nVì sao AI thường cho kết quả generic trong tuyển dụng, và cách Prompt Engineering, Skills, Memory, MCP biến chatbot thành đồng nghiệp kỹ thuật số.\n\n\n\n6 thg 5, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -278,5 +264,19 @@
     "title": "Tutorials",
     "section": "",
     "text": "No matching items"
+  },
+  {
+    "objectID": "training/course-feedback/index.html",
+    "href": "training/course-feedback/index.html",
+    "title": "Khảo sát sau khóa học",
+    "section": "",
+    "text": "Cảm ơn bạn đã tham gia khóa học. Phản hồi của bạn sẽ giúp DZ AI Academy cải thiện nội dung, cách dạy và trải nghiệm học tập cho các khóa sau.\n\n  \n    \n      1. Bạn đã học khóa nào?\n      \n        Chọn khóa học\n        AI Thực Chiến Cho Đội Tuyển Dụng\n      \n    \n\n    \n      \n        2.1 Chất lượng nội dung\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n      \n        2.2 Đánh giá giảng viên\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n    \n\n    \n      2.3 Những điểm làm tốt\n      \n    \n\n    \n      2.4 Những điểm chưa làm tốt / cần cải thiện\n      \n    \n\n    \n    \n\n    \n      Gửi khảo sát"
+  },
+  {
+    "objectID": "training/course-feedback/index.html#khảo-sát-sau-khóa-học",
+    "href": "training/course-feedback/index.html#khảo-sát-sau-khóa-học",
+    "title": "Khảo sát sau khóa học",
+    "section": "",
+    "text": "Cảm ơn bạn đã tham gia khóa học. Phản hồi của bạn sẽ giúp DZ AI Academy cải thiện nội dung, cách dạy và trải nghiệm học tập cho các khóa sau.\n\n  \n    \n      1. Bạn đã học khóa nào?\n      \n        Chọn khóa học\n        AI Thực Chiến Cho Đội Tuyển Dụng\n      \n    \n\n    \n      \n        2.1 Chất lượng nội dung\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n      \n        2.2 Đánh giá giảng viên\n        \n          Chọn mức đánh giá\n          5 - Rất tốt\n          4 - Tốt\n          3 - Ổn\n          2 - Cần cải thiện\n          1 - Chưa tốt\n        \n      \n    \n\n    \n      2.3 Những điểm làm tốt\n      \n    \n\n    \n      2.4 Những điểm chưa làm tốt / cần cải thiện\n      \n    \n\n    \n    \n\n    \n      Gửi khảo sát"
   }
 ]
