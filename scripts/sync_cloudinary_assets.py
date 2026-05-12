@@ -35,7 +35,7 @@ TEXT_SUFFIXES = {
     ".json",
     ".webmanifest",
 }
-EXCLUDED_DIRS = {".git", ".github", "docs", "__pycache__"}
+EXCLUDED_DIRS = {".git", ".github", ".quarto", "docs", "__pycache__"}
 PUBLIC_ID_PREFIX = "dz-academy"
 HEAD_BLOCK_START = "<!-- BEGIN CLOUDINARY MANAGED ASSETS -->"
 HEAD_BLOCK_END = "<!-- END CLOUDINARY MANAGED ASSETS -->"

@@ -61,6 +61,23 @@ Neu muon xem truoc pham vi thay doi ma chua upload/xoa file, chay:
 python3 scripts/sync_cloudinary_assets.py --dry-run --cloud-name <your-cloud-name>
 ```
 
+Truoc khi push code, nen chay precheck:
+
+```bash
+python3 scripts/check_cloudinary_prepush.py
+```
+
+Script nay se fail neu:
+
+- co image source vuot gioi han size hien tai cua Cloudinary mac dinh (`10 MB`)
+- co local image reference khong resolve duoc
+
+Neu can doi nguong size kiem tra:
+
+```bash
+python3 scripts/check_cloudinary_prepush.py --max-bytes 10485760
+```
+
 Neu muon test local voi Cloudinary nhung chua xoa image local, chay:
 
 ```bash
@@ -74,6 +91,7 @@ quarto preview
 Luu y:
 
 - Script chi dong bo image source, khong dua CSS/JS len Cloudinary.
+- `check_cloudinary_prepush.py` la buoc gate don gian truoc khi push, de tranh fail CI vi asset size hoac broken local refs.
 - `--keep-local-images` phu hop cho local test: source duoc rewrite sang Cloudinary URL nhung image local van duoc giu lai.
 - Sau lan migration thanh cong dau tien, image binary cua site se duoc bot xoa khoi repo; source text va `docs/` van duoc giu.
 
