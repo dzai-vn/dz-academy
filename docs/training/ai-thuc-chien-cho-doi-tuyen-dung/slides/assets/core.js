@@ -116,7 +116,7 @@
   function initBrandSystem() {
     const context = root.getAttribute("data-brand-context") || "core";
     const config = brandConfigs[context] || brandConfigs.core;
-    const assetBasePath = root.getAttribute("data-brand-assets-path") || "../assets/01-logos/master";
+    const assetBasePath = (root.getAttribute("data-brand-assets-path") || "../assets/01-logos/master").replace(/\/$/, "");
     const logoPath = `${assetBasePath}/${config.logo}`;
 
     document.querySelectorAll("[data-dz-brand-logo]").forEach((logo) => {

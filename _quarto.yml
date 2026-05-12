@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
+    - assets/website/site.webmanifest
     - training/**/slides/assets/**
     - training/**/slides/media/**
     - training/**/google-apps-script/**
