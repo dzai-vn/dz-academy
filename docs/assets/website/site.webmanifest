@@ -1,0 +1,23 @@
+{
+  "name": "DZ AI Academy",
+  "short_name": "DZ AI",
+  "description": "Hệ thống nội dung và tài sản số cho DZ AI Academy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF5",
+  "theme_color": "#001233",
+  "icons": [
+    {
+      "src": "./light/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./light/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

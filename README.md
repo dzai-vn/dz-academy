@@ -42,6 +42,41 @@ Output:
 docs/
 ```
 
+## Cloudinary publish
+
+Workflow publish tren GitHub da duoc mo rong theo huong:
+
+- push len `main`
+- GitHub Actions doc 3 secrets `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
+- chay `scripts/sync_cloudinary_assets.py`
+- upload image source len Cloudinary theo path on dinh
+- rewrite source sang Cloudinary URLs
+- xoa binary image local khoi repo
+- render lai `docs/`
+- bot commit nguoc source + `docs/` voi `[skip ci]`
+
+Neu muon xem truoc pham vi thay doi ma chua upload/xoa file, chay:
+
+```bash
+python3 scripts/sync_cloudinary_assets.py --dry-run --cloud-name <your-cloud-name>
+```
+
+Neu muon test local voi Cloudinary nhung chua xoa image local, chay:
+
+```bash
+export CLOUDINARY_CLOUD_NAME=...
+export CLOUDINARY_API_KEY=...
+export CLOUDINARY_API_SECRET=...
+python3 scripts/sync_cloudinary_assets.py --keep-local-images
+quarto preview
+```
+
+Luu y:
+
+- Script chi dong bo image source, khong dua CSS/JS len Cloudinary.
+- `--keep-local-images` phu hop cho local test: source duoc rewrite sang Cloudinary URL nhung image local van duoc giu lai.
+- Sau lan migration thanh cong dau tien, image binary cua site se duoc bot xoa khoi repo; source text va `docs/` van duoc giu.
+
 ## Thành phần chính
 
 - `_metadata.yml`: mặc định chung cho toàn site academy

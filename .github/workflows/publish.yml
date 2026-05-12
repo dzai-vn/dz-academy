@@ -28,12 +28,29 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Preflight Cloudinary secrets
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          test -n "$CLOUDINARY_CLOUD_NAME"
+          test -n "$CLOUDINARY_API_KEY"
+          test -n "$CLOUDINARY_API_SECRET"
+
+      - name: Sync Cloudinary assets
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: python3 scripts/sync_cloudinary_assets.py
+
       - name: Render site
         run: quarto render
 
-      - name: Commit and push docs/
+      - name: Commit and push source + docs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/
-          git diff --staged --quiet || (git commit -m "ci: render site [skip ci]" && git push)
+          git add -A
+          git diff --staged --quiet || (git commit -m "ci: sync cloudinary assets and render site [skip ci]" && git push)
