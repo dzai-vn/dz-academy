@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Duy NHM">
+
+<title>03 — Frontend, Backend, Database &amp; API – DZ AI Academy</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-3123a1fcdd3f833ab3f2be71d84c8e78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
+
+
+<link rel="stylesheet" href="../../../../assets/dz-tokens.css">
+<meta property="og:title" content="03 — Frontend, Backend, Database &amp; API – DZ AI Academy">
+<meta property="og:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
+<meta property="og:site_name" content="DZ AI Academy">
+<meta name="twitter:title" content="03 — Frontend, Backend, Database &amp; API – DZ AI Academy">
+<meta name="twitter:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="../../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">DZ AI Academy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../posts/index.html"> 
+<span class="menu-text">Bài viết</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../tutorials/index.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../demos/index.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../roadmap/index.html"> 
+<span class="menu-text">Roadmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html"> 
+<span class="menu-text">Về tôi</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dzai-vn"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ôn-lại-ba-tầng-của-mọi-ứng-dụng-web" id="toc-ôn-lại-ba-tầng-của-mọi-ứng-dụng-web" class="nav-link active" data-scroll-target="#ôn-lại-ba-tầng-của-mọi-ứng-dụng-web">1. Ôn Lại: Ba Tầng Của Mọi Ứng Dụng Web</a></li>
+  <li><a href="#frontend-là-gì" id="toc-frontend-là-gì" class="nav-link" data-scroll-target="#frontend-là-gì">2. Frontend là gì?</a>
+  <ul class="collapse">
+  <li><a href="#html-cấu-trúc-bộ-xương" id="toc-html-cấu-trúc-bộ-xương" class="nav-link" data-scroll-target="#html-cấu-trúc-bộ-xương">HTML — Cấu trúc (bộ xương)</a></li>
+  <li><a href="#css-trang-trí-da-quần-áo" id="toc-css-trang-trí-da-quần-áo" class="nav-link" data-scroll-target="#css-trang-trí-da-quần-áo">CSS — Trang trí (da + quần áo)</a></li>
+  <li><a href="#javascript-js-hành-vi-hệ-thống-điện" id="toc-javascript-js-hành-vi-hệ-thống-điện" class="nav-link" data-scroll-target="#javascript-js-hành-vi-hệ-thống-điện">JavaScript (JS) — Hành vi (hệ thống điện)</a></li>
+  <li><a href="#bộ-ba-gộp-lại" id="toc-bộ-ba-gộp-lại" class="nav-link" data-scroll-target="#bộ-ba-gộp-lại">Bộ ba gộp lại</a></li>
+  </ul></li>
+  <li><a href="#backend-là-gì" id="toc-backend-là-gì" class="nav-link" data-scroll-target="#backend-là-gì">3. Backend là gì?</a></li>
+  <li><a href="#api-người-bồi-bàn-giữa-frontend-và-backend" id="toc-api-người-bồi-bàn-giữa-frontend-và-backend" class="nav-link" data-scroll-target="#api-người-bồi-bàn-giữa-frontend-và-backend">4. API — Người Bồi Bàn Giữa Frontend Và Backend</a>
+  <ul class="collapse">
+  <li><a href="#api-là-gì" id="toc-api-là-gì" class="nav-link" data-scroll-target="#api-là-gì">API là gì?</a></li>
+  <li><a href="#rest-ngôn-ngữ-phổ-biến-nhất-của-api" id="toc-rest-ngôn-ngữ-phổ-biến-nhất-của-api" class="nav-link" data-scroll-target="#rest-ngôn-ngữ-phổ-biến-nhất-của-api">REST — “Ngôn ngữ” phổ biến nhất của API</a></li>
+  <li><a href="#status-code-bồi-bàn-phản-hồi" id="toc-status-code-bồi-bàn-phản-hồi" class="nav-link" data-scroll-target="#status-code-bồi-bàn-phản-hồi">Status code — “Bồi bàn phản hồi”</a></li>
+  </ul></li>
+  <li><a href="#database-sâu-hơn-bảng-quan-hệ-khoá-ngoại" id="toc-database-sâu-hơn-bảng-quan-hệ-khoá-ngoại" class="nav-link" data-scroll-target="#database-sâu-hơn-bảng-quan-hệ-khoá-ngoại">5. Database Sâu Hơn — Bảng, Quan Hệ, Khoá Ngoại</a>
+  <ul class="collapse">
+  <li><a href="#database-nhiều-bảng-liên-kết" id="toc-database-nhiều-bảng-liên-kết" class="nav-link" data-scroll-target="#database-nhiều-bảng-liên-kết">Database = nhiều bảng liên kết</a></li>
+  <li><a href="#khoá-ngoại-foreign-key-sợi-dây-liên-kết" id="toc-khoá-ngoại-foreign-key-sợi-dây-liên-kết" class="nav-link" data-scroll-target="#khoá-ngoại-foreign-key-sợi-dây-liên-kết">Khoá ngoại (Foreign Key) — sợi dây liên kết</a></li>
+  </ul></li>
+  <li><a href="#rls-row-level-security" id="toc-rls-row-level-security" class="nav-link" data-scroll-target="#rls-row-level-security">6. RLS — Row Level Security</a>
+  <ul class="collapse">
+  <li><a href="#vấn-đề" id="toc-vấn-đề" class="nav-link" data-scroll-target="#vấn-đề">Vấn đề</a></li>
+  <li><a href="#giải-pháp-rls" id="toc-giải-pháp-rls" class="nav-link" data-scroll-target="#giải-pháp-rls">Giải pháp: RLS</a></li>
+  </ul></li>
+  <li><a href="#supabase-backend-gói-sẵn-cho-bạn" id="toc-supabase-backend-gói-sẵn-cho-bạn" class="nav-link" data-scroll-target="#supabase-backend-gói-sẵn-cho-bạn">7. Supabase — “Backend Gói Sẵn” Cho Bạn</a>
+  <ul class="collapse">
+  <li><a href="#vấn-đề-1" id="toc-vấn-đề-1" class="nav-link" data-scroll-target="#vấn-đề-1">Vấn đề</a></li>
+  <li><a href="#giải-pháp-supabase" id="toc-giải-pháp-supabase" class="nav-link" data-scroll-target="#giải-pháp-supabase">Giải pháp: Supabase</a></li>
+  <li><a href="#free-tier-đủ-dùng-cho-khoá-học" id="toc-free-tier-đủ-dùng-cho-khoá-học" class="nav-link" data-scroll-target="#free-tier-đủ-dùng-cho-khoá-học">Free tier — đủ dùng cho khoá học</a></li>
+  </ul></li>
+  <li><a href="#tất-cả-gộp-lại-luồng-đi-cụ-thể" id="toc-tất-cả-gộp-lại-luồng-đi-cụ-thể" class="nav-link" data-scroll-target="#tất-cả-gộp-lại-luồng-đi-cụ-thể">8. Tất Cả Gộp Lại — Luồng Đi Cụ Thể</a></li>
+  <li><a href="#bảng-tóm-tắt-thuật-ngữ" id="toc-bảng-tóm-tắt-thuật-ngữ" class="nav-link" data-scroll-target="#bảng-tóm-tắt-thuật-ngữ">9. Bảng Tóm Tắt Thuật Ngữ</a></li>
+  <li><a href="#bạn-đã-hiểu-chưa" id="toc-bạn-đã-hiểu-chưa" class="nav-link" data-scroll-target="#bạn-đã-hiểu-chưa">✅ Bạn Đã Hiểu Chưa?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">03 — Frontend, Backend, Database &amp; API</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Duy NHM </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>⏱️ <strong>Thời lượng:</strong> 45 phút<br>
+🎯 <strong>Mục tiêu:</strong> Hiểu sâu hơn về 3 tầng của ứng dụng web (Frontend / Backend / Database), biết API là gì, RLS hoạt động ra sao, và Supabase giúp bạn điều gì.</p>
+</blockquote>
+<hr>
+<section id="ôn-lại-ba-tầng-của-mọi-ứng-dụng-web" class="level2">
+<h2 class="anchored" data-anchor-id="ôn-lại-ba-tầng-của-mọi-ứng-dụng-web">1. Ôn Lại: Ba Tầng Của Mọi Ứng Dụng Web</h2>
+<p>Ở <a href="../../../../training/vibe-coding/materials/primer-pack/01-what-is-code.html">bài 01</a>, bạn đã biết ví von nhà hàng. Giờ mình đi sâu hơn vào từng tầng.</p>
+<pre class="mermaid"><code>graph LR
+    A["🧑 Khách hàng&lt;br/&gt;(Bạn)"] --&gt;|"Ngồi xuống,&lt;br/&gt;xem menu"| B["🍽️ PHÒNG ĂN&lt;br/&gt;(Frontend)"]
+    B --&gt;|"Order&lt;br/&gt;gửi vào bếp (API)"| C["👨‍🍳 BẾP&lt;br/&gt;(Backend)"]
+    C --&gt;|"Lấy nguyên liệu"| D["🧊 KHO LẠNH&lt;br/&gt;(Database)"]
+    D --&gt;|"Trả nguyên liệu"| C
+    C --&gt;|"Món ăn&lt;br/&gt;ra bàn (API)"| B</code></pre>
+<hr>
+</section>
+<section id="frontend-là-gì" class="level2">
+<h2 class="anchored" data-anchor-id="frontend-là-gì">2. Frontend là gì?</h2>
+<p>Frontend là phần người dùng nhìn thấy và tương tác.</p>
+<p>Các thành phần cơ bản:</p>
+<ul>
+<li><strong>HTML:</strong> cấu trúc nội dung, như form, tiêu đề, bảng.</li>
+<li><strong>CSS:</strong> cách trình bày, màu sắc, khoảng cách, responsive.</li>
+<li><strong>JavaScript:</strong> hành vi tương tác, ví dụ bấm nút, lọc danh sách, gọi API.</li>
+</ul>
+<p>Trong khóa này, bạn có thể gặp React/Next.js. Hãy hiểu đơn giản: React giúp chia giao diện thành các component nhỏ, còn Next.js giúp tổ chức route, render trang và deploy dễ hơn.</p>
+<section id="html-cấu-trúc-bộ-xương" class="level3">
+<h3 class="anchored" data-anchor-id="html-cấu-trúc-bộ-xương">HTML — Cấu trúc (bộ xương)</h3>
+<p>HTML quyết định <strong>có gì</strong> trên trang: tiêu đề, đoạn văn, hình ảnh, nút bấm, form nhập liệu.</p>
+<pre><code>Ví von: HTML giống như bản thiết kế kiến trúc —
+"Ở đây có 1 phòng khách, 2 phòng ngủ, 1 nhà bếp."
+Chưa nói gì về màu sơn hay nội thất.</code></pre>
+<p>Ví dụ HTML đơn giản (bạn không cần nhớ, chỉ cần nhận diện):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Đặt phòng họp<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Chọn phòng và giờ bạn muốn đặt.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="dt">&gt;</span>Đặt ngay<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>→ Trình duyệt hiểu: “À, có 1 tiêu đề, 1 đoạn text, 1 nút bấm.”</p>
+</section>
+<section id="css-trang-trí-da-quần-áo" class="level3">
+<h3 class="anchored" data-anchor-id="css-trang-trí-da-quần-áo">CSS — Trang trí (da + quần áo)</h3>
+<p>CSS quyết định <strong>trông như thế nào</strong>: màu sắc, font chữ, kích thước, khoảng cách, hiệu ứng.</p>
+<pre><code>Ví von: CSS giống như nhà thiết kế nội thất —
+"Phòng khách sơn trắng, ghế sofa xám, đèn vàng ấm."</code></pre>
+</section>
+<section id="javascript-js-hành-vi-hệ-thống-điện" class="level3">
+<h3 class="anchored" data-anchor-id="javascript-js-hành-vi-hệ-thống-điện">JavaScript (JS) — Hành vi (hệ thống điện)</h3>
+<p>JS quyết định <strong>phản ứng thế nào</strong> khi người dùng tương tác: click nút → mở popup, nhập form → kiểm tra email đúng chưa, kéo thả → đổi vị trí.</p>
+<pre><code>Ví von: JS giống hệ thống điện + cơ khí —
+"Bấm công tắc → đèn sáng. Mở cửa → chuông reo."</code></pre>
+</section>
+<section id="bộ-ba-gộp-lại" class="level3">
+<h3 class="anchored" data-anchor-id="bộ-ba-gộp-lại">Bộ ba gộp lại</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>HTML</th>
+<th>CSS</th>
+<th>JS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Vai trò</strong></td>
+<td>Cấu trúc</td>
+<td>Trang trí</td>
+<td>Tương tác</td>
+</tr>
+<tr class="even">
+<td><strong>Ví von</strong></td>
+<td>Bộ xương</td>
+<td>Da + quần áo</td>
+<td>Cơ bắp + thần kinh</td>
+</tr>
+<tr class="odd">
+<td><strong>Thiếu thì sao?</strong></td>
+<td>Không có trang</td>
+<td>Trang trắng xấu</td>
+<td>Trang “chết” — bấm không phản hồi</td>
+</tr>
+<tr class="even">
+<td><strong>AI viết cho bạn?</strong></td>
+<td>✅ Có</td>
+<td>✅ Có</td>
+<td>✅ Có</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Tin vui:</strong> Trong Vibe Coding, AI viết cả 3 cho bạn. Bạn chỉ cần <strong>mô tả bạn muốn gì</strong>.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="backend-là-gì" class="level2">
+<h2 class="anchored" data-anchor-id="backend-là-gì">3. Backend là gì?</h2>
+<p>Backend xử lý logic mà frontend không nên tự làm:</p>
+<ul>
+<li>Kiểm tra quyền người dùng.</li>
+<li>Kiểm tra dữ liệu hợp lệ.</li>
+<li>Ghi/đọc database.</li>
+<li>Gửi email.</li>
+<li>Tính báo cáo.</li>
+<li>Bảo vệ secret key.</li>
+</ul>
+<p>Ví dụ <strong>ExpenseFlow</strong> không thể để frontend tự quyết “đề xuất này đã được kế toán duyệt”, vì người dùng có thể sửa request trong trình duyệt. Backend phải kiểm tra role và trạng thái hiện tại.</p>
+<hr>
+</section>
+<section id="api-người-bồi-bàn-giữa-frontend-và-backend" class="level2">
+<h2 class="anchored" data-anchor-id="api-người-bồi-bàn-giữa-frontend-và-backend">4. API — Người Bồi Bàn Giữa Frontend Và Backend</h2>
+<section id="api-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="api-là-gì">API là gì?</h3>
+<p><strong>API (Application Programming Interface)</strong> = bộ quy tắc để Frontend “nói chuyện” với Backend.</p>
+<pre><code>Ví von: Bạn (frontend) ngồi ở bàn nhà hàng. Bạn KHÔNG tự chạy vào bếp.
+Bạn gọi người bồi bàn (API), nói "Cho tôi 1 phở bò tái."
+Bồi bàn mang order vào bếp (backend), bếp nấu xong, bồi bàn mang ra.</code></pre>
+</section>
+<section id="rest-ngôn-ngữ-phổ-biến-nhất-của-api" class="level3">
+<h3 class="anchored" data-anchor-id="rest-ngôn-ngữ-phổ-biến-nhất-của-api">REST — “Ngôn ngữ” phổ biến nhất của API</h3>
+<p>REST dùng 4 hành động chính:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 14%">
+<col style="width: 32%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hành động</th>
+<th>Nghĩa</th>
+<th>Ví dụ nhà hàng</th>
+<th>Ví dụ ứng dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GET</strong></td>
+<td>Xem / lấy dữ liệu</td>
+<td>“Cho xem menu”</td>
+<td>Xem danh sách ticket</td>
+</tr>
+<tr class="even">
+<td><strong>POST</strong></td>
+<td>Tạo mới</td>
+<td>“Gọi 1 phở bò”</td>
+<td>Tạo ticket mới</td>
+</tr>
+<tr class="odd">
+<td><strong>PUT</strong></td>
+<td>Sửa / cập nhật</td>
+<td>“Đổi phở bò thành phở gà”</td>
+<td>Cập nhật trạng thái ticket</td>
+</tr>
+<tr class="even">
+<td><strong>DELETE</strong></td>
+<td>Xoá</td>
+<td>“Huỷ phở bò”</td>
+<td>Xoá ticket nháp</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="status-code-bồi-bàn-phản-hồi" class="level3">
+<h3 class="anchored" data-anchor-id="status-code-bồi-bàn-phản-hồi">Status code — “Bồi bàn phản hồi”</h3>
+<p>Sau mỗi request, server trả về 1 <strong>mã số</strong> cho biết kết quả:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 36%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mã</th>
+<th>Nghĩa</th>
+<th>Ví von</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>200</strong></td>
+<td>OK — thành công</td>
+<td>“Đây, phở của bạn!”</td>
+</tr>
+<tr class="even">
+<td><strong>201</strong></td>
+<td>Created — tạo mới thành công</td>
+<td>“Order đã ghi nhận!”</td>
+</tr>
+<tr class="odd">
+<td><strong>400</strong></td>
+<td>Bad Request — sai cú pháp</td>
+<td>“Dạ em không hiểu order”</td>
+</tr>
+<tr class="even">
+<td><strong>401</strong></td>
+<td>Unauthorized — chưa đăng nhập</td>
+<td>“Quý khách chưa có vé vào cửa”</td>
+</tr>
+<tr class="odd">
+<td><strong>404</strong></td>
+<td>Not Found — không tìm thấy</td>
+<td>“Dạ quán không có món này”</td>
+</tr>
+<tr class="even">
+<td><strong>500</strong></td>
+<td>Server Error — lỗi bếp</td>
+<td>“Bếp bị cháy, xin lỗi quý khách!”</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Bạn không cần nhớ hết mã</strong> — chỉ cần biết: 2xx = tốt, 4xx = lỗi do bạn, 5xx = lỗi do server.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="database-sâu-hơn-bảng-quan-hệ-khoá-ngoại" class="level2">
+<h2 class="anchored" data-anchor-id="database-sâu-hơn-bảng-quan-hệ-khoá-ngoại">5. Database Sâu Hơn — Bảng, Quan Hệ, Khoá Ngoại</h2>
+<section id="database-nhiều-bảng-liên-kết" class="level3">
+<h3 class="anchored" data-anchor-id="database-nhiều-bảng-liên-kết">Database = nhiều bảng liên kết</h3>
+<p>Ở <a href="../../../../training/vibe-coding/materials/primer-pack/01-what-is-code.html">bài 01</a> bạn biết database giống Excel. Nhưng 1 app thật có <strong>nhiều bảng</strong>, và chúng <strong>liên kết</strong> với nhau.</p>
+<p><strong>Ví dụ: HRIS</strong> (đồ án giảng viên demo)</p>
+<pre class="mermaid"><code>erDiagram
+    USERS {
+        int id PK
+        text name
+        text email
+        text role
+    }
+    TICKETS {
+        int id PK
+        text title
+        text description
+        text status
+        int created_by FK
+        int assigned_to FK
+    }
+    COMMENTS {
+        int id PK
+        int ticket_id FK
+        int author_id FK
+        text content
+        date created_at
+    }
+
+    USERS ||--o{ TICKETS : "tạo"
+    USERS ||--o{ TICKETS : "được giao"
+    TICKETS ||--o{ COMMENTS : "có"
+    USERS ||--o{ COMMENTS : "viết"</code></pre>
+<p><strong>Đọc sơ đồ này:</strong> - 1 User <strong>tạo</strong> nhiều Ticket (1 → nhiều) - 1 Ticket <strong>có</strong> nhiều Comment (1 → nhiều) - Mỗi Comment <strong>thuộc về</strong> 1 User và 1 Ticket</p>
+</section>
+<section id="khoá-ngoại-foreign-key-sợi-dây-liên-kết" class="level3">
+<h3 class="anchored" data-anchor-id="khoá-ngoại-foreign-key-sợi-dây-liên-kết">Khoá ngoại (Foreign Key) — sợi dây liên kết</h3>
+<p><strong>Khoá ngoại (FK)</strong> là cột trong bảng A chỉ đến dòng trong bảng B.</p>
+<pre><code>Bảng TICKETS có cột "created_by" = id của user nào tạo ticket.
+→ Đó là khoá ngoại — nó "trỏ" sang bảng USERS.</code></pre>
+<p>Ví von: <strong>Khoá ngoại giống “số phòng” trên thẻ khách sạn</strong> — nhìn vào biết khách ở phòng nào.</p>
+<hr>
+</section>
+</section>
+<section id="rls-row-level-security" class="level2">
+<h2 class="anchored" data-anchor-id="rls-row-level-security">6. RLS — Row Level Security</h2>
+<section id="vấn-đề" class="level3">
+<h3 class="anchored" data-anchor-id="vấn-đề">Vấn đề</h3>
+<p>Bạn có bảng <code>employees</code> chứa lương của toàn công ty. <strong>Ai cũng query được bảng này</strong> → lộ lương hết!</p>
+</section>
+<section id="giải-pháp-rls" class="level3">
+<h3 class="anchored" data-anchor-id="giải-pháp-rls">Giải pháp: RLS</h3>
+<p><strong>RLS (Row Level Security)</strong> = quy tắc “mỗi người chỉ thấy dòng liên quan đến mình.”</p>
+<pre><code>Ví von: Tủ hồ sơ văn phòng.
+- Nhân viên mở tủ → chỉ thấy hồ sơ của mình (ngăn kéo khoá).
+- Trưởng phòng → thấy hồ sơ cả phòng mình.
+- Giám đốc → thấy tất cả.</code></pre>
+<pre class="mermaid"><code>graph LR
+    A["👤 Nhân viên A&lt;br/&gt;đăng nhập"] --&gt;|"SELECT *&lt;br/&gt;FROM tickets"| B{"🔒 RLS&lt;br/&gt;kiểm tra"}
+    B --&gt;|"Chỉ trả ticket&lt;br/&gt;của A"| C["📋 3 tickets&lt;br/&gt;của A"]
+    
+    D["👨‍💼 Admin&lt;br/&gt;đăng nhập"] --&gt;|"SELECT *&lt;br/&gt;FROM tickets"| E{"🔒 RLS&lt;br/&gt;kiểm tra"}
+    E --&gt;|"Trả tất cả"| F["📋 50 tickets&lt;br/&gt;toàn bộ"]</code></pre>
+<p><strong>Cùng 1 câu hỏi</strong> (“cho xem tất cả ticket”), <strong>kết quả khác nhau</strong> tuỳ người hỏi là ai. Đó là sức mạnh của RLS.</p>
+<blockquote class="blockquote">
+<p>💡 <strong>Trong khoá học:</strong> Khi build schema ở buổi 3, bạn sẽ viết RLS policy để bảo vệ dữ liệu. AI sẽ giúp bạn viết, nhưng bạn cần hiểu “mỗi vai trò thấy gì.”</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="supabase-backend-gói-sẵn-cho-bạn" class="level2">
+<h2 class="anchored" data-anchor-id="supabase-backend-gói-sẵn-cho-bạn">7. Supabase — “Backend Gói Sẵn” Cho Bạn</h2>
+<section id="vấn-đề-1" class="level3">
+<h3 class="anchored" data-anchor-id="vấn-đề-1">Vấn đề</h3>
+<p>Xây backend từ đầu cần: cài database, viết API, thiết lập đăng nhập, lưu file… Rất nhiều việc, đặc biệt cho người mới.</p>
+</section>
+<section id="giải-pháp-supabase" class="level3">
+<h3 class="anchored" data-anchor-id="giải-pháp-supabase">Giải pháp: Supabase</h3>
+<p><strong>Supabase</strong> gói sẵn tất cả vào 1 nền tảng miễn phí:</p>
+<pre class="mermaid"><code>graph TB
+    subgraph "Supabase — gói sẵn cho bạn"
+        A["🐘 PostgreSQL&lt;br/&gt;Database mạnh mẽ"]
+        B["🔐 Auth&lt;br/&gt;Đăng nhập/đăng ký"]
+        C["📁 Storage&lt;br/&gt;Lưu file/ảnh"]
+        D["⚡ API tự động&lt;br/&gt;Không cần viết backend"]
+        E["🔒 RLS&lt;br/&gt;Phân quyền theo hàng"]
+    end
+
+    F["💻 Frontend&lt;br/&gt;của bạn"] --&gt; D
+    D --&gt; A
+    D --&gt; B
+    D --&gt; C</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Supabase cung cấp</th>
+<th>Bạn phải làm</th>
+<th>AI giúp bạn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Database (PostgreSQL)</td>
+<td>Thiết kế bảng (schema)</td>
+<td>✅ Viết SQL tạo bảng</td>
+</tr>
+<tr class="even">
+<td>Auth (đăng nhập)</td>
+<td>Chọn phương thức (Magic Link / Google)</td>
+<td>✅ Cài đặt</td>
+</tr>
+<tr class="odd">
+<td>Storage (lưu file)</td>
+<td>Quyết định lưu gì (CV, ảnh hoá đơn)</td>
+<td>✅ Config</td>
+</tr>
+<tr class="even">
+<td>API tự động</td>
+<td>Không cần viết!</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>RLS</td>
+<td>Định nghĩa “ai thấy gì”</td>
+<td>✅ Viết policy</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="free-tier-đủ-dùng-cho-khoá-học" class="level3">
+<h3 class="anchored" data-anchor-id="free-tier-đủ-dùng-cho-khoá-học">Free tier — đủ dùng cho khoá học</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tài nguyên</th>
+<th>Giới hạn miễn phí</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Database</td>
+<td>500 MB</td>
+</tr>
+<tr class="even">
+<td>Storage</td>
+<td>1 GB</td>
+</tr>
+<tr class="odd">
+<td>Auth users</td>
+<td>50.000 MAU</td>
+</tr>
+<tr class="even">
+<td>API requests</td>
+<td>Không giới hạn số lượng tổng (có <a href="https://supabase.com/docs/guides/platform/going-into-prod#rate-limiting">rate limit</a>)</td>
+</tr>
+<tr class="odd">
+<td>Bandwidth</td>
+<td>5 GB</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>Dư sức</strong> cho đồ án cuối khoá với 5–20 user nội bộ. Chi tiết xem <a href="https://supabase.com/pricing">Supabase Pricing</a>.</p>
+<hr>
+</section>
+</section>
+<section id="tất-cả-gộp-lại-luồng-đi-cụ-thể" class="level2">
+<h2 class="anchored" data-anchor-id="tất-cả-gộp-lại-luồng-đi-cụ-thể">8. Tất Cả Gộp Lại — Luồng Đi Cụ Thể</h2>
+<p>Ví dụ: <strong>HR manager xem hồ sơ nhân viên trên HRIS</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant NV as 👤 Nhân viên
+    participant FE as 🌐 Frontend (Next.js)
+    participant API as ⚡ Supabase API
+    participant DB as 🐘 PostgreSQL
+    participant RLS as 🔒 RLS Policy
+
+    NV-&gt;&gt;FE: Điền form "Máy in hỏng" + Bấm "Gửi"
+    FE-&gt;&gt;API: POST /tickets {title: "Máy in hỏng", priority: "high"}
+    API-&gt;&gt;RLS: User này có quyền tạo ticket không?
+    RLS--&gt;&gt;API: ✅ Có (role = employee)
+    API-&gt;&gt;DB: INSERT INTO tickets (...)
+    DB--&gt;&gt;API: ✅ Đã lưu, id = 42
+    API--&gt;&gt;FE: 201 Created {id: 42}
+    FE--&gt;&gt;NV: "Ticket #42 đã được tạo! ✅"</code></pre>
+<hr>
+</section>
+<section id="bảng-tóm-tắt-thuật-ngữ" class="level2">
+<h2 class="anchored" data-anchor-id="bảng-tóm-tắt-thuật-ngữ">9. Bảng Tóm Tắt Thuật Ngữ</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 18%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Thuật ngữ</th>
+<th>Nghĩa</th>
+<th>Một câu nhớ nhanh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Frontend</strong></td>
+<td>Phần người dùng nhìn thấy</td>
+<td>“Phòng ăn nhà hàng”</td>
+</tr>
+<tr class="even">
+<td><strong>Backend</strong></td>
+<td>Phần xử lý logic phía sau</td>
+<td>“Nhà bếp”</td>
+</tr>
+<tr class="odd">
+<td><strong>Database</strong></td>
+<td>Nơi lưu trữ dữ liệu</td>
+<td>“Kho lạnh , tủ hồ sơ”</td>
+</tr>
+<tr class="even">
+<td><strong>API</strong></td>
+<td>Cầu nối giữa FE và BE</td>
+<td>“Người bồi bàn”</td>
+</tr>
+<tr class="odd">
+<td><strong>REST</strong></td>
+<td>Quy tắc API phổ biến</td>
+<td>“GET = xem, POST = tạo, PUT = sửa, DELETE = xoá”</td>
+</tr>
+<tr class="even">
+<td><strong>RLS</strong></td>
+<td>Phân quyền theo dòng dữ liệu</td>
+<td>“Ai thấy dòng nào tuỳ vai trò”</td>
+</tr>
+<tr class="odd">
+<td><strong>Supabase</strong></td>
+<td>Nền tảng backend gói sẵn</td>
+<td>“Backend-as-a-Service miễn phí”</td>
+</tr>
+<tr class="even">
+<td><strong>Foreign Key</strong></td>
+<td>Cột liên kết giữa 2 bảng</td>
+<td>“Số phòng trên thẻ khách sạn”</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="bạn-đã-hiểu-chưa" class="level2">
+<h2 class="anchored" data-anchor-id="bạn-đã-hiểu-chưa">✅ Bạn Đã Hiểu Chưa?</h2>
+<ol type="1">
+<li><strong>HTML, CSS, JS mỗi cái làm gì?</strong> Dùng ví von bộ xương / da / cơ bắp.</li>
+<li><strong>API là gì?</strong> Giải thích bằng ví von người bồi bàn.</li>
+<li><strong>GET và POST khác nhau ra sao?</strong> Cho 1 ví dụ thực tế.</li>
+<li><strong>RLS giải quyết vấn đề gì?</strong> Vì sao quan trọng?</li>
+<li><strong>Supabase giúp bạn bỏ qua bước nào</strong> khi xây ứng dụng?</li>
+</ol>
+<blockquote class="blockquote">
+<p>🎯 Trả lời được 5/5 → bạn sẵn sàng cho phần schema ở buổi 3!</p>
+</blockquote>
+<hr>
+<p><em>📖 Quay lại: <a href="../../../../training/vibe-coding/materials/primer-pack/02-git-basics.html">02 — Git &amp; GitHub Cơ Bản</a></em><br>
+<em>📖 Đọc tiếp: <a href="../../../../training/vibe-coding/materials/primer-pack/04-agile-scrum-101.html">04 — Agile &amp; Scrum Cho Người Mới</a></em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    renderMermaid(currentTheme);
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dz-academy\.pages\.dev");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 DZ AI Academy · <a href="https://github.com/dzai-vn">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

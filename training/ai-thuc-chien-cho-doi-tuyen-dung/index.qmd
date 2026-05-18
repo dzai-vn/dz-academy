@@ -27,19 +27,5 @@ description: "Khoá training thực chiến về Skills, Cowork, Claude in Chrom
 [Khảo sát sau khóa học →](../course-feedback/index.qmd){.dz-button}
 :::
 
-::: {.dz-card}
-[Tổ chức nội dung]{.dz-card__meta}
-
-### Cấu trúc publish
-
-- `slides/`: toàn bộ HTML presentation, assets, media
-- Sau này có thể thêm:
-  - `materials/`: workbook, handout, checklist
-  - `examples/`: skill demo, dataset mẫu
-  - `follow-up/`: bài tập sau buổi học
-
-Mỗi khóa là một “package” riêng nên rất thuận tiện để tái sử dụng hoặc nhân bản cho khóa tiếp theo.
-:::
-
 :::
 :::

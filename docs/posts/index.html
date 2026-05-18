@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fe25e17a2d4e6c484a0cdc46dabfa4e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3123a1fcdd3f833ab3f2be71d84c8e78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -284,6 +284,7 @@ Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số —
   var root = document.documentElement;
   var storageKey = "dz-template-theme";
   var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
 
   function getStored() {
     try { return localStorage.getItem(storageKey); } catch (e) { return null; }
@@ -347,6 +348,77 @@ Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số —
     return btn;
   }
 
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     var stored = getStored();
     var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
@@ -363,6 +435,7 @@ Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số —
       applyTheme(currentTheme);
       setStored(currentTheme);
       updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
     });
 
     systemQuery.addEventListener("change", function () {
@@ -370,7 +443,10 @@ Từ “Kết Quả Chung Chung” Đến Đồng Nghiệp Kỹ Thuật Số —
       currentTheme = (s === "dark" || s === "light") ? s : "auto";
       applyTheme(currentTheme);
       updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
     });
+
+    renderMermaid(currentTheme);
   });
 })();
 </script>

@@ -23,6 +23,16 @@ Slide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đ
 :::
 
 ::: {.dz-card}
+[Khoá học]{.dz-card__meta}
+
+### Vibe Coding Thực Chiến Cùng BMAD
+
+Slide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đến skill, workflow, Cowork, Chrome, và bảo mật khi dùng Agent Skill.
+
+[Mở trang khoá học →](vibe-coding/index.qmd)
+:::
+
+::: {.dz-card}
 [Khảo sát]{.dz-card__meta}
 
 ### Khảo sát sau khóa học
@@ -30,21 +40,6 @@ Slide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đ
 Trang feedback dùng lại cho nhiều khóa: chọn khóa đã học, chấm điểm nội dung, đánh giá giảng viên, và gửi phản hồi thẳng về Google Sheets qua Google Apps Script.
 
 [Mở trang khảo sát →](course-feedback/index.qmd)
-:::
-
-::: {.dz-card}
-[Kiến trúc]{.dz-card__meta}
-
-### Cách tổ chức để mở rộng
-
-Mỗi khoá nên có:
-
-- `training/<slug>/index.qmd` cho landing page
-- `training/<slug>/slides/` cho HTML deck và assets
-- `training/course-feedback/index.qmd` cho trang khảo sát chung
-- `training/<slug>/materials/` nếu có handout, dataset, workbook
-
-Nhờ vậy, mỗi khoá có thể xuất bản độc lập nhưng vẫn nằm trong cùng hệ sinh thái `dz-academy`.
 :::
 
 :::

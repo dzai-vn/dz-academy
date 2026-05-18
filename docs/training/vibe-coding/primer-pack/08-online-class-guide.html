@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Duy NHM">
+
+<title>08 — Hướng Dẫn Học Online – DZ AI Academy</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3123a1fcdd3f833ab3f2be71d84c8e78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
+
+
+<link rel="stylesheet" href="../../../assets/dz-tokens.css">
+<meta property="og:title" content="08 — Hướng Dẫn Học Online – DZ AI Academy">
+<meta property="og:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
+<meta property="og:site_name" content="DZ AI Academy">
+<meta name="twitter:title" content="08 — Hướng Dẫn Học Online – DZ AI Academy">
+<meta name="twitter:description" content="Chia sẻ tri thức cho cộng đồng Việt Nam">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">DZ AI Academy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts/index.html"> 
+<span class="menu-text">Bài viết</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tutorials/index.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../demos/index.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../roadmap/index.html"> 
+<span class="menu-text">Roadmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">Về tôi</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dzai-vn"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cấu-trúc-mỗi-buổi-học-2-tiếng" id="toc-cấu-trúc-mỗi-buổi-học-2-tiếng" class="nav-link active" data-scroll-target="#cấu-trúc-mỗi-buổi-học-2-tiếng">1. Cấu Trúc Mỗi Buổi Học (2 tiếng)</a></li>
+  <li><a href="#google-meet-những-thứ-cần-biết" id="toc-google-meet-những-thứ-cần-biết" class="nav-link" data-scroll-target="#google-meet-những-thứ-cần-biết">2. Google Meet — Những Thứ Cần Biết</a>
+  <ul class="collapse">
+  <li><a href="#trước-buổi-học" id="toc-trước-buổi-học" class="nav-link" data-scroll-target="#trước-buổi-học">Trước buổi học</a></li>
+  <li><a href="#trong-buổi-học" id="toc-trong-buổi-học" class="nav-link" data-scroll-target="#trong-buổi-học">Trong buổi học</a></li>
+  </ul></li>
+  <li><a href="#phòng-nhóm-nhỏ-3-link-meet-riêng" id="toc-phòng-nhóm-nhỏ-3-link-meet-riêng" class="nav-link" data-scroll-target="#phòng-nhóm-nhỏ-3-link-meet-riêng">3. Phòng Nhóm Nhỏ — “3 Link Meet Riêng”</a>
+  <ul class="collapse">
+  <li><a href="#tại-sao-không-dùng-tính-năng-breakout-rooms-có-sẵn" id="toc-tại-sao-không-dùng-tính-năng-breakout-rooms-có-sẵn" class="nav-link" data-scroll-target="#tại-sao-không-dùng-tính-năng-breakout-rooms-có-sẵn">Tại sao không dùng tính năng Breakout Rooms có sẵn?</a></li>
+  <li><a href="#cách-hoạt-động" id="toc-cách-hoạt-động" class="nav-link" data-scroll-target="#cách-hoạt-động">Cách hoạt động</a></li>
+  <li><a href="#quy-trình-từng-bước" id="toc-quy-trình-từng-bước" class="nav-link" data-scroll-target="#quy-trình-từng-bước">Quy trình từng bước</a></li>
+  <li><a href="#bạn-cần-làm-gì-trong-phòng-nhóm" id="toc-bạn-cần-làm-gì-trong-phòng-nhóm" class="nav-link" data-scroll-target="#bạn-cần-làm-gì-trong-phòng-nhóm">Bạn cần làm gì trong phòng nhóm?</a></li>
+  <li><a href="#cần-mentor-vào-phòng-nhóm" id="toc-cần-mentor-vào-phòng-nhóm" class="nav-link" data-scroll-target="#cần-mentor-vào-phòng-nhóm">Cần mentor vào phòng nhóm?</a></li>
+  <li><a href="#xử-lý-sự-cố-thường-gặp" id="toc-xử-lý-sự-cố-thường-gặp" class="nav-link" data-scroll-target="#xử-lý-sự-cố-thường-gặp">Xử lý sự cố thường gặp</a></li>
+  </ul></li>
+  <li><a href="#slido-đặt-câu-hỏi" id="toc-slido-đặt-câu-hỏi" class="nav-link" data-scroll-target="#slido-đặt-câu-hỏi">4. Slido — Đặt Câu Hỏi</a>
+  <ul class="collapse">
+  <li><a href="#slido-là-gì" id="toc-slido-là-gì" class="nav-link" data-scroll-target="#slido-là-gì">Slido là gì?</a></li>
+  <li><a href="#cách-dùng" id="toc-cách-dùng" class="nav-link" data-scroll-target="#cách-dùng">Cách dùng</a></li>
+  </ul></li>
+  <li><a href="#buddy-pair-bạn-đồng-hành" id="toc-buddy-pair-bạn-đồng-hành" class="nav-link" data-scroll-target="#buddy-pair-bạn-đồng-hành">5. Buddy Pair — “Bạn Đồng Hành”</a>
+  <ul class="collapse">
+  <li><a href="#buddy-pair-là-gì" id="toc-buddy-pair-là-gì" class="nav-link" data-scroll-target="#buddy-pair-là-gì">Buddy pair là gì?</a></li>
+  <li><a href="#cách-hoạt-động-1" id="toc-cách-hoạt-động-1" class="nav-link" data-scroll-target="#cách-hoạt-động-1">Cách hoạt động</a></li>
+  <li><a href="#quy-tắc-buddy" id="toc-quy-tắc-buddy" class="nav-link" data-scroll-target="#quy-tắc-buddy">Quy tắc buddy</a></li>
+  </ul></li>
+  <li><a href="#quy-tắc-lớp-học" id="toc-quy-tắc-lớp-học" class="nav-link" data-scroll-target="#quy-tắc-lớp-học">6. Quy Tắc Lớp Học</a>
+  <ul class="collapse">
+  <li><a href="#camera" id="toc-camera" class="nav-link" data-scroll-target="#camera">Camera</a></li>
+  <li><a href="#mic" id="toc-mic" class="nav-link" data-scroll-target="#mic">Mic</a></li>
+  <li><a href="#giải-lao" id="toc-giải-lao" class="nav-link" data-scroll-target="#giải-lao">Giải lao</a></li>
+  <li><a href="#quy-tắc-vàng" id="toc-quy-tắc-vàng" class="nav-link" data-scroll-target="#quy-tắc-vàng">Quy tắc vàng</a></li>
+  </ul></li>
+  <li><a href="#ghi-hình-buổi-học" id="toc-ghi-hình-buổi-học" class="nav-link" data-scroll-target="#ghi-hình-buổi-học">7. Ghi Hình Buổi Học</a>
+  <ul class="collapse">
+  <li><a href="#quy-tắc-ghi-hình" id="toc-quy-tắc-ghi-hình" class="nav-link" data-scroll-target="#quy-tắc-ghi-hình">Quy tắc ghi hình</a></li>
+  </ul></li>
+  <li><a href="#khi-bị-kẹt-cầu-cứu-theo-thứ-tự" id="toc-khi-bị-kẹt-cầu-cứu-theo-thứ-tự" class="nav-link" data-scroll-target="#khi-bị-kẹt-cầu-cứu-theo-thứ-tự">8. Khi Bị Kẹt — Cầu Cứu Theo Thứ Tự</a>
+  <ul class="collapse">
+  <li><a href="#cách-đặt-câu-hỏi-hay-trên-zalo-nhóm" id="toc-cách-đặt-câu-hỏi-hay-trên-zalo-nhóm" class="nav-link" data-scroll-target="#cách-đặt-câu-hỏi-hay-trên-zalo-nhóm">Cách đặt câu hỏi hay trên Zalo nhóm</a></li>
+  </ul></li>
+  <li><a href="#netiquette-ứng-xử-online" id="toc-netiquette-ứng-xử-online" class="nav-link" data-scroll-target="#netiquette-ứng-xử-online">9. Netiquette — Ứng Xử Online</a></li>
+  <li><a href="#checklist-trước-buổi-1" id="toc-checklist-trước-buổi-1" class="nav-link" data-scroll-target="#checklist-trước-buổi-1">✅ Checklist Trước Buổi 1</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">08 — Hướng Dẫn Học Online</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Duy NHM </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>⏱️ <strong>Thời lượng:</strong> 25 phút<br>
+🎯 <strong>Mục tiêu:</strong> Biết cách sử dụng Google Meet, 3 link phòng nhỏ, Slido, buddy pair, và các quy tắc lớp online để buổi học đầu tiên diễn ra suôn sẻ.</p>
+</blockquote>
+<hr>
+<section id="cấu-trúc-mỗi-buổi-học-2-tiếng" class="level2">
+<h2 class="anchored" data-anchor-id="cấu-trúc-mỗi-buổi-học-2-tiếng">1. Cấu Trúc Mỗi Buổi Học (2 tiếng)</h2>
+<p>Mỗi buổi đều có <strong>cùng 1 cấu trúc</strong> — bạn sẽ quen nhanh:</p>
+<pre class="mermaid"><code>graph LR
+    A["⏰ 0:00–0:15&lt;br/&gt;🎲 Bốc thăm&lt;br/&gt;2 vòng random"] --&gt; B["⏰ 0:15–0:55&lt;br/&gt;👨‍🏫 Mentor demo&lt;br/&gt;skill BMAD mới&lt;br/&gt;(share screen)"]
+    B --&gt; C["⏰ 0:55–1:00&lt;br/&gt;☕ Giải lao&lt;br/&gt;5 phút"]
+    C --&gt; D["⏰ 1:00–1:30&lt;br/&gt;💻 Warm-up&lt;br/&gt;thực hành nhóm nhỏ&lt;br/&gt;(3 link Meet riêng)"]
+    D --&gt; E["⏰ 1:30–2:00&lt;br/&gt;📋 Chọn đồ án&lt;br/&gt;+ giao notebook&lt;br/&gt;+ buddy pairs"]</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 36%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Phần</th>
+<th>Thời gian</th>
+<th>Bạn làm gì</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bốc thăm</strong></td>
+<td>15’</td>
+<td>Được gọi tên → giải thích 1 khái niệm cho cả lớp</td>
+</tr>
+<tr class="even">
+<td><strong>Mentor demo</strong></td>
+<td>40’</td>
+<td>Xem mentor share screen demo BMAD trên HRIS</td>
+</tr>
+<tr class="odd">
+<td><strong>Giải lao</strong></td>
+<td>5’</td>
+<td>Tắt camera, uống nước, nghỉ mắt</td>
+</tr>
+<tr class="even">
+<td><strong>Warm-up nhóm nhỏ</strong></td>
+<td>30’</td>
+<td>Vào 1 trong 3 link Meet riêng, làm bài tập theo nhóm</td>
+</tr>
+<tr class="odd">
+<td><strong>Chốt &amp; giao bài</strong></td>
+<td>30’</td>
+<td>Quay về phòng chính, chọn đề + nhận notebook</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="google-meet-những-thứ-cần-biết" class="level2">
+<h2 class="anchored" data-anchor-id="google-meet-những-thứ-cần-biết">2. Google Meet — Những Thứ Cần Biết</h2>
+<p>Khoá học dùng <strong>Google Meet</strong> (không phải Zoom). Không cần cài app — chạy thẳng trên Chrome.</p>
+<section id="trước-buổi-học" class="level3">
+<h3 class="anchored" data-anchor-id="trước-buổi-học">Trước buổi học</h3>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Dùng Chrome</strong> (Meet chạy tốt nhất trên Chrome)</label></li>
+<li><label><input type="checkbox"><strong>Test mic + camera</strong> trước 15 phút: vào https://meet.google.com → New meeting → test</label></li>
+<li><label><input type="checkbox"><strong>Dùng tai nghe</strong> (headphone) — tránh echo cho cả lớp</label></li>
+<li><label><input type="checkbox"><strong>Tắt thông báo</strong> trên máy (Focus/DND mode) — tránh lộ tin nhắn riêng khi share screen</label></li>
+</ul>
+</section>
+<section id="trong-buổi-học" class="level3">
+<h3 class="anchored" data-anchor-id="trong-buổi-học">Trong buổi học</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 35%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tính năng</th>
+<th>Cách dùng</th>
+<th>Khi nào</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bật/tắt mic</strong></td>
+<td>Click icon mic hoặc <code>Ctrl+D</code> (Win) / <code>Cmd+D</code> (Mac)</td>
+<td>Mute khi không nói</td>
+</tr>
+<tr class="even">
+<td><strong>Bật/tắt camera</strong></td>
+<td>Click icon camera hoặc <code>Ctrl+E</code> / <code>Cmd+E</code></td>
+<td>Bắt buộc 15 phút đầu</td>
+</tr>
+<tr class="odd">
+<td><strong>Share screen</strong></td>
+<td>Click icon “Present now” → chọn cửa sổ</td>
+<td>Khi mentor gọi demo</td>
+</tr>
+<tr class="even">
+<td><strong>Reactions</strong></td>
+<td>Click icon 😊 ở thanh dưới</td>
+<td>Giơ tay ✋ muốn nói</td>
+</tr>
+<tr class="odd">
+<td><strong>Chat</strong></td>
+<td>Click icon 💬 ở góc phải</td>
+<td>Hỏi nhanh, share link</td>
+</tr>
+<tr class="even">
+<td><strong>Đổi tên</strong></td>
+<td>Click avatar → Manage account</td>
+<td>Đổi thành “Tên — Đề project”</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Tip:</strong> Đổi tên Google Meet thành format <strong>“Tên — Đề project”</strong> (ví dụ: “Lan — PipeTrack”). Mentor sẽ dễ nhớ bạn đang làm đề gì.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="phòng-nhóm-nhỏ-3-link-meet-riêng" class="level2">
+<h2 class="anchored" data-anchor-id="phòng-nhóm-nhỏ-3-link-meet-riêng">3. Phòng Nhóm Nhỏ — “3 Link Meet Riêng”</h2>
+<section id="tại-sao-không-dùng-tính-năng-breakout-rooms-có-sẵn" class="level3">
+<h3 class="anchored" data-anchor-id="tại-sao-không-dùng-tính-năng-breakout-rooms-có-sẵn">Tại sao không dùng tính năng Breakout Rooms có sẵn?</h3>
+<p>Google Meet có tính năng Breakout Rooms nhưng <strong>chỉ hoạt động khi host là tài khoản Google Workspace trả phí</strong>. Để đảm bảo mọi người đều vào được, khoá học dùng cách đơn giản hơn: <strong>3 link Meet riêng tạo sẵn</strong>.</p>
+</section>
+<section id="cách-hoạt-động" class="level3">
+<h3 class="anchored" data-anchor-id="cách-hoạt-động">Cách hoạt động</h3>
+<pre class="mermaid"><code>graph TD
+    A["🏫 Phòng chính&lt;br/&gt;(link buổi học)"] --&gt;|"Giải lao 5'&lt;br/&gt;Mentor paste link vào Zalo"| B["👥 Phòng A&lt;br/&gt;link Meet riêng #1"]
+    A --&gt; C["👥 Phòng B&lt;br/&gt;link Meet riêng #2"]
+    A --&gt; D["👥 Phòng C&lt;br/&gt;link Meet riêng #3"]
+
+    E["👨‍🏫 Mentor"] --&gt;|"Xoay vòng&lt;br/&gt;~10'/phòng"| B
+    E --&gt; C
+    E --&gt; D</code></pre>
+</section>
+<section id="quy-trình-từng-bước" class="level3">
+<h3 class="anchored" data-anchor-id="quy-trình-từng-bước">Quy trình từng bước</h3>
+<p><strong>Cuối phần Giải lao (phút 55–60):</strong></p>
+<ol type="1">
+<li><p>Mentor paste <strong>3 link Meet</strong> vào nhóm Zalo Chat, kèm tên nhóm:</p>
+<pre><code>Phòng A (Nhóm 1–4): meet.google.com/abc-defg-hij
+Phòng B (Nhóm 5–8): meet.google.com/klm-nopq-rst
+Phòng C (Nhóm 9–12): meet.google.com/uvw-xyza-bcd</code></pre></li>
+<li><p>Bạn <strong>rời phòng chính</strong> → mở link phòng nhóm của mình → Join</p></li>
+<li><p>Làm bài warm-up trong 30 phút với nhóm</p></li>
+</ol>
+<p><strong>Cuối phần Warm-up (phút 90):</strong></p>
+<ol start="4" type="1">
+<li>Mentor gửi tin nhắn Zalo: <strong>“5 phút nữa về phòng chính”</strong></li>
+<li>Bạn <strong>rời phòng nhóm</strong> → quay lại link phòng chính ban đầu</li>
+</ol>
+</section>
+<section id="bạn-cần-làm-gì-trong-phòng-nhóm" class="level3">
+<h3 class="anchored" data-anchor-id="bạn-cần-làm-gì-trong-phòng-nhóm">Bạn cần làm gì trong phòng nhóm?</h3>
+<ol type="1">
+<li><strong>Bật mic + camera</strong> — phòng nhỏ, cần tương tác trực tiếp</li>
+<li><strong>Đọc đề bài warm-up</strong> mentor đã post trong Google Classroom (tab Classwork)</li>
+<li><strong>Mỗi người share screen</strong> trình bày tiến độ, cả nhóm cùng debug</li>
+<li><strong>Không đợi mentor</strong> — hỏi nhau trước, ghi lại câu hỏi chưa giải được</li>
+</ol>
+</section>
+<section id="cần-mentor-vào-phòng-nhóm" class="level3">
+<h3 class="anchored" data-anchor-id="cần-mentor-vào-phòng-nhóm">Cần mentor vào phòng nhóm?</h3>
+<p>Mentor xoay vòng qua 3 phòng — nếu cần gấp: - Nhắn <strong>Zalo Chat</strong>: “<span class="citation" data-cites="mentor">@mentor</span> Phòng A cần giúp — [mô tả ngắn vấn đề]” - Mentor sẽ join phòng bạn trong vòng vài phút</p>
+<blockquote class="blockquote">
+<p>⚠️ <strong>Đừng ngồi im trong phòng nhóm!</strong> Đây là 30 phút thực hành hiệu quả nhất của buổi. Nếu không làm gì, bạn sẽ không có gì để chốt trong 30 phút cuối.</p>
+</blockquote>
+</section>
+<section id="xử-lý-sự-cố-thường-gặp" class="level3">
+<h3 class="anchored" data-anchor-id="xử-lý-sự-cố-thường-gặp">Xử lý sự cố thường gặp</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sự cố</th>
+<th>Cách xử lý</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Không tìm thấy link phòng</td>
+<td>Mở lại Zalo Chat → kéo lên tìm tin nhắn mentor paste link</td>
+</tr>
+<tr class="even">
+<td>Vào nhầm phòng</td>
+<td>Rời ra, click đúng link phòng của mình</td>
+</tr>
+<tr class="odd">
+<td>Link không vào được</td>
+<td>Báo Zalo → mentor tạo link mới trong &lt; 2 phút</td>
+</tr>
+<tr class="even">
+<td>Mất kết nối giữa chừng</td>
+<td>Reconnect và vào lại link phòng nhóm, không cần báo</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="slido-đặt-câu-hỏi" class="level2">
+<h2 class="anchored" data-anchor-id="slido-đặt-câu-hỏi">4. Slido — Đặt Câu Hỏi</h2>
+<section id="slido-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="slido-là-gì">Slido là gì?</h3>
+<p>Slido là ứng dụng Q&amp;A cho phép bạn <strong>đặt câu hỏi ẩn danh</strong> và <strong>vote</strong> câu hỏi hay nhất. Mentor sẽ trả lời câu hỏi có nhiều vote nhất trong phần Q&amp;A cuối buổi.</p>
+</section>
+<section id="cách-dùng" class="level3">
+<h3 class="anchored" data-anchor-id="cách-dùng">Cách dùng</h3>
+<ol type="1">
+<li>Mentor share <strong>link Slido</strong> đầu mỗi buổi (hoặc pin trong Meet chat)</li>
+<li>Mở link trên trình duyệt hoặc điện thoại</li>
+<li>Gõ câu hỏi → Submit</li>
+<li>Vote 👍 câu hỏi người khác bạn cũng muốn biết</li>
+</ol>
+<blockquote class="blockquote">
+<p>💡 <strong>Không có câu hỏi ngớ ngẩn.</strong> Nếu bạn thắc mắc, chắc chắn 3–4 người khác cũng thắc mắc. Hỏi đi!</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="buddy-pair-bạn-đồng-hành" class="level2">
+<h2 class="anchored" data-anchor-id="buddy-pair-bạn-đồng-hành">5. Buddy Pair — “Bạn Đồng Hành”</h2>
+<section id="buddy-pair-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="buddy-pair-là-gì">Buddy pair là gì?</h3>
+<p>Mentor sẽ <strong>ghép 2 học viên</strong> thành 1 cặp “buddy” — cùng độ phức tạp đề, cả khoá nhắn tin hỗ trợ nhau qua Zalo.</p>
+</section>
+<section id="cách-hoạt-động-1" class="level3">
+<h3 class="anchored" data-anchor-id="cách-hoạt-động-1">Cách hoạt động</h3>
+<pre class="mermaid"><code>graph LR
+    A["👩 Bạn&lt;br/&gt;(PipeTrack ★★)"] &lt;--&gt;|"Zalo DM&lt;br/&gt;hỗ trợ lẫn nhau"| B["👨 Buddy&lt;br/&gt;(ShipBoard ★★)"]
+
+    A --&gt;|"Share screen&lt;br/&gt;review code"| C["📋 Peer Review&lt;br/&gt;mỗi tuần"]
+    B --&gt; C</code></pre>
+</section>
+<section id="quy-tắc-buddy" class="level3">
+<h3 class="anchored" data-anchor-id="quy-tắc-buddy">Quy tắc buddy</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quy tắc</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Liên lạc qua Zalo DM</strong></td>
+<td>Nhắn tin trực tiếp cho buddy ngay buổi 1</td>
+</tr>
+<tr class="even">
+<td><strong>Check-in 2 lần/tuần</strong></td>
+<td>“Tuần này mình xong đến step nào rồi?”</td>
+</tr>
+<tr class="odd">
+<td><strong>Peer review</strong></td>
+<td>Đọc code của buddy, comment ít nhất 2 điểm</td>
+</tr>
+<tr class="even">
+<td><strong>Không làm hộ</strong></td>
+<td>Giải thích, gợi ý — KHÔNG code thay</td>
+</tr>
+<tr class="odd">
+<td><strong>Báo mentor nếu buddy mất tích</strong></td>
+<td>&gt; 3 ngày không reply → nhắn Zalo nhóm cho mentor biết</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Buddy pair là “phao cứu sinh”</strong> cho lúc 2 giờ sáng đang code bị kẹt, mentor chưa online. Buddy có thể share screen Google Meet giúp bạn debug ngay.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="quy-tắc-lớp-học" class="level2">
+<h2 class="anchored" data-anchor-id="quy-tắc-lớp-học">6. Quy Tắc Lớp Học</h2>
+<section id="camera" class="level3">
+<h3 class="anchored" data-anchor-id="camera">Camera</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Thời điểm</th>
+<th>Camera</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>15 phút đầu (bốc thăm)</td>
+<td><strong>BẮT BUỘC bật</strong></td>
+</tr>
+<tr class="even">
+<td>Mentor demo</td>
+<td>Tuỳ chọn</td>
+</tr>
+<tr class="odd">
+<td>Phòng nhóm nhỏ</td>
+<td><strong>Khuyến khích bật</strong></td>
+</tr>
+<tr class="even">
+<td>Chốt &amp; giao bài</td>
+<td>Tuỳ chọn</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mic" class="level3">
+<h3 class="anchored" data-anchor-id="mic">Mic</h3>
+<ul>
+<li><strong>Mute</strong> khi không nói (tránh tiếng ồn nền)</li>
+<li><strong><code>Ctrl+D</code> / <code>Cmd+D</code></strong> để toggle mic nhanh</li>
+<li>Trong phòng nhóm: bật mic tự do, thoải mái nói chuyện</li>
+</ul>
+</section>
+<section id="giải-lao" class="level3">
+<h3 class="anchored" data-anchor-id="giải-lao">Giải lao</h3>
+<ul>
+<li><strong>5 phút</strong> giữa phần Demo và Warm-up — mentor đặt timer</li>
+<li>Dùng thời gian này để: uống nước, nghỉ mắt, đi vệ sinh</li>
+<li><strong>Không skip giải lao</strong> — sau 40 phút demo, não cần reset</li>
+</ul>
+</section>
+<section id="quy-tắc-vàng" class="level3">
+<h3 class="anchored" data-anchor-id="quy-tắc-vàng">Quy tắc vàng</h3>
+<pre><code>✅ Mentor SẼ gọi tên cụ thể — "Lan, giải thích Git là gì?"
+❌ Mentor KHÔNG nói "Ai trả lời đi?" — câu này luôn = im lặng
+
+✅ Được phép nói sai — sai thì sửa, không ai cười
+❌ Không được im lặng khi được gọi tên — ít nhất nói "Em chưa hiểu phần này"</code></pre>
+<hr>
+</section>
+</section>
+<section id="ghi-hình-buổi-học" class="level2">
+<h2 class="anchored" data-anchor-id="ghi-hình-buổi-học">7. Ghi Hình Buổi Học</h2>
+<ul>
+<li><strong>Mọi buổi đều được ghi hình</strong> bởi mentor qua Google Meet</li>
+<li><strong>Upload lên Google Classroom</strong> (tab Stream) trong vòng 24 giờ</li>
+<li>Bạn có thể xem lại nếu bỏ lỡ hoặc muốn ôn</li>
+</ul>
+<section id="quy-tắc-ghi-hình" class="level3">
+<h3 class="anchored" data-anchor-id="quy-tắc-ghi-hình">Quy tắc ghi hình</h3>
+<ul>
+<li>Camera bạn <strong>có thể</strong> xuất hiện trong recording</li>
+<li>Nếu không muốn → tắt camera (ngoài 15 phút bắt buộc)</li>
+<li><strong>Không chia sẻ recording</strong> ra ngoài khoá học</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="khi-bị-kẹt-cầu-cứu-theo-thứ-tự" class="level2">
+<h2 class="anchored" data-anchor-id="khi-bị-kẹt-cầu-cứu-theo-thứ-tự">8. Khi Bị Kẹt — Cầu Cứu Theo Thứ Tự</h2>
+<pre class="mermaid"><code>graph TD
+    A["🤔 Bạn bị kẹt!"] --&gt; B{"Loại vấn đề?"}
+
+    B --&gt;|"Code lỗi / AI lú"| C["1️⃣ Thử '/clear'&lt;br/&gt;bắt đầu lại"]
+    C --&gt; D["2️⃣ Hỏi buddy&lt;br/&gt;(Zalo DM)"]
+    D --&gt; E["3️⃣ Nhắn Zalo nhóm&lt;br/&gt;+ screenshot lỗi"]
+    E --&gt; F["4️⃣ Đợi mentor&lt;br/&gt;(&lt; 4h giờ HC)"]
+
+    B --&gt;|"Không hiểu khái niệm"| G["1️⃣ Đọc lại&lt;br/&gt;Primer Pack"]
+    G --&gt; H["2️⃣ Xem recording&lt;br/&gt;trên Google Classroom"]
+    H --&gt; I["3️⃣ Hỏi trên&lt;br/&gt;Zalo nhóm"]
+
+    B --&gt;|"Lỗi setup / cài đặt"| J["1️⃣ Xem Troubleshooting&lt;br/&gt;trong bài 07"]
+    J --&gt; K["2️⃣ Google lỗi&lt;br/&gt;(paste error message)"]
+    K --&gt; L["3️⃣ Nhắn Zalo nhóm&lt;br/&gt;+ screenshot"]</code></pre>
+<section id="cách-đặt-câu-hỏi-hay-trên-zalo-nhóm" class="level3">
+<h3 class="anchored" data-anchor-id="cách-đặt-câu-hỏi-hay-trên-zalo-nhóm">Cách đặt câu hỏi hay trên Zalo nhóm</h3>
+<pre><code>❓ Đang làm Story 2 (tạo form đăng ký), bấm Submit thì không lưu vào DB.
+
+Đã thử:
+- Chạy lại npm run dev → vẫn lỗi
+- /clear + paste lại Story → AI sửa nhưng vẫn lỗi
+- Kiểm tra Supabase dashboard → bảng users trống
+
+[screenshot console error]
+
+Đề: PipeTrack (★★)</code></pre>
+<blockquote class="blockquote">
+<p>💡 <strong>Càng chi tiết → mentor trả lời càng nhanh.</strong> “Em bị lỗi” không đủ — cần screenshot + đã thử gì.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="netiquette-ứng-xử-online" class="level2">
+<h2 class="anchored" data-anchor-id="netiquette-ứng-xử-online">9. Netiquette — Ứng Xử Online</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>✅ Nên</th>
+<th>❌ Không nên</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bật camera khi được yêu cầu</td>
+<td>Tắt camera suốt buổi</td>
+</tr>
+<tr class="even">
+<td>Mute khi không nói</td>
+<td>Để mic mở có tiếng ồn nền</td>
+</tr>
+<tr class="odd">
+<td>Đặt câu hỏi trên Slido</td>
+<td>Im lặng cả buổi</td>
+</tr>
+<tr class="even">
+<td>Reply buddy trong 24h</td>
+<td>Ghost buddy &gt; 3 ngày</td>
+</tr>
+<tr class="odd">
+<td>Nhắn Zalo khi cần hỗ trợ</td>
+<td>Chờ đến buổi học mới hỏi</td>
+</tr>
+<tr class="even">
+<td>Nói “Em chưa hiểu” khi chưa hiểu</td>
+<td>Giả vờ hiểu rồi kẹt sau</td>
+</tr>
+<tr class="odd">
+<td>Dùng reactions (👍 ✋ 👏)</td>
+<td>Spam chat không liên quan</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="checklist-trước-buổi-1" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-trước-buổi-1">✅ Checklist Trước Buổi 1</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Google Meet hoạt động trên Chrome (đã test mic + camera)</label></li>
+<li><label><input type="checkbox">Tai nghe sẵn sàng</label></li>
+<li><label><input type="checkbox">Đã biết phím tắt mic: <code>Ctrl+D</code> (Win) / <code>Cmd+D</code> (Mac)</label></li>
+<li><label><input type="checkbox">Đã join Google Classroom (thấy được tab Classwork)</label></li>
+<li><label><input type="checkbox">Đã join Zalo nhóm + đổi tên hiển thị “Họ tên — Nhóm A/B/C”</label></li>
+<li><label><input type="checkbox">Đã hiểu cách dùng 3 link Meet riêng (đọc Section 3)</label></li>
+<li><label><input type="checkbox">Đã đổi tên hiển thị Google Meet thành “Tên — Đề project”</label></li>
+<li><label><input type="checkbox">Đã đọc hết 7 bài trước trong Primer Pack</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>🎯 <strong>8/8 ✅ → Bạn sẵn sàng 100%!</strong> Hẹn gặp ở buổi 1! 🚀</p>
+</blockquote>
+<hr>
+<p><em>📖 Quay lại: <a href="../../../training/vibe-coding/primer-pack/07-tool-setup-guide.html">07 — Hướng Dẫn Cài Đặt Công Cụ</a></em><br>
+<em>🏁 Bạn đã hoàn thành Primer Pack! Quay lại <a href="../../../training/vibe-coding/primer-pack/index.html">Mục lục</a> để kiểm tra tiến độ. Hẹn gặp tại buổi 1 — mang theo năng lượng và sẵn sàng Vibe Coding cùng BMAD!</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    renderMermaid(currentTheme);
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dz-academy\.pages\.dev");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 DZ AI Academy · <a href="https://github.com/dzai-vn">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
