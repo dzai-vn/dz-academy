@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Duy NHM">
+<meta name="description" content="Danh sách 10 đồ án CRUD cho nhân viên văn phòng Việt Nam trong khóa Vibe Coding với BMAD Method">
+
+<title>10 Đồ Án Cuối Khóa Vibe Coding với BMAD Method – DZ AI Academy</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3123a1fcdd3f833ab3f2be71d84c8e78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
+
+
+<link rel="stylesheet" href="../../../assets/dz-tokens.css">
+<meta property="og:title" content="10 Đồ Án Cuối Khóa Vibe Coding với BMAD Method – DZ AI Academy">
+<meta property="og:description" content="Danh sách 10 đồ án CRUD cho nhân viên văn phòng Việt Nam trong khóa Vibe Coding với BMAD Method">
+<meta property="og:site_name" content="DZ AI Academy">
+<meta name="twitter:title" content="10 Đồ Án Cuối Khóa Vibe Coding với BMAD Method – DZ AI Academy">
+<meta name="twitter:description" content="Danh sách 10 đồ án CRUD cho nhân viên văn phòng Việt Nam trong khóa Vibe Coding với BMAD Method">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">DZ AI Academy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts/index.html"> 
+<span class="menu-text">Bài viết</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tutorials/index.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../demos/index.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../roadmap/index.html"> 
+<span class="menu-text">Roadmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">Về tôi</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dzai-vn"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">10 Đồ Án Cuối Khóa Vibe Coding với BMAD Method</h1>
+</div>
+
+<div>
+  <div class="description">
+    Danh sách 10 đồ án CRUD cho nhân viên văn phòng Việt Nam trong khóa Vibe Coding với BMAD Method
+  </div>
+</div>
+
+
+<div class="quarto-title-meta column-page">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Duy NHM </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="đồ-án-cuối-khóa-vibe-coding-với-bmad-method-web-app-crud-cho-nhân-viên-văn-phòng" class="level1">
+<h1>10 Đồ Án Cuối Khóa “Vibe Coding với BMAD Method” — Web App CRUD cho Nhân Viên Văn Phòng</h1>
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">TL;DR</h2>
+<ul>
+<li><strong>10 đồ án CRUD được thiết kế chuyên biệt cho nhân viên văn phòng Việt Nam</strong>, mỗi project giải quyết một pain point thực tế của Excel/Google Sheets thủ công (mất dữ liệu, không phân quyền, không thông báo, không tìm kiếm nhanh, không tracking lịch sử) và phù hợp hoàn thiện trong 1–2 ngày vibe coding với AI agent.</li>
+<li><strong>Mỗi project có 2 phương án triển khai miễn phí</strong>: (a) Web App Next.js/React + Vercel (dùng Supabase free tier hoặc SQLite/JSON file) hoặc (b) “Spreadsheet App” Google Sheets + Apps Script Web App — không server, không chi phí, không authentication phức tạp.</li>
+<li><strong>Cấu trúc BMAD nhất quán cho cả 10 đồ án</strong>: Module 1 (Mindset) → Module 2 (PRD 1 trang) → Module 3 (Epics + User Stories, mỗi spec tập trung 1 nhiệm vụ) → Module 4 (vibe code với Claude Code, Antigravity) → Module 5 (AI review + QA test case). Không có project nào tích hợp AI <strong>bên trong</strong> sản phẩm — AI chỉ là công cụ xây.</li>
+</ul>
+<hr>
+</section>
+<section id="key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings">Key Findings</h2>
+<section id="pain-point-chung-của-nhân-viên-văn-phòng-việt-nam-đúc-kết-từ-khảo-sát-thị-trường" class="level3">
+<h3 class="anchored" data-anchor-id="pain-point-chung-của-nhân-viên-văn-phòng-việt-nam-đúc-kết-từ-khảo-sát-thị-trường">Pain point chung của nhân viên văn phòng Việt Nam (đúc kết từ khảo sát thị trường)</h3>
+<p>Khi tìm hiểu các bài viết của 1Office, MISA AMIS, FastWork, Base.vn, ITG Technology, VietFul và Brands Vietnam, có 7 “nỗi đau” lặp đi lặp lại khi dùng Excel/Google Sheets thủ công:</p>
+<ol type="1">
+<li><strong>Nhiều người nhập cùng lúc → trùng/mất dữ liệu</strong> (file Excel local), hoặc xung đột chỉnh sửa (Google Sheets shared).</li>
+<li><strong>Không phân quyền theo vai trò</strong> — ai mở file cũng xem/sửa được mọi cột, dễ rò rỉ lương, hợp đồng, công nợ.</li>
+<li><strong>Không có lịch sử thay đổi (audit log)</strong> — không biết ai sửa cái gì, lúc nào.</li>
+<li><strong>Không có thông báo / cảnh báo tự động</strong> (tồn kho thấp, hợp đồng sắp hết hạn, deadline sắp đến).</li>
+<li><strong>Tìm kiếm/lọc chậm</strong> khi data &gt; 1.000 dòng; file nặng, dễ treo.</li>
+<li><strong>Khó truy cập trên mobile</strong>, không có giao diện form thân thiện cho người không thạo Excel.</li>
+<li><strong>Báo cáo tổng hợp tốn công</strong> — phải copy-paste, dùng VLOOKUP/PivotTable mỗi lần.</li>
+</ol>
+<p>Khảo sát của VietnamWorks &amp; TopCV 2025 (trích trong 1Office) cho thấy <strong>~78% doanh nghiệp Việt Nam 5–150 nhân viên vẫn quản lý nhân sự bằng Excel</strong>, và theo Capterra 2024 trích trong AccNet thì <strong>64% trong số đó phản ánh khó khăn khi dữ liệu tăng nhanh</strong>. Đây chính là khoảng trống mà 10 đồ án dưới đây nhắm tới.</p>
+</section>
+<section id="khung-bmad-áp-dụng-cho-mọi-đồ-án-5-buổi-học" class="level3">
+<h3 class="anchored" data-anchor-id="khung-bmad-áp-dụng-cho-mọi-đồ-án-5-buổi-học">Khung BMAD áp dụng cho mọi đồ án (5 buổi học)</h3>
+<p>Theo tài liệu chính thức của BMAD-METHOD(TM) (github.com/bmad-code-org/BMAD-METHOD) và các bài blog của Vishal Mysore, Reenbit, DEV Community, framework gồm:</p>
+<ul>
+<li><strong>Buổi 1 — Mindset</strong>: Phân biệt “vibe coding tự do” (Karpathy, 2/2025) vs “vibe coding có cấu trúc” (BMAD). Học viên chọn ý tưởng + viết Project Brief 1 trang.</li>
+<li><strong>Buổi 2 — PRD</strong>: Dùng PM agent (Analyst → PM) để sinh PRD chuẩn (Problem, User, Goals, Success Metrics, MVP scope).</li>
+<li><strong>Buổi 3 — Epics &amp; Stories</strong>: Architect agent + Scrum Master agent shard PRD thành 3–5 Epics, mỗi Epic 3–6 Stories. <strong>Mỗi story-spec tập trung 1 nhiệm vụ</strong> để feed gọn vào context của Dev agent (thường 60–120 dòng, không phải giới hạn cứng).</li>
+<li><strong>Buổi 4 — Coding flow</strong>: Dev agent (Cursor / Claude Code / Windsurf) implement từng story, commit từng bước.</li>
+<li><strong>Buổi 5 — AI Review &amp; QA</strong>: QA agent sinh test plan + manual QA checklist, review code, viết README + deploy lên Vercel hoặc publish Apps Script Web App.</li>
+</ul>
+</section>
+<section id="khuyến-nghị-tech-stack-chung" class="level3">
+<h3 class="anchored" data-anchor-id="khuyến-nghị-tech-stack-chung">Khuyến nghị tech stack chung</h3>
+<ul>
+<li><strong>Web App (Vercel)</strong>: Next.js 14 App Router + TailwindCSS + shadcn/ui + <strong>Supabase free tier</strong> (Postgres + Auth + RLS) hoặc <strong>Neon free Postgres</strong> + Prisma. Deploy = <code>git push</code> → Vercel auto-build. Đăng nhập đơn giản bằng Magic Link email hoặc Google OAuth (1 click).</li>
+<li><strong>Spreadsheet App (Google Sheets)</strong>: Google Sheet làm DB + Apps Script <code>doGet/doPost</code> + HTML Service (file <code>index.html</code> dùng vanilla JS + Bootstrap/Tailwind CDN) + <code>google.script.run</code> để gọi server. Deploy = “Deploy as Web App, Anyone with the link”. Phân quyền nhờ chính Google Workspace của công ty.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="details-10-đồ-án" class="level2">
+<h2 class="anchored" data-anchor-id="details-10-đồ-án">Details — 10 Đồ Án</h2>
+<section id="hireflow-lite-ats-mini-cho-công-ty-520-người-không-bỏ-sót-ứng-viên-nào" class="level3">
+<h3 class="anchored" data-anchor-id="hireflow-lite-ats-mini-cho-công-ty-520-người-không-bỏ-sót-ứng-viên-nào">1. <strong>HireFlow Lite</strong> — <em>“ATS mini cho công ty 5–20 người: không bỏ sót ứng viên nào”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: HR / Tuyển dụng (HR Specialist, Talent Acquisition của SME).</li>
+<li><strong>Pain point</strong>: CV gửi rải rác qua Gmail, Zalo, Facebook; HR copy thủ công sang Excel; trưởng phòng không có chỗ feedback tập trung; ứng viên bị quên reply sau phỏng vấn. Các bài viết của JuggleHire, Breezy HR, SelectSoftware đều xác nhận đây là pain point #1 của SMB khi “tốt nghiệp” khỏi Google Forms + spreadsheet.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Form public submit CV (Tên, email, vị trí, link CV PDF, nguồn) — nhúng lên trang tuyển dụng.</li>
+<li><strong>Read</strong>: Kanban board theo pipeline (New → Screening → Interview → Offer → Hired/Rejected).</li>
+<li><strong>Update</strong>: Kéo-thả ứng viên giữa các cột; HR/Hiring manager comment + cho điểm 1–5 sao.</li>
+<li><strong>Delete/Archive</strong>: Lưu lịch sử ứng viên bị từ chối kèm lý do (để re-contact sau).</li>
+<li>Lọc theo vị trí / nguồn / khoảng ngày apply.</li>
+<li>Export danh sách shortlist ra CSV cho buổi phỏng vấn.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase (table <code>candidates</code>, <code>stages</code>, <code>notes</code>) + Supabase Storage cho CV. UI: shadcn/ui Kanban (dnd-kit).</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Candidates</code> (1 row = 1 CV), Sheet <code>Stages</code>, Sheet <code>Notes</code>. Apps Script + HTML Service render Kanban dùng SortableJS.</li>
+<li><strong>Độ phức tạp: ★★★☆☆ (3/5)</strong> — vì cần upload file (CV PDF) và Kanban drag-drop, nhưng cả Supabase Storage lẫn Google Drive đều có API dễ.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là một HR Specialist, tôi muốn kéo ứng viên từ cột ‘Screening’ sang ‘Interview’ và tự động email lịch phỏng vấn cho ứng viên đó, để tôi không phải copy email thủ công nữa.”</em> &gt; <em>“Là một Hiring Manager, tôi muốn chấm điểm 1–5 sao + viết note ngắn cho từng ứng viên trong board, để HR biết ai nên mời round 2.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="pipetrack-sales-pipeline-gọn-nhẹ-thay-cho-file-excel-khách-hàng" class="level3">
+<h3 class="anchored" data-anchor-id="pipetrack-sales-pipeline-gọn-nhẹ-thay-cho-file-excel-khách-hàng">2. <strong>PipeTrack</strong> — <em>“Sales pipeline gọn nhẹ thay cho file Excel khách hàng”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Sales / Account Executive, đặc biệt B2B nhỏ.</li>
+<li><strong>Pain point</strong>: Excel khách hàng bị nhiều sales sửa đè, không theo dõi được tiến độ deal, không nhắc follow-up. OnePageCRM, Less Annoying CRM, Pipedrive đều chiếm thị phần SMB chính vì điều này — nhưng tốn $15–30/user/tháng, vượt ngân sách team 5–10 người.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Thêm lead (Tên cty, người liên hệ, giá trị deal, nguồn, sales phụ trách).</li>
+<li><strong>Read</strong>: Pipeline 5 stage (Lead → Qualified → Proposal → Negotiation → Won/Lost) — view Kanban hoặc table.</li>
+<li><strong>Update</strong>: Cập nhật stage, ghi activity log (cuộc gọi, email, meeting).</li>
+<li><strong>Delete</strong>: Đánh dấu Lost + lý do; archive nhưng giữ data để báo cáo.</li>
+<li>Nhắc follow-up: deal nào &gt; 7 ngày chưa có activity → highlight đỏ.</li>
+<li>Dashboard: tổng giá trị pipeline, win-rate theo sales, theo tháng.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + Recharts cho dashboard.</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Deals</code>, <code>Activities</code>, <code>Users</code>. Apps Script <code>Trigger</code> chạy mỗi đêm để gửi email nhắc follow-up qua MailApp.</li>
+<li><strong>Độ phức tạp: ★★☆☆☆ (2/5)</strong> — gần như CRUD chuẩn + 1 dashboard đơn giản.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là một Sales, tôi muốn thấy ngay khi mở app danh sách deal cần gọi/follow-up hôm nay, để tôi không bỏ lỡ deal nào.”</em> &gt; <em>“Là Trưởng phòng Sales, tôi muốn xem tổng giá trị pipeline + win rate theo từng nhân viên trong tháng này, để giao KPI hợp lý hơn.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="shipboard-bảng-theo-dõi-đơn-hàng-giao-vận-nội-bộ" class="level3">
+<h3 class="anchored" data-anchor-id="shipboard-bảng-theo-dõi-đơn-hàng-giao-vận-nội-bộ">3. <strong>ShipBoard</strong> — <em>“Bảng theo dõi đơn hàng &amp; giao vận nội bộ”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Vận hành / Logistics / Order Fulfillment Coordinator của shop online, công ty thương mại B2B nhỏ.</li>
+<li><strong>Pain point</strong>: Theo phân tích của VietFul, GHN, GESO, Cogover, doanh nghiệp nhỏ chạy đơn hàng giữa kho – sale – ship qua nhiều file Excel + nhóm chat Zalo, dẫn đến: trễ đơn, sót đơn, không biết đơn đang ở bước nào, khách hỏi “đơn em tới đâu rồi” mà không trả lời được.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Tạo đơn (mã đơn, khách hàng, sản phẩm, SL, địa chỉ, ngày yêu cầu giao).</li>
+<li><strong>Read</strong>: Bảng đơn theo trạng thái: Mới → Đã xác nhận → Đang đóng gói → Đã giao đơn vị vận chuyển → Đã giao khách → Hoàn/Hủy.</li>
+<li><strong>Update</strong>: Cập nhật trạng thái + ghi chú (vd: “Khách hẹn giao lại thứ 2”).</li>
+<li><strong>Delete</strong>: Hủy đơn kèm lý do.</li>
+<li>Trang public tra cứu đơn bằng mã + SĐT khách (không cần login).</li>
+<li>Báo cáo: tỷ lệ giao thành công, thời gian xử lý trung bình.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + 1 route public <code>/track/[orderCode]</code>.</li>
+<li><strong>Google Sheets stack</strong>: 1 sheet làm DB. Apps Script Web App 2 endpoint: <code>?action=staff</code> (nội bộ) và <code>?action=track&amp;code=...</code> (public, chỉ trả status).</li>
+<li><strong>Độ phức tạp: ★★☆☆☆ (2/5)</strong> — pure state-machine, không upload file phức tạp.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là nhân viên đóng gói, tôi muốn quét/nhập mã đơn rồi bấm ‘Đã đóng gói’ để chuyển trạng thái, không phải mở Excel sửa tay nữa.”</em> &gt; <em>“Là khách hàng, tôi muốn nhập mã đơn + 4 số cuối SĐT để xem đơn đang ở bước nào, không cần gọi hotline.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="content-cal-lịch-nội-dung-đa-kênh-cho-team-marketing-310-người" class="level3">
+<h3 class="anchored" data-anchor-id="content-cal-lịch-nội-dung-đa-kênh-cho-team-marketing-310-người">4. <strong>Content Cal</strong> — <em>“Lịch nội dung đa kênh cho team Marketing 3–10 người”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Marketing / Content / Social Media Executive.</li>
+<li><strong>Pain point</strong>: Theo Hootsuite, Sprout Social, Planable, Mailchimp, team marketing nhỏ thường dùng Google Sheets “thô” để lên lịch post Facebook/LinkedIn/TikTok/blog — không có view calendar, không workflow duyệt bài, post bị quên giờ.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Tạo post (tiêu đề, caption, kênh, ngày đăng, người viết, người duyệt, link Drive ảnh/video).</li>
+<li><strong>Read</strong>: 3 view — Calendar (tháng), Kanban (Draft → Review → Approved → Published), Table (filter).</li>
+<li><strong>Update</strong>: Đổi status, comment chỉnh sửa, gắn label campaign.</li>
+<li><strong>Delete</strong>: Xóa hoặc archive sau khi đã đăng.</li>
+<li>Filter theo kênh, theo người phụ trách, theo chiến dịch.</li>
+<li>Auto-reminder buổi sáng: “Hôm nay phải đăng 3 bài: …”</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + FullCalendar React + integrate Google Calendar API (tùy chọn nâng cao).</li>
+<li><strong>Google Sheets stack</strong>: Sheet làm DB; Apps Script render Calendar view dùng FullCalendar.io CDN; Trigger gửi email/Telegram mỗi sáng.</li>
+<li><strong>Độ phức tạp: ★★★☆☆ (3/5)</strong> — vì có Calendar view + multi-view, cần học thư viện FullCalendar.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là một Content Writer, tôi muốn drag post sang ngày khác trên calendar, để khi sếp đổi lịch tôi không phải sửa tay từng dòng.”</em> &gt; <em>“Là Marketing Manager, tôi muốn lọc xem tuần này còn bao nhiêu bài đang ở status ‘Draft’ chưa duyệt, để đốc thúc team.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="expenseflow-đề-xuất-chi-hoàn-ứng-không-còn-giấy-ký-lòng-vòng" class="level3">
+<h3 class="anchored" data-anchor-id="expenseflow-đề-xuất-chi-hoàn-ứng-không-còn-giấy-ký-lòng-vòng">5. <strong>ExpenseFlow</strong> — <em>“Đề xuất chi &amp; hoàn ứng — không còn giấy ký lòng vòng”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Kế toán / Tài chính + nhân viên các phòng ban (người đề xuất).</li>
+<li><strong>Pain point</strong>: Quy trình “đề xuất chi → trưởng phòng duyệt → kế toán duyệt → thủ quỹ chi” hiện đang chạy qua giấy, email, Zalo. Theo Base.vn, Bizzi và WPro, đây là nỗi đau cực lớn: nhân viên không biết đề xuất đang ở đâu, kế toán phải nhập lại data vào Excel sổ chi.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Form đề xuất (số tiền, mục đích, danh mục chi phí, upload hóa đơn/ảnh).</li>
+<li><strong>Read</strong>: Dashboard cá nhân (đề xuất của tôi) + dashboard duyệt (đề xuất chờ tôi duyệt).</li>
+<li><strong>Update</strong>: Approve / Reject / Request more info; mỗi action ghi log + email người đề xuất.</li>
+<li><strong>Delete</strong>: Hủy đề xuất nháp; đề xuất đã duyệt thì lock.</li>
+<li>Báo cáo: tổng chi theo phòng ban / theo tháng / theo danh mục (xuất CSV cho kế toán).</li>
+<li>2-cấp duyệt đơn giản (trưởng phòng → kế toán trưởng).</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase (RLS theo role) + Supabase Storage upload hóa đơn + Resend cho email.</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Requests</code>, <code>Approvals</code>, <code>Users(role)</code>. Upload ảnh hóa đơn → Google Drive folder, lưu link. Apps Script <code>MailApp.sendEmail</code> khi đổi status.</li>
+<li><strong>Độ phức tạp: ★★★★☆ (4/5)</strong> — vì có workflow đa cấp, role-based permission, upload file. Đây là project “tham vọng” hơn cho học viên nhanh hấp thu.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là nhân viên Marketing, tôi muốn tạo đề xuất chi 2tr cho buổi chụp sản phẩm, đính kèm 2 ảnh báo giá, và biết ngay khi trưởng phòng duyệt qua email.”</em> &gt; <em>“Là kế toán, tôi muốn xem danh sách đề xuất đã được trưởng phòng duyệt và đang chờ tôi duyệt cuối, để xử lý theo lô trong ngày thứ Sáu.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="meetroom-đặt-phòng-họp-tài-sản-dùng-chung-không-kẹt-lịch" class="level3">
+<h3 class="anchored" data-anchor-id="meetroom-đặt-phòng-họp-tài-sản-dùng-chung-không-kẹt-lịch">6. <strong>MeetRoom</strong> — <em>“Đặt phòng họp &amp; tài sản dùng chung, không kẹt lịch”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Hành chính văn phòng (Office Admin) + toàn bộ nhân viên.</li>
+<li><strong>Pain point</strong>: Đặt phòng họp hiện được hỏi nhau trong Zalo group hoặc xem Google Calendar shared → vẫn trùng lịch, không quản lý được thiết bị mượn (máy chiếu, micro). MRBS open source và Yeastar Workplace đắt; nhân viên cần phiên bản nhẹ.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Đặt phòng (chọn phòng, ngày, slot giờ, mục đích, số người).</li>
+<li><strong>Read</strong>: View timeline theo phòng / theo ngày (giống Google Calendar 1 tab).</li>
+<li><strong>Update</strong>: Đổi giờ, đổi phòng, thêm người tham dự (email).</li>
+<li><strong>Delete</strong>: Hủy booking, slot tự giải phóng.</li>
+<li>CRUD tài nguyên: phòng (sức chứa, thiết bị), tài sản di động (laptop dự phòng, máy chiếu).</li>
+<li>Conflict-check: không cho đặt trùng slot.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + React Big Calendar.</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Rooms</code>, <code>Bookings</code>, <code>Resources</code>. Apps Script kiểm tra overlap bằng filter trước khi <code>appendRow</code>. Có thể tích hợp <code>CalendarApp.createEvent</code> để sync vào Google Calendar công ty.</li>
+<li><strong>Độ phức tạp: ★★☆☆☆ (2/5)</strong> — logic chính chỉ là conflict-detect bằng so sánh time range.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là một trưởng nhóm, tôi muốn đặt phòng họp 15 người vào 14h–15h thứ Năm, hệ thống tự báo phòng nào còn trống đủ chỗ, để tôi không phải hỏi nhiều người.”</em> &gt; <em>“Là nhân viên hành chính, tôi muốn xem báo cáo tỷ lệ sử dụng phòng họp tháng vừa rồi, để đề xuất chuyển 1 phòng họp thành phòng làm việc.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="traintrack-quản-lý-khóa-đào-tạo-nội-bộ-điểm-danh-học-viên" class="level3">
+<h3 class="anchored" data-anchor-id="traintrack-quản-lý-khóa-đào-tạo-nội-bộ-điểm-danh-học-viên">7. <strong>TrainTrack</strong> — <em>“Quản lý khóa đào tạo nội bộ &amp; điểm danh học viên”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: L&amp;D / Đào tạo / HR phụ trách training.</li>
+<li><strong>Pain point</strong>: Theo Fastdo, Base.vn, SureHCS, đào tạo nội bộ hiện chạy bằng nhiều file Excel rời rạc — danh sách khóa, list học viên, điểm danh, kết quả test, ngân sách. HR mất nửa ngày tổng hợp báo cáo.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Tạo khóa (tên, giảng viên, lịch học, sức chứa, link tài liệu).</li>
+<li><strong>Read</strong>: List khóa sắp diễn ra / đã diễn ra; chi tiết từng khóa với danh sách học viên.</li>
+<li><strong>Update</strong>: Đăng ký / hủy đăng ký học viên; tick điểm danh từng buổi; nhập điểm bài test cuối khóa.</li>
+<li><strong>Delete</strong>: Hủy khóa (notify học viên đã đăng ký).</li>
+<li>Trang public cho học viên xem khóa + tự đăng ký.</li>
+<li>Báo cáo: số giờ đào tạo / nhân viên / quý (phục vụ báo cáo ISO, KPI L&amp;D).</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + email confirm qua Resend.</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Courses</code>, <code>Enrollments</code>, <code>Attendance</code>. Trang đăng ký public dùng Apps Script doGet trả HTML.</li>
+<li><strong>Độ phức tạp: ★★★☆☆ (3/5)</strong> — nhiều bảng liên kết (course – enrollment – attendance) nên cần thiết kế schema cẩn thận.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là một nhân viên, tôi muốn xem danh sách khóa nội bộ sắp mở, đọc syllabus, và tự đăng ký 1 click, không phải gửi email cho HR.”</em> &gt; <em>“Là HR L&amp;D, tôi muốn import danh sách điểm danh từ Zoom report bằng paste CSV, để cập nhật buổi học cho 30 người trong &lt; 1 phút.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="helpdesk-mini-hệ-thống-ticket-cho-phòng-ithrcskh-nội-bộ" class="level3">
+<h3 class="anchored" data-anchor-id="helpdesk-mini-hệ-thống-ticket-cho-phòng-ithrcskh-nội-bộ">8. <strong>HelpDesk Mini</strong> — <em>“Hệ thống ticket cho phòng IT/HR/CSKH nội bộ”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Chăm sóc khách hàng nội bộ — IT support, HR helpdesk, hoặc CSKH ngoài (B2B nhỏ).</li>
+<li><strong>Pain point</strong>: Theo Hiver, Keeping, Wrangle, Desk365, nhiều SME dùng Excel làm “ticket tracker” thủ công — nhưng không có công khai status cho người yêu cầu, không SLA, không nhắc nhở agent. Một số dùng Google Forms + Sheets DIY, vẫn rối.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Form public submit ticket (loại vấn đề, mức độ ưu tiên, mô tả, ảnh đính kèm).</li>
+<li><strong>Read</strong>: Inbox cho agent (Open / In Progress / Resolved / Closed); người gửi xem được ticket của mình bằng mã + email.</li>
+<li><strong>Update</strong>: Agent reply (comment), đổi status, gán cho agent khác.</li>
+<li><strong>Delete</strong>: Đóng + ghi nhận giải pháp; archive sau 30 ngày.</li>
+<li>SLA highlight: ticket cao tới hạn → highlight đỏ.</li>
+<li>Báo cáo: thời gian phản hồi trung bình, top loại vấn đề.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + Resend (gửi email khi có reply).</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Tickets</code>, <code>Replies</code>. Apps Script bind trigger gửi <code>MailApp</code> khi cột Status đổi.</li>
+<li><strong>Độ phức tạp: ★★★☆☆ (3/5)</strong> — comment thread + email notification là điểm khó nhất.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là nhân viên, tôi muốn submit 1 ticket báo lỗi máy in cho IT, nhận mã ticket #IT-042 qua email, để theo dõi tiến độ mà không cần gọi điện.”</em> &gt; <em>“Là IT support, tôi muốn thấy ticket nào quá 24h chưa được trả lời highlight đỏ, để xử lý trước, đảm bảo SLA.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="stockroom-quản-lý-nhập-xuất-văn-phòng-phẩm-vật-tư" class="level3">
+<h3 class="anchored" data-anchor-id="stockroom-quản-lý-nhập-xuất-văn-phòng-phẩm-vật-tư">9. <strong>StockRoom</strong> — <em>“Quản lý nhập xuất văn phòng phẩm &amp; vật tư”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Quản lý kho / Mua hàng / Hành chính (kho văn phòng phẩm, kho vật tư marketing, kho thiết bị IT).</li>
+<li><strong>Pain point</strong>: Theo FastWork, Nhanh.vn, MISA eShop, ITG Technology, ~95% công ty SME quản lý kho bằng Excel với hàng loạt hạn chế: nhiều người nhập trùng, công thức VLOOKUP lỗi #N/A, không cảnh báo tồn thấp, không phân quyền nhân viên kho vs sếp.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Thêm mặt hàng (SKU, tên, đơn vị, tồn tối thiểu); tạo phiếu nhập / phiếu xuất.</li>
+<li><strong>Read</strong>: Dashboard tồn hiện tại + danh sách mặt hàng “dưới mức an toàn”.</li>
+<li><strong>Update</strong>: Điều chỉnh tồn sau kiểm kê; cập nhật thông tin SKU.</li>
+<li><strong>Delete</strong>: Xóa SKU không còn dùng; hủy phiếu nhập/xuất sai (có log).</li>
+<li>Lịch sử giao dịch (audit trail) — ai xuất cái gì, lúc nào.</li>
+<li>Cảnh báo: tự gửi email cho người mua hàng khi 1 SKU &lt; min stock.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + 1 cron Vercel để check stock &amp; gửi email.</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Items</code>, <code>Transactions</code>. Time-driven Trigger trong Apps Script (mỗi sáng 8h) quét và gửi cảnh báo qua <code>MailApp</code>.</li>
+<li><strong>Độ phức tạp: ★★☆☆☆ (2/5)</strong> — pattern CRUD chuẩn + tính tổng từ transactions.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là nhân viên hành chính, tôi muốn ghi nhận ‘xuất 5 hộp giấy A4 cho phòng Sales’ bằng 1 form, hệ thống tự trừ tồn + ghi log, để không tốn 10 phút sửa file Excel.”</em> &gt; <em>“Là người phụ trách mua hàng, tôi muốn nhận email mỗi sáng liệt kê các SKU dưới mức an toàn, để chủ động đặt hàng trước khi hết.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="tasksprint-bảng-việc-sprint-mini-cho-team-dự-án-515-người" class="level3">
+<h3 class="anchored" data-anchor-id="tasksprint-bảng-việc-sprint-mini-cho-team-dự-án-515-người">10. <strong>TaskSprint</strong> — <em>“Bảng việc + sprint mini cho team dự án 5–15 người”</em></h3>
+<ul>
+<li><strong>Vị trí mục tiêu</strong>: Project Manager / Team Lead các dự án nhỏ, agency, in-house team.</li>
+<li><strong>Pain point</strong>: Theo 1Office, MISA AMIS, CoDX, team nhỏ không đủ ngân sách cho Jira/Asana ($10–25/user); dùng Google Sheets thì không có Kanban, không có timeline, không thấy ai đang quá tải.</li>
+<li><strong>CRUD chính</strong>:
+<ol type="1">
+<li><strong>Create</strong>: Tạo task (tiêu đề, mô tả, assignee, deadline, độ ưu tiên, sprint, project).</li>
+<li><strong>Read</strong>: 3 view — Kanban (Todo / Doing / Review / Done), List, Sprint board.</li>
+<li><strong>Update</strong>: Drag task giữa cột; log thời gian thực hiện; comment.</li>
+<li><strong>Delete</strong>: Xóa task; archive sprint đã kết thúc.</li>
+<li>Workload view: mỗi người đang có bao nhiêu task / tổng giờ ước lượng.</li>
+<li>Báo cáo sprint: velocity, % task hoàn thành đúng hạn.</li>
+</ol></li>
+<li><strong>Web App stack</strong>: Next.js + Supabase + dnd-kit + Recharts.</li>
+<li><strong>Google Sheets stack</strong>: Sheet <code>Tasks</code>, <code>Sprints</code>, <code>Users</code>. Apps Script + SortableJS render Kanban; sheet <code>Reports</code> dùng QUERY() built-in.</li>
+<li><strong>Độ phức tạp: ★★★★☆ (4/5)</strong> — vì có drag-drop multi-column, multi-view, workload aggregate. Thử thách cao nhất nhưng cũng “wow” nhất.</li>
+<li><strong>User Story mẫu</strong>: &gt; <em>“Là team lead, tôi muốn nhìn workload view trước khi giao task mới, thấy ai đang quá tải, để giao cho người khác.”</em> &gt; <em>“Là developer, tôi muốn kéo task của mình sang cột ‘Done’ và log 3 giờ đã làm, hệ thống tự cập nhật burndown chart của sprint.”</em></li>
+</ul>
+<hr>
+</section>
+<section id="bảng-tổng-hợp-nhanh-10-đồ-án" class="level3">
+<h3 class="anchored" data-anchor-id="bảng-tổng-hợp-nhanh-10-đồ-án">Bảng tổng hợp nhanh 10 đồ án</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Tên project</th>
+<th>Nhóm nghề</th>
+<th>Độ phức tạp</th>
+<th>“Wow factor” của AI vibe-code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>HireFlow Lite</td>
+<td>HR / Tuyển dụng</td>
+<td>★★★</td>
+<td>Kanban + file upload</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>PipeTrack</td>
+<td>Sales / CRM</td>
+<td>★★</td>
+<td>Dashboard + auto reminder</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ShipBoard</td>
+<td>Vận hành / Logistics</td>
+<td>★★</td>
+<td>Public tracking page</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Content Cal</td>
+<td>Marketing</td>
+<td>★★★</td>
+<td>Calendar drag-drop</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>ExpenseFlow</td>
+<td>Kế toán / Tài chính</td>
+<td>★★★★</td>
+<td>Workflow duyệt 2 cấp + email</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>MeetRoom</td>
+<td>Hành chính</td>
+<td>★★</td>
+<td>Conflict detection</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>TrainTrack</td>
+<td>Đào tạo</td>
+<td>★★★</td>
+<td>Public enrollment page</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>HelpDesk Mini</td>
+<td>Chăm sóc KH</td>
+<td>★★★</td>
+<td>Email thread + SLA highlight</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>StockRoom</td>
+<td>Kho / Mua hàng</td>
+<td>★★</td>
+<td>Auto low-stock email</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>TaskSprint</td>
+<td>Project Mgmt</td>
+<td>★★★★</td>
+<td>Kanban + workload view</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gợi-ý-cách-phân-bổ-học-viên-lớp-20-người" class="level3">
+<h3 class="anchored" data-anchor-id="gợi-ý-cách-phân-bổ-học-viên-lớp-20-người">Gợi ý cách phân bổ học viên (lớp ~20 người)</h3>
+<ul>
+<li><strong>Tuần đầu</strong>: cho học viên chọn 1 project. Khuyến nghị cá nhân/đôi 2 người chọn project ★★–★★★; nhóm 3 người chọn ★★★★.</li>
+<li><strong>Cuối buổi 2</strong>: nộp PRD 1 trang theo template BMAD (Problem, Persona, MVP scope, Success Metrics, Out-of-scope).</li>
+<li><strong>Cuối buổi 3</strong>: nộp Epics + 8–15 User Stories (mỗi story file tập trung 1 nhiệm vụ, theo nguyên lý micro-file của BMAD).</li>
+<li><strong>Cuối buổi 4</strong>: deploy MVP lên Vercel hoặc publish Apps Script Web App, demo 5 phút.</li>
+<li><strong>Buổi 5</strong>: AI QA agent review code, học viên fix bug, viết README + video demo 90 giây.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="caveats" class="level2">
+<h2 class="anchored" data-anchor-id="caveats">Caveats</h2>
+<ol type="1">
+<li><strong>Phạm vi BMAD Method được mô tả ở đây dựa trên tài liệu công khai</strong> trên github.com/bmad-code-org/BMAD-METHOD, bmadcodes.com, và các bài blog của Vishal Mysore (Medium), Reenbit, DEV Community, Vibe Sparking AI. <strong>BMAD v6 đang ở giai đoạn Alpha</strong> tại thời điểm nghiên cứu — học viên nên check tài liệu chính thức để biết phiên bản agent template mới nhất; nếu công cụ thay đổi đáng kể, mapping 5 module ở trên có thể cần điều chỉnh.</li>
+<li><strong>Free tier Supabase, Neon, Vercel hiện hào phóng cho ~5–20 user nội bộ</strong> (Vercel free: 100 GB bandwidth/tháng; Supabase: 500 MB DB + 1 GB storage), nhưng có thể bị giảm trong tương lai — học viên nên đọc lại điều khoản trước khi triển khai cho công ty thật.</li>
+<li><strong>Apps Script Web App có giới hạn</strong>: ~30s execution time/request, 6 phút trigger time/lần, quota MailApp 100 email/ngày cho tài khoản gmail.com (1.500/ngày cho Google Workspace). Với team &lt; 20 người gửi email vài lần/ngày thì dư, nhưng nếu app gửi mass-email cần lưu ý.</li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    renderMermaid(currentTheme);
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dz-academy\.pages\.dev");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 DZ AI Academy · <a href="https://github.com/dzai-vn">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

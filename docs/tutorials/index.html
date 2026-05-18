@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-efd3ce25759adbcde0f48713dbe8013f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-04ebb2299ea93bd538288f4925640ff1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -220,7 +220,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -249,7 +249,19 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1778596368711" data-listing-reading-time-sort="10" data-listing-word-count-sort="1918">
+<a href="../tutorials/03. Pandas - CHAP 3 — MERGE VÀ PIVOT.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+0 - Dataset
+</h5>
+<div class="card-text listing-description delink">
+Source: https://www.kaggle.com/datasets/devrishisharma/finguard-ai-behavioral-fraud-detection-dataset
+</div>
+</div>
+</div></a>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -258,6 +270,7 @@ window.Quarto = {
   var root = document.documentElement;
   var storageKey = "dz-template-theme";
   var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
 
   function getStored() {
     try { return localStorage.getItem(storageKey); } catch (e) { return null; }
@@ -321,6 +334,77 @@ window.Quarto = {
     return btn;
   }
 
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     var stored = getStored();
     var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
@@ -337,6 +421,7 @@ window.Quarto = {
       applyTheme(currentTheme);
       setStored(currentTheme);
       updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
     });
 
     systemQuery.addEventListener("change", function () {
@@ -344,7 +429,10 @@ window.Quarto = {
       currentTheme = (s === "dark" || s === "light") ? s : "auto";
       applyTheme(currentTheme);
       updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
     });
+
+    renderMermaid(currentTheme);
   });
 })();
 </script>

@@ -1,0 +1,29 @@
+---
+title: "Vibe Coding"
+description: "Khoá học Vibe Coding Thực Chiến Cùng BMAD"
+---
+
+::: {.dz-section}
+
+::: {.dz-grid .dz-grid--two}
+
+::: {.dz-card}
+[Thông tin]{.dz-card__meta}
+
+### Nội dung chính
+
+[Mở slide deck →](slides/index.html){.dz-button .dz-button--primary}
+:::
+
+::: {.dz-card}
+[Primer Pack]{.dz-card__meta}
+
+Primer Pack là bộ tài liệu đọc trước Buổi 1. Mục tiêu không phải biến bạn thành lập trình viên trong 5 ngày, mà giúp bạn có đủ "bản đồ" để không lạc khi mentor demo BMAD, GitHub, frontend, backend, database và AI agent.
+
+[Mở primer pack →](materials/primer-pack/){.dz-button .dz-button--primary}
+:::
+
+
+
+:::
+:::

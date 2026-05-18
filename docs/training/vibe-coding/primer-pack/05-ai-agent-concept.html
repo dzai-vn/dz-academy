@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Duy NHM">
+
+<title>05 — AI Agent Là Gì? – DZ AI Academy</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3123a1fcdd3f833ab3f2be71d84c8e78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+// Early theme init — runs before body renders to prevent flash
+(function () {
+  var stored;
+  try { stored = localStorage.getItem("dz-template-theme"); } catch (e) {}
+  var theme = (stored === "dark" || stored === "light") ? stored : "auto";
+  var isDark = theme === "dark" || (theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+})();
+</script>
+
+
+<link rel="stylesheet" href="../../../assets/dz-tokens.css">
+<meta property="og:title" content="05 — AI Agent Là Gì? – DZ AI Academy">
+<meta property="og:site_name" content="DZ AI Academy">
+<meta name="twitter:title" content="05 — AI Agent Là Gì? – DZ AI Academy">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo light-content">
+    <img src="../../../assets/01-logos/master/dz-academy.svg" alt="DZ AI Academy" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">DZ AI Academy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../training/index.html"> 
+<span class="menu-text">Training</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts/index.html"> 
+<span class="menu-text">Bài viết</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../tutorials/index.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../demos/index.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../roadmap/index.html"> 
+<span class="menu-text">Roadmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">Về tôi</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/dzai-vn"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ai-agent-là-gì" id="toc-ai-agent-là-gì" class="nav-link active" data-scroll-target="#ai-agent-là-gì">05 — AI Agent Là Gì?</a>
+  <ul class="collapse">
+  <li><a href="#llm-bộ-não-đã-đọc-cả-thư-viện" id="toc-llm-bộ-não-đã-đọc-cả-thư-viện" class="nav-link" data-scroll-target="#llm-bộ-não-đã-đọc-cả-thư-viện">1. LLM — “Bộ Não Đã Đọc Cả Thư Viện”</a>
+  <ul class="collapse">
+  <li><a href="#llm-là-gì" id="toc-llm-là-gì" class="nav-link" data-scroll-target="#llm-là-gì">LLM là gì?</a></li>
+  <li><a href="#những-llm-bạn-sẽ-gặp-trong-khoá-học" id="toc-những-llm-bạn-sẽ-gặp-trong-khoá-học" class="nav-link" data-scroll-target="#những-llm-bạn-sẽ-gặp-trong-khoá-học">Những LLM bạn sẽ gặp trong khoá học</a></li>
+  </ul></li>
+  <li><a href="#prompt-câu-hỏi-bạn-đưa-cho-ai" id="toc-prompt-câu-hỏi-bạn-đưa-cho-ai" class="nav-link" data-scroll-target="#prompt-câu-hỏi-bạn-đưa-cho-ai">2. Prompt — “Câu Hỏi Bạn Đưa Cho AI”</a>
+  <ul class="collapse">
+  <li><a href="#prompt-là-gì" id="toc-prompt-là-gì" class="nav-link" data-scroll-target="#prompt-là-gì">Prompt là gì?</a></li>
+  <li><a href="#quy-tắc-prompt-vàng" id="toc-quy-tắc-prompt-vàng" class="nav-link" data-scroll-target="#quy-tắc-prompt-vàng">Quy tắc prompt vàng</a></li>
+  </ul></li>
+  <li><a href="#context-window-bàn-làm-việc-của-ai" id="toc-context-window-bàn-làm-việc-của-ai" class="nav-link" data-scroll-target="#context-window-bàn-làm-việc-của-ai">3. Context Window — “Bàn Làm Việc” Của AI</a>
+  <ul class="collapse">
+  <li><a href="#context-window-là-gì" id="toc-context-window-là-gì" class="nav-link" data-scroll-target="#context-window-là-gì">Context window là gì?</a></li>
+  <li><a href="#khi-nào-context-bị-đầy" id="toc-khi-nào-context-bị-đầy" class="nav-link" data-scroll-target="#khi-nào-context-bị-đầy">Khi nào context bị “đầy”?</a></li>
+  </ul></li>
+  <li><a href="#hallucination-ai-bịa-tự-tin-nhưng-sai" id="toc-hallucination-ai-bịa-tự-tin-nhưng-sai" class="nav-link" data-scroll-target="#hallucination-ai-bịa-tự-tin-nhưng-sai">4. Hallucination — “AI Bịa, Tự Tin Nhưng Sai”</a>
+  <ul class="collapse">
+  <li><a href="#hallucination-là-gì" id="toc-hallucination-là-gì" class="nav-link" data-scroll-target="#hallucination-là-gì">Hallucination là gì?</a></li>
+  <li><a href="#ví-dụ-hallucination-thường-gặp" id="toc-ví-dụ-hallucination-thường-gặp" class="nav-link" data-scroll-target="#ví-dụ-hallucination-thường-gặp">Ví dụ hallucination thường gặp</a></li>
+  <li><a href="#cách-phát-hiện" id="toc-cách-phát-hiện" class="nav-link" data-scroll-target="#cách-phát-hiện">Cách phát hiện</a></li>
+  </ul></li>
+  <li><a href="#persona-role-đeo-mặt-nạ-cho-ai" id="toc-persona-role-đeo-mặt-nạ-cho-ai" class="nav-link" data-scroll-target="#persona-role-đeo-mặt-nạ-cho-ai">5. Persona / Role — “Đeo Mặt Nạ Cho AI”</a>
+  <ul class="collapse">
+  <li><a href="#persona-là-gì" id="toc-persona-là-gì" class="nav-link" data-scroll-target="#persona-là-gì">Persona là gì?</a></li>
+  </ul></li>
+  <li><a href="#ai-agent-vs-chatbot-khác-biệt-cốt-lõi" id="toc-ai-agent-vs-chatbot-khác-biệt-cốt-lõi" class="nav-link" data-scroll-target="#ai-agent-vs-chatbot-khác-biệt-cốt-lõi">6. AI Agent vs Chatbot — Khác Biệt Cốt Lõi</a>
+  <ul class="collapse">
+  <li><a href="#chatbot-trả-lời" id="toc-chatbot-trả-lời" class="nav-link" data-scroll-target="#chatbot-trả-lời">Chatbot = trả lời</a></li>
+  <li><a href="#ai-agent-hành-động" id="toc-ai-agent-hành-động" class="nav-link" data-scroll-target="#ai-agent-hành-động">AI Agent = hành động</a></li>
+  </ul></li>
+  <li><a href="#vibe-coding-vòng-lặp-cốt-lõi" id="toc-vibe-coding-vòng-lặp-cốt-lõi" class="nav-link" data-scroll-target="#vibe-coding-vòng-lặp-cốt-lõi">7. Vibe Coding — Vòng Lặp Cốt Lõi</a></li>
+  <li><a href="#bảng-tóm-tắt-thuật-ngữ" id="toc-bảng-tóm-tắt-thuật-ngữ" class="nav-link" data-scroll-target="#bảng-tóm-tắt-thuật-ngữ">8. Bảng Tóm Tắt Thuật Ngữ</a></li>
+  <li><a href="#bạn-đã-hiểu-chưa" id="toc-bạn-đã-hiểu-chưa" class="nav-link" data-scroll-target="#bạn-đã-hiểu-chưa">✅ Bạn Đã Hiểu Chưa?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">05 — AI Agent Là Gì?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Duy NHM </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ai-agent-là-gì" class="level1">
+<h1>05 — AI Agent Là Gì?</h1>
+<blockquote class="blockquote">
+<p>⏱️ <strong>Thời lượng:</strong> 30 phút<br>
+🎯 <strong>Mục tiêu:</strong> Hiểu LLM, prompt, context window, hallucination, persona là gì. Phân biệt chatbot vs AI Agent. Hiểu tại sao Vibe Coding cần AI Agent chứ không phải chatbot.</p>
+</blockquote>
+<hr>
+<section id="llm-bộ-não-đã-đọc-cả-thư-viện" class="level2">
+<h2 class="anchored" data-anchor-id="llm-bộ-não-đã-đọc-cả-thư-viện">1. LLM — “Bộ Não Đã Đọc Cả Thư Viện”</h2>
+<section id="llm-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="llm-là-gì">LLM là gì?</h3>
+<p><strong>LLM (Large Language Model)</strong> = mô hình ngôn ngữ lớn. Nôm na: một “bộ não nhân tạo” đã được <strong>đọc hàng tỷ trang</strong> sách, Wikipedia, code, báo, luận văn… và học cách <strong>viết tiếp câu</strong> dựa trên những gì đã đọc.</p>
+<pre><code>Ví von: Tưởng tượng có 1 người đã đọc:
+- Toàn bộ Wikipedia (tiếng Anh + tiếng Việt)
+- 1 triệu cuốn sách
+- 100 triệu bài code trên GitHub
+- Mọi bài blog kỹ thuật trên internet
+
+Bạn hỏi gì, người đó trả lời dựa trên "trí nhớ" khổng lồ này.</code></pre>
+</section>
+<section id="những-llm-bạn-sẽ-gặp-trong-khoá-học" class="level3">
+<h3 class="anchored" data-anchor-id="những-llm-bạn-sẽ-gặp-trong-khoá-học">Những LLM bạn sẽ gặp trong khoá học</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 16%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>LLM</th>
+<th>Nhà sản xuất</th>
+<th>Dùng ở đâu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Claude</strong> (Sonnet, Opus)</td>
+<td>Anthropic</td>
+<td>Claude Code, Antigravity Agent</td>
+</tr>
+<tr class="even">
+<td><strong>GPT-4o / GPT-5</strong></td>
+<td>OpenAI</td>
+<td>ChatGPT, Antigravity Agent</td>
+</tr>
+<tr class="odd">
+<td><strong>Gemini</strong></td>
+<td>Google</td>
+<td>Google AI Studio, Antigravity Agent</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Antigravity Agent</strong> là code editor tích hợp AI Agent — bạn có thể chọn sử dụng nhiều LLM khác nhau (Claude, GPT, Gemini) bên trong Antigravity. Nó không phải LLM mà là <strong>nền tảng</strong> để bạn làm việc với LLM.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>💡 <strong>Key insight:</strong> LLM không “hiểu” theo nghĩa con người. Nó <strong>dự đoán từ tiếp theo</strong> cực giỏi — giỏi đến mức trông như hiểu. Nó dự đoán câu trả lời hợp lý dựa trên dữ liệu, prompt và context bạn cung cấp.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="prompt-câu-hỏi-bạn-đưa-cho-ai" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-câu-hỏi-bạn-đưa-cho-ai">2. Prompt — “Câu Hỏi Bạn Đưa Cho AI”</h2>
+<section id="prompt-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-là-gì">Prompt là gì?</h3>
+<p><strong>Prompt</strong> = chỉ dẫn / yêu cầu / câu hỏi bạn gửi cho AI.</p>
+<p><strong>Prompt tệ vs Prompt tốt:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prompt tệ 😕</th>
+<th>Prompt tốt ✅</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“Làm app cho tôi”</td>
+<td>“Tạo form đăng ký có 3 trường: tên, email, số điện thoại. Khi bấm Gửi, validate email đúng format, hiện thông báo thành công.”</td>
+</tr>
+<tr class="even">
+<td>“Sửa lỗi”</td>
+<td>“Khi bấm nút Submit, console hiện lỗi ‘TypeError: Cannot read property of null’. Đây là code lỗi: [dán code]. Hãy fix.”</td>
+</tr>
+<tr class="odd">
+<td>“Code đẹp hơn”</td>
+<td>“Đổi màu nền header thành gradient từ #1e3a5f sang #2d5a87, font chữ Inter, border-radius 12px.”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quy-tắc-prompt-vàng" class="level3">
+<h3 class="anchored" data-anchor-id="quy-tắc-prompt-vàng">Quy tắc prompt vàng</h3>
+<pre class="mermaid"><code>graph LR
+    A["🎯 CỤ THỂ&lt;br/&gt;Nói rõ muốn gì"] --&gt; B["📋 CÓ NGỮ CẢNH&lt;br/&gt;Cho AI biết&lt;br/&gt;đang làm gì"]
+    B --&gt; C["✅ CÓ TIÊU CHÍ&lt;br/&gt;Xong = như thế nào"]
+    C --&gt; D["💬 PROMPT TỐT"]</code></pre>
+<blockquote class="blockquote">
+<p>💡 <strong>Key insight:</strong> AI giỏi bao nhiêu phụ thuộc vào prompt của bạn rõ ràng bao nhiêu. Skill #1 của Vibe Coding = <strong>viết prompt tốt</strong>.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="context-window-bàn-làm-việc-của-ai" class="level2">
+<h2 class="anchored" data-anchor-id="context-window-bàn-làm-việc-của-ai">3. Context Window — “Bàn Làm Việc” Của AI</h2>
+<section id="context-window-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="context-window-là-gì">Context window là gì?</h3>
+<p><strong>Context window</strong> = “bàn làm việc” của AI — lượng thông tin AI có thể <strong>nhớ cùng lúc</strong> trong 1 cuộc trò chuyện.</p>
+<pre><code>Ví von: Bạn có 1 bàn làm việc. Bàn nhỏ → chỉ để được 5 tờ giấy.
+Muốn đọc tờ thứ 6 → phải bỏ 1 tờ cũ ra.
+
+Context window của AI cũng vậy:
+- Claude: ~1.000.000 token
+- GPT-5: ~1.050.000 token</code></pre>
+<p>https://developers.openai.com/api/docs/models/compare?model=gpt-5.4 https://platform.claude.com/docs/en/about-claude/models/overview ### Vì sao quan trọng?</p>
+<pre class="mermaid"><code>graph TD
+    A["📄 Story ôm nhiều&lt;br/&gt;nhiệm vụ cùng lúc"] --&gt;|"AI bị phân tán"| C["🤯 AI mất tập trung&lt;br/&gt;→ Code thiếu hoặc sai"]
+    E["📄 Story 1 nhiệm vụ&lt;br/&gt;rõ ràng, gọn"] --&gt;|"AI đọc hiểu trọn"| D["✅ AI tập trung&lt;br/&gt;→ Code đúng"]</code></pre>
+<p><strong>Đây là lý do khoá học khuyến nghị mỗi Story chỉ mô tả 1 nhiệm vụ:</strong> để AI luôn “thấy” toàn bộ yêu cầu trên “bàn làm việc” mà không bị phân tán. Trong thực tế, điều này thường dẫn đến story trong khoảng 60–120 dòng — nhưng con số không phải quy tắc cứng, <strong>sự tập trung mới là điều quan trọng</strong>.</p>
+</section>
+<section id="khi-nào-context-bị-đầy" class="level3">
+<h3 class="anchored" data-anchor-id="khi-nào-context-bị-đầy">Khi nào context bị “đầy”?</h3>
+<ul>
+<li>Chat dài → tin nhắn cũ bị “rơi” khỏi bàn</li>
+<li>Paste file code quá lớn → AI chỉ nhớ phần cuối</li>
+<li>Nhiều file cùng lúc → AI lẫn lộn giữa các file</li>
+</ul>
+<p><strong>Giải pháp:</strong> Lệnh <code>/compact</code> — dọn sạch bàn, bắt đầu lại. Bạn sẽ dùng lệnh này thường xuyên ở buổi 5.</p>
+<hr>
+</section>
+</section>
+<section id="hallucination-ai-bịa-tự-tin-nhưng-sai" class="level2">
+<h2 class="anchored" data-anchor-id="hallucination-ai-bịa-tự-tin-nhưng-sai">4. Hallucination — “AI Bịa, Tự Tin Nhưng Sai”</h2>
+<section id="hallucination-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="hallucination-là-gì">Hallucination là gì?</h3>
+<p>Đôi khi AI <strong>trả lời rất tự tin</strong> nhưng <strong>hoàn toàn sai</strong>. Hiện tượng này gọi là <strong>hallucination</strong> (ảo giác).</p>
+<pre><code>Ví von: Bạn hỏi đường 1 người rất tự tin.
+"À, đi thẳng 200m, rẽ trái, quán cà phê ABC ngay góc."
+Bạn đi → không có quán nào cả. Người đó không nói dối — 
+họ THẬT SỰ TIN là đúng, nhưng nhớ sai.
+
+AI cũng vậy. Nó không "cố ý" bịa. Nó dự đoán từ tiếp theo
+dựa trên pattern, và đôi khi pattern dẫn đến sai.</code></pre>
+</section>
+<section id="ví-dụ-hallucination-thường-gặp" class="level3">
+<h3 class="anchored" data-anchor-id="ví-dụ-hallucination-thường-gặp">Ví dụ hallucination thường gặp</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Loại</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bịa API</strong></td>
+<td>“Dùng hàm <code>supabase.magicSearch()</code>” — hàm này không tồn tại</td>
+</tr>
+<tr class="even">
+<td><strong>Bịa thư viện</strong></td>
+<td>“Import <code>react-kanban-pro</code>” — package không có trên npm</td>
+</tr>
+<tr class="odd">
+<td><strong>Code trông đúng nhưng sai logic</strong></td>
+<td>Hàm tính tổng nhưng quên cộng dòng cuối</td>
+</tr>
+<tr class="even">
+<td><strong>Tự tin giải thích sai</strong></td>
+<td>“RLS chỉ hoạt động với MySQL” — sai, RLS là của PostgreSQL</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cách-phát-hiện" class="level3">
+<h3 class="anchored" data-anchor-id="cách-phát-hiện">Cách phát hiện</h3>
+<ol type="1">
+<li><strong>Code không chạy</strong> → lỗi console = dấu hiệu #1</li>
+<li><strong>Tên hàm / package lạ</strong> → Google kiểm tra xem có thật không</li>
+<li><strong>Logic “nghe hay nhưng thiếu”</strong> → đọc lại AC, so với output</li>
+</ol>
+<blockquote class="blockquote">
+<p>💡 <strong>Key insight:</strong> AI <strong>không bao giờ 100% đúng</strong>. Luôn kiểm tra kết quả. Bạn là người ra quyết định cuối cùng, không phải AI.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="persona-role-đeo-mặt-nạ-cho-ai" class="level2">
+<h2 class="anchored" data-anchor-id="persona-role-đeo-mặt-nạ-cho-ai">5. Persona / Role — “Đeo Mặt Nạ Cho AI”</h2>
+<section id="persona-là-gì" class="level3">
+<h3 class="anchored" data-anchor-id="persona-là-gì">Persona là gì?</h3>
+<p><strong>Persona</strong> = giao cho AI 1 vai trò cụ thể để nó trả lời <strong>theo chuyên môn</strong> của vai đó.</p>
+<pre><code>Ví von: Cùng 1 câu hỏi "Nên làm app như thế nào?":
+- Hỏi BẾP TRƯỞNG → trả lời về UX/giao diện nấu ăn
+- Hỏi KẾ TOÁN → trả lời về tính năng sổ sách, thuế
+- Hỏi KỸ SƯ → trả lời về stack công nghệ, database</code></pre>
+<p><strong>Trong BMAD, mỗi Agent đã được gắn persona sẵn:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Persona</th>
+<th>Chuyên môn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>John</strong> (PM)</td>
+<td>Product Manager kinh nghiệm</td>
+<td>Viết PRD, phỏng vấn yêu cầu</td>
+</tr>
+<tr class="even">
+<td><strong>Winston</strong> (Architect)</td>
+<td>Kiến trúc sư hệ thống</td>
+<td>Chọn tech stack, thiết kế schema</td>
+</tr>
+<tr class="odd">
+<td><strong>Sally</strong> (UX)</td>
+<td>UX Designer</td>
+<td>Wireframe, user flow, 4 states</td>
+</tr>
+<tr class="even">
+<td><strong>Amelia</strong> (Dev)</td>
+<td>Senior Developer</td>
+<td>Viết code, implement Story</td>
+</tr>
+<tr class="odd">
+<td><strong>Paige</strong> (Tech Writer)</td>
+<td>Chuyên gia tài liệu</td>
+<td>README, docs, giải thích rõ ràng</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Bạn không cần tự viết persona</strong> — BMAD đã làm sẵn. Bạn chỉ cần gọi đúng Agent cho đúng việc.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="ai-agent-vs-chatbot-khác-biệt-cốt-lõi" class="level2">
+<h2 class="anchored" data-anchor-id="ai-agent-vs-chatbot-khác-biệt-cốt-lõi">6. AI Agent vs Chatbot — Khác Biệt Cốt Lõi</h2>
+<section id="chatbot-trả-lời" class="level3">
+<h3 class="anchored" data-anchor-id="chatbot-trả-lời">Chatbot = trả lời</h3>
+<pre><code>Bạn: "Viết code form đăng ký"
+Chatbot: "Đây là code: [code]"
+→ Bạn phải TỰ TAY copy, paste, tạo file, chạy, debug</code></pre>
+</section>
+<section id="ai-agent-hành-động" class="level3">
+<h3 class="anchored" data-anchor-id="ai-agent-hành-động">AI Agent = hành động</h3>
+<pre><code>Bạn: "Tạo form đăng ký có tên, email, validate"
+AI Agent:
+  1. Đọc cấu trúc dự án hiện tại
+  2. Tạo file mới tại đúng vị trí
+  3. Viết code vào file
+  4. Kiểm tra lỗi
+  5. Sửa nếu có lỗi
+  6. Chạy thử
+→ Bạn CHỈ CẦN review kết quả</code></pre>
+<pre class="mermaid"><code>graph TD
+    subgraph "💬 Chatbot (ChatGPT web)"
+        C1["Nhận prompt"] --&gt; C2["Trả text / code"]
+        C2 --&gt; C3["Bạn tự copy-paste&lt;br/&gt;tự chạy, tự debug"]
+    end
+    
+    subgraph "🤖 AI Agent"
+        A1["Nhận prompt"] --&gt; A2["Đọc file dự án"]
+        A2 --&gt; A3["Viết code vào file"]
+        A3 --&gt; A4["Chạy + kiểm tra"]
+        A4 --&gt; A5{"Lỗi?"}
+        A5 --&gt;|"Có"| A6["Tự sửa"]
+        A6 --&gt; A4
+        A5 --&gt;|"Không"| A7["✅ Xong"]
+    end</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Chatbot</th>
+<th>AI Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Truy cập file</strong></td>
+<td>❌ Không</td>
+<td>✅ Đọc/viết file dự án</td>
+</tr>
+<tr class="even">
+<td><strong>Chạy code</strong></td>
+<td>❌ Không</td>
+<td>✅ Chạy terminal</td>
+</tr>
+<tr class="odd">
+<td><strong>Tự sửa lỗi</strong></td>
+<td>❌ Không</td>
+<td>✅ Đọc lỗi → sửa → chạy lại</td>
+</tr>
+<tr class="even">
+<td><strong>Nhớ cấu trúc dự án</strong></td>
+<td>❌ Không</td>
+<td>✅ Quét thư mục, đọc config</td>
+</tr>
+<tr class="odd">
+<td><strong>Ví dụ</strong></td>
+<td>ChatGPT web, Gemini web</td>
+<td>Antigravity Agent, Claude Code</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Trong khoá học bạn dùng AI Agent</strong> không phải chatbot web. Đây là khác biệt then chốt khiến Vibe Coding khả thi.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="vibe-coding-vòng-lặp-cốt-lõi" class="level2">
+<h2 class="anchored" data-anchor-id="vibe-coding-vòng-lặp-cốt-lõi">7. Vibe Coding — Vòng Lặp Cốt Lõi</h2>
+<p>Bạn đã gặp khái niệm này ở <a href="../../../training/vibe-coding/primer-pack/01-what-is-code.html">bài 01</a>. Giờ mình đi sâu vào <strong>vòng lặp</strong> thực tế:</p>
+<pre class="mermaid"><code>graph TD
+    A["📄 Nạp Story&lt;br/&gt;(1 nhiệm vụ rõ ràng)"] --&gt; B["🤖 AI Agent đọc&lt;br/&gt;+ viết code"]
+    B --&gt; C["💻 Chạy thử"]
+    C --&gt; D{"✅ Chạy được?"}
+    D --&gt;|"Có"| E["🎉 Commit +&lt;br/&gt;chuyển Story tiếp"]
+    D --&gt;|"Không"| F["📋 Copy lỗi&lt;br/&gt;từ console"]
+    F --&gt; G["💬 'Fix this error:&lt;br/&gt;[paste lỗi]'"]
+    G --&gt; B
+    
+    style A fill:#e8f5e9
+    style E fill:#e8f5e9
+    style F fill:#ffebee</code></pre>
+<p><strong>4 bước lặp đi lặp lại:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 39%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bước</th>
+<th>Bạn làm</th>
+<th>AI làm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Nạp Story</td>
+<td>Mở file Story, paste vào AI hoặc mention file và yêu cầu AI Agent tự Dev</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>2. AI code</td>
+<td>—</td>
+<td>Đọc yêu cầu, viết code</td>
+</tr>
+<tr class="odd">
+<td>3. Kiểm tra</td>
+<td>Xem app chạy chưa, đúng AC chưa</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>4. Fix lỗi</td>
+<td>Copy lỗi, bảo “Fix this”</td>
+<td>Đọc lỗi, sửa code</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lặp bước 2–4</strong> cho đến khi Story xong → commit → chuyển Story tiếp.</p>
+<blockquote class="blockquote">
+<p>💡 <strong>“Ném lỗi”</strong> là kỹ thuật quan trọng nhất: khi app lỗi, <strong>đừng tự sửa code</strong> — copy nguyên lỗi, ném cho AI. AI sửa nhanh hơn bạn rất nhiều.</p>
+</blockquote>
+<hr>
+</section>
+<section id="bảng-tóm-tắt-thuật-ngữ" class="level2">
+<h2 class="anchored" data-anchor-id="bảng-tóm-tắt-thuật-ngữ">8. Bảng Tóm Tắt Thuật Ngữ</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 18%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Thuật ngữ</th>
+<th>Nghĩa</th>
+<th>Một câu nhớ nhanh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LLM</strong></td>
+<td>Mô hình ngôn ngữ lớn</td>
+<td>“Bộ não đã đọc cả thư viện”</td>
+</tr>
+<tr class="even">
+<td><strong>Prompt</strong></td>
+<td>Chỉ dẫn bạn gửi cho AI</td>
+<td>“Câu hỏi / yêu cầu”</td>
+</tr>
+<tr class="odd">
+<td><strong>Context Window</strong></td>
+<td>Lượng info AI nhớ cùng lúc</td>
+<td>“Bàn làm việc — đầy thì phải dọn”</td>
+</tr>
+<tr class="even">
+<td><strong>Hallucination</strong></td>
+<td>AI bịa, tự tin nhưng sai</td>
+<td>“Chỉ đường rất tự tin nhưng sai”</td>
+</tr>
+<tr class="odd">
+<td><strong>Persona</strong></td>
+<td>Vai trò gán cho AI</td>
+<td>“Đeo mặt nạ chuyên gia”</td>
+</tr>
+<tr class="even">
+<td><strong>AI Agent</strong></td>
+<td>AI biết hành động (đọc/viết file, chạy code)</td>
+<td>“Trợ lý biết LÀM, không chỉ NÓI”</td>
+</tr>
+<tr class="odd">
+<td><strong>Chatbot</strong></td>
+<td>AI chỉ trả lời text</td>
+<td>“Trợ lý chỉ NÓI, không LÀM”</td>
+</tr>
+<tr class="even">
+<td><strong>Vibe Coding</strong></td>
+<td>Bạn dẫn dắt, AI viết code</td>
+<td>“Nhạc trưởng + dàn nhạc AI”</td>
+</tr>
+<tr class="odd">
+<td><strong>Ném lỗi</strong></td>
+<td>Copy lỗi → paste cho AI sửa</td>
+<td>“Lỗi = thức ăn cho AI”</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="bạn-đã-hiểu-chưa" class="level2">
+<h2 class="anchored" data-anchor-id="bạn-đã-hiểu-chưa">✅ Bạn Đã Hiểu Chưa?</h2>
+<ol type="1">
+<li><strong>LLM “hiểu” ngôn ngữ theo nghĩa nào?</strong> (Gợi ý: dự đoán từ tiếp theo)</li>
+<li><strong>Context window là gì?</strong> Khi nào cần <code>/clear</code>?</li>
+<li><strong>Hallucination là gì?</strong> Cho 1 ví dụ và cách phát hiện.</li>
+<li><strong>AI Agent khác Chatbot ra sao?</strong> Nêu 2 khác biệt chính.</li>
+<li><strong>Vòng lặp Vibe Coding có mấy bước?</strong> Bước nào quan trọng nhất?</li>
+</ol>
+<blockquote class="blockquote">
+<p>🎯 Trả lời được 5/5 → bạn đã sẵn sàng hiểu BMAD ở bài tiếp theo!</p>
+</blockquote>
+<hr>
+<p><em>📖 Quay lại: <a href="../../../training/vibe-coding/primer-pack/04-agile-scrum-101.html">04 — Agile &amp; Scrum Cho Người Mới</a></em><br>
+<em>📖 Đọc tiếp: <a href="../../../training/vibe-coding/primer-pack/06-bmad-overview.html">06 — Tổng Quan BMAD Framework</a></em></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var storageKey = "dz-template-theme";
+  var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
+
+  function getStored() {
+    try { return localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStored(v) {
+    try { localStorage.setItem(storageKey, v); } catch (e) {}
+  }
+
+  function getEffective(theme) {
+    if (theme === "dark" || theme === "light") return theme;
+    return systemQuery.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    var effective = getEffective(theme);
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-bs-theme", effective);
+    // Quarto hardcodes data-bs-theme on <nav> — sync it so Bootstrap scoping doesn't override
+    var nav = document.querySelector("nav.navbar");
+    if (nav) nav.setAttribute("data-bs-theme", effective);
+  }
+
+  function updateButton(btn, currentTheme) {
+    var eff = getEffective(currentTheme);
+    var next = eff === "dark" ? "light" : "dark";
+    btn.dataset.nextTheme = next;
+    btn.setAttribute("aria-pressed", eff === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", "Switch to " + next + " theme");
+    btn.setAttribute("title", "Switch to " + next + " theme");
+    var icon = btn.querySelector("[data-theme-icon]");
+    if (icon) icon.textContent = next === "dark" ? "☾" : "☀";
+  }
+
+  function injectToggleButton(currentTheme) {
+    var btn = document.createElement("button");
+    btn.className = "dz-theme-toggle";
+    btn.type = "button";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.innerHTML = '<span data-theme-icon aria-hidden="true">☾</span>';
+    updateButton(btn, currentTheme);
+
+    // Insert into Quarto navbar — append to the last nav list or navbar container
+    var target =
+      document.querySelector(".quarto-navbar-tools") ||
+      document.querySelector(".navbar-nav.ms-auto") ||
+      document.querySelector("#navbarCollapse");
+
+    if (target) {
+      // Wrap in a nav item if the target is a <ul>
+      if (target.tagName === "UL") {
+        var li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(btn);
+        target.appendChild(li);
+      } else {
+        target.appendChild(btn);
+      }
+    }
+
+    return btn;
+  }
+
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var stored = getStored();
+    var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
+
+    // Ensure theme is applied (in case head script missed edge cases)
+    applyTheme(currentTheme);
+
+    var btn = injectToggleButton(currentTheme);
+
+    btn.addEventListener("click", function () {
+      var next = btn.dataset.nextTheme;
+      if (next !== "dark" && next !== "light") return;
+      currentTheme = next;
+      applyTheme(currentTheme);
+      setStored(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    systemQuery.addEventListener("change", function () {
+      var s = getStored();
+      currentTheme = (s === "dark" || s === "light") ? s : "auto";
+      applyTheme(currentTheme);
+      updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
+    });
+
+    renderMermaid(currentTheme);
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dz-academy\.pages\.dev");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 DZ AI Academy · <a href="https://github.com/dzai-vn">GitHub</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

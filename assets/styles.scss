@@ -52,6 +52,13 @@ $pre-color:  #001233;
   --bs-body-bg-rgb:      0, 18, 51;
   --bs-body-color:       #ffffff;
   --bs-body-color-rgb:   255, 255, 255;
+  --bs-secondary-color:  #c7d2e5;
+  --bs-secondary-color-rgb: 199, 210, 229;
+  --bs-tertiary-color:   #9fb0cb;
+  --bs-tertiary-color-rgb: 159, 176, 203;
+  --bs-emphasis-color:   #ffffff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-heading-color:    #ffffff;
   --bs-link-color:       #00d4ff;
   --bs-link-hover-color: #00b8dd;
   --bs-border-color:     rgba(255, 255, 255, 0.12);
@@ -59,6 +66,13 @@ $pre-color:  #001233;
   --bs-card-border-color: rgba(255, 255, 255, 0.10);
   --bs-code-color:       #00d4ff;
   --bs-pre-bg:           rgba(255, 255, 255, 0.06);
+  --bs-table-color:      #ffffff;
+  --bs-table-bg:         rgba(14, 36, 79, 0.88);
+  --bs-table-border-color: rgba(189, 199, 240, 0.16);
+  --bs-table-striped-color: #ffffff;
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg:   rgba(255, 255, 255, 0.05);
   color-scheme: dark;
 }
 
@@ -86,6 +100,95 @@ h1 { letter-spacing: -0.03em; }
 body {
   color: var(--dz-text, #001233);
   background-color: var(--dz-bg, #fffdf5);
+}
+
+body,
+#quarto-content,
+#quarto-document-content,
+main.content,
+.content,
+article {
+  color: var(--dz-text, #001233);
+}
+
+p,
+li,
+dt,
+dd,
+figcaption,
+.table,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td {
+  color: var(--dz-text, #001233);
+}
+
+strong,
+b,
+th,
+thead th,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dz-heading, #001233);
+}
+
+a {
+  color: var(--dz-link, #006fa0);
+
+  &:hover {
+    color: var(--dz-accent, #e8a21a);
+  }
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--dz-accent, #e8a21a);
+  background: color-mix(in srgb, var(--dz-panel, rgba(255, 255, 255, 0.72)) 72%, transparent);
+  color: var(--dz-text, #001233);
+}
+
+blockquote p,
+blockquote li,
+blockquote strong {
+  color: inherit;
+}
+
+table {
+  border-color: var(--dz-line, rgba(0, 18, 51, 0.12));
+}
+
+thead,
+thead th {
+  color: var(--dz-heading, #001233);
+}
+
+tbody tr {
+  border-color: var(--dz-line, rgba(0, 18, 51, 0.12));
+}
+
+th,
+td {
+  border-color: var(--dz-line, rgba(0, 18, 51, 0.12)) !important;
+}
+
+#title-block-header .description,
+.quarto-title-meta,
+.quarto-title-meta-contents,
+.quarto-title-meta-heading {
+  color: var(--dz-text, #001233);
+}
+
+.quarto-title-meta-heading {
+  color: var(--dz-text-muted, #8892a4);
 }
 
 // ============================================================
@@ -233,6 +336,192 @@ body {
   }
 }
 
+html[data-theme="dark"],
+[data-bs-theme="dark"] {
+  --dz-code-surface: #0f172a;
+  --dz-code-surface-raised: #111b31;
+  --dz-code-border-strong: rgba(189, 199, 240, 0.2);
+  --dz-code-text: #c0caf5;
+  --dz-code-muted: #9aa5ce;
+  --dz-code-keyword: #7dcfff;
+  --dz-code-string: #9ece6a;
+  --dz-code-number: #ff9e64;
+  --dz-code-function: #7aa2f7;
+  --dz-code-constant: #bb9af7;
+  --dz-code-operator: #89ddff;
+  --dz-code-comment: #7f8aa3;
+  --dz-code-inline-text: var(--dz-inline-code-text, #8fdcff);
+  --dz-code-inline-bg: var(--dz-inline-code-bg, rgba(143, 220, 255, 0.12));
+  --dz-code-inline-border: var(--dz-inline-code-border, rgba(143, 220, 255, 0.18));
+
+  blockquote {
+    background: color-mix(in srgb, var(--dz-panel, rgba(8, 25, 58, 0.84)) 88%, transparent);
+    border-left-color: var(--dz-accent-alt, #00d4ff);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  p,
+  li,
+  dt,
+  dd,
+  figcaption,
+  td,
+  .table,
+  .quarto-title-meta-contents,
+  #title-block-header .description {
+    color: var(--dz-text, #ffffff);
+  }
+
+  strong,
+  b,
+  th,
+  thead th,
+  .quarto-title-meta-heading {
+    color: var(--dz-heading, #ffffff);
+  }
+
+  table,
+  .table {
+    --bs-table-color: var(--dz-text, #ffffff);
+    --bs-table-bg: var(--dz-card, rgba(14, 36, 79, 0.88));
+    --bs-table-border-color: rgba(189, 199, 240, 0.16);
+    --bs-table-striped-color: var(--dz-text, #ffffff);
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+    --bs-table-hover-color: var(--dz-text, #ffffff);
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+    background: var(--dz-card, rgba(14, 36, 79, 0.88));
+    color: var(--dz-text, #ffffff);
+    border-color: rgba(189, 199, 240, 0.16);
+  }
+
+  table > :not(caption) > * > *,
+  .table > :not(caption) > * > * {
+    color: var(--dz-text, #ffffff) !important;
+    background-color: transparent !important;
+    box-shadow: inset 0 0 0 9999px var(--dz-card, rgba(14, 36, 79, 0.88));
+  }
+
+  table > thead > tr > *,
+  .table > thead > tr > * {
+    color: var(--dz-heading, #ffffff) !important;
+    box-shadow: inset 0 0 0 9999px color-mix(in srgb, var(--dz-card, rgba(14, 36, 79, 0.88)) 92%, #4e6289) !important;
+  }
+
+  thead th {
+    background: color-mix(in srgb, var(--dz-card, rgba(14, 36, 79, 0.88)) 92%, transparent);
+  }
+
+  tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  th,
+  td {
+    border-color: rgba(189, 199, 240, 0.16) !important;
+  }
+
+  pre,
+  pre.sourceCode,
+  pre.text,
+  div.sourceCode,
+  pre > code,
+  pre.text > code {
+    background: var(--dz-code-surface) !important;
+    border-color: var(--dz-code-border-strong);
+    color: var(--dz-code-text) !important;
+    line-height: 1.7;
+  }
+
+  pre code,
+  pre.text code {
+    color: var(--dz-code-text) !important;
+  }
+
+  div.sourceCode,
+  pre.sourceCode,
+  pre,
+  pre.text {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  code span,
+  pre > code.sourceCode > span,
+  code.sourceCode > span {
+    color: var(--dz-code-text);
+  }
+
+  code span.co,
+  code span.an,
+  code span.cv,
+  code span.do,
+  code span.in,
+  code span.wa {
+    color: var(--dz-code-comment) !important;
+  }
+
+  code span.kw,
+  code span.cf,
+  code span.im,
+  code span.op,
+  code span.ot {
+    color: var(--dz-code-keyword) !important;
+  }
+
+  code span.st,
+  code span.ss,
+  code span.ch,
+  code span.vs {
+    color: var(--dz-code-string) !important;
+  }
+
+  code span.dv,
+  code span.fl,
+  code span.bn,
+  code span.sc {
+    color: var(--dz-code-number) !important;
+  }
+
+  code span.fu {
+    color: var(--dz-code-function) !important;
+  }
+
+  code span.cn,
+  code span.at,
+  code span.va {
+    color: var(--dz-code-constant) !important;
+  }
+
+  p code,
+  li code,
+  td code,
+  th code,
+  h1 code,
+  h2 code,
+  h3 code,
+  h4 code,
+  h5 code,
+  h6 code,
+  blockquote code,
+  .callout-body code,
+  .sidebar code,
+  .toc-actions code,
+  .nav-link code {
+    color: var(--dz-code-inline-text) !important;
+    background: var(--dz-code-inline-bg) !important;
+    border: 1px solid var(--dz-code-inline-border) !important;
+    border-color: var(--dz-code-inline-border) !important;
+    box-shadow: none;
+  }
+
+  a {
+    color: var(--dz-link, #00d4ff);
+
+    &:hover {
+      color: #8fdcff;
+    }
+  }
+}
+
 // ============================================================
 // QUARTO LISTING CARDS
 // ============================================================
@@ -287,10 +576,21 @@ pre, code {
   font-family: "JetBrains Mono", "Courier New", monospace;
 }
 
+pre,
 pre.sourceCode {
   border: 1px solid var(--dz-card-border, rgba(0, 18, 51, 0.10));
   border-radius: 12px;
   background: color-mix(in srgb, var(--dz-bg, #fffdf5) 92%, var(--dz-ocean, #001233)) !important;
+}
+
+pre,
+pre code,
+pre.text,
+pre.text code {
+  color: var(--dz-text, #001233);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 p code,
@@ -308,19 +608,21 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-  display: inline-block;
-  padding: 0.14em 0.38em;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.16em 0.42em;
   border: 1px solid var(--dz-inline-code-border, rgba(0, 18, 51, 0.1));
-  border-radius: 0.28rem;
+  border-radius: 0.5rem;
   background: var(--dz-inline-code-bg, rgba(0, 111, 160, 0.07));
   color: var(--dz-inline-code-text, #006fa0);
-  font-size: 0.88em;
+  font-size: 0.9em;
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.1;
   box-shadow: none;
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: break-word;
+  vertical-align: baseline;
 }
 
 // ============================================================

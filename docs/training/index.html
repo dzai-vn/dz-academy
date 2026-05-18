@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ada687a56ace442acf69d6cf564eb2f3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-81d35ab2fd24d424774b648e243cf6be.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3123a1fcdd3f833ab3f2be71d84c8e78.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -203,25 +203,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <div class="dz-card">
+<p><span class="dz-card__meta">Khoá học</span></p>
+<section id="vibe-coding-thực-chiến-cùng-bmad" class="level3">
+<h3 class="anchored" data-anchor-id="vibe-coding-thực-chiến-cùng-bmad">Vibe Coding Thực Chiến Cùng BMAD</h3>
+<p>Slide deck thực chiến cho team HR/Tuyển dụng: từ prompt chung chung đến skill, workflow, Cowork, Chrome, và bảo mật khi dùng Agent Skill.</p>
+<p><a href="../training/vibe-coding/index.html">Mở trang khoá học →</a></p>
+</section>
+</div>
+<div class="dz-card">
 <p><span class="dz-card__meta">Khảo sát</span></p>
 <section id="khảo-sát-sau-khóa-học" class="level3">
 <h3 class="anchored" data-anchor-id="khảo-sát-sau-khóa-học">Khảo sát sau khóa học</h3>
 <p>Trang feedback dùng lại cho nhiều khóa: chọn khóa đã học, chấm điểm nội dung, đánh giá giảng viên, và gửi phản hồi thẳng về Google Sheets qua Google Apps Script.</p>
 <p><a href="../training/course-feedback/index.html">Mở trang khảo sát →</a></p>
-</section>
-</div>
-<div class="dz-card">
-<p><span class="dz-card__meta">Kiến trúc</span></p>
-<section id="cách-tổ-chức-để-mở-rộng" class="level3">
-<h3 class="anchored" data-anchor-id="cách-tổ-chức-để-mở-rộng">Cách tổ chức để mở rộng</h3>
-<p>Mỗi khoá nên có:</p>
-<ul>
-<li><code>training/&lt;slug&gt;/index.qmd</code> cho landing page</li>
-<li><code>training/&lt;slug&gt;/slides/</code> cho HTML deck và assets</li>
-<li><code>training/course-feedback/index.qmd</code> cho trang khảo sát chung</li>
-<li><code>training/&lt;slug&gt;/materials/</code> nếu có handout, dataset, workbook</li>
-</ul>
-<p>Nhờ vậy, mỗi khoá có thể xuất bản độc lập nhưng vẫn nằm trong cùng hệ sinh thái <code>dz-academy</code>.</p>
 </section>
 </div>
 </div>
@@ -235,6 +229,7 @@ ul.task-list li input[type="checkbox"] {
   var root = document.documentElement;
   var storageKey = "dz-template-theme";
   var systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var mermaidModulePromise;
 
   function getStored() {
     try { return localStorage.getItem(storageKey); } catch (e) { return null; }
@@ -298,6 +293,77 @@ ul.task-list li input[type="checkbox"] {
     return btn;
   }
 
+  function getMermaidTheme(theme) {
+    return getEffective(theme) === "dark" ? "dark" : "default";
+  }
+
+  function getMermaidTargets() {
+    return Array.prototype.slice.call(
+      document.querySelectorAll("pre.mermaid, .mermaid[data-mermaid-code]")
+    );
+  }
+
+  function ensureMermaidBlocks() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll("pre.mermaid"));
+
+    blocks.forEach(function (pre) {
+      var source = (pre.textContent || "").trim();
+      if (!source) return;
+
+      var container = document.createElement("div");
+      container.className = "mermaid";
+      container.dataset.mermaidCode = source;
+      container.textContent = source;
+      pre.replaceWith(container);
+    });
+  }
+
+  function loadMermaidModule() {
+    if (mermaidModulePromise) return mermaidModulePromise;
+
+    mermaidModulePromise = import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        return mod.default || mod;
+      });
+
+    return mermaidModulePromise;
+  }
+
+  function renderMermaid(theme) {
+    if (!getMermaidTargets().length) return Promise.resolve();
+
+    ensureMermaidBlocks();
+
+    return loadMermaidModule()
+      .then(function (mermaid) {
+        var nodes = Array.prototype.slice.call(
+          document.querySelectorAll(".mermaid[data-mermaid-code]")
+        );
+
+        if (!nodes.length) return;
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: getMermaidTheme(theme),
+          securityLevel: "loose",
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true
+          }
+        });
+
+        nodes.forEach(function (node) {
+          node.removeAttribute("data-processed");
+          node.textContent = node.dataset.mermaidCode || "";
+        });
+
+        return mermaid.run({ nodes: nodes });
+      })
+      .catch(function (err) {
+        console.error("Mermaid render failed", err);
+      });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     var stored = getStored();
     var currentTheme = (stored === "dark" || stored === "light") ? stored : "auto";
@@ -314,6 +380,7 @@ ul.task-list li input[type="checkbox"] {
       applyTheme(currentTheme);
       setStored(currentTheme);
       updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
     });
 
     systemQuery.addEventListener("change", function () {
@@ -321,7 +388,10 @@ ul.task-list li input[type="checkbox"] {
       currentTheme = (s === "dark" || s === "light") ? s : "auto";
       applyTheme(currentTheme);
       updateButton(btn, currentTheme);
+      renderMermaid(currentTheme);
     });
+
+    renderMermaid(currentTheme);
   });
 })();
 </script>
