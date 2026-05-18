@@ -15,7 +15,7 @@ website:
   twitter-card: true
 
   navbar:
-    logo: assets/01-logos/master/dz-academy.svg
+    logo: https://res.cloudinary.com/dhw8egavl/image/upload/dz-academy/assets/01-logos/master/dz-academy.svg
     logo-alt: "DZ AI Academy"
     background: light
     search: true

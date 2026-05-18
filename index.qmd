@@ -5,7 +5,7 @@ toc: false
 ---
 
 ::: {.dz-hero}
-![dz academy mark](assets/01-logos/master/dz-academy.svg){.dz-hero__logo}
+![dz academy mark](https://res.cloudinary.com/dhw8egavl/image/upload/dz-academy/assets/01-logos/master/dz-academy.svg){.dz-hero__logo}
 
 [DZ AI Academy]{.dz-kicker}
 

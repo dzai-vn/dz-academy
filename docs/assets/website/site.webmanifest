@@ -1,20 +1,20 @@
 {
   "name": "DZ AI Academy",
   "short_name": "DZ AI",
-  "description": "Hệ thống nội dung và tài sản số cho DZ AI Academy.",
+  "description": "H\u1ec7 th\u1ed1ng n\u1ed9i dung v\u00e0 t\u00e0i s\u1ea3n s\u1ed1 cho DZ AI Academy.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFDF5",
   "theme_color": "#001233",
   "icons": [
     {
-      "src": "./light/favicon.svg",
+      "src": "https://res.cloudinary.com/dhw8egavl/image/upload/dz-academy/assets/website/light/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "./light/apple-touch-icon.png",
+      "src": "https://res.cloudinary.com/dhw8egavl/image/upload/dz-academy/assets/website/light/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
